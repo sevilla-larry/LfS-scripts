@@ -5,7 +5,8 @@
 #
 #
 # on-going
-# try UpLoad VS Community
+# try UpLoad from Windows 10 using VSCommunity
+# try UpLoad from Gentoo using VSCode
 #
 # Working LfS ver: 12.0
 # Started: 2023/Sept/07
