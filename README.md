@@ -4,13 +4,15 @@
 #  eMail: sevilla.larry.oss@gmail.com
 #
 #
-# on-going
-# try UpLoad from Windows 10 using VSCommunity
-# try UpLoad from Gentoo using VSCode
+# On-going LfS ver: 12.1
+# Started: 2024/Mar/08
+# arch: x64, UEFI
+#
 #
 # Working LfS ver: 12.0
 # Started: 2023/Sept/07
 # arch: x64, UEFI
+# Note: 2024 errata patches was NOT applied due to time constraint
 #
 # Working LfS ver: 11.3
 # Started: 2023/Apr/06
