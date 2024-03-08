@@ -3,6 +3,7 @@
 # Author: Sevilla, Larry
 #  eMail: sevilla.larry.oss@gmail.com
 #
+# test UpLoad from Home: Gentoo VSCode
 #
 # On-going LfS ver: 12.1
 # Started: 2024/Mar/08
