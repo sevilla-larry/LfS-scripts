@@ -5,6 +5,7 @@
 #
 #
 # on-going
+# try UpLoad VS Community
 #
 # Working LfS ver: 12.0
 # Started: 2023/Sept/07
