@@ -112,7 +112,6 @@ A. Preparation
         ###
 
       # (a) VM
-
         mkdir -pv $LFS/mnt/src
         mount /dev/vdc1 $LFS/mnt/src
 
@@ -123,7 +122,6 @@ A. Preparation
         ln -sf $LFS/mnt/src/lfs.src $LFS/sources
 
       # (b) PC
-
         mkdir -pv $LFS/usr/src/lfs
 
         chmod -v a+wt $LFS/usr/src/lfs
@@ -179,11 +177,9 @@ A. Preparation
         # ( Logging )
 
       # (a) VM
-
         bash a.04.03.3.1.Add.Logging.Requirement.VMs.sh
 
       # (b) PC
-
         bash a.04.03.3.2.Add.Logging.Requirement.PCs.sh
 
         ###
@@ -225,8 +221,7 @@ B.  Generate LFS
 
         echo $LFS             # /mnt/lfs
         echo $LFSLOG          # /mnt/lfs/var/log/lfs
-        echo $MAKEFLAGS       # -j8
-        echo $NPROC           # 8
+        echo $MAKEFLAGS       # -j$(nproc)
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash
@@ -268,6 +263,9 @@ B.  Generate LFS
         bash a.07.02.Changing.Ownership.to.root.User.sh
 
         chown -v root:root $LFS/var/log
+        chown -v root:root $LFS/var/log/*
+
+      # (a) VM
         chown -v root:root $LFS/mnt/src/lfs.log
         chown -v root:root $LFS/mnt/src/lfs.log/*
 
@@ -290,6 +288,8 @@ B.  Generate LFS
             TERM="$TERM"                \
             PS1='(lfs chroot) \u:\w\$ ' \
             PATH=/usr/bin:/usr/sbin     \
+            MAKEFLAGS="-j$(nproc)"      \
+            TESTSUITEFLAGS="-j$(nproc)" \
             /bin/bash --login
 
         ###
@@ -299,23 +299,27 @@ B.  Generate LFS
 
         ###
 
+      # (a) VM
         rm /sources
         ln -sf /mnt/src/lfs.src /sources
-
         rm /var/log/lfs
         ln -sf /mnt/src/lfs.log /var/log/lfs
 
+      # (b) PC
+        rm /sources
+        ln -sf /usr/src/lfs /sources
+
+        ###
+
         export LFSLOG=/var/log/lfs
-        export MAKEFLAGS="-j8"
-        export NPROC="8"
 
         cd /sources
 
         ###
 
         echo $LFSLOG          # /var/log/lfs
-        echo $MAKEFLAGS       # -j8
-        echo $NPROC           # 8
+        echo $MAKEFLAGS       # -j$(nproc)
+        echo $TESTSUITEFLAGS  # -j$(nproc)
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash
