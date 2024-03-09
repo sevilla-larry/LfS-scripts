@@ -4,6 +4,8 @@
 #  eMail: sevilla.larry.prg@gmail.com
 #
 #
+# Test Update from Home VM 109 Gentoo VSCode
+#
 # On-going LfS ver: 12.1
 # Started: 2024/Mar/08
 # arch: x64, UEFI
