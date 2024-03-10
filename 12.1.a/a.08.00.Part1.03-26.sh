@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "08.06.Zlib-1.2.13"
-echo "08.06.Zlib-1.2.13" >> $LFSLOG_PROCESS
+echo "08.06.Zlib-1.3.1"
+echo "08.06.Zlib-1.3.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.06.Zlib-1.2.13.sh ; }
+time { bash a.08.06.Zlib-1.3.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -78,10 +78,10 @@ echo "."
 
 ###
 
-echo "08.08.Xz-5.4.4"
-echo "08.08.Xz-5.4.4" >> $LFSLOG_PROCESS
+echo "08.08.Xz-5.4.6"
+echo "08.08.Xz-5.4.6" >> $LFSLOG_PROCESS
 
-time { bash a.08.08.Xz-5.4.4.sh ; }
+time { bash a.08.08.Xz-5.4.6.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
