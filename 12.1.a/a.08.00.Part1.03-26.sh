@@ -148,10 +148,10 @@ echo "."
 
 ###
 
-echo "08.13.Bc-6.6.0"
-echo "08.13.Bc-6.6.0" >> $LFSLOG_PROCESS
+echo "08.13.Bc-6.7.5"
+echo "08.13.Bc-6.7.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.13.Bc-6.6.0.sh ; }
+time { bash a.08.13.Bc-6.7.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -218,24 +218,10 @@ echo "."
 
 ###
 
-echo "08.18.Binutils-2.41"
-echo "08.18.Binutils-2.41" >> $LFSLOG_PROCESS
+echo "08.18.Pkgconf-2.1.1"
+echo "08.18.Pkgconf-2.1.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.18.Binutils-2.41.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.19.GMP-6.3.0"
-echo "08.19.GMP-6.3.0" >> $LFSLOG_PROCESS
-
-time { bash a.08.19.GMP-6.3.0.sh ; }
+time { bash a.08.18.Pkgconf-2.1.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -246,24 +232,10 @@ echo "."
 
 ###
 
-echo "08.20.MPFR-4.2.0"
-echo "08.20.MPFR-4.2.0" >> $LFSLOG_PROCESS
+echo "08.19.Binutils-2.42"
+echo "08.19.Binutils-2.42" >> $LFSLOG_PROCESS
 
-time { bash a.08.20.MPFR-4.2.0.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.21.MPC-1.3.1"
-echo "08.21.MPC-1.3.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.21.MPC-1.3.1.sh ; }
+time { bash a.08.19.Binutils-2.42.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -274,24 +246,10 @@ echo "."
 
 ###
 
-echo "08.22.Attr-2.5.1"
-echo "08.22.Attr-2.5.1" >> $LFSLOG_PROCESS
+echo "08.20.GMP-6.3.0"
+echo "08.20.GMP-6.3.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.22.Attr-2.5.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.23.Acl-2.3.1"
-echo "08.23.Acl-2.3.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.23.Acl-2.3.1.sh ; }
+time { bash a.08.20.GMP-6.3.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -302,10 +260,66 @@ echo "."
 
 ###
 
-echo "08.24.Libcap-2.69"
-echo "08.24.Libcap-2.69" >> $LFSLOG_PROCESS
+echo "08.21.MPFR-4.2.1"
+echo "08.21.MPFR-4.2.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.24.Libcap-2.69.sh ; }
+time { bash a.08.21.MPFR-4.2.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.22.MPC-1.3.1"
+echo "08.22.MPC-1.3.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.22.MPC-1.3.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.23.Attr-2.5.2"
+echo "08.23.Attr-2.5.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.23.Attr-2.5.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.24.Acl-2.3.2"
+echo "08.24.Acl-2.3.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.24.Acl-2.3.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.25.Libcap-2.69"
+echo "08.25.Libcap-2.69" >> $LFSLOG_PROCESS
+
+time { bash a.08.25.Libcap-2.69.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
