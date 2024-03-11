@@ -8,6 +8,7 @@ export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -20,7 +21,10 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-sed -i s/mawk// configure
+echo "First, ensure that gawk is found first during configuration"  \
+    >> $PKGLOG_OTHERS
+sed -i s/mawk// configure   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Build tic ..."
 echo "2. Build tic ..." >> $LFSLOG_PROCESS
@@ -57,16 +61,18 @@ make >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install   \
+make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install       \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 ln -s libncursesw.so $LFS/usr/lib/libncurses.so
-sed -e 's/^#if.*XOPEN.*$/#if 1/' -i $LFS/usr/include/curses.h
+sed -e 's/^#if.*XOPEN.*$/#if 1/' -i $LFS/usr/include/curses.h   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

@@ -36,14 +36,21 @@ echo "1.3 Extract tar MPC ." >> $PKGLOG_ERROR
 tar -xvf ../mpc-1.3.1.tar.gz >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv mpc-1.3.1 mpc
 
+echo "If building on x86_64, change the default directory name for 64-bit libraries to 'lib'"  \
+    >> $PKGLOG_OTHERS
 case $(uname -m) in
   x86_64)
     sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   ;;
-esac
+esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed '/thread_header =/s/@.*@/gthr-posix.h/' \
-    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in
+echo "Override the building rule of libgcc and libstdc++ headers,"  \
+    >> $PKGLOG_OTHERS
+echo "to allow building these libraries with POSIX threads support" \
+    >> $PKGLOG_OTHERS
+sed '/thread_header =/s/@.*@/gthr-posix.h/'                 \
+    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -82,6 +89,7 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install \
   > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
+echo "create a utility symlink" >> $PKGLOG_OTHERS
 ln -s gcc $LFS/usr/bin/cc
 
 
