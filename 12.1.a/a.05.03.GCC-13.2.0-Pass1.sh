@@ -7,8 +7,8 @@ export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
-export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -24,20 +24,22 @@ cd $PKG
 echo "1.1 Extract tar MPFR ."
 echo "1.1 Extract tar MPFR ." >> $LFSLOG_PROCESS
 echo "1.1 Extract tar MPFR ." >> $PKGLOG_ERROR
-tar -xf ../mpfr-4.2.1.tar.xz  >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar -xvf ../mpfr-4.2.1.tar.xz >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv mpfr-4.2.1 mpfr
 echo "1.2 Extract tar GMP ."
 echo "1.2 Extract tar GMP ." >> $LFSLOG_PROCESS
 echo "1.2 Extract tar GMP ." >> $PKGLOG_ERROR
-tar -xf ../gmp-6.3.0.tar.xz   >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar -xvf ../gmp-6.3.0.tar.xz >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv gmp-6.3.0 gmp
 echo "1.3 Extract tar MPC ."
 echo "1.3 Extract tar MPC ." >> $LFSLOG_PROCESS
 echo "1.3 Extract tar MPC ." >> $PKGLOG_ERROR
-tar -xf ../mpc-1.3.1.tar.gz   >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar -xvf ../mpc-1.3.1.tar.gz >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv mpc-1.3.1 mpc
 
-echo "Default directory for 64-bit lib" >> $PKGLOG_OTHERS
+echo "    Default directory for 64-bit lib"
+echo "    Default directory for 64-bit lib" >> $LFSLOG_PROCESS
+echo "    Default directory for 64-bit lib" >> $PKGLOG_ERROR
 case $(uname -m) in
   x86_64)
     sed -e '/m64=/s/lib64/lib/' \
@@ -83,9 +85,13 @@ echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
+echo "   Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances"
+echo "   Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances" >> $LFSLOG_PROCESS
+echo "   Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances" >> $PKGLOG_ERROR
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h
+  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h    \
+   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

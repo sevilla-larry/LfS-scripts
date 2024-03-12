@@ -41,9 +41,12 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Make a link for the programs that use sh for a shell" \
-    >> $PKGLOG_OTHERS
-ln -s bash $LFS/bin/sh
+echo "   Make a link for the programs that use sh for a shell..."
+echo "   Make a link for the programs that use sh for a shell..." >> $LFSLOG_PROCESS
+echo "   Make a link for the programs that use sh for a shell..." >> $PKGLOG_ERROR
+ln -sv bash $LFS/bin/sh \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 
 
 cd ..

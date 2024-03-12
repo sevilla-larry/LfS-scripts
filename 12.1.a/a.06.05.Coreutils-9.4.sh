@@ -42,16 +42,17 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Move programs to their final expected locations" \
-    >> $PKGLOG_OTHERS
-mv    -v    $LFS/usr/bin/chroot                 $LFS/usr/sbin
-    >> $PKGLOG_OTHERS
-mkdir -pv   $LFS/usr/share/man/man8
-    >> $PKGLOG_OTHERS
+echo "   Move programs to their final expected locations..."
+echo "   Move programs to their final expected locations..."    >> $LFSLOG_PROCESS
+echo "   Move programs to their final expected locations..."    >> $PKGLOG_ERROR
+mv    -v    $LFS/usr/bin/chroot                 $LFS/usr/sbin                       \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+mkdir -pv   $LFS/usr/share/man/man8                                                 \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 mv    -v    $LFS/usr/share/man/man1/chroot.1    $LFS/usr/share/man/man8/chroot.8    \
-    >> $PKGLOG_OTHERS
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 sed         -i 's/"1"/"8"/'                     $LFS/usr/share/man/man8/chroot.8    \
-    >> $PKGLOG_OTHERS
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

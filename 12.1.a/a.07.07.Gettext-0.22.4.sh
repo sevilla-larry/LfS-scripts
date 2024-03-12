@@ -23,7 +23,6 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-
 ./configure --disable-shared \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
@@ -32,7 +31,10 @@ echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-cp gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin
+echo "Patch to FHS-compliant"   >> $PKGLOG_INSTALL
+cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext}  \
+    /usr/bin    \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

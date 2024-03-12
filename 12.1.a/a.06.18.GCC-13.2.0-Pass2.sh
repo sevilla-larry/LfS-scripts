@@ -8,6 +8,7 @@ export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -36,18 +37,21 @@ echo "1.3 Extract tar MPC ." >> $PKGLOG_ERROR
 tar -xvf ../mpc-1.3.1.tar.gz >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv mpc-1.3.1 mpc
 
-echo "If building on x86_64, change the default directory name for 64-bit libraries to 'lib'"  \
-    >> $PKGLOG_OTHERS
+echo "    If building on x86_64, change the default directory name for 64-bit libraries to {lib}..."
+echo "    If building on x86_64, change the default directory name for 64-bit libraries to {lib}..." >> $LFSLOG_PROCESS
+echo "    If building on x86_64, change the default directory name for 64-bit libraries to {lib}..." >> $PKGLOG_ERROR
 case $(uname -m) in
   x86_64)
     sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   ;;
 esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "Override the building rule of libgcc and libstdc++ headers,"  \
-    >> $PKGLOG_OTHERS
-echo "to allow building these libraries with POSIX threads support" \
-    >> $PKGLOG_OTHERS
+echo "    Override the building rule of libgcc and libstdc++ headers,"
+echo "    Override the building rule of libgcc and libstdc++ headers," >> $LFSLOG_PROCESS
+echo "    Override the building rule of libgcc and libstdc++ headers," >> $PKGLOG_ERROR
+echo "    to allow building these libraries with POSIX threads support..."
+echo "    to allow building these libraries with POSIX threads support..." >> $LFSLOG_PROCESS
+echo "    to allow building these libraries with POSIX threads support..." >> $PKGLOG_ERROR
 sed '/thread_header =/s/@.*@/gthr-posix.h/'                 \
     -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
@@ -87,16 +91,21 @@ echo "4. Make Install ..."
 echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install \
-  > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "create a utility symlink" >> $PKGLOG_OTHERS
-ln -s gcc $LFS/usr/bin/cc
+echo "Create a utility symlink" >> $PKGLOG_OTHERS
+echo "   Create a utility symlink..."
+echo "   Create a utility symlink..." >> $LFSLOG_PROCESS
+echo "   Create a utility symlink..." >> $PKGLOG_ERROR
+ln -vs gcc $LFS/usr/bin/cc  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

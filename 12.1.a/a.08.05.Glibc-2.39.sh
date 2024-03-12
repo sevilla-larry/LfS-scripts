@@ -8,8 +8,8 @@ export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
-export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 #Modify the next line for your local time zone
@@ -57,8 +57,18 @@ echo "5. Make Check ..." >> $LFSLOG_PROCESS
 echo "5. Make Check ..." >> $PKGLOG_ERROR
 make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
+echo "Though it is a harmless message," \
+    >> $PKGLOG_OTHERS
+echo "the install stage of Glibc will complain about the absence of /etc/ld.so.conf."   \
+    >> $PKGLOG_OTHERS
+echo "Prevent this warning with:"       \
+    >> $PKGLOG_OTHERS
 touch /etc/ld.so.conf
 
+echo "Fix the Makefile to skip an outdated sanity check"    \
+    >> $PKGLOG_OTHERS
+echo "that fails with a modern Glibc configuration"         \
+    >> $PKGLOG_OTHERS
 sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
 
 echo "6. Make Install ..."
@@ -66,7 +76,10 @@ echo "6. Make Install ..." >> $LFSLOG_PROCESS
 echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd
+echo "Fix a hardcoded path"                         >> $PKGLOG_OTHERS
+echo "to the executable loader in the ldd script"   >> $PKGLOG_OTHERS
+sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "7. Locale Definitions ..."
 echo "7. Locale Definitions ..." >> $LFSLOG_PROCESS

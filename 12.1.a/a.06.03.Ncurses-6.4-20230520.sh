@@ -21,10 +21,10 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "First, ensure that gawk is found first during configuration"  \
-    >> $PKGLOG_OTHERS
-sed -i s/mawk// configure   \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "   First, ensure that gawk is found first during configuration..."
+echo "   First, ensure that gawk is found first during configuration..." >> $LFSLOG_PROCESS
+echo "   First, ensure that gawk is found first during configuration..." >> $PKGLOG_ERROR
+sed -i s/mawk// configure   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Build tic ..."
 echo "2. Build tic ..." >> $LFSLOG_PROCESS
@@ -62,11 +62,11 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install       \
-    > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-
-ln -s libncursesw.so $LFS/usr/lib/libncurses.so
+     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+ln -vs libncursesw.so $LFS/usr/lib/libncurses.so                \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 sed -e 's/^#if.*XOPEN.*$/#if 1/' -i $LFS/usr/include/curses.h   \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

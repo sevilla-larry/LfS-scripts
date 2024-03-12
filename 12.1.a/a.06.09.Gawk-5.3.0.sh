@@ -20,10 +20,10 @@ echo "1. Extract tar..." >> $PKGLOG_ERROR
 tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
-echo "First, ensure some unneeded files are not installed" \
-    >> $PKGLOG_OTHERS
-sed -i 's/extras//' Makefile.in \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "   First, ensure some unneeded files are not installed..."
+echo "   First, ensure some unneeded files are not installed..." >> $LFSLOG_PROCESS
+echo "   First, ensure some unneeded files are not installed..." >> $PKGLOG_ERROR
+sed -i 's/extras//' Makefile.in >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS

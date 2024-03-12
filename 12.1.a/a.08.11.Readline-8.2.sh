@@ -22,15 +22,15 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+echo "Avoid a linking bug in ldconfig" >> $PKGLOG_OTHERS
+sed -i '/MV.*old/d' Makefile.in                 >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -i '/{OLDSUFF}/c:' support/shlib-install    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-
-sed -i '/MV.*old/d' Makefile.in
-sed -i '/{OLDSUFF}/c:' support/shlib-install
-
 patch -Np1 -i ../readline-8.2-upstream_fixes-3.patch  \
-     > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS
@@ -53,9 +53,10 @@ echo "5. Make Install ..." >> $PKGLOG_ERROR
 make SHLIB_LIBS="-lncursesw" install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -m644 doc/*.{ps,pdf,html,dvi}   \
-    /usr/share/doc/readline-8.2
-
+echo "Install the documentation" >> $PKGLOG_OTHERS
+install -v -m644 doc/*.{ps,pdf,html,dvi}    \
+    /usr/share/doc/readline-8.2             \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 cd ..
 rm -rf $PKG

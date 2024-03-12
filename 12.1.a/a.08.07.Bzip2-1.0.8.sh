@@ -7,8 +7,8 @@ export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
-export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -27,8 +27,10 @@ echo "2. Patching for documentation..." >> $PKGLOG_ERROR
 patch -Np1 -i ../bzip2-1.0.8-install_docs-1.patch   \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
+echo "Ensure installation of symbolic links are relative" >> $PKGLOG_OTHERS
 sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
 
+echo "Ensure the man pages are installed into the correct location" >> $PKGLOG_OTHERS
 sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 
 echo "3. Make Build libbz2 ..."
@@ -53,14 +55,18 @@ echo "6. Make Install ..." >> $PKGLOG_ERROR
 make PREFIX=/usr install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-cp -a libbz2.so.* /usr/lib
-ln -s libbz2.so.1.0.8 /usr/lib/libbz2.so
+echo "Install the shared library" >> $PKGLOG_OTHERS
+cp -av libbz2.so.* /usr/lib                 >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+ln -sv libbz2.so.1.0.8 /usr/lib/libbz2.so   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cp  bzip2-shared /usr/bin/bzip2
+echo "Install the shared bzip2 binary into the /usr/bin directory," >> $PKGLOG_OTHERS
+cp  -v bzip2-shared /usr/bin/bzip2          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "and replace two copies of bzip2 with symlinks"                >> $PKGLOG_OTHERS
 for i in /usr/bin/{bzcat,bunzip2}; do
-  ln -sf bzip2 $i
+  ln -sfv bzip2 $i                          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 done
 
+echo "Remove a useless static library" >> $PKGLOG_OTHERS
 rm -f /usr/lib/libbz2.a
 
 

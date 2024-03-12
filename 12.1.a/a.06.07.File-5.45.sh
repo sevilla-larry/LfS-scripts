@@ -62,9 +62,10 @@ echo "5. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Remove the libtool archive file because it is harmful for cross compilation" \
-    >> $PKGLOG_OTHERS
-rm $LFS/usr/lib/libmagic.la
+echo "   Remove the libtool archive file because it is harmful for cross compilation..."
+echo "   Remove the libtool archive file because it is harmful for cross compilation..." >> $LFSLOG_PROCESS
+echo "   Remove the libtool archive file because it is harmful for cross compilation..." >> $PKGLOG_ERROR
+rm -v $LFS/usr/lib/libmagic.la  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

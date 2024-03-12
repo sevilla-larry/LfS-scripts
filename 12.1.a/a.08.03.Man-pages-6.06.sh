@@ -8,6 +8,7 @@ export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -20,6 +21,10 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+echo "Remove two man pages for password hashing functions."         \
+    >> $PKGLOG_OTHERS
+echo "Libxcrypt will provide a better version of these man pages"   \
+    >> $PKGLOG_OTHERS
 rm man3/crypt*
 
 echo "2. Make Install ..."
@@ -32,6 +37,7 @@ make prefix=/usr install    \
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL
 # PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

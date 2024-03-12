@@ -23,7 +23,9 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "Symbolic Link"        >> $PKGLOG_OTHERS
+echo "   Symbolic Link..."
+echo "   Symbolic Link..." >> $LFSLOG_PROCESS
+echo "   Symbolic Link..." >> $PKGLOG_ERROR
 case $(uname -m) in
     i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
     ;;
@@ -32,8 +34,11 @@ case $(uname -m) in
     ;;
 esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "Patch to FHS-compliant"           >> $PKGLOG_OTHERS
-patch -Np1 -i ../glibc-2.39-fhs-1.patch >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "   Patch to FHS-compliant..."
+echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
+echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
+patch -Np1 -i ../glibc-2.39-fhs-1.patch \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -67,7 +72,9 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Fix hard code path in 'ldd' script" >> $PKGLOG_OTHERS
+echo "   Fix hard code path in ldd script..."
+echo "   Fix hard code path in ldd script..." >> $LFSLOG_PROCESS
+echo "   Fix hard code path in ldd script..." >> $PKGLOG_ERROR
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
