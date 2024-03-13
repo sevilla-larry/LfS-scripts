@@ -43,8 +43,10 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Remove a useless static library" >> $PKGLOG_OTHERS
-rm -f /usr/lib/libz.a
+echo "   Remove a useless static library..."
+echo "   Remove a useless static library..." >> $LFSLOG_PROCESS
+echo "   Remove a useless static library..." >> $PKGLOG_ERROR
+rm -fv /usr/lib/libz.a  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

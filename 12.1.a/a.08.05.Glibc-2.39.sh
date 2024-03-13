@@ -34,6 +34,9 @@ patch -Np1 -i ../glibc-2.39-fhs-1.patch \
 mkdir build
 cd    build
 
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..."
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..." >> $LFSLOG_PROCESS
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..." >> $PKGLOG_ERROR
 echo "rootsbindir=/usr/sbin" > configparms
 
 echo "3. Configure ..."
@@ -57,33 +60,44 @@ echo "5. Make Check ..." >> $LFSLOG_PROCESS
 echo "5. Make Check ..." >> $PKGLOG_ERROR
 make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-echo "Though it is a harmless message," \
-    >> $PKGLOG_OTHERS
-echo "the install stage of Glibc will complain about the absence of /etc/ld.so.conf."   \
-    >> $PKGLOG_OTHERS
-echo "Prevent this warning with:"       \
-    >> $PKGLOG_OTHERS
-touch /etc/ld.so.conf
+echo "   Though it is a harmless message,"
+echo "   Though it is a harmless message," >> $LFSLOG_PROCESS
+echo "   Though it is a harmless message," >> $PKGLOG_ERROR
+echo "   the install stage of Glibc will complain about the absence of /etc/ld.so.conf"
+echo "   the install stage of Glibc will complain about the absence of /etc/ld.so.conf" >> $LFSLOG_PROCESS
+echo "   the install stage of Glibc will complain about the absence of /etc/ld.so.conf" >> $PKGLOG_ERROR
+echo "   Prevent this warning with..."
+echo "   Prevent this warning with..." >> $LFSLOG_PROCESS
+echo "   Prevent this warning with..." >> $PKGLOG_ERROR
+touch /etc/ld.so.conf   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "Fix the Makefile to skip an outdated sanity check"    \
     >> $PKGLOG_OTHERS
 echo "that fails with a modern Glibc configuration"         \
     >> $PKGLOG_OTHERS
-sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+echo "   Fix the Makefile to skip an outdated sanity check"
+echo "   Fix the Makefile to skip an outdated sanity check" >> $LFSLOG_PROCESS
+echo "   Fix the Makefile to skip an outdated sanity check" >> $PKGLOG_ERROR
+echo "   that fails with a modern Glibc configuration..."
+echo "   that fails with a modern Glibc configuration..." >> $LFSLOG_PROCESS
+echo "   that fails with a modern Glibc configuration..." >> $PKGLOG_ERROR
+sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "6. Make Install ..."
 echo "6. Make Install ..." >> $LFSLOG_PROCESS
 echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Fix a hardcoded path"                         >> $PKGLOG_OTHERS
-echo "to the executable loader in the ldd script"   >> $PKGLOG_OTHERS
-sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd  \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "   Fix a hardcoded path to the executable loader in the ldd script..."
+echo "   Fix a hardcoded path to the executable loader in the ldd script..." >> $LFSLOG_PROCESS
+echo "   Fix a hardcoded path to the executable loader in the ldd script..." >> $PKGLOG_ERROR
+sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "7. Locale Definitions ..."
 echo "7. Locale Definitions ..." >> $LFSLOG_PROCESS
 echo "7. Locale Definitions ..." >> $PKGLOG_ERROR
+
 mkdir -p /usr/lib/locale
 localedef -i C -f UTF-8 C.UTF-8
 localedef -i cs_CZ -f UTF-8 cs_CZ.UTF-8

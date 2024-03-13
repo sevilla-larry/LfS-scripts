@@ -21,7 +21,10 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-mkdir -p /var/lib/hwclock
+echo "   The FHS recommends using the /var/lib/hwclock directory..."
+echo "   The FHS recommends using the /var/lib/hwclock directory..." >> $LFSLOG_PROCESS
+echo "   The FHS recommends using the /var/lib/hwclock directory..." >> $PKGLOG_ERROR
+mkdir -pv /var/lib/hwclock  >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS

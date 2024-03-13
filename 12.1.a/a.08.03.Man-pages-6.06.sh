@@ -21,11 +21,13 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "Remove two man pages for password hashing functions."         \
-    >> $PKGLOG_OTHERS
-echo "Libxcrypt will provide a better version of these man pages"   \
-    >> $PKGLOG_OTHERS
-rm man3/crypt*
+echo "   Remove two man pages for password hashing functions."
+echo "   Remove two man pages for password hashing functions." >> $LFSLOG_PROCESS
+echo "   Remove two man pages for password hashing functions." >> $PKGLOG_ERROR
+echo "   Libxcrypt will provide a better version of these man pages..."
+echo "   Libxcrypt will provide a better version of these man pages..." >> $LFSLOG_PROCESS
+echo "   Libxcrypt will provide a better version of these man pages..." >> $PKGLOG_ERROR
+rm -v man3/crypt*   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Make Install ..."
 echo "2. Make Install ..." >> $LFSLOG_PROCESS

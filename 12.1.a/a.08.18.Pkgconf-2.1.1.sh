@@ -9,6 +9,7 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 #export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -19,6 +20,7 @@ echo "1. Extract tar..." >> $LFSLOG_PROCESS
 echo "1. Extract tar..." >> $PKGLOG_ERROR
 tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
+
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
@@ -38,13 +40,17 @@ echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-ln -s pkgconf   /usr/bin/pkg-config
-ln -s pkgconf.1 /usr/share/man/man1/pkg-config.1
+echo "   To maintain compatibility with the original Pkg-config create two symlinks..."
+echo "   To maintain compatibility with the original Pkg-config create two symlinks..." >> $LFSLOG_PROCESS
+echo "   To maintain compatibility with the original Pkg-config create two symlinks..." >> $PKGLOG_ERROR
+ln -sv pkgconf   /usr/bin/pkg-config                >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+ln -sv pkgconf.1 /usr/share/man/man1/pkg-config.1   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 #unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

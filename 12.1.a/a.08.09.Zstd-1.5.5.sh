@@ -39,8 +39,10 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make prefix=/usr install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Remove the static library" >> $PKGLOG_OTHERS
-rm /usr/lib/libzstd.a
+echo "   Remove the static library..."
+echo "   Remove the static library..." >> $LFSLOG_PROCESS
+echo "   Remove the static library..." >> $PKGLOG_ERROR
+rm -v /usr/lib/libzstd.a    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

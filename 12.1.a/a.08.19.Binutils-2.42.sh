@@ -9,6 +9,7 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -59,13 +60,18 @@ echo "5. Make Install ..." >> $PKGLOG_ERROR
 make tooldir=/usr install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-rm -f /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a
+echo "   Remove a useless static libraries..."
+echo "   Remove a useless static libraries..." >> $LFSLOG_PROCESS
+echo "   Remove a useless static libraries..." >> $PKGLOG_ERROR
+rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

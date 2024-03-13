@@ -22,7 +22,9 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "Avoid a linking bug in ldconfig" >> $PKGLOG_OTHERS
+echo "   Avoid a linking bug in ldconfig..."
+echo "   Avoid a linking bug in ldconfig..." >> $LFSLOG_PROCESS
+echo "   Avoid a linking bug in ldconfig..." >> $PKGLOG_ERROR
 sed -i '/MV.*old/d' Makefile.in                 >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 sed -i '/{OLDSUFF}/c:' support/shlib-install    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
@@ -53,7 +55,9 @@ echo "5. Make Install ..." >> $PKGLOG_ERROR
 make SHLIB_LIBS="-lncursesw" install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Install the documentation" >> $PKGLOG_OTHERS
+echo "   Install the documentation..."
+echo "   Install the documentation..." >> $LFSLOG_PROCESS
+echo "   Install the documentation..." >> $PKGLOG_ERROR
 install -v -m644 doc/*.{ps,pdf,html,dvi}    \
     /usr/share/doc/readline-8.2             \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR

@@ -31,9 +31,10 @@ echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "Patch to FHS-compliant"   >> $PKGLOG_INSTALL
-cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext}  \
-    /usr/bin    \
+echo "   Patch to FHS-compliant..."
+echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
+echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
+cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
