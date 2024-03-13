@@ -330,24 +330,10 @@ echo "."
 
 ###
 
-echo "08.25.Libxcrypt-4.4.36"
-echo "08.25.Libxcrypt-4.4.36" >> $LFSLOG_PROCESS
+echo "08.26.Libxcrypt-4.4.36"
+echo "08.26.Libxcrypt-4.4.36" >> $LFSLOG_PROCESS
 
-time { bash a.08.25.Libxcrypt-4.4.36.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.26.Shadow-4.13.Part1"
-echo "08.26.Shadow-4.13.Part1" >> $LFSLOG_PROCESS
-
-time { bash a.08.26.Shadow-4.13.Part1.sh ; }
+time { bash a.08.26.Libxcrypt-4.4.36.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -358,10 +344,24 @@ echo "."
 
 ###
 
-echo "08.26.Shadow-4.13.Part9"
-echo "08.26.Shadow-4.13.Part9" >> $LFSLOG_PROCESS
+echo "08.27.Shadow-4.14.5.Part1"
+echo "08.27.Shadow-4.14.5.Part1" >> $LFSLOG_PROCESS
 
-bash a.08.26.Shadow-4.13.Part9.sh
+time { bash a.08.27.Shadow-4.14.5.Part1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.27.Shadow-4.14.5.Part9"
+echo "08.27.Shadow-4.14.5.Part9" >> $LFSLOG_PROCESS
+
+bash a.08.27.Shadow-4.14.5.Part9.sh
 
 echo "." >> $LFSLOG_PROCESS
 echo "."
