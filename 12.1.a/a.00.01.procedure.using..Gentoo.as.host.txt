@@ -350,15 +350,15 @@ B.  Generate LFS
 
         ###
 
-  B.11. [LFS 8.03-8.26] Chapter 8 Part 1
+  B.11. [LFS 8.03-8.27] Chapter 8 Part 1
 
         ###
 
-        bash a.08.00.Part1.03-26.sh
+        bash a.08.00.Part1.03-27.sh
 
         ###
 
-  B.12. [LFS 8.26.2 & 8.26.3] Configuring Shadow & Setting the Root password
+  B.12. [LFS 8.27 .2 & .3] Configuring Shadow & Setting the Root password
 
         ###
 
