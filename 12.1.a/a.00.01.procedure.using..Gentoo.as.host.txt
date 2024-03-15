@@ -375,11 +375,11 @@ B.  Generate LFS
 
         ###
 
-  B.13. [LFS 8.27-8.35] Chapter 8 Part 2
+  B.13. [LFS 8.28-8.35] Chapter 8 Part 2
 
         ###
 
-        bash a.08.00.Part2.27-35.sh
+        bash a.08.00.Part2.28-35.sh
 
         ###
 

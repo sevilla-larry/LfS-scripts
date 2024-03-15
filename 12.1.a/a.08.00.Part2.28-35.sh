@@ -1,4 +1,4 @@
-# a.08.00.Part2.28-36.sh
+# a.08.00.Part2.28-35.sh
 #
 
 export LFSLOG_PROCESS=$LFSLOG/process.log
@@ -8,10 +8,10 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.27.GCC-13.2.0"
-echo "08.27.GCC-13.2.0" >> $LFSLOG_PROCESS
+echo "08.28.GCC-13.2.0"
+echo "08.28.GCC-13.2.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.27.GCC-13.2.0.sh ; }
+time { bash a.08.28.GCC-13.2.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -106,10 +106,10 @@ echo "."
 
 ###
 
-echo "08.35.Bash-5.2.15.Part1"
-echo "08.35.Bash-5.2.15.Part1" >> $LFSLOG_PROCESS
+echo "08.35.Bash-5.2.21.Part1"
+echo "08.35.Bash-5.2.21.Part1" >> $LFSLOG_PROCESS
 
-time { bash a.08.35.Bash-5.2.15.Part1.sh ; }
+time { bash a.08.35.Bash-5.2.21.Part1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -120,10 +120,10 @@ echo "."
 
 ###
 
-echo "08.35.Bash-5.2.15.Part9"
-echo "08.35.Bash-5.2.15.Part9" >> $LFSLOG_PROCESS
+echo "08.35.Bash-5.2.21.Part9"
+echo "08.35.Bash-5.2.21.Part9" >> $LFSLOG_PROCESS
 
-bash a.08.35.Bash-5.2.15.Part9.sh
+bash a.08.35.Bash-5.2.21.Part9.sh
 
 echo "." >> $LFSLOG_PROCESS
 echo "."
