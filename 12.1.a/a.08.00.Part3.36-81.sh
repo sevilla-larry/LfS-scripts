@@ -1,5 +1,5 @@
 # a.08.00.Part3.36-80.sh
-# exludes 08.62 GRUB
+# excludes 08.62 GRUB
 
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
@@ -388,24 +388,10 @@ echo "."
 ##### 08.63.GRUB is on the Last Part 08.90.GRUB.....
 #####
 
-echo "08.63.Gzip-1.12"
-echo "08.63.Gzip-1.12" >> $LFSLOG_PROCESS
+echo "08.64.Gzip-1.13"
+echo "08.64.Gzip-1.13" >> $LFSLOG_PROCESS
 
-time { bash a.08.63.Gzip-1.12.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.64.IPRoute2-6.4.0"
-echo "08.64.IPRoute2-6.4.0" >> $LFSLOG_PROCESS
-
-time { bash a.08.64.IPRoute2-6.4.0.sh ; }
+time { bash a.08.64.Gzip-1.13.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -416,24 +402,10 @@ echo "."
 
 ###
 
-echo "08.65.Kbd-2.6.1"
-echo "08.65.Kbd-2.6.1" >> $LFSLOG_PROCESS
+echo "08.65.IPRoute2-6.7.0"
+echo "08.65.IPRoute2-6.7.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.65.Kbd-2.6.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.66.Libpipeline-1.5.7"
-echo "08.66.Libpipeline-1.5.7" >> $LFSLOG_PROCESS
-
-time { bash a.08.66.Libpipeline-1.5.7.sh ; }
+time { bash a.08.65.IPRoute2-6.7.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -444,24 +416,10 @@ echo "."
 
 ###
 
-echo "08.67.Make-4.4.1"
-echo "08.67.Make-4.4.1" >> $LFSLOG_PROCESS
+echo "08.66.Kbd-2.6.4"
+echo "08.66.Kbd-2.6.4" >> $LFSLOG_PROCESS
 
-time { bash a.08.67.Make-4.4.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.68.Patch-2.7.6"
-echo "08.68.Patch-2.7.6" >> $LFSLOG_PROCESS
-
-time { bash a.08.68.Patch-2.7.6.sh ; }
+time { bash a.08.66.Kbd-2.6.4.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -472,24 +430,10 @@ echo "."
 
 ###
 
-echo "08.69.Tar-1.35"
-echo "08.69.Tar-1.35" >> $LFSLOG_PROCESS
+echo "08.67.Libpipeline-1.5.7"
+echo "08.67.Libpipeline-1.5.7" >> $LFSLOG_PROCESS
 
-time { bash a.08.69.Tar-1.35.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.70.Texinfo-7.0.3"
-echo "08.70.Texinfo-7.0.3" >> $LFSLOG_PROCESS
-
-time { bash a.08.70.Texinfo-7.0.3.sh ; }
+time { bash a.08.67.Libpipeline-1.5.7.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -500,24 +444,10 @@ echo "."
 
 ###
 
-echo "08.71a.Nano-7.2"
-echo "08.71a.Nano-7.2" >> $LFSLOG_PROCESS
+echo "08.68.Make-4.4.1"
+echo "08.68.Make-4.4.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.71a.Nano-7.2.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.72.MarkupSafe-2.1.3"
-echo "08.72.MarkupSafe-2.1.3" >> $LFSLOG_PROCESS
-
-time { bash a.08.72.MarkupSafe-2.1.3.sh ; }
+time { bash a.08.68.Make-4.4.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -528,24 +458,10 @@ echo "."
 
 ###
 
-echo "08.73.Jinja2-3.1.2"
-echo "08.73.Jinja2-3.1.2" >> $LFSLOG_PROCESS
+echo "08.69.Patch-2.7.6"
+echo "08.69.Patch-2.7.6" >> $LFSLOG_PROCESS
 
-time { bash a.08.73.Jinja2-3.1.2.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.74.Udev.from.Systemd-254"
-echo "08.74.Udev.from.Systemd-254" >> $LFSLOG_PROCESS
-
-time { bash a.08.74.Udev.from.Systemd-254.sh ; }
+time { bash a.08.69.Patch-2.7.6.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -556,24 +472,10 @@ echo "."
 
 ###
 
-echo "08.75.Man-DB-2.11.2"
-echo "08.75.Man-DB-2.11.2" >> $LFSLOG_PROCESS
+echo "08.70.Tar-1.35"
+echo "08.70.Tar-1.35" >> $LFSLOG_PROCESS
 
-time { bash a.08.75.Man-DB-2.11.2.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.76.Procps-ng-4.0.3"
-echo "08.76.Procps-ng-4.0.3" >> $LFSLOG_PROCESS
-
-time { bash a.08.76.Procps-ng-4.0.3.sh ; }
+time { bash a.08.70.Tar-1.35.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -584,24 +486,10 @@ echo "."
 
 ###
 
-echo "08.77.Util-linux-2.39.1"
-echo "08.77.Util-linux-2.39.1" >> $LFSLOG_PROCESS
+echo "08.71.Texinfo-7.1"
+echo "08.71.Texinfo-7.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.77.Util-linux-2.39.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.78.E2fsprogs-1.47.0"
-echo "08.78.E2fsprogs-1.47.0" >> $LFSLOG_PROCESS
-
-time { bash a.08.78.E2fsprogs-1.47.0.sh ; }
+time { bash a.08.71.Texinfo-7.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -612,10 +500,10 @@ echo "."
 
 ###
 
-echo "08.79.Sysklogd-1.5.1"
-echo "08.79.Sysklogd-1.5.1" >> $LFSLOG_PROCESS
+echo "08.72a.Nano-7.2"
+echo "08.72a.Nano-7.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.79.Sysklogd-1.5.1.sh ; }
+time { bash a.08.72a.Nano-7.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -626,10 +514,122 @@ echo "."
 
 ###
 
-echo "08.80.Sysvinit-3.07"
-echo "08.80.Sysvinit-3.07" >> $LFSLOG_PROCESS
+echo "08.73.MarkupSafe-2.1.5"
+echo "08.73.MarkupSafe-2.1.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.80.Sysvinit-3.07.sh ; }
+time { bash a.08.73.MarkupSafe-2.1.5.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.74.Jinja2-3.1.3"
+echo "08.74.Jinja2-3.1.3" >> $LFSLOG_PROCESS
+
+time { bash a.08.74.Jinja2-3.1.3.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.75.Udev.from.Systemd-255"
+echo "08.75.Udev.from.Systemd-255" >> $LFSLOG_PROCESS
+
+time { bash a.08.75.Udev.from.Systemd-255.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.76.Man-DB-2.12.0"
+echo "08.76.Man-DB-2.12.0" >> $LFSLOG_PROCESS
+
+time { bash a.08.76.Man-DB-2.12.0.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.77.Procps-ng-4.0.4"
+echo "08.77.Procps-ng-4.0.4" >> $LFSLOG_PROCESS
+
+time { bash a.08.77.Procps-ng-4.0.4.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.78.Util-linux-2.39.3"
+echo "08.78.Util-linux-2.39.3" >> $LFSLOG_PROCESS
+
+time { bash a.08.78.Util-linux-2.39.3.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.79.E2fsprogs-1.47.0"
+echo "08.79.E2fsprogs-1.47.0" >> $LFSLOG_PROCESS
+
+time { bash a.08.79.E2fsprogs-1.47.0.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.80.Sysklogd-1.5.1"
+echo "08.80.Sysklogd-1.5.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.80.Sysklogd-1.5.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.81.Sysvinit-3.08"
+echo "08.81.Sysvinit-3.08" >> $LFSLOG_PROCESS
+
+time { bash a.08.81.Sysvinit-3.08.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
