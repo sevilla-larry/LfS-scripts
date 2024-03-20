@@ -1,0 +1,17 @@
+13742c686c6ddb0b7b294634f0c13cec nano-7.2.tar.xz
+eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz
+f0adf24e8fdef5f3e332191f653e422a mandoc-1.14.6.tar.gz
+a8fc3e79336cd6e738ab44f9bc96a5aa efivar-39.tar.gz
+e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
+72f95e7ecb47a4c7ed610babe6959ead unifont-15.1.04.pcf.gz
+f701ab57eb8e7d9c105b2cd5d809b29a libtasn1-4.19.0.tar.gz
+2610cef2951d83d7037577eaae1acb54 p11-kit-0.25.3.tar.xz
+04bd86fe2eb299788439c3466782ce45 make-ca-1.13.tar.xz
+e7f7ca2f215b711f76584756ebd3c853 wget-1.21.4.tar.gz
+44316f1b8a857b59099927edc26bef79 lynx2.8.9rel.1.tar.bz2
+#lynx-2.8.9rel.1-security_fix-1.patch
+bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
+#gpm-1.20.7-consolidated-1.patch
+5e90def5af3ffb27e149ca6fff12bef3 openssh-9.6p1.tar.gz
+4166279cb188ecb6641c7a2ba5f68270 sudo-1.9.15p5.tar.gz
+#blfs-bootscripts-20240209.tar.xz
