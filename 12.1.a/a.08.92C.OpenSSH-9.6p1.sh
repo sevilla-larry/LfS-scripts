@@ -1,5 +1,4 @@
 # a.08.92C.OpenSSH-9.6p1.sh
-# errata
 #
 
 export PKG="openssh-9.6p1"
@@ -26,8 +25,8 @@ cd $PKG
 echo "2. Initial Install ..."
 echo "2. Initial Install ..." >> $LFSLOG_PROCESS
 echo "2. Initial Install ..." >> $PKGLOG_ERROR
-
-install -g sys -m700 -d /var/lib/sshd
+install -v -g sys -m700 -d /var/lib/sshd    \
+         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 groupadd -g 50 sshd
 useradd  -c 'sshd PrivSep'  \
@@ -35,7 +34,7 @@ useradd  -c 'sshd PrivSep'  \
          -g sshd            \
          -s /bin/false      \
          -u 50 sshd         \
-        > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS
@@ -64,13 +63,17 @@ echo "6. Make Install ..." >> $LFSLOG_PROCESS
 echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -m755       contrib/ssh-copy-id /usr/bin
+install -v -m755    contrib/ssh-copy-id /usr/bin        \
+         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-install -m644       contrib/ssh-copy-id.1               \
-                    /usr/share/man/man1
-install -m755 -d    /usr/share/doc/openssh-9.6p1
-install -m644       INSTALL LICENCE OVERVIEW README*    \
-                    /usr/share/doc/openssh-9.6p1
+install -v -m644    contrib/ssh-copy-id.1               \
+                    /usr/share/man/man1                 \
+         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+install -v -m755 -d /usr/share/doc/openssh-9.6p1        \
+         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+install -v -m644    INSTALL LICENCE OVERVIEW README*    \
+                    /usr/share/doc/openssh-9.6p1        \
+         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "."
 echo "."                                                    >> $LFSLOG_PROCESS

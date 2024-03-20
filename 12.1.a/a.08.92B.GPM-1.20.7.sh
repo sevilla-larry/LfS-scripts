@@ -38,6 +38,7 @@ echo "4. Configure ..." >> $LFSLOG_PROCESS
 echo "4. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr       \
             --sysconfdir=/etc   \
+            ac_cv_path_emacs=no \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "5. Make Build ..."
@@ -51,19 +52,26 @@ echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 install-info --dir-file=/usr/share/info/dir \
-             /usr/share/info/gpm.info
+             /usr/share/info/gpm.info       \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-rm -f /usr/lib/libgpm.a
-ln -sf libgpm.so.2.1.0 /usr/lib/libgpm.so
-install -m644 conf/gpm-root.conf /etc
+rm -fv /usr/lib/libgpm.a                    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+ln -sfv libgpm.so.2.1.0 /usr/lib/libgpm.so  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+install -v -m644 conf/gpm-root.conf /etc    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-install -m755 -d    /usr/share/doc/gpm-1.20.7/support
-install -m644       doc/support/*                       \
-                    /usr/share/doc/gpm-1.20.7/support
-install -m644       doc/{FAQ,HACK_GPM,README*}          \
-                    /usr/share/doc/gpm-1.20.7
+install -v -m755 -d /usr/share/doc/gpm-1.20.7/support   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+install -v -m644    doc/support/*                       \
+                    /usr/share/doc/gpm-1.20.7/support   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+install -v -m644    doc/{FAQ,HACK_GPM,README*}          \
+                    /usr/share/doc/gpm-1.20.7           \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cat > /etc/sysconfig/mouse << "EOF"
+cat > /etc/sysconfig/mouse << "EOF" >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 # Begin /etc/sysconfig/mouse
 
 MDEVICE="/dev/input/mice"

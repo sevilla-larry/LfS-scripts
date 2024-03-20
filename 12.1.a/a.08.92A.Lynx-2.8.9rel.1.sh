@@ -33,12 +33,12 @@ echo "3. Configure ..." >> $LFSLOG_PROCESS
 echo "3. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr           \
             --sysconfdir=/etc/lynx  \
-            --datadir=/usr/share/doc/lynx-2.8.9rel.1 \
             --with-zlib             \
             --with-bzlib            \
             --with-ssl              \
             --with-screen=ncursesw  \
             --enable-locale-charset \
+            --datadir=/usr/share/doc/lynx-2.8.9rel.1 \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "4. Make Build ..."
@@ -51,7 +51,8 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install-full   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-chgrp -R root /usr/share/doc/lynx-2.8.9rel.1/lynx_doc
+chgrp -v -R root /usr/share/doc/lynx-2.8.9rel.1/lynx_doc    \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

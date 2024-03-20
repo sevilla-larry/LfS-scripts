@@ -33,10 +33,10 @@ echo "."
 
 ###
 
-echo "08.91B.p11-kit-0.25.0"
-echo "08.91B.p11-kit-0.25.0" >> $LFSLOG_PROCESS
+echo "08.91B.p11-kit-0.25.3"
+echo "08.91B.p11-kit-0.25.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.91B.p11-kit-0.25.0.sh ; }
+time { bash a.08.91B.p11-kit-0.25.3.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

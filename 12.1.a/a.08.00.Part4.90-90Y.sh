@@ -77,10 +77,10 @@ echo "."
 
 ###
 
-echo "08.90Y.GRUB-2.12.for.EFI.x64"
-echo "08.90Y.GRUB-2.12.for.EFI.x64" >> $LFSLOG_PROCESS
+echo "08.90Z.GRUB-2.12.for.EFI.x64"
+echo "08.90Z.GRUB-2.12.for.EFI.x64" >> $LFSLOG_PROCESS
 
-time { bash a.08.90Y.GRUB-2.12.for.EFI.x64.sh ; }
+time { bash a.08.90Z.GRUB-2.12.for.EFI.x64.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
