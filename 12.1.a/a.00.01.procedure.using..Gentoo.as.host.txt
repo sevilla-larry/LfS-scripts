@@ -404,7 +404,7 @@ B.  Generate LFS
 
         ###
 
-        bash a.08.00.Part4.90-90Y.sh
+        bash a.08.00.Part4.90-90Z.sh
 
         ###
 
@@ -420,7 +420,7 @@ B.  Generate LFS
 
         ###
 
-        bash a.08.00.Part6.92-92E.sh
+        bash a.08.00.Part6.92-92D.sh
 
         ###
 
@@ -449,10 +449,10 @@ C. Finishing Up
         ONBOOT=yes
         IFACE=eth0
         SERVICE=ipv4-static
-        IP=192.168.122.111
-        GATEWAY=192.168.122.1
+        IP=192.168.xxx.yyy
+        GATEWAY=192.168.xxx.1
         PREFIX=24
-        BROADCAST=192.168.122.255
+        BROADCAST=192.168.xxx.255
         EOF
 
 
@@ -463,14 +463,14 @@ C. Finishing Up
         # nameserver <IP address of your primary nameserver>
         # nameserver <IP address of your secondary nameserver>
 
-        nameserver 192.168.1.1
+        nameserver 192.168.xxx.1
         nameserver 8.8.8.8
 
         # End /etc/resolv.conf
         EOF
 
 
-        echo "VM-LFS" > /etc/hostname
+        echo "XX-LFS" > /etc/hostname
 
 
         cat > /etc/hosts << "EOF"
@@ -530,9 +530,9 @@ C. Finishing Up
 
         ###
 
-        bash a.09.99.BLFS-Bootscripts-20231119.extract.only.sh
+        bash a.09.99.BLFS-Bootscripts-20240209.extract.only.sh
 
-        cd blfs-bootscripts-20231119
+        cd blfs-bootscripts-20240209
 
         ###
 
@@ -578,14 +578,22 @@ D. [LFS 10.x] Making the LFS System Bootable
         #/dev/<xxx>     /            <fff>    defaults            1     1
         #/dev/<yyy>     swap         swap     pri=1               0     0
 
-        /dev/vda1       /boot/efi   vfat  defaults,discard      0 2
-        /dev/vda2       /           ext4  defaults,noatime,discard               0 1
 
-        /dev/vdb1       /mnt/src    ext4  noatime,discard               0 3
+        # for VMs
+        /dev/vda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1,discard  0 2
+        /dev/vda2       /           ext4  defaults,noatime,discard                  0 1
 
-        /dev/vdc1       none        swap  sw,discard                    0 0
+        /dev/vdb1       /mnt/src    ext4  noatime,discard                           0 3
 
-        /dev/cdrom      /mnt/cdrom  auto  noauto,user                   0 0
+        /dev/vdc1       none        swap  sw,discard                                0 0
+
+        # for PCs
+        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda2       /           ext4  defaults,noatime                          0 1
+        /dev/sda3       none        swap  sw                                        0 0
+
+
+        /dev/cdrom      /mnt/cdrom  auto  noauto,user                               0 0
 
         proc           /proc          proc     nosuid,noexec,nodev 0     0
         sysfs          /sys           sysfs    nosuid,noexec,nodev 0     0
@@ -611,9 +619,9 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         cd /sources
 
-        bash a.10.03.Linux-6.4.12.extract.only.sh
+        bash a.10.03.Linux-6.7.4.extract.only.sh
 
-        cd linux-6.4.12
+        cd linux-6.7.4
 
         make mrproper
         make defconfig
@@ -621,14 +629,14 @@ D. [LFS 10.x] Making the LFS System Bootable
         make MENUCONFIG_COLOR=blackbg menuconfig
 
         ( Note the flags needed )
-        https://www.linuxfromscratch.org/lfs/view/12.0/chapter10/kernel.html
-        https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/grub-setup.html
-        https://www.linuxfromscratch.org/blfs/view/12.0/general/gpm.html
-        https://wiki.gentoo.org/wiki/QEMU/Linux_guest
-        https://www.linuxfromscratch.org/blfs/view/12.0/x/mesa.html
-        https://www.linuxfromscratch.org/blfs/view/12.0/x/xorg-server.html
-        https://www.linuxfromscratch.org/blfs/view/12.0/x/x7driver.html#libevdev
-        https://www.linuxfromscratch.org/blfs/view/12.0/general/elogind.html
+        https://www.linuxfromscratch.org/lfs/view/12.1/chapter10/kernel.html
+        https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/grub-setup.html
+        https://www.linuxfromscratch.org/blfs/view/12.1/general/gpm.html
+        https://wiki.gentoo.org/wiki/QEMU/Linux_guest   # for VMs
+        https://www.linuxfromscratch.org/blfs/view/12.1/x/mesa.html
+        https://www.linuxfromscratch.org/blfs/view/12.1/x/xorg-server.html
+        https://www.linuxfromscratch.org/blfs/view/12.1/x/x7driver.html#libevdev
+        https://www.linuxfromscratch.org/blfs/view/12.1/general/elogind.html
         
         ( additional )
 
@@ -643,22 +651,24 @@ D. [LFS 10.x] Making the LFS System Bootable
         make
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.4.12-lfs-12.0-r00
-        cp -iv System.map /boot/System.map-6.4.12-lfs-12.0-r00
-        cp -iv .config /boot/config-6.4.12-lfs-12.0-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.7.4-lfs-12.1-r00
+        cp -iv System.map /boot/System.map-6.7.4-lfs-12.1-r00
+        cp -iv .config /boot/config-6.7.4-lfs-12.1-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.4.12
+        cp -r Documentation -T /usr/share/doc/linux-6.7.4
 
         ###
 
   D.03. [LFS 10.4] Using GRUB to Set Up the Boot Process with UEFI
-        ( https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/grub-setup.html )
+        ( https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/grub-setup.html )
 
         ###
 
-        mkdir -pv /boot/efi
-        mount -v -t vfat /dev/vdb1 /boot/efi
+        #mkdir -pv /boot/efi
+        #mount -v -t vfat /dev/vdb1 /boot/efi
 
+        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # VMs
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # PCs
         grub-install --target=x86_64-efi --removable
 
 
@@ -676,8 +686,9 @@ D. [LFS 10.x] Making the LFS System Bootable
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.4.12-lfs-12.0-r00"  {
-          linux   /boot/vmlinuz-6.4.12-lfs-12.0-r00 root=/dev/vda2 ro
+        menuentry "GNU/Linux, Linux 6.7.4-lfs-12.1-r00"  {
+          linux   /boot/vmlinuz-6.7.4-lfs-12.1-r00 root=/dev/vda2 ro    # VMs
+          linux   /boot/vmlinuz-6.7.4-lfs-12.1-r00 root=/dev/sda2 ro    # PCs
         }
 
         menuentry "Firmware Setup" {
@@ -693,12 +704,12 @@ E. The End
 
         ###
 
-        echo 12.0 > /etc/lfs-release
+        echo 12.1 > /etc/lfs-release
 
 
         cat > /etc/lsb-release << "EOF"
         DISTRIB_ID="Linux From Scratch"
-        DISTRIB_RELEASE="12.0"
+        DISTRIB_RELEASE="12.1"
         DISTRIB_CODENAME="<your name here>"
         DISTRIB_DESCRIPTION="Linux From Scratch"
         EOF
@@ -706,10 +717,11 @@ E. The End
 
         cat > /etc/os-release << "EOF"
         NAME="Linux From Scratch"
-        VERSION="12.0"
+        VERSION="12.1"
         ID=lfs
-        PRETTY_NAME="Linux From Scratch 12.0"
+        PRETTY_NAME="Linux From Scratch 12.1"
         VERSION_CODENAME="<your name here>"
+        HOME_URL="https://www.linuxfromscratch.org/lfs/"
         EOF
 
         ###
@@ -730,12 +742,12 @@ E. The End
 
         # Based on:
         #
-        #   https://www.linuxfromscratch.org/lfs/view/12.0/chapter08/stripping.html
-        #   https://www.linuxfromscratch.org/lfs/view/12.0/chapter08/cleanup.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/stripping.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/cleanup.html
         #
-        #   https://www.linuxfromscratch.org/blfs/view/12.0/introduction/notes-on-building.html
-        #   https://www.linuxfromscratch.org/blfs/view/12.0/introduction/la-files.html
-        #   https://www.linuxfromscratch.org/blfs/view/12.0/introduction/locale-issues.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/notes-on-building.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/la-files.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/locale-issues.html / NOT working, permission denied
         #
 
         ###
@@ -748,7 +760,7 @@ E. The End
 
   E.04. Bash shell
 
-        # Based on: https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/profile.html
+        # Based on: https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/profile.html
 
         ### as root
 
@@ -782,21 +794,31 @@ E. The End
         umount -v $LFS/proc
         umount -v $LFS/sys
 
-        umount -v $LFS/mnt/src
+        umount -v $LFS/mnt/src  # for VMs
         umount -v $LFS/boot/efi
 
         umount -v $LFS
 
-        poweroff         ( --- the VM Gentoo Host )
+        poweroff         ( --- the VM/PC Gentoo Host )
 
         ###
 
-  E.06. Detach the 3 VDs from host
+  E.06. Detaching
+      # (a) VM - 3 Virtual Disks
+        Detach the 3 VDs from host
 
-F. Create a new VM for LFS and run it
-      VM.LFS.sys.qcow2 as vda
-      VM.LFS.src.qcow2 as vdb
-      VM.LFS.swp.qcow2 as vdc
+      # (b) PC - 2nd Disk
+        Detach the 1st Disk
+
+F. Deploying
+      # (a) VM - 3 Virtual Disks
+        Create a new VM for LFS and run it
+        VM.LFS.sys.qcow2 as vda
+        VM.LFS.src.qcow2 as vdb
+        VM.LFS.swp.qcow2 as vdc
+
+      # (b) PC - 2nd Disk
+        Start-up the PC from the newly installed LFS drive.
 
 Note: Copying LFS use tar
 read: 8.2.3 Deploying LFS on Multiple Systems
