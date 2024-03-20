@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\12.0.a",
+    "\\12.1.a"
   ],
-  "SelectedNode": "\\12.1.a",
+  "SelectedNode": "\\12.1.a\\a.08.75.Udev.from.Systemd-255.sh",
   "PreviewInSolutionExplorer": false
 }
