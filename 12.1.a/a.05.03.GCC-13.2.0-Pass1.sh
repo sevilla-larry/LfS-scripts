@@ -85,9 +85,12 @@ echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "   Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances"
-echo "   Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances" >> $LFSLOG_PROCESS
-echo "   Create a full version of the internal header using a command that is identical to what the GCC build system does in normal circumstances" >> $PKGLOG_ERROR
+echo "   Create a full version of the internal header using a command that is"
+echo "   identical to what the GCC build system does in normal circumstances"
+echo "   Create a full version of the internal header using a command that is"  >> $LFSLOG_PROCESS
+echo "   identical to what the GCC build system does in normal circumstances"   >> $LFSLOG_PROCESS
+echo "   Create a full version of the internal header using a command that is"  >> $PKGLOG_ERROR
+echo "   identical to what the GCC build system does in normal circumstances"   >> $PKGLOG_ERROR
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h    \
