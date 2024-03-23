@@ -1,7 +1,7 @@
-# a.08.32.Gettext-0.22.sh
+# a.08.32.Gettext-0.22.4.sh
 #
 
-export PKG="gettext-0.22"
+export PKG="gettext-0.22.4"
 export PKGLOG_DIR=$LFSLOG/08.32
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -26,7 +26,7 @@ echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                           \
             --disable-static                        \
-            --docdir=/usr/share/doc/gettext-0.22    \
+            --docdir=/usr/share/doc/gettext-0.22.4  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
