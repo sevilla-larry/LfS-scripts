@@ -24,7 +24,7 @@ cd $PKG
 echo "   The FHS recommends using the /var/lib/hwclock directory..."
 echo "   The FHS recommends using the /var/lib/hwclock directory..." >> $LFSLOG_PROCESS
 echo "   The FHS recommends using the /var/lib/hwclock directory..." >> $PKGLOG_ERROR
-mkdir -pv /var/lib/hwclock  >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+mkdir -pv /var/lib/hwclock  > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
@@ -52,7 +52,7 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Install ..."
 echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
-make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make install >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

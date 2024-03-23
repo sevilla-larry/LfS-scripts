@@ -1,4 +1,5 @@
 # a.08.39. Expat-2.6.2.sh
+# Errata
 #
 
 export PKG="expat-2.6.2"

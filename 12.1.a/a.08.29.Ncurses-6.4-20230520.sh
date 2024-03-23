@@ -69,7 +69,8 @@ ln -sfv libncursesw.so /usr/lib/libcurses.so    >> $PKGLOG_OTHERS 2>> $PKGLOG_ER
 echo "   Install the Ncurses documentation..."
 echo "   Install the Ncurses documentation..." >> $LFSLOG_PROCESS
 echo "   Install the Ncurses documentation..." >> $PKGLOG_ERROR
-cp -v -R doc -T /usr/share/doc/ncurses-6.4-20230520
+cp -v -R doc -T /usr/share/doc/ncurses-6.4-20230520 \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

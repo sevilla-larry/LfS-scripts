@@ -71,10 +71,6 @@ echo "   Prevent this warning with..." >> $LFSLOG_PROCESS
 echo "   Prevent this warning with..." >> $PKGLOG_ERROR
 touch /etc/ld.so.conf   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "Fix the Makefile to skip an outdated sanity check"    \
-    >> $PKGLOG_OTHERS
-echo "that fails with a modern Glibc configuration"         \
-    >> $PKGLOG_OTHERS
 echo "   Fix the Makefile to skip an outdated sanity check"
 echo "   Fix the Makefile to skip an outdated sanity check" >> $LFSLOG_PROCESS
 echo "   Fix the Makefile to skip an outdated sanity check" >> $PKGLOG_ERROR
