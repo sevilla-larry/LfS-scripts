@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "08.39.Expat-2.6.0"
-echo "08.39.Expat-2.6.0" >> $LFSLOG_PROCESS
+echo "08.39.Expat-2.6.2"
+echo "08.39.Expat-2.6.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.39.Expat-2.6.0.sh ; }
+time { bash a.08.39.Expat-2.6.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

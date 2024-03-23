@@ -92,6 +92,20 @@ echo "."
 
 ###
 
+echo "08.08L.Lz4-1.9.4"
+echo "08.08L.Lz4-1.9.4" >> $LFSLOG_PROCESS
+
+time { bash a.08.08L.Lz4-1.9.4.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
 echo "08.09.Zstd-1.5.5"
 echo "08.09.Zstd-1.5.5" >> $LFSLOG_PROCESS
 
