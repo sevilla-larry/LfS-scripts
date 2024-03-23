@@ -94,7 +94,7 @@ echo "   identical to what the GCC build system does in normal circumstances"   
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
   `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h    \
-   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+   2>> $PKGLOG_ERROR
 
 
 cd ..
