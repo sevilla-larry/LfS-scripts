@@ -64,10 +64,10 @@ echo "."
 
 ###
 
-echo "08.32.Gettext-0.22"
-echo "08.32.Gettext-0.22" >> $LFSLOG_PROCESS
+echo "08.32.Gettext-0.22.4"
+echo "08.32.Gettext-0.22.4" >> $LFSLOG_PROCESS
 
-time { bash a.08.32.Gettext-0.22.sh ; }
+time { bash a.08.32.Gettext-0.22.4.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
