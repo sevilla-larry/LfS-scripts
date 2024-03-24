@@ -732,7 +732,8 @@ E. The End
 
         ###
 
-        useradd -m -G users,wheel,audio,cdrom,usb,video -s /bin/bash <user>
+        useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user> #VM
+        useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user> #PC
 
         passwd <user>
 
