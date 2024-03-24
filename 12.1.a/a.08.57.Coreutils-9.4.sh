@@ -82,7 +82,7 @@ su tester -c "PATH=$PATH make RUN_EXPENSIVE_TESTS=yes check"    \
 echo "   Remove the temporary group..."
 echo "   Remove the temporary group..." >> $LFSLOG_PROCESS
 echo "   Remove the temporary group..." >> $PKGLOG_ERROR
-groupdel -v dummy   \
+groupdel dummy   \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "6. Make Install ..."
