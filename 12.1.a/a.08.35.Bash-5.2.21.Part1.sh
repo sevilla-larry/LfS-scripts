@@ -1,7 +1,7 @@
-# a.08.35.Bash-5.2.15.sh
+# a.08.35.Bash-5.2.21.sh
 #
 
-export PKG="bash-5.2.15"
+export PKG="bash-5.2.21"
 export PKGLOG_DIR=$LFSLOG/08.35
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
