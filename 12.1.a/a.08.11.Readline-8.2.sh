@@ -62,6 +62,7 @@ install -v -m644 doc/*.{ps,pdf,html,dvi}    \
     /usr/share/doc/readline-8.2             \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
+
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS

@@ -41,8 +41,9 @@ echo "4. Make Install ..."
 echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -m644 doc/{nano.html,sample.nanorc} \
-  /usr/share/doc/nano-7.2
+install -v -m644 doc/{nano.html,sample.nanorc}  \
+  /usr/share/doc/nano-7.2                       \
+  >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

@@ -135,7 +135,7 @@ echo "8. Adding nsswitch.conf ..."
 echo "8. Adding nsswitch.conf ..." >> $LFSLOG_PROCESS
 echo "8. Adding nsswitch.conf ..." >> $PKGLOG_ERROR
 
-cat > /etc/nsswitch.conf << "EOF"
+cat > /etc/nsswitch.conf << "EOF" 2>> $PKGLOG_ERROR
 # Begin /etc/nsswitch.conf
 
 passwd: files
@@ -179,14 +179,14 @@ echo "10. Configuring the Dynamic Loader ..."
 echo "10. Configuring the Dynamic Loader ..." >> $LFSLOG_PROCESS
 echo "10. Configuring the Dynamic Loader ..." >> $PKGLOG_ERROR
 
-cat > /etc/ld.so.conf << "EOF"
+cat > /etc/ld.so.conf << "EOF"  2>> $PKGLOG_ERROR
 # Begin /etc/ld.so.conf
 /usr/local/lib
 /opt/lib
 
 EOF
 
-cat >> /etc/ld.so.conf << "EOF"
+cat >> /etc/ld.so.conf << "EOF" 2>> $PKGLOG_ERROR
 # Add an include directory
 include /etc/ld.so.conf.d/*.conf
 

@@ -71,7 +71,7 @@ install -v -m644    doc/{FAQ,HACK_GPM,README*}          \
                     /usr/share/doc/gpm-1.20.7           \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cat > /etc/sysconfig/mouse << "EOF" >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cat > /etc/sysconfig/mouse << "EOF" 2>> $PKGLOG_ERROR
 # Begin /etc/sysconfig/mouse
 
 MDEVICE="/dev/input/mice"

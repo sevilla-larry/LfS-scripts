@@ -46,7 +46,7 @@ echo "   Create a new /etc/syslog.conf file..."
 echo "   Create a new /etc/syslog.conf file..." >> $LFSLOG_PROCESS
 echo "   Create a new /etc/syslog.conf file..." >> $PKGLOG_ERROR
 
-cat > /etc/syslog.conf << "EOF"    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cat > /etc/syslog.conf << "EOF"    2>> $PKGLOG_ERROR
 # Begin /etc/syslog.conf
 
 auth,authpriv.* -/var/log/auth.log

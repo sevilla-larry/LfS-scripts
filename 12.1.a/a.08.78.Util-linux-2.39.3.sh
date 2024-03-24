@@ -59,7 +59,7 @@ echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
 chown -vR tester .            \
-     > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+      > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 su tester -c "make -k check"  \
      >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 

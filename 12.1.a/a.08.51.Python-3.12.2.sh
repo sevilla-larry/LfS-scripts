@@ -58,7 +58,7 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 echo "   Suppress warnings..."
 echo "   Suppress warnings..." >> $LFSLOG_PROCESS
 echo "   Suppress warnings..." >> $PKGLOG_ERROR
-cat > /etc/pip.conf << EOF  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cat > /etc/pip.conf << EOF 2>> $PKGLOG_ERROR
 [global]
 root-user-action = ignore
 disable-pip-version-check = true

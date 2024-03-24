@@ -26,7 +26,7 @@ echo "   Prepare the distribution specific anchor hook..."
 echo "   Prepare the distribution specific anchor hook..." >> $LFSLOG_PROCESS
 echo "   Prepare the distribution specific anchor hook..." >> $PKGLOG_ERROR
 sed '20,$ d' -i trust/trust-extract-compat  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-cat >> trust/trust-extract-compat << "EOF"  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cat >> trust/trust-extract-compat << "EOF"      2>> $PKGLOG_ERROR
 # Copy existing anchor modifications to /etc/ssl/local
 /usr/libexec/make-ca/copy-trust-modifications
 

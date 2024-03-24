@@ -50,8 +50,9 @@ su tester -c "PATH=$PATH make check"    \
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-rm -f /usr/bin/gawk-5.3.0
-make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+rm -fv /usr/bin/gawk-5.3.0    \
+     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make install >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 echo "   Create man page as a symlink..."
 echo "   Create man page as a symlink..." >> $LFSLOG_PROCESS
@@ -62,8 +63,10 @@ ln -sv gawk.1 /usr/share/man/man1/awk.1 \
 echo "   Install the documentation..."
 echo "   Install the documentation..." >> $LFSLOG_PROCESS
 echo "   Install the documentation..." >> $PKGLOG_ERROR
-mkdir -pv                                    /usr/share/doc/gawk-5.3.0
-cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}}  /usr/share/doc/gawk-5.3.0
+mkdir -pv                                    /usr/share/doc/gawk-5.3.0     \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cp    -v doc/{awkforai.txt,*.{eps,pdf,jpg}}  /usr/share/doc/gawk-5.3.0     \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..

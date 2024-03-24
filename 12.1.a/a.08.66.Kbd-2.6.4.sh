@@ -59,7 +59,8 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 echo "   Install the documentation..."
 echo "   Install the documentation..." >> $LFSLOG_PROCESS
 echo "   Install the documentation..." >> $PKGLOG_ERROR
-cp -R -v docs/doc -T /usr/share/doc/kbd-2.6.1   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cp -R -v docs/doc -T /usr/share/doc/kbd-2.6.4     \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..
