@@ -801,8 +801,8 @@ E. The End
         umount -v $LFS/proc
         umount -v $LFS/sys
 
-        umount -v $LFS/mnt/src  # for VMs
-        umount -v $LFS/boot/efi
+        umount -v $LFS/mnt/Src  # for VMs
+        umount -v $LFS/efi
 
         umount -v $LFS
 
