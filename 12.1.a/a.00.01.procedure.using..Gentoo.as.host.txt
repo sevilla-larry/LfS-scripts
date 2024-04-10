@@ -112,14 +112,14 @@ A. Preparation
         ###
 
       # (a) VM
-        mkdir -pv $LFS/mnt/src
-        mount /dev/vdc1 $LFS/mnt/src
+        mkdir -pv $LFS/mnt/Src
+        mount /dev/vdc1 $LFS/mnt/Src
 
-        mkdir -v $LFS/mnt/src/lfs.{src,log}
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
-        chmod -v a+wt $LFS/mnt/src/lfs.{src,log}
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
 
-        ln -sf $LFS/mnt/src/lfs.src $LFS/sources
+        ln -sf $LFS/mnt/Src/lfs.src $LFS/sources
 
       # (b) PC
         mkdir -pv $LFS/usr/src/lfs
