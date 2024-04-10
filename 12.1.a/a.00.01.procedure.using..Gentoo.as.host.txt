@@ -670,11 +670,11 @@ D. [LFS 10.x] Making the LFS System Bootable
         #mkdir -pv /boot/efi
         #mount -v -t vfat /dev/vdb1 /boot/efi
 
-        mkdir -v /efi
-        mount -v -t vfat /dev/vdb1 /efi
+        #mkdir -v /efi
+        #mount -v -t vfat /dev/vdb1 /efi
 
-        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # VMs
-        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # PCs
+        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /efi    # VMs
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PCs
         grub-install --target=x86_64-efi --efi-directory=/efi --removable
 
 
