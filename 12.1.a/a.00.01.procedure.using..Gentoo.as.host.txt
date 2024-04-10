@@ -301,9 +301,9 @@ B.  Generate LFS
 
       # (a) VM
         rm /sources
-        ln -sf /mnt/src/lfs.src /sources
+        ln -sf /mnt/Src/lfs.src /sources
         rm /var/log/lfs
-        ln -sf /mnt/src/lfs.log /var/log/lfs
+        ln -sf /mnt/Src/lfs.log /var/log/lfs
 
       # (b) PC
         rm /sources
