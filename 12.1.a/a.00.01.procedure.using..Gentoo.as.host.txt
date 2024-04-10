@@ -580,7 +580,7 @@ D. [LFS 10.x] Making the LFS System Bootable
 
 
         # for VMs
-        /dev/vda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1,discard  0 2
+        /dev/vda1       /efi        vfat  codepage=437,iocharset=iso8859-1,discard  0 2
         /dev/vda2       /           ext4  defaults,noatime,discard                  0 1
 
         /dev/vdb1       /mnt/Src    ext4  noatime,discard                           0 3
@@ -588,7 +588,7 @@ D. [LFS 10.x] Making the LFS System Bootable
         /dev/vdc1       none        swap  sw,discard                                0 0
 
         # for PCs
-        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda1       /efi        vfat  codepage=437,iocharset=iso8859-1          0 2
         /dev/sda2       /           ext4  defaults,noatime                          0 1
         /dev/sda3       none        swap  sw                                        0 0
 
