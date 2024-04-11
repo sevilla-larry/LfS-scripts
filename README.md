@@ -34,13 +34,18 @@
 #
 #
 # For scripts of Chapters 5 & 6, the scripts assumed you finished executing up to Chapter 4.
-# The username should be "lfs" and the location should be "/mnt/lfs/sources" directory.  That means the prompt should be:
-# lfs:/mnt/lfs/sources$
+# The username should be "lfs" and the location should be "/mnt/lfs/sources" directory.
+# That means the prompt should be:
+#
+#   lfs:/mnt/lfs/sources$
 #
 #
-# For scripts of Chapter 7 & up, the scripts assumed you finished executing Chapter/Section 7.2 to 7.6.
-# the username should be "root", should had CHROOTed, and the location should be "/sources" directory.  That means the prompt should be:
-# root:/sources#
+# For scripts of Chapter 7 & up,
+# the scripts assumed you finished executing Chapter/Section 7.2 to 7.6,
+# the username should be "root", should had CHROOTed,
+# and the location should be "/sources" directory.  That means the prompt should be:
+#
+#   root:/sources#
 #
 
 
