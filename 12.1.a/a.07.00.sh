@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "07.10.Python-3.12.2"
-echo "07.10.Python-3.12.2" >> $LFSLOG_PROCESS
+echo "07.10.Python-3.12.4"
+echo "07.10.Python-3.12.4" >> $LFSLOG_PROCESS
 
-time { bash a.07.10.Python-3.12.2.sh ; }
+time { bash a.07.10.Python-3.12.4.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

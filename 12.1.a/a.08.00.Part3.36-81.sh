@@ -162,10 +162,10 @@ echo "."
 
 ###
 
-echo "08.47.OpenSSL-3.2.1"
-echo "08.47.OpenSSL-3.2.1" >> $LFSLOG_PROCESS
+echo "08.47.OpenSSL-3.3.1"
+echo "08.47.OpenSSL-3.3.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.47.OpenSSL-3.2.1.sh ; }
+time { bash a.08.47.OpenSSL-3.3.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -218,10 +218,10 @@ echo "."
 
 ###
 
-echo "08.51.Python-3.12.2"
-echo "08.51.Python-3.12.2" >> $LFSLOG_PROCESS
+echo "08.51.Python-3.12.4"
+echo "08.51.Python-3.12.4" >> $LFSLOG_PROCESS
 
-time { bash a.08.51.Python-3.12.2.sh ; }
+time { bash a.08.51.Python-3.12.4.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

@@ -1,4 +1,5 @@
 # a.07.10.Python-3.12.4.sh
+# errata
 #
 
 export PKG="Python-3.12.4"

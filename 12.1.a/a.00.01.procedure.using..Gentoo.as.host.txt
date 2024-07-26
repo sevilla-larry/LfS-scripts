@@ -613,15 +613,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] Linux-6.4.12 Kernel
+  D.02. [LFS 10.3] Linux-6.9.9 Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.7.4.extract.only.sh
+        bash a.10.03.Linux-6.9.9.extract.only.sh
 
-        cd linux-6.7.4
+        cd linux-6.9.9
 
         make mrproper
         make defconfig
@@ -654,11 +654,11 @@ D. [LFS 10.x] Making the LFS System Bootable
         make
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.7.4-lfs-12.1-r00
-        cp -iv System.map /boot/System.map-6.7.4-lfs-12.1-r00
-        cp -iv .config /boot/config-6.7.4-lfs-12.1-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.9.9-lfs-12.1-e29
+        cp -iv System.map /boot/System.map-6.9.9-lfs-12.1-e29
+        cp -iv .config /boot/config-6.9.9-lfs-12.1-e29
 
-        cp -r Documentation -T /usr/share/doc/linux-6.7.4
+        cp -r Documentation -T /usr/share/doc/linux-6.9.9
 
         ###
 
@@ -692,9 +692,9 @@ D. [LFS 10.x] Making the LFS System Bootable
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.7.4-lfs-12.1-r00"  {
-          linux   /boot/vmlinuz-6.7.4-lfs-12.1-r00 root=/dev/vda2 ro    # VMs
-          linux   /boot/vmlinuz-6.7.4-lfs-12.1-r00 root=/dev/sda2 ro    # PCs
+        menuentry "GNU/Linux, Linux 6.9.9-lfs-12.1-e29"  {
+          linux   /boot/vmlinuz-6.9.9-lfs-12.1-e29 root=/dev/vda2 ro    # VMs
+          linux   /boot/vmlinuz-6.9.9-lfs-12.1-e29 root=/dev/sda2 ro    # PCs
         }
 
         menuentry "Firmware Setup" {
