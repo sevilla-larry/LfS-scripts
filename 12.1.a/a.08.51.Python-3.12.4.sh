@@ -1,7 +1,7 @@
-# a.08.51.Python-3.12.2.sh
+# a.08.51.Python-3.12.4.sh
 #
 
-export PKG="Python-3.12.2"
+export PKG="Python-3.12.4"
 export PKGLOG_DIR=$LFSLOG/08.51
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -67,14 +67,14 @@ EOF
 echo "   Install the preformatted documentation..."
 echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
 echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.12.2/html \
+install -v -dm755 /usr/share/doc/python-3.12.4/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --no-same-owner                                 \
-    -xvf ../python-3.12.2-docs-html.tar.bz2         \
+    -xvf ../python-3.12.4-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-cp -vR --no-preserve=mode python-3.12.2-docs-html/* \
-    /usr/share/doc/python-3.12.2/html               \
+cp -vR --no-preserve=mode python-3.12.4-docs-html/* \
+    /usr/share/doc/python-3.12.4/html               \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 

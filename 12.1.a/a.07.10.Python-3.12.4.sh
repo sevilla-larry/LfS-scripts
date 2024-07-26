@@ -1,7 +1,7 @@
-# a.07.10.Python-3.12.2.sh
+# a.07.10.Python-3.12.4.sh
 #
 
-export PKG="Python-3.12.2"
+export PKG="Python-3.12.4"
 export PKGLOG_DIR=$LFSLOG/07.10
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
