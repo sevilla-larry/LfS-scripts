@@ -31,6 +31,12 @@ echo "2. Patching..." >> $PKGLOG_ERROR
 patch -Np1 -i ../glibc-2.39-fhs-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
+     echo "   Vulnerability Patch..."
+echo "   Vulnerability Patch..." >> $LFSLOG_PROCESS
+echo "   Vulnerability Patch..." >> $PKGLOG_ERROR
+patch -Np1 -i ../glibc-2.39-upstream_fix-2.patch \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 mkdir build
 cd    build
 
