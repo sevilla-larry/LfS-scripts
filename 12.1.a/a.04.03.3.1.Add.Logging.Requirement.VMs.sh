@@ -4,5 +4,5 @@
 mkdir -pv $LFS/var/log
 chmod -v a+wt $LFS/var/log
 chown -v lfs:lfs $LFS/var/log
-chown -v lfs:lfs $LFS/mnt/src/lfs.log
-ln -sfv $LFS/mnt/src/lfs.log $LFS/var/log/lfs
+chown -v lfs:lfs $LFS/mnt/Src/lfs.log
+ln -sfv $LFS/mnt/Src/lfs.log $LFS/var/log/lfs

@@ -112,14 +112,14 @@ A. Preparation
         ###
 
       # (a) VM
-        mkdir -pv $LFS/mnt/src
-        mount /dev/vdc1 $LFS/mnt/src
+        mkdir -pv $LFS/mnt/Src
+        mount /dev/vdc1 $LFS/mnt/Src
 
-        mkdir -v $LFS/mnt/src/lfs.{src,log}
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
-        chmod -v a+wt $LFS/mnt/src/lfs.{src,log}
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
 
-        ln -sf $LFS/mnt/src/lfs.src $LFS/sources
+        ln -sf $LFS/mnt/Src/lfs.src $LFS/sources
 
       # (b) PC
         mkdir -pv $LFS/usr/src/lfs
@@ -266,8 +266,8 @@ B.  Generate LFS
         chown -v root:root $LFS/var/log/*
 
       # (a) VM
-        chown -v root:root $LFS/mnt/src/lfs.log
-        chown -v root:root $LFS/mnt/src/lfs.log/*
+        chown -v root:root $LFS/mnt/Src/lfs.log
+        chown -v root:root $LFS/mnt/Src/lfs.log/*
 
         ###
 
@@ -301,9 +301,9 @@ B.  Generate LFS
 
       # (a) VM
         rm /sources
-        ln -sf /mnt/src/lfs.src /sources
+        ln -sf /mnt/Src/lfs.src /sources
         rm /var/log/lfs
-        ln -sf /mnt/src/lfs.log /var/log/lfs
+        ln -sf /mnt/Src/lfs.log /var/log/lfs
 
       # (b) PC
         rm /sources
@@ -580,15 +580,15 @@ D. [LFS 10.x] Making the LFS System Bootable
 
 
         # for VMs
-        /dev/vda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1,discard  0 2
+        /dev/vda1       /efi        vfat  codepage=437,iocharset=iso8859-1,discard  0 2
         /dev/vda2       /           ext4  defaults,noatime,discard                  0 1
 
-        /dev/vdb1       /mnt/src    ext4  noatime,discard                           0 3
+        /dev/vdb1       /mnt/Src    ext4  noatime,discard                           0 3
 
         /dev/vdc1       none        swap  sw,discard                                0 0
 
         # for PCs
-        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda1       /efi        vfat  codepage=437,iocharset=iso8859-1          0 2
         /dev/sda2       /           ext4  defaults,noatime                          0 1
         /dev/sda3       none        swap  sw                                        0 0
 
@@ -625,7 +625,10 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         make mrproper
         make defconfig
+
+        # VM only
         make kvm_guest.config
+
         make MENUCONFIG_COLOR=blackbg menuconfig
 
         ( Note the flags needed )
@@ -667,9 +670,12 @@ D. [LFS 10.x] Making the LFS System Bootable
         #mkdir -pv /boot/efi
         #mount -v -t vfat /dev/vdb1 /boot/efi
 
-        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # VMs
-        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # PCs
-        grub-install --target=x86_64-efi --removable
+        #mkdir -v /efi
+        #mount -v -t vfat /dev/vdb1 /efi
+
+        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /efi    # VMs
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PCs
+        grub-install --target=x86_64-efi --efi-directory=/efi --removable
 
 
         cat > /boot/grub/grub.cfg << EOF
@@ -795,8 +801,8 @@ E. The End
         umount -v $LFS/proc
         umount -v $LFS/sys
 
-        umount -v $LFS/mnt/src  # for VMs
-        umount -v $LFS/boot/efi
+        umount -v $LFS/mnt/Src  # for VMs
+        umount -v $LFS/efi
 
         umount -v $LFS
 
