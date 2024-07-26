@@ -1,9 +1,10 @@
-# a.10.03.Linux-6.7.4.extract.only.sh
+# a.10.03.Linux-6.9.9.extract.only.sh
+# errata
 #
 # This will only extract the .tar.xz file
 # and will NOT delete the source directory
 
-export PKG="linux-6.7.4"
+export PKG="linux-6.9.9"
 export PKGLOG_DIR=$LFSLOG/10.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

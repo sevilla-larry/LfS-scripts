@@ -18,3 +18,5 @@ https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20240
 https://github.com/lz4/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz
 https://prdownloads.sourceforge.net/expat/expat-2.6.2.tar.xz
 https://linuxfromscratch.org/patches/downloads/glibc/glibc-2.39-upstream_fix-2.patch
+https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.9.9.tar.xz
+https://www.openssl.org/source/openssl-3.3.1.tar.gz
