@@ -1,7 +1,7 @@
-# a.05.04.Linux-6.7.4.API.Headers.sh
+# a.05.04.Linux-6.10.5.API.Headers.sh
 #
 
-export PKG="linux-6.7.4"
+export PKG="linux-6.10.5"
 export PKGLOG_DIR=$LFSLOG/05.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

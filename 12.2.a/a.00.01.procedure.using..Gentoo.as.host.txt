@@ -14,13 +14,12 @@ A. Preparation
       ( Big topic )
 
       /etc/portage/package.mask
-        >sys-devel/gcc-13.2.0
-      (based on https://www.linuxfromscratch.org/lfs/view/12.1/chapter02/hostreqs.html )
-      (requirement of LFS 12.1)
+        >=sys-devel/gcc-14.3.0
+      (based on https://www.linuxfromscratch.org/lfs/view/12.2/chapter02/hostreqs.html )
 
   A.02. [LFS 2.2] Host System Requirements
 
-      # (based on https://www.linuxfromscratch.org/lfs/view/12.1/chapter02/hostreqs.html )
+      # (based on https://www.linuxfromscratch.org/lfs/view/12.2/chapter02/hostreqs.html )
       # check the corresponding versions
 
       bash a.02.02.version-check.sh
@@ -30,9 +29,9 @@ A. Preparation
   A.03. attach disk(s)
 
       # (a) VM - 3 Virtual Disks
-        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdb
-        2.      80Gb      VM.LfS.src.qcow2        /dev/vdc
-        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vdd    ( will be used after installation )
+        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdd
+        2.      80Gb      VM.LfS.src.qcow2        /dev/vde
+        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vdf    ( will be used after installation )
 
       # (b) PC - 2nd Disk
         /dev/sdb
@@ -42,12 +41,12 @@ A. Preparation
         set as GPT ( UEFI )
 
       # (a) VM
-        /dev/vdb1   256M            VFAT / UEFI / EFI System
-        /dev/vdb2   remaining       Linux filesystem
+        /dev/vdd1   256M            VFAT / UEFI / EFI System
+        /dev/vdd2   remaining       Linux filesystem
 
-        /dev/vdc1   all             Linux filesystem
+        /dev/vde1   all             Linux filesystem
 
-        /dev/vdd1   all             swap
+        /dev/vdf1   all             swap
 
       # (b) PC
         /dev/sdb1   256M            VFAT / UEFI / EFI System
@@ -63,10 +62,10 @@ A. Preparation
         ###
 
       # (a) VM
-        mkfs.vfat -v -F 32 -n BOOT /dev/vdb1
-        mkfs.ext4 -v -L ROOT /dev/vdb2
-        mkfs.ext4 -v -L SOURCES /dev/vdc1
-        mkswap -L SWAP /dev/vdd1
+        mkfs.vfat -v -F 32 -n BOOT /dev/vdd1
+        mkfs.ext4 -v -L ROOT /dev/vdd2
+        mkfs.ext4 -v -L SOURCES /dev/vde1
+        mkswap -L SWAP /dev/vdf1
 
       # (b) PC
         mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
@@ -88,12 +87,12 @@ A. Preparation
         mkdir -pv $LFS
 
       # (a) VM
-        mount -v -t ext4 /dev/vdb2 $LFS
+        mount -v -t ext4 /dev/vdd2 $LFS
 
         ###
 
         /etc/fstab
-          /dev/vdb2   /mnt/lfs  ...
+          /dev/vdd2   /mnt/lfs  ...
 
         ###
 
@@ -113,7 +112,7 @@ A. Preparation
 
       # (a) VM
         mkdir -pv $LFS/mnt/Src
-        mount /dev/vdc1 $LFS/mnt/Src
+        mount /dev/vde1 $LFS/mnt/Src
 
         mkdir -v $LFS/mnt/Src/lfs.{src,log}
 

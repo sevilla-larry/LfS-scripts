@@ -1,7 +1,7 @@
-# a.5.05.Glibc-2.39.sh
+# a.5.05.Glibc-2.40.sh
 #
 
-export PKG="glibc-2.39"
+export PKG="glibc-2.40"
 export PKGLOG_DIR=$LFSLOG/05.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -37,15 +37,9 @@ esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 echo "   Patch to FHS-compliant..."
 echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
 echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.39-fhs-1.patch \
+patch -Np1 -i ../glibc-2.40-fhs-1.patch \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "   Vulnerability Patch..."
-echo "   Vulnerability Patch..." >> $LFSLOG_PROCESS
-echo "   Vulnerability Patch..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.39-upstream_fix-2.patch \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-    
 mkdir build
 cd    build
 

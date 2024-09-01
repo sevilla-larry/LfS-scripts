@@ -1,7 +1,7 @@
-# a.05.02.Binutils-2.42-Pass1.sh
+# a.05.02.Binutils-2.43.1-Pass1.sh
 #
 
-export PKG="binutils-2.42"
+export PKG="binutils-2.43.1"
 export PKGLOG_DIR=$LFSLOG/05.02
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -32,6 +32,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
              --disable-nls          \
              --enable-gprofng=no    \
              --disable-werror       \
+             --enable-new-dtags     \
              --enable-default-hash-style=gnu    \
              > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 

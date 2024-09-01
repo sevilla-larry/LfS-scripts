@@ -1,7 +1,7 @@
-# a.05.03.GCC-13.2.0-Pass1.sh
+# a.05.03.GCC-14.2.0-Pass1.sh
 #
 
-export PKG="gcc-13.2.0"
+export PKG="gcc-14.2.0"
 export PKGLOG_DIR=$LFSLOG/05.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -56,7 +56,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ../configure                  \
     --target=$LFS_TGT         \
     --prefix=$LFS/tools       \
-    --with-glibc-version=2.39 \
+    --with-glibc-version=2.40 \
     --with-sysroot=$LFS       \
     --with-newlib             \
     --without-headers         \

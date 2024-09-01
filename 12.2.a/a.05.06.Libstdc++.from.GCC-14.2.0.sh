@@ -1,7 +1,7 @@
-# a.05.06.Libstdc++.from.GCC-13.2.0.sh
+# a.05.06.Libstdc++.from.GCC-14.2.0.sh
 #
 
-export PKG="gcc-13.2.0"
+export PKG="gcc-14.2.0"
 export PKGLOG_DIR=$LFSLOG/05.06
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -34,7 +34,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
     --disable-multilib              \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/13.2.0   \
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.2.0   \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
