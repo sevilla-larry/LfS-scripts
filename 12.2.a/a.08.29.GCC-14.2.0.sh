@@ -1,12 +1,12 @@
-# a.08.28.GCC-13.2.0.sh
+# a.08.29.GCC-14.2.0.sh
 #
 
 #
-# Note: read https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/gcc.html
+# Note: read https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/gcc.html
 #
 
-export PKG="gcc-13.2.0"
-export PKGLOG_DIR=$LFSLOG/08.28
+export PKG="gcc-14.2.0"
+export PKGLOG_DIR=$LFSLOG/08.29
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -42,15 +42,16 @@ cd    build
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-../configure --prefix=/usr            \
-             LD=ld                    \
-             --enable-languages=c,c++ \
-             --enable-default-pie     \
-             --enable-default-ssp     \
-             --disable-multilib       \
-             --disable-bootstrap      \
-             --disable-fixincludes    \
-             --with-system-zlib       \
+../configure --prefix=/usr              \
+             LD=ld                      \
+             --enable-languages=c,c++   \
+             --enable-default-pie       \
+             --enable-default-ssp       \
+             --enable-host-pie          \
+             --disable-multilib         \
+             --disable-bootstrap        \
+             --disable-fixincludes      \
+             --with-system-zlib         \
              > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
@@ -58,16 +59,29 @@ echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "   Increase the stack size prior to running the tests..."
-echo "   Increase the stack size prior to running the tests..." >> $LFSLOG_PROCESS
-echo "   Increase the stack size prior to running the tests..." >> $PKGLOG_ERROR
-ulimit -s 32768
+echo "   Set stack size to unlimited..."
+echo "   Set stack size to unlimited..." >> $LFSLOG_PROCESS
+echo "   Set stack size to unlimited..." >> $PKGLOG_ERROR
+ulimit -s -H unlimited
+
+echo "   Remove/fix several known test failures..."
+echo "   Remove/fix several known test failures..." >> $LFSLOG_PROCESS
+echo "   Remove/fix several known test failures..." >> $PKGLOG_ERROR
+sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp              \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -e 's/no-pic /&-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c          \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -e 's/{ target nonpic } //' \
+    -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c         \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "4. Make Check 1 Test the results as a non-privileged user..."
 echo "4. Make Check 1 Test the results as a non-privileged user..." >> $LFSLOG_PROCESS
 echo "4. Make Check 1 Test the results as a non-privileged user..." >> $PKGLOG_ERROR
 chown -v -R tester . >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-su tester -c "PATH=$PATH make $MAKEFLAGS -k check" \
+su tester -c "PATH=$PATH make -k check" \
   > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "   Extract a summary of the test suite results..."
@@ -85,7 +99,7 @@ echo "   Change the ownership to the root user and group..."
 echo "   Change the ownership to the root user and group..." >> $LFSLOG_PROCESS
 echo "   Change the ownership to the root user and group..." >> $PKGLOG_ERROR
 chown -v -R root:root                                         \
-    /usr/lib/gcc/$(gcc -dumpmachine)/13.2.0/include{,-fixed}  \
+    /usr/lib/gcc/$(gcc -dumpmachine)/14.2.0/include{,-fixed}  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "   Create a symlink required by the FHS for historical reasons..."
@@ -101,7 +115,7 @@ ln -sv gcc.1 /usr/share/man/man1/cc.1   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 echo "   Add a compatibility symlink to enable building programs with Link Time Optimization (LTO)..."
 echo "   Add a compatibility symlink to enable building programs with Link Time Optimization (LTO)..." >> $LFSLOG_PROCESS
 echo "   Add a compatibility symlink to enable building programs with Link Time Optimization (LTO)..." >> $PKGLOG_ERROR
-ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/13.2.0/liblto_plugin.so  \
+ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/14.2.0/liblto_plugin.so  \
         /usr/lib/bfd-plugins/   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo 'int main(){}' > dummy.c

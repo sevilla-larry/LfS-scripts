@@ -374,15 +374,17 @@ B.  Generate LFS
 
         ###
 
-  B.13. [LFS 8.29-8.35??] Chapter 8 Part 2
+  B.13. [LFS 8.29-8.36] Chapter 8 Part 2
 
         ###
 
-        bash a.08.00.Part2.28-35.sh
+        bash a.08.00.Part2.29-36.sh
+
+        Note: read https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/gcc.html specially the 29/*.log files
 
         ###
 
-  B.14. [LFS 8.35] run the newly compiled BASH program
+  B.14. [LFS 8.36] run the newly compiled BASH program
 
         ###
 
@@ -390,11 +392,11 @@ B.  Generate LFS
 
         ###
 
-  B.15. [LFS 8.36-8.81] Chapter 8 Part 3
+  B.15. [LFS 8.37-8.81??] Chapter 8 Part 3
 
         ###
 
-        bash a.08.00.Part3.36-81.sh
+        bash a.08.00.Part3.37-81??.sh
 
         ###
 

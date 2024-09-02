@@ -1,8 +1,8 @@
-# a.08.31.Psmisc-23.6.sh
+# a.08.32.Psmisc-23.7.sh
 #
 
-export PKG="psmisc-23.6"
-export PKGLOG_DIR=$LFSLOG/08.31
+export PKG="psmisc-23.7"
+export PKGLOG_DIR=$LFSLOG/08.32
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

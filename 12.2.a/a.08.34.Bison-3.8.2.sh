@@ -1,8 +1,8 @@
-# a.08.30.Sed-4.9.sh
+# a.08.34.Bison-3.8.2.sh
 #
 
-export PKG="sed-4.9"
-export PKGLOG_DIR=$LFSLOG/08.30
+export PKG="bison-3.8.2"
+export PKGLOG_DIR=$LFSLOG/08.34
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -24,30 +24,24 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr   \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+./configure --prefix=/usr                       \
+            --docdir=/usr/share/doc/bison-3.8.2 \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
-make       > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Test results ..."
-echo "4. Test results ..." >> $LFSLOG_PROCESS
-echo "4. Test results ..." >> $PKGLOG_ERROR
-chown -v -R tester . > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-su tester -c "PATH=$PATH make check"    \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo "4. Make Check ..."
+echo "4. Make Check ..." >> $LFSLOG_PROCESS
+echo "4. Make Check ..." >> $PKGLOG_ERROR
+make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -d -m755           /usr/share/doc/sed-4.9    \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -m644 doc/sed.html /usr/share/doc/sed-4.9    \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

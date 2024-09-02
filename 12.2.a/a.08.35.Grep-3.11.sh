@@ -1,14 +1,15 @@
-# a.08.32.Gettext-0.22.4.sh
+# a.08.35.Grep-3.11.sh
 #
 
-export PKG="gettext-0.22.4"
-export PKGLOG_DIR=$LFSLOG/08.32
+export PKG="grep-3.11"
+export PKGLOG_DIR=$LFSLOG/08.35
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -21,13 +22,16 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+echo "   Remove a warning about using egrep and fgrep that makes tests on some packages fail..."
+echo "   Remove a warning about using egrep and fgrep that makes tests on some packages fail..." >> $LFSLOG_PROCESS
+echo "   Remove a warning about using egrep and fgrep that makes tests on some packages fail..." >> $PKGLOG_ERROR
+sed -i "s/echo/#echo/" src/egrep.sh >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                           \
-            --disable-static                        \
-            --docdir=/usr/share/doc/gettext-0.22.4  \
-            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+./configure --prefix=/usr   \
+    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -43,13 +47,12 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-chmod -v 0755 /usr/lib/preloadable_libintl.so   \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

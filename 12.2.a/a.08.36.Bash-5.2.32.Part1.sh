@@ -1,8 +1,8 @@
-# a.08.35.Bash-5.2.21.sh
+# a.08.36.Bash-5.2.32.sh
 #
 
-export PKG="bash-5.2.21"
-export PKGLOG_DIR=$LFSLOG/08.35
+export PKG="bash-5.2.32"
+export PKGLOG_DIR=$LFSLOG/08.36
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -22,19 +22,14 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "   Fix some issues identified upstream..."
-echo "   Fix some issues identified upstream..." >> $LFSLOG_PROCESS
-echo "   Fix some issues identified upstream..." >> $PKGLOG_ERROR
-patch -Np1 -i ../bash-5.2.21-upstream_fixes-1.patch \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                       \
             --without-bash-malloc               \
             --with-installed-readline           \
-            --docdir=/usr/share/doc/bash-5.2.21 \
+            bash_cv_strtold_broken=no           \
+            --docdir=/usr/share/doc/bash-5.2.32 \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."

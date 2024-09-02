@@ -1,8 +1,8 @@
-# a.08.29.Ncurses-6.4.sh
+# a.08.30.Ncurses-6.5.sh
 #
 
-export PKG="ncurses-6.4-20230520"
-export PKGLOG_DIR=$LFSLOG/08.29
+export PKG="ncurses-6.5"
+export PKGLOG_DIR=$LFSLOG/08.30
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -32,9 +32,9 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --without-normal        \
             --with-cxx-shared       \
             --enable-pc-files       \
-            --enable-widec          \
             --with-pkg-config-libdir=/usr/lib/pkgconfig \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --enable-widec          \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -46,9 +46,12 @@ echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$PWD/dest install  \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -vm755 dest/usr/lib/libncursesw.so.6.4 /usr/lib \
+install -vm755 dest/usr/lib/libncursesw.so.6.5 /usr/lib \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-rm -v dest/usr/lib/libncursesw.so.6.4   \
+rm -v dest/usr/lib/libncursesw.so.6.5   \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+    -i dest/usr/include/curses.h        \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 cp -av dest/* /                         \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
@@ -69,7 +72,7 @@ ln -sfv libncursesw.so /usr/lib/libcurses.so    >> $PKGLOG_OTHERS 2>> $PKGLOG_ER
 echo "   Install the Ncurses documentation..."
 echo "   Install the Ncurses documentation..." >> $LFSLOG_PROCESS
 echo "   Install the Ncurses documentation..." >> $PKGLOG_ERROR
-cp -v -R doc -T /usr/share/doc/ncurses-6.4-20230520 \
+cp -v -R doc -T /usr/share/doc/ncurses-6.5 \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
