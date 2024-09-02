@@ -1,7 +1,7 @@
-# a.06.17.Binutils-2.42-Pass2.sh
+# a.06.17.Binutils-2.43.1.-Pass2.sh
 #
 
-export PKG="binutils-2.42"
+export PKG="binutils-2.43.1"
 export PKGLOG_DIR=$LFSLOG/06.17
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -33,15 +33,16 @@ cd    build
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-../configure                    \
-    --prefix=/usr               \
-    --build=$(../config.guess)  \
-    --host=$LFS_TGT             \
-    --disable-nls               \
-    --enable-shared             \
-    --enable-gprofng=no         \
-    --disable-werror            \
-    --enable-64-bit-bfd         \
+../configure                        \
+    --prefix=/usr                   \
+    --build=$(../config.guess)      \
+    --host=$LFS_TGT                 \
+    --disable-nls                   \
+    --enable-shared                 \
+    --enable-gprofng=no             \
+    --disable-werror                \
+    --enable-64-bit-bfd             \
+    --enable-new-dtags              \
     --enable-default-hash-style=gnu \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 

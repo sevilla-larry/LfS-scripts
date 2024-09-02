@@ -1,7 +1,7 @@
-# a.06.18.GCC-13.2.0-Pass2.sh
+# a.06.18.GCC-14.2.0-Pass2.sh
 #
 
-export PKG="gcc-13.2.0"
+export PKG="gcc-14.2.0"
 export PKGLOG_DIR=$LFSLOG/06.18
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -97,7 +97,7 @@ echo "Create a utility symlink" >> $PKGLOG_OTHERS
 echo "   Create a utility symlink..."
 echo "   Create a utility symlink..." >> $LFSLOG_PROCESS
 echo "   Create a utility symlink..." >> $PKGLOG_ERROR
-ln -vs gcc $LFS/usr/bin/cc  \
+ln -sv gcc $LFS/usr/bin/cc  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

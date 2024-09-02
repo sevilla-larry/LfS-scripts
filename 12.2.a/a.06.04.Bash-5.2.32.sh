@@ -1,7 +1,7 @@
-# a.06.04.Bash-5.2.21.sh
+# a.06.04.Bash-5.2.32.sh
 #
 
-export PKG="bash-5.2.21"
+export PKG="bash-5.2.32"
 export PKGLOG_DIR=$LFSLOG/06.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -28,6 +28,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --build=$(sh support/config.guess)  \
             --host=$LFS_TGT                     \
             --without-bash-malloc               \
+            bash_cv_strtold_broken=no           \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."

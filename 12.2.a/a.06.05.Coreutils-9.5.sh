@@ -1,7 +1,7 @@
-# a.06.05.Coreutils-9.4.sh
+# a.06.05.Coreutils-9.5.sh
 #
 
-export PKG="coreutils-9.4"
+export PKG="coreutils-9.5"
 export PKGLOG_DIR=$LFSLOG/06.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

@@ -22,24 +22,10 @@ echo "."
 
 ###
 
-echo "06.03.Ncurses-6.4-20230520"
-echo "06.03.Ncurses-6.4-20230520" >> $LFSLOG_PROCESS
+echo "06.03.Ncurses-6.5"
+echo "06.03.Ncurses-6.5" >> $LFSLOG_PROCESS
 
-time { bash a.06.03.Ncurses-6.4-20230520.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "06.04.Bash-5.2.21"
-echo "06.04.Bash-5.2.21" >> $LFSLOG_PROCESS
-
-time { bash a.06.04.Bash-5.2.21.sh ; }
+time { bash a.06.03.Ncurses-6.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -50,10 +36,24 @@ echo "."
 
 ###
 
-echo "06.05.Coreutils-9.4"
-echo "06.05.Coreutils-9.4" >> $LFSLOG_PROCESS
+echo "06.04.Bash-5.2.32"
+echo "06.04.Bash-5.2.32" >> $LFSLOG_PROCESS
 
-time { bash a.06.05.Coreutils-9.4.sh ; }
+time { bash a.06.04.Bash-5.2.32.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "06.05.Coreutils-9.5"
+echo "06.05.Coreutils-9.5" >> $LFSLOG_PROCESS
+
+time { bash a.06.05.Coreutils-9.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -92,10 +92,10 @@ echo "."
 
 ###
 
-echo "06.08.Findutils-4.9.0"
-echo "06.08.Findutils-4.9.0" >> $LFSLOG_PROCESS
+echo "06.08.Findutils-4.10.0"
+echo "06.08.Findutils-4.10.0" >> $LFSLOG_PROCESS
 
-time { bash a.06.08.Findutils-4.9.0.sh ; }
+time { bash a.06.08.Findutils-4.10.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -204,24 +204,10 @@ echo "."
 
 ###
 
-echo "06.16.Xz-5.4.6"
-echo "06.16.Xz-5.4.6" >> $LFSLOG_PROCESS
+echo "06.16.Xz-5.6.2"
+echo "06.16.Xz-5.6.2" >> $LFSLOG_PROCESS
 
-time { bash a.06.16.Xz-5.4.6.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "06.17.Binutils-2.42-Pass2"
-echo "06.17.Binutils-2.42-Pass2" >> $LFSLOG_PROCESS
-
-time { bash a.06.17.Binutils-2.42-Pass2.sh ; }
+time { bash a.06.16.Xz-5.6.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -232,10 +218,24 @@ echo "."
 
 ###
 
-echo "06.18.GCC-13.2.0-Pass2"
-echo "06.18.GCC-13.2.0-Pass2" >> $LFSLOG_PROCESS
+echo "06.17.Binutils-2.43.1-Pass2"
+echo "06.17.Binutils-2.43.1-Pass2" >> $LFSLOG_PROCESS
 
-time { bash a.06.18.GCC-13.2.0-Pass2.sh ; }
+time { bash a.06.17.Binutils-2.43.1-Pass2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "06.18.GCC-14.2.0-Pass2"
+echo "06.18.GCC-14.2.0-Pass2" >> $LFSLOG_PROCESS
+
+time { bash a.06.18.GCC-14.2.0-Pass2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
