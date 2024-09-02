@@ -7,6 +7,7 @@ mkdir -pv /etc/{opt,sysconfig}
 mkdir -pv /lib/firmware
 mkdir -pv /media/{floppy,cdrom}
 mkdir -pv /usr/{,local/}{include,src}
+mkdir -pv /usr/lib/locale
 mkdir -pv /usr/local/{bin,lib,sbin}
 mkdir -pv /usr/{,local/}share/{color,dict,doc,info,locale,man}
 mkdir -pv /usr/{,local/}share/{misc,terminfo,zoneinfo}

@@ -1,9 +1,8 @@
-# a.07.10.Python-3.12.4.sh
-# errata
+# a.07.07.Gettext-0.22.5.sh
 #
 
-export PKG="Python-3.12.4"
-export PKGLOG_DIR=$LFSLOG/07.10
+export PKG="gettext-0.22.5"
+export PKGLOG_DIR=$LFSLOG/07.07
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -24,9 +23,7 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr       \
-            --enable-shared     \
-            --without-ensurepip \
+./configure --disable-shared \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
@@ -34,10 +31,11 @@ echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Make Install ..."
-echo "4. Make Install ..." >> $LFSLOG_PROCESS
-echo "4. Make Install ..." >> $PKGLOG_ERROR
-make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+echo "   Patch to FHS-compliant..."
+echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
+echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
+cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

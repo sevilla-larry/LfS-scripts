@@ -1,7 +1,7 @@
-# a.07.12.Util-linux-2.39.3.sh
+# a.07.12.Util-linux-2.40.2.sh
 #
 
-export PKG="util-linux-2.39.3"
+export PKG="util-linux-2.40.2"
 export PKGLOG_DIR=$LFSLOG/07.12
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -41,7 +41,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --disable-static        \
             --without-python        \
             ADJTIME_PATH=/var/lib/hwclock/adjtime       \
-            --docdir=/usr/share/doc/util-linux-2.39.3   \
+            --docdir=/usr/share/doc/util-linux-2.40.2   \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
