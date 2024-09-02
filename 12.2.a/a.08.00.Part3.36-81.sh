@@ -316,6 +316,20 @@ echo "."
 
 ###
 
+echo "08.57a.25.Acl-2.3.2"
+echo "08.57a.25.Acl-2.3.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.57a.25.Acl-2.3.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
 echo "08.58.Check-0.15.2"
 echo "08.58.Check-0.15.2" >> $LFSLOG_PROCESS
 

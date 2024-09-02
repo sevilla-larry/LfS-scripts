@@ -1,8 +1,8 @@
-# a.08.26.Shadow-4.14.5.Part1.sh
+# a.08.28.Shadow-4.16.0.Part1.sh
 #
 
-export PKG="shadow-4.14.5"
-export PKGLOG_DIR=$LFSLOG/08.27
+export PKG="shadow-4.16.0"
+export PKGLOG_DIR=$LFSLOG/08.28
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -29,9 +29,9 @@ echo "   Also, prevent the installation of manual pages that were already instal
 echo "   Also, prevent the installation of manual pages that were already installed..." >> $LFSLOG_PROCESS
 echo "   Also, prevent the installation of manual pages that were already installed..." >> $PKGLOG_ERROR
 sed -i 's/groups$(EXEEXT) //' src/Makefile.in                       >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \;   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \;   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {}      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {}      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {}      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "   Instead of using the default crypt method, use the much more secure YESCRYPT method of password encryption."
 echo "   Instead of using the default crypt method, use the much more secure YESCRYPT method of password encryption." >> $LFSLOG_PROCESS

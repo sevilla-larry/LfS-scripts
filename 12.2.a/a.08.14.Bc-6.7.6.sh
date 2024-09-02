@@ -1,8 +1,8 @@
-# a.08.21.MPFR-4.2.1.sh
+# a.08.14.Bc-6.7.6.sh
 #
 
-export PKG="mpfr-4.2.1"
-export PKGLOG_DIR=$LFSLOG/08.21
+export PKG="bc-6.7.6"
+export PKGLOG_DIR=$LFSLOG/08.14
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -24,28 +24,25 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                       \
-            --disable-static                    \
-            --enable-thread-safe                \
-            --docdir=/usr/share/doc/mpfr-4.2.1  \
+CC=gcc  \
+    ./configure --prefix=/usr   \
+                -G -O3 -r       \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
-echo "3. Make Build ..." >> $LFSLOG_PROCESS 
+echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
-make       > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+make test > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-make install       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-make install-html >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

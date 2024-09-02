@@ -1,8 +1,8 @@
-# a.08.22.MPC-1.3.1.sh
+# a.08.11.File-5.45.sh
 #
 
-export PKG="mpc-1.3.1"
-export PKGLOG_DIR=$LFSLOG/08.22
+export PKG="file-5.45"
+export PKGLOG_DIR=$LFSLOG/08.11
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -24,16 +24,13 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                       \
-            --disable-static                    \
-            --docdir=/usr/share/doc/mpc-1.3.1   \
+./configure --prefix=/usr   \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
-make       > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
@@ -43,8 +40,7 @@ make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-make install       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-make install-html >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd ..

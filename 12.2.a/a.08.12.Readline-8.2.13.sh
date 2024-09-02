@@ -1,8 +1,8 @@
-# a.08.11.Readline-8.2.sh
+# a.08.12.Readline-8.2.13.sh
 #
 
-export PKG="readline-8.2"
-export PKGLOG_DIR=$LFSLOG/08.11
+export PKG="readline-8.2.13"
+export PKGLOG_DIR=$LFSLOG/08.12
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -25,14 +25,13 @@ cd $PKG
 echo "   Avoid a linking bug in ldconfig..."
 echo "   Avoid a linking bug in ldconfig..." >> $LFSLOG_PROCESS
 echo "   Avoid a linking bug in ldconfig..." >> $PKGLOG_ERROR
-sed -i '/MV.*old/d' Makefile.in                 >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-sed -i '/{OLDSUFF}/c:' support/shlib-install    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -i '/MV.*old/d'             Makefile.in             >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -i '/{OLDSUFF}/c:'          support/shlib-install   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "2. Patching..."
-echo "2. Patching..." >> $LFSLOG_PROCESS
-echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../readline-8.2-upstream_fixes-3.patch  \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "   Prevent hard coding library search paths (rpath) into the shared libraries..."
+echo "   Prevent hard coding library search paths (rpath) into the shared libraries..." >> $LFSLOG_PROCESS
+echo "   Prevent hard coding library search paths (rpath) into the shared libraries..." >> $PKGLOG_ERROR
+sed -i 's/-Wl,-rpath,[^ ]*//'   support/shobj-conf      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS
@@ -40,7 +39,7 @@ echo "3. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                           \
             --disable-static                        \
             --with-curses                           \
-            --docdir=/usr/share/doc/readline-8.2    \
+            --docdir=/usr/share/doc/readline-8.2.13 \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "4. Make Build ..."
@@ -59,7 +58,7 @@ echo "   Install the documentation..."
 echo "   Install the documentation..." >> $LFSLOG_PROCESS
 echo "   Install the documentation..." >> $PKGLOG_ERROR
 install -v -m644 doc/*.{ps,pdf,html,dvi}    \
-    /usr/share/doc/readline-8.2             \
+    /usr/share/doc/readline-8.2.13          \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

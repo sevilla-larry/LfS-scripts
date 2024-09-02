@@ -1,8 +1,8 @@
-# a.08.25.Libcap-2.69.sh
+# a.08.26.Libcap-2.70.sh
 #
 
-export PKG="libcap-2.69"
-export PKGLOG_DIR=$LFSLOG/08.25
+export PKG="libcap-2.70"
+export PKGLOG_DIR=$LFSLOG/08.26
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -33,9 +33,9 @@ echo "2. Make Build ..." >> $PKGLOG_ERROR
 make prefix=/usr lib=lib    \
     > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "3. Make Check ..."
-echo "3. Make Check ..." >> $LFSLOG_PROCESS
-echo "3. Make Check ..." >> $PKGLOG_ERROR
+echo "3. Make Test ..."
+echo "3. Make Test ..." >> $LFSLOG_PROCESS
+echo "3. Make Test ..." >> $PKGLOG_ERROR
 make test > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "4. Make Install ..."

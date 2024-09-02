@@ -1,7 +1,7 @@
-# a.08.05.Glibc-2.39.sh
+# a.08.05.Glibc-2.40.sh
 #
 
-export PKG="glibc-2.39"
+export PKG="glibc-2.40"
 export PKGLOG_DIR=$LFSLOG/08.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -28,14 +28,8 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.39-fhs-1.patch \
+patch -Np1 -i ../glibc-2.40-fhs-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-     echo "   Vulnerability Patch..."
-echo "   Vulnerability Patch..." >> $LFSLOG_PROCESS
-echo "   Vulnerability Patch..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.39-upstream_fix-2.patch \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -100,7 +94,6 @@ echo "7. Locale Definitions ..."
 echo "7. Locale Definitions ..." >> $LFSLOG_PROCESS
 echo "7. Locale Definitions ..." >> $PKGLOG_ERROR
 
-mkdir -p /usr/lib/locale
 localedef -i C -f UTF-8 C.UTF-8
 localedef -i cs_CZ -f UTF-8 cs_CZ.UTF-8
 localedef -i de_DE -f ISO-8859-1 de_DE

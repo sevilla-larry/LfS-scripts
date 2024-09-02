@@ -1,7 +1,7 @@
-# a.08.20.GMP-6.3.0.sh
+# a.08.20.Binutils-2.43.1.sh
 #
 
-export PKG="gmp-6.3.0"
+export PKG="binutils-2.43.1"
 export PKGLOG_DIR=$LFSLOG/08.20
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -22,41 +22,53 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+mkdir build
+cd    build
+
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                       \
-            --enable-cxx                        \
-            --disable-static                    \
-            --docdir=/usr/share/doc/gmp-6.3.0   \
+../configure --prefix=/usr          \
+             --sysconfdir=/etc      \
+             --enable-gold          \
+             --enable-ld=default    \
+             --enable-plugins       \
+             --enable-shared        \
+             --disable-werror       \
+             --enable-64-bit-bfd    \
+             --enable-new-dtags     \
+             --with-system-zlib     \
+             --enable-default-hash-style=gnu    \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
-make       > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+make tooldir=/usr   \
+    > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-make check > $PKGLOG_CHECK 2>&1 | tee gmp-check-log
-cat gmp-check-log >> $PKGLOG_ERROR
+make -k check >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-echo "   Ensure that at least 199 tests in the test suite passed. Check the results..."
-echo "   Ensure that at least 199 tests in the test suite passed. Check the results..." >> $LFSLOG_PROCESS
-echo "   Ensure that at least 199 tests in the test suite passed. Check the results..." >> $PKGLOG_ERROR
-awk '/# PASS:/{total+=$3} ; END{print total}'   \
-    gmp-check-log                               \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+# For a list of failed tests, run
+# grep '^FAIL:' $(find -name '*.log')
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-make install       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-make install-html >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make tooldir=/usr install   \
+    > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+echo "   Remove a useless static libraries..."
+echo "   Remove a useless static libraries..." >> $LFSLOG_PROCESS
+echo "   Remove a useless static libraries..." >> $PKGLOG_ERROR
+rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
+cd ..
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
