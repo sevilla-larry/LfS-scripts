@@ -340,7 +340,7 @@ B.  Generate LFS
 
         ###
 
-      # (a) VM
+      # (a) VM & VB
         rm /sources
         ln -sf /mnt/Src/lfs.src /sources
         rm /var/log/lfs
