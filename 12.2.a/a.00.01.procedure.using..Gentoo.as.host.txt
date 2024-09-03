@@ -2,11 +2,15 @@ A. Preparation
 
   A.01. Prepare a Gentoo (LFS) host with:
 
-      # (a) VM
+      # (a) Qemu/KVM VM
         Q35, UEFI
-        50Gb VM.Gentoo.host.qcow2       /dev/vda
+        50Gb VM.Gentoo.host.qcow2   /dev/vda
 
-      # (b) PC
+      # (b) Virtualbox VB
+        ICH9, EFI
+        60Gb VM.Gentoo.host.vdi     /dev/sda
+
+      # (c) PC
         UEFI
         /dev/sda
 
@@ -33,7 +37,7 @@ A. Preparation
         2.      80Gb      VM.LfS.src.qcow2        /dev/vde
         3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vdf    ( will be used after installation )
 
-      # (b) PC - 2nd Disk
+      # (c) PC - 2nd Disk
         /dev/sdb
 
   A.04. [LFS 2.4] Partition the newly attached VDs
