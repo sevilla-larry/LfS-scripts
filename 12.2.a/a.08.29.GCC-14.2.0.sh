@@ -80,7 +80,7 @@ sed -e 's/{ target nonpic } //' \
 echo "4. Make Check 1 Test the results as a non-privileged user..."
 echo "4. Make Check 1 Test the results as a non-privileged user..." >> $LFSLOG_PROCESS
 echo "4. Make Check 1 Test the results as a non-privileged user..." >> $PKGLOG_ERROR
-chown -v -R tester . >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+chown -vR tester . >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 su tester -c "PATH=$PATH make -k check" \
   > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
@@ -98,8 +98,8 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 echo "   Change the ownership to the root user and group..."
 echo "   Change the ownership to the root user and group..." >> $LFSLOG_PROCESS
 echo "   Change the ownership to the root user and group..." >> $PKGLOG_ERROR
-chown -v -R root:root                                         \
-    /usr/lib/gcc/$(gcc -dumpmachine)/14.2.0/include{,-fixed}  \
+chown -vR root:root                                             \
+    /usr/lib/gcc/$(gcc -dumpmachine)/14.2.0/include{,-fixed}    \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "   Create a symlink required by the FHS for historical reasons..."

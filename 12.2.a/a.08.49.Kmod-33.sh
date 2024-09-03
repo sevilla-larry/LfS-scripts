@@ -1,12 +1,12 @@
-# a.08.31.Sed-4.9.sh
+# a.08.49.Kmod-33.sh
 #
 
-export PKG="sed-4.9"
-export PKGLOG_DIR=$LFSLOG/08.31
+export PKG="kmod-33"
+export PKGLOG_DIR=$LFSLOG/08.49
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
-export PKGLOG_CHECK=$PKGLOG_DIR/check.log
+#export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
@@ -24,36 +24,39 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr   \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+./configure --prefix=/usr       \
+            --sysconfdir=/etc   \
+            --with-openssl      \
+            --with-xz           \
+            --with-zstd         \
+            --with-zlib         \
+            --disable-manpages  \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
-make       > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Test results ..."
-echo "4. Test results ..." >> $LFSLOG_PROCESS
-echo "4. Test results ..." >> $PKGLOG_ERROR
-chown -vR tester . > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-su tester -c "PATH=$PATH make check"    \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-
-echo "5. Make Install ..."
-echo "5. Make Install ..." >> $LFSLOG_PROCESS
-echo "5. Make Install ..." >> $PKGLOG_ERROR
+echo "4. Make Install ..."
+echo "4. Make Install ..." >> $LFSLOG_PROCESS
+echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -d -m755           /usr/share/doc/sed-4.9    \
+
+for target in depmod insmod modinfo modprobe rmmod; do
+  ln -svf ../bin/kmod /usr/sbin/$target \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -m644 doc/sed.html /usr/share/doc/sed-4.9    \
+  rm -fv /usr/bin/$target   \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+done
+
+#ln -svf kmod /usr/bin/lsmod
 
 
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
-unset PKGLOG_CHECK
+#unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

@@ -1,4 +1,5 @@
-#https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz
+https://www.nano-editor.org/dist/v8/nano-8.1.tar.xz
+
 #http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz
 #https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz
 #https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz

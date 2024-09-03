@@ -44,7 +44,7 @@ echo "4. Test ..." >> $PKGLOG_ERROR
 echo "   Ensure that the tester user can write to the sources tree..."
 echo "   Ensure that the tester user can write to the sources tree..." >> $LFSLOG_PROCESS
 echo "   Ensure that the tester user can write to the sources tree..." >> $PKGLOG_ERROR
-chown -v -R tester . > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+chown -vR tester . > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 su -s /usr/bin/expect tester << EOF >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 set timeout -1
