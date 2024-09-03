@@ -223,7 +223,7 @@ A. Preparation
 
         ###
 
-        export LFSLOG=$LFS/var/log/lfs
+        # export LFSLOG=$LFS/var/log/lfs
 
         ###
 
