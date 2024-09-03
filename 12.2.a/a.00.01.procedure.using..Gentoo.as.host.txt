@@ -118,14 +118,14 @@ A. Preparation
 
         chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
 
-        ln -sf $LFS/mnt/Src/lfs.src $LFS/sources
+        ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
 
       # (b) PC
         mkdir -pv $LFS/usr/src/lfs
 
         chmod -v a+wt $LFS/usr/src/lfs
 
-        ln -sf $LFS/usr/src/lfs $LFS/sources
+        ln -svf $LFS/usr/src/lfs $LFS/sources
 
         ###
 
