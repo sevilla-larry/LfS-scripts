@@ -6,7 +6,7 @@ e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
 da47e9c7a2cec3b68a0fad5d2a341dcc unifont-15.1.05.pcf.gz
 f701ab57eb8e7d9c105b2cd5d809b29a libtasn1-4.19.0.tar.gz
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz
-e99d2985ead0037caedb765fd66b33f0 make-ca-1.14.tar.xz
+e99d2985ead0037caedb765fd66b33f0 make-ca-1.14.tar.gz
 271bf949384d0858c2c3d419f6311365 wget-1.24.5.tar.gz
 3ce01505e82626ca4d7291d7e649c4c9 lynx2.9.2.tar.bz2
 bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
