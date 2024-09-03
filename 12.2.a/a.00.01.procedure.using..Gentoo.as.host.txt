@@ -149,6 +149,7 @@ A. Preparation
         ###
 
         wget --input-file=a.03.01.wget-list-sysv.additional.txt --continue --directory-prefix=$LFS/sources
+        md5sum -c a.03.02.md5sums.additional.txt
 
         ###
 
