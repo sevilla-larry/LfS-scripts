@@ -215,7 +215,7 @@ A. Preparation
 
         # ( Logging )
 
-      # (a) VM
+      # (a) VM & VB
         bash a.04.03.3.1.Add.Logging.Requirement.VMs.sh
 
       # (b) PC
@@ -241,6 +241,8 @@ A. Preparation
         $$$
 
         $$$
+
+        export LFS=/mnt/lfs
 
         cd $LFS/sources
 
