@@ -1,11 +1,12 @@
-# a.10.03.Linux-6.9.9.extract.only.sh
-# errata
+# a.09.99.BLFS-Bootscripts-20240416.extract.only.sh
+#
+# BLFS Chapter 2 Section 4
 #
 # This will only extract the .tar.xz file
 # and will NOT delete the source directory
 
-export PKG="linux-6.9.9"
-export PKGLOG_DIR=$LFSLOG/10.03
+export PKG="blfs-bootscripts-20240416"
+export PKGLOG_DIR=$LFSLOG/09.99
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 #export PKGLOG_BUILD=$PKGLOG_DIR/build.log

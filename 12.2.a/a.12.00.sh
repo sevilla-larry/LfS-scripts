@@ -2,12 +2,11 @@
 #
 # Clean Up  Based on:
 #
-#   https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/stripping.html
-#   https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/cleanup.html
+#   https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/stripping.html
+#   https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/cleanup.html
 #
-#   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/notes-on-building.html
-#   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/la-files.html
-#   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/locale-issues.html	# NOT working, permission denied
+#   https://www.linuxfromscratch.org/blfs/view/12.2/introduction/notes-on-building.html
+#   https://www.linuxfromscratch.org/blfs/view/12.2/introduction/la-files.html
 #
 
 export LFSLOG_PROCESS=$LFSLOG/process.log

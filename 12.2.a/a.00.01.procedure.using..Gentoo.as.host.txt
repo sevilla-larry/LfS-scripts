@@ -433,7 +433,7 @@ C. Finishing Up
 
         cd /sources
 
-        bash a.09.02.LFS-Bootscripts-20230728.sh
+        bash a.09.02.LFS-Bootscripts-20240825.sh
 
         ###
 
@@ -531,7 +531,7 @@ C. Finishing Up
 
         ###
 
-        bash a.09.99.BLFS-Bootscripts-20240209.extract.only.sh
+        bash a.09.99.BLFS-Bootscripts-20240416.extract.only.sh
 
         cd blfs-bootscripts-20240209
 
@@ -614,15 +614,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] Linux-6.9.9 Kernel
+  D.02. [LFS 10.3] Linux-6.10.5 Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.9.9.extract.only.sh
+        bash a.10.03.Linux-6.10.5.extract.only.sh
 
-        cd linux-6.9.9
+        cd linux-6.10.5
 
         make mrproper
         make defconfig
@@ -633,14 +633,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         make MENUCONFIG_COLOR=blackbg menuconfig
 
         ( Note the flags needed )
-        https://www.linuxfromscratch.org/lfs/view/12.1/chapter10/kernel.html
-        https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/grub-setup.html
-        https://www.linuxfromscratch.org/blfs/view/12.1/general/gpm.html
-        https://wiki.gentoo.org/wiki/QEMU/Linux_guest   # for VMs
-        https://www.linuxfromscratch.org/blfs/view/12.1/x/mesa.html
-        https://www.linuxfromscratch.org/blfs/view/12.1/x/xorg-server.html
-        https://www.linuxfromscratch.org/blfs/view/12.1/x/x7driver.html#libevdev
-        https://www.linuxfromscratch.org/blfs/view/12.1/general/elogind.html
+        https://www.linuxfromscratch.org/lfs/view/12.2/chapter10/kernel.html
+        https://www.linuxfromscratch.org/blfs/view/12.2/postlfs/grub-setup.html
+        https://www.linuxfromscratch.org/blfs/view/12.2/general/gpm.html
+        https://wiki.gentoo.org/wiki/QEMU/Linux_guest           # for Qemu/KVM guest
+        https://wiki.gentoo.org/wiki/VirtualBox#Gentoo_guests   # for VirtualBox guest
+        https://www.linuxfromscratch.org/blfs/view/12.2/x/mesa.html
+        https://www.linuxfromscratch.org/blfs/view/12.2/x/xorg-server.html
+        https://www.linuxfromscratch.org/blfs/view/12.2/x/x7driver.html#libevdev
+        https://www.linuxfromscratch.org/blfs/view/12.2/general/elogind.html
         
         ( additional )
 
@@ -655,27 +656,25 @@ D. [LFS 10.x] Making the LFS System Bootable
         make
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.9.9-lfs-12.1-e29
-        cp -iv System.map /boot/System.map-6.9.9-lfs-12.1-e29
-        cp -iv .config /boot/config-6.9.9-lfs-12.1-e29
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.10.5-lfs-12.2-r00
+        cp -iv System.map /boot/System.map-6.10.5-lfs-12.2-r00
+        cp -iv .config /boot/config-6.10.5-lfs-12.2-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.9.9
+        cp -r Documentation -T /usr/share/doc/linux-6.10.5
 
         ###
 
   D.03. [LFS 10.4] Using GRUB to Set Up the Boot Process with UEFI
-        ( https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/grub-setup.html )
+        ( https://www.linuxfromscratch.org/blfs/view/12.2/postlfs/grub-setup.html )
 
         ###
 
-        #mkdir -pv /boot/efi
-        #mount -v -t vfat /dev/vdb1 /boot/efi
-
         #mkdir -v /efi
-        #mount -v -t vfat /dev/vdb1 /efi
+        #mount -v -t vfat /dev/vdb1 /efi    # Qemu/KVM VM
+        #mount -v -t vfat /dev/sdb1 /efi    # PC & VB
 
-        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /efi    # VMs
-        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PCs
+        mount --mkdir -v -t vfat /dev/vdb1 -o codepage=437,iocharset=iso8859-1 /efi    # Qemu/KVM VM
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PC & VB
         grub-install --target=x86_64-efi --efi-directory=/efi --removable
 
 
@@ -688,14 +687,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         insmod ext2
         set root=(hd0,2)
 
-        insmod all_video
+        insmod efi_gop
+        insmod efi_uga
         if loadfont /boot/grub/fonts/unicode.pf2; then
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.9.9-lfs-12.1-e29"  {
-          linux   /boot/vmlinuz-6.9.9-lfs-12.1-e29 root=/dev/vda2 ro    # VMs
-          linux   /boot/vmlinuz-6.9.9-lfs-12.1-e29 root=/dev/sda2 ro    # PCs
+        menuentry "GNU/Linux, Linux 6.10.5-lfs-12.2-r00" {
+          linux   /boot/vmlinuz-6.10.5-lfs-12.2-r00 root=/dev/vda2 ro   # Qemu/KVM VM
+          linux   /boot/vmlinuz-6.10.5-lfs-12.2-r00 root=/dev/sda2 ro   # PC & VB
         }
 
         menuentry "Firmware Setup" {
@@ -711,12 +711,12 @@ E. The End
 
         ###
 
-        echo 12.1 > /etc/lfs-release
+        echo 12.2 > /etc/lfs-release
 
 
         cat > /etc/lsb-release << "EOF"
         DISTRIB_ID="Linux From Scratch"
-        DISTRIB_RELEASE="12.1"
+        DISTRIB_RELEASE="12.2"
         DISTRIB_CODENAME="<your name here>"
         DISTRIB_DESCRIPTION="Linux From Scratch"
         EOF
@@ -724,9 +724,9 @@ E. The End
 
         cat > /etc/os-release << "EOF"
         NAME="Linux From Scratch"
-        VERSION="12.1"
+        VERSION="12.2"
         ID=lfs
-        PRETTY_NAME="Linux From Scratch 12.1"
+        PRETTY_NAME="Linux From Scratch 12.2"
         VERSION_CODENAME="<your name here>"
         HOME_URL="https://www.linuxfromscratch.org/lfs/"
         EOF
@@ -739,8 +739,8 @@ E. The End
 
         ###
 
-        useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user> #VM
-        useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user> #PC
+        useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user> # VM & VB
+        useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user> # PC
 
         passwd <user>
 
@@ -750,12 +750,11 @@ E. The End
 
         # Based on:
         #
-        #   https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/stripping.html
-        #   https://www.linuxfromscratch.org/lfs/view/12.1/chapter08/cleanup.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/stripping.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/cleanup.html
         #
-        #   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/notes-on-building.html
-        #   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/la-files.html
-        #   https://www.linuxfromscratch.org/blfs/view/12.1/introduction/locale-issues.html / NOT working, permission denied
+        #   https://www.linuxfromscratch.org/blfs/view/12.2/introduction/notes-on-building.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.2/introduction/la-files.html
         #
 
         ###
@@ -768,7 +767,7 @@ E. The End
 
   E.04. Bash shell
 
-        # Based on: https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/profile.html
+        # Based on: https://www.linuxfromscratch.org/blfs/view/12.2/postlfs/profile.html
 
         ### as root
 

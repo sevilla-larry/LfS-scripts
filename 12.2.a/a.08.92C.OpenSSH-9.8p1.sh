@@ -1,7 +1,7 @@
-# a.08.92C.OpenSSH-9.6p1.sh
+# a.08.92C.OpenSSH-9.8p1.sh
 #
 
-export PKG="openssh-9.6p1"
+export PKG="openssh-9.8p1"
 export PKGLOG_DIR=$LFSLOG/08.92C
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -69,10 +69,10 @@ install -v -m755    contrib/ssh-copy-id /usr/bin        \
 install -v -m644    contrib/ssh-copy-id.1               \
                     /usr/share/man/man1                 \
          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install -v -m755 -d /usr/share/doc/openssh-9.6p1        \
+install -v -m755 -d /usr/share/doc/openssh-9.8p1        \
          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 install -v -m644    INSTALL LICENCE OVERVIEW README*    \
-                    /usr/share/doc/openssh-9.6p1        \
+                    /usr/share/doc/openssh-9.8p1        \
          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "."

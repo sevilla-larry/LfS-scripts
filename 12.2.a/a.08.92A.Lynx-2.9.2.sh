@@ -1,7 +1,7 @@
-# a.08.92A.Lynx-2.8.9rel.1.sh
+# a.08.92A.Lynx-2.9.2.sh
 #
 
-export PKG="lynx2.8.9rel.1"
+export PKG="lynx2.9.2"
 export PKGLOG_DIR=$LFSLOG/08.92A
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -22,15 +22,9 @@ tar xvf $PKG.tar.bz2 > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "2. Patching..."
-echo "2. Patching..." >> $LFSLOG_PROCESS
-echo "2. Patching..." >> $PKGLOG_ERROR
-patch -p1 -i ../lynx-2.8.9rel.1-security_fix-1.patch    \
-    > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-echo "3. Configure ..."
-echo "3. Configure ..." >> $LFSLOG_PROCESS
-echo "3. Configure ..." >> $PKGLOG_ERROR
+echo "2. Configure ..."
+echo "2. Configure ..." >> $LFSLOG_PROCESS
+echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr           \
             --sysconfdir=/etc/lynx  \
             --with-zlib             \
@@ -38,20 +32,20 @@ echo "3. Configure ..." >> $PKGLOG_ERROR
             --with-ssl              \
             --with-screen=ncursesw  \
             --enable-locale-charset \
-            --datadir=/usr/share/doc/lynx-2.8.9rel.1 \
+            --datadir=/usr/share/doc/lynx-2.9.2 \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
-echo "4. Make Build ..."
-echo "4. Make Build ..." >> $LFSLOG_PROCESS
-echo "4. Make Build ..." >> $PKGLOG_ERROR
+echo "3. Make Build ..."
+echo "3. Make Build ..." >> $LFSLOG_PROCESS
+echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "5. Make Install ..."
-echo "5. Make Install ..." >> $LFSLOG_PROCESS
-echo "5. Make Install ..." >> $PKGLOG_ERROR
+echo "4. Make Install ..."
+echo "4. Make Install ..." >> $LFSLOG_PROCESS
+echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install-full   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-chgrp -v -R root /usr/share/doc/lynx-2.8.9rel.1/lynx_doc    \
+chgrp -v -R root /usr/share/doc/lynx-2.9.2/lynx_doc    \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 

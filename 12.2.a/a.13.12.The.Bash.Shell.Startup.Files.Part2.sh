@@ -31,6 +31,7 @@ fi
 # End ~/.bash_profile
 EOF
 
+
 cat > ~/.profile << "EOF"
 # Begin ~/.profile
 # Personal environment variables and startup programs.
@@ -44,6 +45,7 @@ fi
 
 # End ~/.profile
 EOF
+
 
 cat > ~/.bashrc << "EOF"
 # Begin ~/.bashrc
@@ -66,6 +68,7 @@ fi
 
 # End ~/.bashrc
 EOF
+
 
 cat > ~/.bash_logout << "EOF"
 # Begin ~/.bash_logout

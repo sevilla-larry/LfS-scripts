@@ -8,17 +8,9 @@ f701ab57eb8e7d9c105b2cd5d809b29a libtasn1-4.19.0.tar.gz
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz
 e99d2985ead0037caedb765fd66b33f0 make-ca-1.14.tar.xz
 271bf949384d0858c2c3d419f6311365 wget-1.24.5.tar.gz
-
-#44316f1b8a857b59099927edc26bef79 lynx2.8.9rel.1.tar.bz2
-##lynx-2.8.9rel.1-security_fix-1.patch
-#bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
+3ce01505e82626ca4d7291d7e649c4c9 lynx2.9.2.tar.bz2
+bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
 ##gpm-1.20.7-consolidated-1.patch
-#5e90def5af3ffb27e149ca6fff12bef3 openssh-9.6p1.tar.gz
-#4166279cb188ecb6641c7a2ba5f68270 sudo-1.9.15p5.tar.gz
-##blfs-bootscripts-20240209.tar.xz
-#e9286adb64040071c5e23498bf753261 lz4-1.9.4.tar.gz
-#0cb75c8feb842c0794ba89666b762a2d expat-2.6.2.tar.xz
-#e9f8f23746755bf880772cfa59c1896c glibc-2.39-upstream_fix-2.patch
-#15bd6e9fea3d295a3919efe5495bc8b7 linux-6.9.9.tar.xz
-#8a4342b399c18f870ca6186299195984 openssl-3.3.1.tar.gz
-#d68f25193eec491eb54bc2ea664a05bd Python-3.12.4.tar.xz
+bc04ff77796758c0b37bd0bc9314cd3f openssh-9.8p1.tar.gz
+4166279cb188ecb6641c7a2ba5f68270 sudo-1.9.15p5.tar.gz
+##blfs-bootscripts-20240416.tar.xz

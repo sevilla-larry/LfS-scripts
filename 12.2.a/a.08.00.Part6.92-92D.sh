@@ -19,8 +19,8 @@ echo "."
 
 ###
 
-echo "08.92A.Lynx-2.8.9rel.1"
-echo "08.92A.Lynx-2.8.9rel.1" >> $LFSLOG_PROCESS
+echo "08.92A.Lynx-2.9.2"
+echo "08.92A.Lynx-2.9.2" >> $LFSLOG_PROCESS
 
 time { bash a.08.92A.Lynx-2.8.9rel.1.sh ; }
 
@@ -47,10 +47,10 @@ echo "."
 
 ###
 
-echo "08.92C.OpenSSH-9.6p1"
-echo "08.92C.OpenSSH-9.6p1" >> $LFSLOG_PROCESS
+echo "08.92C.OpenSSH-9.8p1"
+echo "08.92C.OpenSSH-9.8p1" >> $LFSLOG_PROCESS
 
-time { bash a.08.92C.OpenSSH-9.6p1.sh ; }
+time { bash a.08.92C.OpenSSH-9.8p1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

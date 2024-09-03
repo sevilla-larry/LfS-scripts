@@ -66,8 +66,8 @@ export HISTSIZE=1000
 export HISTIGNORE="&:[bf]g:exit"
 
 # Set some defaults for graphical systems
-export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share/}
-export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg/}
+export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share}
+export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg}
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
 
 # Set up a red prompt for root and a green one for users.
@@ -92,6 +92,7 @@ unset script RED GREEN NORMAL
 EOF
 
 install --directory --mode=0755 --owner=root --group=root /etc/profile.d
+
 
 cat > /etc/profile.d/bash_completion.sh << "EOF"
 # Begin /etc/profile.d/bash_completion.sh
@@ -132,6 +133,7 @@ EOF
 
 install --directory --mode=0755 --owner=root --group=root /etc/bash_completion.d
 
+
 cat > /etc/profile.d/dircolors.sh << "EOF"
 # Setup for /bin/ls and /bin/grep to support color, the alias is in /etc/bashrc.
 if [ -f "/etc/dircolors" ] ; then
@@ -145,6 +147,7 @@ fi
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 EOF
+
 
 cat > /etc/profile.d/extrapaths.sh << "EOF"
 if [ -d /usr/local/lib/pkgconfig ] ; then
@@ -162,9 +165,9 @@ if [ -d /usr/local/share ]; then
 fi
 
 # Set some defaults before other applications add to these paths.
-pathappend /usr/share/man  MANPATH
 pathappend /usr/share/info INFOPATH
 EOF
+
 
 cat > /etc/profile.d/readline.sh << "EOF"
 # Set up the INPUTRC environment variable.
@@ -173,6 +176,7 @@ if [ -z "$INPUTRC" -a ! -f "$HOME/.inputrc" ] ; then
 fi
 export INPUTRC
 EOF
+
 
 cat > /etc/profile.d/umask.sh << "EOF"
 # By default, the umask should be set.
@@ -183,18 +187,20 @@ else
 fi
 EOF
 
+
 cat > /etc/profile.d/i18n.sh << "EOF"
 # Set up i18n variables
 for i in $(locale); do
   unset ${i%=*}
 done
 
-#if [[ "$TERM" = linux ]]; then
+if [[ "$TERM" = linux ]]; then
   export LANG=C.UTF-8
 #else
 #  export LANG=<ll>_<CC>.<charmap><@modifiers>
 #fi
 EOF
+
 
 cat > /etc/bashrc << "EOF"
 # Begin /etc/bashrc
