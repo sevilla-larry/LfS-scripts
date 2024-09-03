@@ -37,6 +37,10 @@ A. Preparation
         2.      80Gb      VM.LfS.src.qcow2        /dev/vde
         3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vdf    ( will be used after installation )
 
+      # (b) VB - 2 Virtual Disks
+        1.      50Gb      VM.LfS.sys.vdi          /dev/sdc
+        2.      80Gb      VM.LfS.src.qcow2        /dev/sdd
+
       # (c) PC - 2nd Disk
         /dev/sdb
 
@@ -52,7 +56,14 @@ A. Preparation
 
         /dev/vdf1   all             swap
 
-      # (b) PC
+      # (b) VB
+        /dev/sdc1   256M            VFAT / UEFI / EFI System
+        /dev/sdc2   Max - RAM*2     Linux filesystem
+        /dev/sdc3   RAM*2           swap
+
+        /dev/sdd1   all             Linux filesystem
+
+      # (c) PC
         /dev/sdb1   256M            VFAT / UEFI / EFI System
         /dev/sdb2   Max - RAM*2     Linux filesystem
         /dev/sdb3   RAM*2           swap
@@ -71,7 +82,13 @@ A. Preparation
         mkfs.ext4 -v -L SOURCES /dev/vde1
         mkswap -L SWAP /dev/vdf1
 
-      # (b) PC
+      # (b) VB
+        mkfs.vfat -v -F 32 -n BOOT /dev/sdc1
+        mkfs.ext4 -v -L ROOT /dev/sdc2
+        mkswap -L SWAP /dev/sdc3
+        mkfs.ext4 -v -L SOURCES /dev/sdd1
+
+      # (c) PC
         mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
         mkfs.ext4 -v -L ROOT /dev/sdb2
         mkswap -L SWAP /dev/sdb3
