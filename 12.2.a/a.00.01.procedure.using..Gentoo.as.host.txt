@@ -117,7 +117,15 @@ A. Preparation
 
         ###
 
-      # (b) PC
+      # (b) VB
+        mount -v -t ext4 /dev/sdc2 $LFS
+
+        ###
+
+        /etc/fstab
+          /dev/sdc2   /mnt/lfs  ...
+
+      # (c) PC
         mount -v -t ext4 /dev/sdb2 $LFS
 
         ###
@@ -141,7 +149,17 @@ A. Preparation
 
         ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
 
-      # (b) PC
+      # (b) VB
+        mkdir -pv $LFS/mnt/Src
+        mount /dev/sdd1 $LFS/mnt/Src
+
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
+
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
+
+        ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
+
+      # (c) PC
         mkdir -pv $LFS/usr/src/lfs
 
         chmod -v a+wt $LFS/usr/src/lfs
