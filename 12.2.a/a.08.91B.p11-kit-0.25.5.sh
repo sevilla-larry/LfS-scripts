@@ -1,7 +1,7 @@
-# a.08.91B.p11-kit-0.25.3.sh
+# a.08.91B.p11-kit-0.25.5.sh
 #
 
-export PKG="p11-kit-0.25.3"
+export PKG="p11-kit-0.25.5"
 export PKGLOG_DIR=$LFSLOG/08.91B
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -43,7 +43,7 @@ echo "2. Meson Configure ..." >> $PKGLOG_ERROR
 meson   setup ..                        \
         --prefix=/usr                   \
         --buildtype=release             \
-        -Dtrust_paths=/etc/pki/anchors  \
+        -D trust_paths=/etc/pki/anchors \
         > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Ninja Build ..."

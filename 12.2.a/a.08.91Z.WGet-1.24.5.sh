@@ -1,7 +1,7 @@
-# a.08.91Z.WGet-1.21.4.sh
+# a.08.91Z.WGet-1.24.5.sh
 #
 
-export PKG="wget-1.21.4"
+export PKG="wget-1.24.5"
 export PKGLOG_DIR=$LFSLOG/08.91Z
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

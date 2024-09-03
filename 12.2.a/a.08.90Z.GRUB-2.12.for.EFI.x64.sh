@@ -27,7 +27,7 @@ echo "   Install font data..." >> $LFSLOG_PROCESS
 echo "   Install font data..." >> $PKGLOG_ERROR
 mkdir -pv /usr/share/fonts/unifont        \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-gunzip -c ../unifont-15.1.04.pcf.gz       \
+gunzip -c ../unifont-15.1.05.pcf.gz       \
   > /usr/share/fonts/unifont/unifont.pcf  \
   2>> $PKGLOG_ERROR
 
