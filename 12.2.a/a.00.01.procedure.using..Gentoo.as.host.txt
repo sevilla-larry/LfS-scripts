@@ -339,14 +339,14 @@ B.  Generate LFS
         ###
 
       # (a) VM & VB
-        rm /sources
-        ln -sf /mnt/Src/lfs.src /sources
-        rm /var/log/lfs
-        ln -sf /mnt/Src/lfs.log /var/log/lfs
+        rm -v /sources
+        ln -svf /mnt/Src/lfs.src /sources
+        rm -v /var/log/lfs
+        ln -svf /mnt/Src/lfs.log /var/log/lfs
 
       # (b) PC
-        rm /sources
-        ln -sf /usr/src/lfs /sources
+        rm -v /sources
+        ln -svf /usr/src/lfs /sources
 
         ###
 
