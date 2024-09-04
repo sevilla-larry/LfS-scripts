@@ -39,6 +39,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --disable-runuser       \
             --disable-pylibmount    \
             --disable-static        \
+            --disable-liblastlog2   \
             --without-python        \
             ADJTIME_PATH=/var/lib/hwclock/adjtime       \
             --docdir=/usr/share/doc/util-linux-2.40.2   \
