@@ -1,7 +1,7 @@
 # a.08.04.Iana-Etc-20240806.sh
 #
 
-export PKG="iana-etc-202400806"
+export PKG="iana-etc-20240806"
 export PKGLOG_DIR=$LFSLOG/08.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
