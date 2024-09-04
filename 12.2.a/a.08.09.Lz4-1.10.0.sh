@@ -34,9 +34,9 @@ echo "3. Make Check ..." >> $PKGLOG_ERROR
 make -j1 check  \
     > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-echo "5. Make Install ..."
-echo "5. Make Install ..." >> $LFSLOG_PROCESS
-echo "5. Make Install ..." >> $PKGLOG_ERROR
+echo "4. Make Install ..."
+echo "4. Make Install ..." >> $LFSLOG_PROCESS
+echo "4. Make Install ..." >> $PKGLOG_ERROR
 make    BUILD_STATIC=no \
         PREFIX=/usr     \
         install         \
