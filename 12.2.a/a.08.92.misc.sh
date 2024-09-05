@@ -3,7 +3,7 @@
 echo "....."
 echo "."
 echo "."
-echo "miscellaneous - for downloading files"
+echo "miscellaneous apps"
 echo "."
 echo "."
 echo "Read the following:"
