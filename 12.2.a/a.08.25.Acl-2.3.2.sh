@@ -1,6 +1,7 @@
 # a.08.25.Acl-2.3.2.sh
 #
-
+# This is the build portion
+#
 export PKG="acl-2.3.2"
 export PKGLOG_DIR=$LFSLOG/08.25
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
