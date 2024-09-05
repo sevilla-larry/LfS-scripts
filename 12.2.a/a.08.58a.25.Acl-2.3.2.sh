@@ -18,7 +18,7 @@ mkdir $PKGLOG_DIR
 echo "1. Extract tar..."
 echo "1. Extract tar..." >> $LFSLOG_PROCESS
 echo "1. Extract tar..." >> $PKGLOG_ERROR
-tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar xvf $PKG.tar.xz >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
@@ -41,7 +41,7 @@ cd $PKG
 echo "5. Make Check ..."
 echo "5. Make Check ..." >> $LFSLOG_PROCESS
 echo "5. Make Check ..." >> $PKGLOG_ERROR
-make check >> PKGLOG_CHECK	2>> PKGLOG_ERROR
+make check > PKGLOG_CHECK	2>> PKGLOG_ERROR
 
 #echo "4. Make Install ..."
 #echo "4. Make Install ..." >> $LFSLOG_PROCESS

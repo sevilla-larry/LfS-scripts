@@ -1,7 +1,7 @@
 # a.08.75.Jinja2-3.1.4.sh
 #
 
-export PKG="Jinja2-3.1.4"
+export PKG="jinja2-3.1.4"
 export PKGLOG_DIR=$LFSLOG/08.75
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
