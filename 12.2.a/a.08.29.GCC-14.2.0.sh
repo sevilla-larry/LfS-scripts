@@ -84,11 +84,16 @@ chown -vR tester . >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 su tester -c "PATH=$PATH make $MAKEFLAGS -k check" \
   > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-echo "   Extract a summary of the test suite results..."
-echo "   Extract a summary of the test suite results..." >> $LFSLOG_PROCESS
-echo "   Extract a summary of the test suite results..." >> $PKGLOG_ERROR
+echo "   Begin: Extract a summary of the test suite results..."
+echo "   Begin: Extract a summary of the test suite results..." >> $LFSLOG_PROCESS
+echo "   Begin: Extract a summary of the test suite results..." >> $PKGLOG_CHECK
+echo "   Begin: Extract a summary of the test suite results..." >> $PKGLOG_ERROR
 ../contrib/test_summary \
   >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo "   End: Extract summary of the test suite results..."
+echo "   End: Extract summary of the test suite results..." >> $LFSLOG_PROCESS
+echo "   End: Extract summary of the test suite results..." >> $PKGLOG_CHECK
+echo "   End: Extract summary of the test suite results..." >> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
