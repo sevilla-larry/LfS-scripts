@@ -3,7 +3,7 @@
 # This is the Acl tests after the Coreutils package has been built
 #
 export PKG="acl-2.3.2"
-export PKGLOG_DIR=$LFSLOG/08.25
+export PKGLOG_DIR=$LFSLOG/08.58a
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -41,7 +41,7 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "5. Make Check ..."
 echo "5. Make Check ..." >> $LFSLOG_PROCESS
 echo "5. Make Check ..." >> $PKGLOG_ERROR
-make check > PKGLOG_CHECK	2>> PKGLOG_ERROR
+make check > $PKGLOG_CHECK	2>> $PKGLOG_ERROR
 
 #echo "4. Make Install ..."
 #echo "4. Make Install ..." >> $LFSLOG_PROCESS
