@@ -22,7 +22,7 @@ A. Preparation
       # (based on https://www.linuxfromscratch.org/lfs/view/12.2/chapter02/hostreqs.html )
 
       # check kernel .config on CONFIG_CRYPTO_SHA256_SSSE3
-      #                         CONFIG_SCSI_DEBUG
+      #                         CONFIG_SCSI_DEBUG           as module
       # https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/util-linux.html
 
   A.02. [LFS 2.2] Host System Requirements
