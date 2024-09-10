@@ -49,7 +49,7 @@ echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-install -mv755 -d /etc/pam.d    \
+install -v -m755 -p /etc/pam.d    \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 cat > /etc/pam.d/other << "EOF" 2>> $PKGLOG_ERROR
@@ -64,7 +64,7 @@ echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
 make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-rm -vf /etc/pam.d/other \
+rm -fv /etc/pam.d/other \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."

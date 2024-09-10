@@ -145,7 +145,7 @@ A. Preparation
 
       # (a) VM
         mkdir -pv $LFS/mnt/Src
-        mount /dev/vde1 $LFS/mnt/Src
+        mount -v /dev/vde1 $LFS/mnt/Src
 
         mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
@@ -155,7 +155,7 @@ A. Preparation
 
       # (b) VB
         mkdir -pv $LFS/mnt/Src
-        mount /dev/sdd1 $LFS/mnt/Src
+        mount -v /dev/sdd1 $LFS/mnt/Src
 
         mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
