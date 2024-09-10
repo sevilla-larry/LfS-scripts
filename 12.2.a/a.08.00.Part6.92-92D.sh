@@ -22,7 +22,7 @@ echo "."
 echo "08.92A.Lynx-2.9.2"
 echo "08.92A.Lynx-2.9.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.92A.Lynx-2.8.9rel.1.sh ; }
+time { bash a.08.92A.Lynx-2.9.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
