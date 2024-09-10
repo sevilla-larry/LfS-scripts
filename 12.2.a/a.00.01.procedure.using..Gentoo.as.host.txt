@@ -879,7 +879,10 @@ E. The End
       # (a) VM - 3 Virtual Disks
         Detach the 3 VDs from host
 
-      # (b) PC - 2nd Disk
+      # (b) VB - 2 Virtual Disks
+        Detach the 2 VDs from host
+
+      # (c) PC - 2nd Disk
         Detach the 1st Disk
 
 F. Deploying
@@ -889,7 +892,12 @@ F. Deploying
         VM.LFS.src.qcow2 as vdb
         VM.LFS.swp.qcow2 as vdc
 
-      # (b) PC - 2nd Disk
+      # (b) VB - 2 Virtual Disks
+        Create a new VB for LFS and run it
+        VM.LFS.sys.qcow2 as sda
+        VM.LFS.src.qcow2 as sdb
+
+      # (c) PC - 2nd Disk
         Start-up the PC from the newly installed LFS drive.
 
 Note: Copying LFS use tar
