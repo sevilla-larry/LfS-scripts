@@ -564,7 +564,15 @@ C. Finishing Up
 
         ###
 
-  C.05. [LFS 9.8] /etc/inputrc
+  C.05. [LFS 9.7] Configuring the System Locale /etc/profile
+
+        ###
+
+        bash a.09.07.Configuring.the.System.Locale.sh
+
+        ###
+
+  C.06. [LFS 9.8] /etc/inputrc
 
         ###
 
@@ -572,7 +580,7 @@ C. Finishing Up
 
         ###
 
-  C.06. [LFS 9.9] /etc/shells
+  C.07. [LFS 9.9] /etc/shells
 
         ###
 
@@ -580,7 +588,7 @@ C. Finishing Up
 
         ###
 
-  C.07. BLFS-Bootscripts
+  C.08. BLFS-Bootscripts
 
         ###
 
@@ -590,7 +598,7 @@ C. Finishing Up
 
         ###
 
-  C.08. GPM bootscripts
+  C.09. GPM bootscripts
 
         ###
 
@@ -598,7 +606,7 @@ C. Finishing Up
 
         ###
 
-  C.09. OpenSSH bootscripts
+  C.10. OpenSSH bootscripts
 
 
         ###
@@ -607,7 +615,7 @@ C. Finishing Up
 
         ###
 
-#  C.10. acpid bootscripts
+#  C.11. acpid bootscripts
 #
 #        ###
 #           Possible conflict with
