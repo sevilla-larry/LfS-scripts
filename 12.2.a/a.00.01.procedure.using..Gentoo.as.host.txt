@@ -582,7 +582,7 @@ C. Finishing Up
 
         bash a.09.99.BLFS-Bootscripts-20240416.extract.only.sh
 
-        cd blfs-bootscripts-20240209
+        cd blfs-bootscripts-20240416
 
         ###
 
