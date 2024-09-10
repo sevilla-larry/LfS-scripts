@@ -727,7 +727,8 @@ D. [LFS 10.x] Making the LFS System Bootable
         #mount -v -t vfat /dev/sdb1 /efi    # PC & VB
 
         mount --mkdir -v -t vfat /dev/vdd1 -o codepage=437,iocharset=iso8859-1 /efi    # Qemu/KVM VM
-        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PC & VB
+        mount --mkdir -v -t vfat /dev/sdc1 -o codepage=437,iocharset=iso8859-1 /efi    # VB
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PC
         grub-install --target=x86_64-efi --efi-directory=/efi --removable
 
 
