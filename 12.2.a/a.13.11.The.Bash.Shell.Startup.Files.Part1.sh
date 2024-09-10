@@ -198,7 +198,7 @@ if [[ "$TERM" = linux ]]; then
   export LANG=C.UTF-8
 #else
 #  export LANG=<ll>_<CC>.<charmap><@modifiers>
-#fi
+fi
 EOF
 
 
