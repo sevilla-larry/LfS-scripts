@@ -794,8 +794,10 @@ E. The End
 
         ###
 
-        useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user> # VM & VB
-        useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user> # PC
+        useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user>
+
+        # No USB in LfS
+        # useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user>
 
         passwd <user>
 
