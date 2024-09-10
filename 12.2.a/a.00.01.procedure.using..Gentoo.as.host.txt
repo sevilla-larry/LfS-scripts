@@ -554,6 +554,10 @@ C. Finishing Up
 
         bash a.09.06.System.V.Bootscript.Usage.and.Configuration.sh
 
+        # PC
+        # modify /etc/sysconfig/clock with UTC=0
+        #
+
         ###
 
         # modify /etc/sysconfig/rc.site, UNcomment some settings
