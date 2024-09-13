@@ -20,7 +20,7 @@ echo "."
 echo "https://www.linuxfromscratch.org/blfs/view/12.2/postlfs/sudo.html"
 echo "."
 #     Possible conflict with elogind
-#echo "https://www.linuxfromscratch.org/blfs/view/12.1/general/acpid.html"
+#echo "https://www.linuxfromscratch.org/blfs/view/12.2/general/acpid.html"
 #echo "."
 echo "."
 echo "."
