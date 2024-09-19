@@ -1,8 +1,8 @@
-# a.08.93B.Linux-PAM-1.6.1.sh
+# a.08.94B.Linux-PAM-1.6.1.sh
 #
 
 export PKG="Linux-PAM-1.6.1"
-export PKGLOG_DIR=$LFSLOG/08.93B
+export PKGLOG_DIR=$LFSLOG/08.94B
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

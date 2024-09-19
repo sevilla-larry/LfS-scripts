@@ -461,17 +461,25 @@ B.  Generate LFS
 
         ###
 
-  B.18. Additional Applications needed - misc
+  B.18. Additional Applications needed - NTP
 
         ###
 
-        bash a.08.00.Part6.92-92D.sh
+        bash a.08.00.Part6.92-92Z.sh
 
         ###
 
-  B.19. Additioanl Applications needed by BLFS - Linux-PAM ( & reBuild Shadow )
+  B.19. Additional Applications needed - misc
 
-        bash a.08.00.Part7.93-93C.sh
+        ###
+
+        bash a.08.00.Part7.93-93G.sh
+
+        ###
+
+  B.20. Additioanl Applications needed by BLFS - Linux-PAM ( & reBuild Shadow )
+
+        bash a.08.00.Part8.94-94C.sh
 
 
 C. Finishing Up
@@ -615,7 +623,16 @@ C. Finishing Up
 
         ###
 
-#  C.11. acpid bootscripts
+  C.11. NTP bootscripts
+
+
+        ###
+
+        make install-ntpd
+
+        ###
+
+#  C.12. acpid bootscripts
 #
 #        ###
 #           Possible conflict with

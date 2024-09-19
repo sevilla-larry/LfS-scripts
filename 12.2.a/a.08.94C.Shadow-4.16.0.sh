@@ -1,8 +1,8 @@
-# a.08.93C.Shadow-4.16.0.sh
+# a.08.94C.Shadow-4.16.0.sh
 #
 
 export PKG="shadow-4.16.0"
-export PKGLOG_DIR=$LFSLOG/08.93C
+export PKGLOG_DIR=$LFSLOG/08.94C
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
