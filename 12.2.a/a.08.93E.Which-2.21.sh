@@ -1,5 +1,7 @@
 # a.08.93E.Which-2.21.sh
 #
+# needed by VirtualBox-Guest-Additions binary
+#
 
 export PKG="which-2.21"
 export PKGLOG_DIR=$LFSLOG/08.93E
