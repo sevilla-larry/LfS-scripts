@@ -50,6 +50,11 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
+cat > /etc/sudoers.d/00-sudo << "EOF"       2>> $PKGLOG_E
+Defaults secure_path="/usr/sbin:/usr/bin"
+%wheel ALL=(ALL) ALL
+EOF
+
 
 cd ..
 rm -rf $PKG
