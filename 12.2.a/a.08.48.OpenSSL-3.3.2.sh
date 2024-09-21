@@ -1,7 +1,8 @@
-# a.08.48.OpenSSL-3.3.1.sh
+# a.08.48.OpenSSL-3.3.2.sh
+# errata update
 #
 
-export PKG="openssl-3.3.1"
+export PKG="openssl-3.3.2"
 export PKGLOG_DIR=$LFSLOG/08.48
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -54,13 +55,13 @@ make MANSUFFIX=ssl install    \
 echo "   Add the version to the documentation directory name..."
 echo "   Add the version to the documentation directory name..." >> $LFSLOG_PROCESS
 echo "   Add the version to the documentation directory name..." >> $PKGLOG_ERROR
-mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.3.1   \
+mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.3.2   \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "   Install some additional documentation..."
 echo "   Install some additional documentation..." >> $LFSLOG_PROCESS
 echo "   Install some additional documentation..." >> $PKGLOG_ERROR
-cp -vfr doc/* /usr/share/doc/openssl-3.3.1   \
+cp -vfr doc/* /usr/share/doc/openssl-3.3.2   \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

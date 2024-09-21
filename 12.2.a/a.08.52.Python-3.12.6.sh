@@ -1,7 +1,8 @@
-# a.08.52.Python-3.12.5.sh
+# a.08.52.Python-3.12.6.sh
+# errata
 #
 
-export PKG="Python-3.12.5"
+export PKG="Python-3.12.6"
 export PKGLOG_DIR=$LFSLOG/08.52
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -55,7 +56,7 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-# Read: https://www.linuxfromscratch.org/lfs/view/12.0/chapter08/Python.html
+# Read: https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/Python.html
 echo "   Suppress warnings..."
 echo "   Suppress warnings..." >> $LFSLOG_PROCESS
 echo "   Suppress warnings..." >> $PKGLOG_ERROR
@@ -68,14 +69,14 @@ EOF
 echo "   Install the preformatted documentation..."
 echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
 echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.12.5/html \
+install -v -dm755 /usr/share/doc/python-3.12.6/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --no-same-owner                                 \
-    -xvf ../python-3.12.5-docs-html.tar.bz2         \
+    -xvf ../python-3.12.6-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-cp -vR --no-preserve=mode python-3.12.5-docs-html/* \
-    /usr/share/doc/python-3.12.5/html               \
+cp -vR --no-preserve=mode python-3.12.6-docs-html/* \
+    /usr/share/doc/python-3.12.6/html               \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 
