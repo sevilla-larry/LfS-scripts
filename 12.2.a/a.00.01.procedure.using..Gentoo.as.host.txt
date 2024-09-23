@@ -461,19 +461,19 @@ B.  Generate LFS
 
         ###
 
-  B.18. Additional Applications needed - NTP
+  B.18. Additional Applications needed - misc
 
         ###
 
-        bash a.08.00.Part6.92-92Z.sh
+        bash a.08.00.Part6.92-92G.sh
 
         ###
 
-  B.19. Additional Applications needed - misc
+  B.19. Additional Applications needed - NTP
 
         ###
 
-        bash a.08.00.Part7.93-93G.sh
+        bash a.08.00.Part7.93-93Z.sh
 
         ###
 
