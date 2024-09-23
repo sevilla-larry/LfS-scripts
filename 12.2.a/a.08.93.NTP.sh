@@ -1,4 +1,4 @@
-# a.08.92.NTP.sh
+# a.08.93.NTP.sh
 #
 echo "....."
 echo "."

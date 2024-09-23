@@ -1,8 +1,8 @@
-# a.08.93F.pciutils-3.13.0.sh
+# a.08.92F.pciutils-3.13.0.sh
 #
 
 export PKG="pciutils-3.13.0"
-export PKGLOG_DIR=$LFSLOG/08.93F
+export PKGLOG_DIR=$LFSLOG/08.92F
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

@@ -1,8 +1,8 @@
-# a.08.93B.GPM-1.20.7.sh
+# a.08.92B.GPM-1.20.7.sh
 #
 
 export PKG="gpm-1.20.7"
-export PKGLOG_DIR=$LFSLOG/08.93B
+export PKGLOG_DIR=$LFSLOG/08.92B
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

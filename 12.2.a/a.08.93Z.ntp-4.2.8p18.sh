@@ -1,8 +1,8 @@
-# a.08.92Z.ntp-4.2.8p18.sh
+# a.08.93Z.ntp-4.2.8p18.sh
 #
 
 export PKG="ntp-4.2.8p18"
-export PKGLOG_DIR=$LFSLOG/08.92Z
+export PKGLOG_DIR=$LFSLOG/08.93Z
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

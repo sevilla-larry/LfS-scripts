@@ -1,8 +1,8 @@
-# a.08.92B.IO-Socket-SSL-2.088.sh
+# a.08.93A.Net-SSLeay-1.94.sh
 #
 
-export PKG="IO-Socket-SSL-2.088"
-export PKGLOG_DIR=$LFSLOG/08.92B
+export PKG="Net-SSLeay-1.94"
+export PKGLOG_DIR=$LFSLOG/08.93A
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -24,14 +24,13 @@ cd $PKG
 echo "2. Preparing ..."
 echo "2. Preparing ..." >> $LFSLOG_PROCESS
 echo "2. Preparing ..." >> $PKGLOG_ERROR
-yes | perl Makefile.PL > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+yes '' | perl Makefile.PL > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-# One test, Client non-SSL connection, is known to fail
 echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS
 echo "4. Make Test ..." >> $PKGLOG_ERROR
