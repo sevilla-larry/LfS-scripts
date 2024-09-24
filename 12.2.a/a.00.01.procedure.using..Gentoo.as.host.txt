@@ -745,7 +745,7 @@ D. [LFS 10.x] Making the LFS System Bootable
         cp -iv System.map /boot/System.map-6.10.5-lfs-12.2-r00
         cp -iv .config /boot/config-6.10.5-lfs-12.2-r00
 
-        cp -vr Documentation -T /usr/share/doc/linux-6.10.5
+        cp -r Documentation -T /usr/share/doc/linux-6.10.5
 
         ###
 
