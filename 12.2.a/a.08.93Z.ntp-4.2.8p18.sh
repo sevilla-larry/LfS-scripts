@@ -72,10 +72,6 @@ install -v -o ntp -g ntp -d /var/lib/ntp    \
 # Adjust to your nearest NTP servers
 #
 cat > /etc/ntp.conf << "EOF"    2>> $PKGLOG_OTHERS
-# Philippines
-server ntp.pagasa.dost.gov.ph
-server ph.pool.ntp.org
-
 # Asia
 # server 0.asia.pool.ntp.org
 
@@ -93,6 +89,24 @@ server ph.pool.ntp.org
 
 driftfile /var/lib/ntp/ntp.drift
 pidfile   /run/ntpd.pid
+EOF
+
+#
+# Additional entries
+#
+cat >> /etc/ntp.conf << "EOF"   2>> $PKGLOG_OTHERS
+
+# LAN
+# server 192.168.1.xx
+
+# Philippines
+server ntp.pagasa.dost.gov.ph
+server ph.pool.ntp.org
+
+interface ignore wildcard
+
+interface listen 127.0.0.1
+#interface listen 192.168.1.xx
 EOF
 
 echo "."
