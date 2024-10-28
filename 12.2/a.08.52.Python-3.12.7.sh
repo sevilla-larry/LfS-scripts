@@ -1,13 +1,13 @@
-# a.08.52.Python-3.12.6.sh
-# errata
+# a.08.52.Python-3.12.7.sh
+# svn due to errata of Firefox
 #
 
-export PKG="Python-3.12.6"
+export PKG="Python-3.12.7"
 export PKGLOG_DIR=$LFSLOG/08.52
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
-#export PKGLOG_CHECK=$PKGLOG_DIR/check.log
+export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
@@ -69,22 +69,22 @@ EOF
 echo "   Install the preformatted documentation..."
 echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
 echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.12.6/html \
+install -v -dm755 /usr/share/doc/python-3.12.7/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --no-same-owner                                 \
-    -xvf ../python-3.12.6-docs-html.tar.bz2         \
+    -xvf ../python-3.12.7-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-cp -vR --no-preserve=mode python-3.12.6-docs-html/* \
-    /usr/share/doc/python-3.12.6/html               \
-    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+cp -vR --no-preserve=mode python-3.12.7-docs-html/* \
+    /usr/share/doc/python-3.12.7/html               \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
-#unset PKGLOG_CHECK
+unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

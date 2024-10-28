@@ -1,8 +1,8 @@
-# a.07.10.Python-3.12.6.sh
-# errata
+# a.07.10.Python-3.12.7.sh
+# svn due to errata of Firefox
 #
 
-export PKG="Python-3.12.6"
+export PKG="Python-3.12.7"
 export PKGLOG_DIR=$LFSLOG/07.10
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
