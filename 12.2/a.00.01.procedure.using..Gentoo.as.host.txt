@@ -477,9 +477,13 @@ B.  Generate LFS
 
         ###
 
-  B.20. Additioanl Applications needed by BLFS - Linux-PAM ( & reBuild Shadow )
+  B.20. Additional Applications needed by BLFS - Linux-PAM ( & reBuild Shadow )
+
+        ###
 
         bash a.08.00.Part8.94-94C.sh
+
+        ###
 
 
 C. Finishing Up
