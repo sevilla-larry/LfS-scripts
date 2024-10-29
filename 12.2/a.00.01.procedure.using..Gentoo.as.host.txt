@@ -37,13 +37,13 @@ A. Preparation
   A.03. attach disk(s)
 
       # (a) VM - 3 Virtual Disks
-        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdd
-        2.      80Gb      VM.LfS.src.qcow2        /dev/vde
-        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vdf    ( will be used after installation )
+        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdc
+        2.      80Gb      VM.LfS.src.qcow2        /dev/vdd
+        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vde    ( will be used after installation )
 
       # (b) VB - 2 Virtual Disks
-        1.      50Gb      VM.LfS.sys.vdi          /dev/sdc
-        2.      80Gb      VM.LfS.src.qcow2        /dev/sdd
+        1.      50Gb      VM.LfS.sys.vdi          /dev/sdb
+        2.      80Gb      VM.LfS.src.qcow2        /dev/sdc
 
       # (c) PC - 2nd Disk
         /dev/sdb
@@ -53,19 +53,19 @@ A. Preparation
         set as GPT ( UEFI )
 
       # (a) VM
-        /dev/vdd1   256M            VFAT / UEFI / EFI System
-        /dev/vdd2   remaining       Linux filesystem
+        /dev/vdc1   256M            VFAT / UEFI / EFI System
+        /dev/vdc2   remaining       Linux filesystem
 
-        /dev/vde1   all             Linux filesystem
+        /dev/vdd1   all             Linux filesystem
 
-        /dev/vdf1   all             swap
+        /dev/vde1   all             swap
 
       # (b) VB
-        /dev/sdc1   256M            VFAT / UEFI / EFI System
-        /dev/sdc2   Max - RAM*2     Linux filesystem
-        /dev/sdc3   RAM*2           swap
+        /dev/sdb1   256M            VFAT / UEFI / EFI System
+        /dev/sdb2   Max - RAM*2     Linux filesystem
+        /dev/sdb3   RAM*2           swap
 
-        /dev/sdd1   all             Linux filesystem
+        /dev/sdc1   all             Linux filesystem
 
       # (c) PC
         /dev/sdb1   256M            VFAT / UEFI / EFI System
@@ -81,16 +81,16 @@ A. Preparation
         ###
 
       # (a) VM
-        mkfs.vfat -v -F 32 -n BOOT /dev/vdd1
-        mkfs.ext4 -v -L ROOT /dev/vdd2
-        mkfs.ext4 -v -L SOURCES /dev/vde1
-        mkswap -L SWAP /dev/vdf1
+        mkfs.vfat -v -F 32 -n BOOT /dev/vdc1
+        mkfs.ext4 -v -L ROOT /dev/vdc2
+        mkfs.ext4 -v -L SOURCES /dev/vdd1
+        mkswap -L SWAP /dev/vde1
 
       # (b) VB
-        mkfs.vfat -v -F 32 -n BOOT /dev/sdc1
-        mkfs.ext4 -v -L ROOT /dev/sdc2
-        mkswap -L SWAP /dev/sdc3
-        mkfs.ext4 -v -L SOURCES /dev/sdd1
+        mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
+        mkfs.ext4 -v -L ROOT /dev/sdb2
+        mkswap -L SWAP /dev/sdb3
+        mkfs.ext4 -v -L SOURCES /dev/sdc1
 
       # (c) PC
         mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
@@ -112,22 +112,22 @@ A. Preparation
         mkdir -pv $LFS
 
       # (a) VM
-        mount -v -t ext4 /dev/vdd2 $LFS
+        mount -v -t ext4 /dev/vdc2 $LFS
 
         ###
 
         /etc/fstab
-          /dev/vdd2   /mnt/lfs  ...
+          /dev/vdc2   /mnt/lfs  ...
 
         ###
 
       # (b) VB
-        mount -v -t ext4 /dev/sdc2 $LFS
+        mount -v -t ext4 /dev/sdb2 $LFS
 
         ###
 
         /etc/fstab
-          /dev/sdc2   /mnt/lfs  ...
+          /dev/sdb2   /mnt/lfs  ...
 
       # (c) PC
         mount -v -t ext4 /dev/sdb2 $LFS
@@ -145,7 +145,7 @@ A. Preparation
 
       # (a) VM
         mkdir -pv $LFS/mnt/Src
-        mount -v /dev/vde1 $LFS/mnt/Src
+        mount -v /dev/vdd1 $LFS/mnt/Src
 
         mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
@@ -155,7 +155,7 @@ A. Preparation
 
       # (b) VB
         mkdir -pv $LFS/mnt/Src
-        mount -v /dev/sdd1 $LFS/mnt/Src
+        mount -v /dev/sdc1 $LFS/mnt/Src
 
         mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
@@ -762,8 +762,8 @@ D. [LFS 10.x] Making the LFS System Bootable
         #mount -v -t vfat /dev/vdb1 /efi    # Qemu/KVM VM
         #mount -v -t vfat /dev/sdb1 /efi    # PC & VB
 
-        mount --mkdir -v -t vfat /dev/vdd1 -o codepage=437,iocharset=iso8859-1 /efi    # Qemu/KVM VM
-        mount --mkdir -v -t vfat /dev/sdc1 -o codepage=437,iocharset=iso8859-1 /efi    # VB
+        mount --mkdir -v -t vfat /dev/vdc1 -o codepage=437,iocharset=iso8859-1 /efi    # Qemu/KVM VM
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # VB
         mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PC
 
         grub-install --target=x86_64-efi --efi-directory=/efi --removable
