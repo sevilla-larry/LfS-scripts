@@ -336,6 +336,10 @@ B.  Generate LFS
             /bin/bash --login
 
         ###
+        #
+        # Note: prompt "I have no name!" is normal
+        #
+        ###
 
   B.07. [before LFS 7.5] Adjust links and checking environment
         ( Note: change the MAKEFLAGS based on the number of threads )
