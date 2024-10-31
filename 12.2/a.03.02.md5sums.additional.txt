@@ -25,7 +25,5 @@ bc04ff77796758c0b37bd0bc9314cd3f openssh-9.8p1.tar.gz
 516bdabd94ab7c824e9771390761a46c ntp-4.2.8p18.tar.gz
 3812d9fe29a5a6d64de3fa6e6509fdad expat-2.6.3.tar.xz
 015fca2692596560b6fe8a2d8fecd84b openssl-3.3.2.tar.gz
-#c6c933c1a0db52597cb45a7910490f93 Python-3.12.7.tar.xz
-#dc8310645d00143661062779196e551e python-3.12.7-docs-html.tar.bz2
 726e5b829fcf352326874c1ae599abaa Python-3.13.0.tar.xz
 afbf0a2319b7ac7561c52969bd0f5148 python-3.13.0-docs-html.tar.bz2
