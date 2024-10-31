@@ -218,8 +218,8 @@ echo "."
 
 ###
 
-echo "08.52.Python-3.12.7"
-echo "08.52.Python-3.12.7" >> $LFSLOG_PROCESS
+echo "08.52.Python-3.13.0"
+echo "08.52.Python-3.13.0" >> $LFSLOG_PROCESS
 
 time { bash a.08.52.Python-3.12.7.sh ; }
 
