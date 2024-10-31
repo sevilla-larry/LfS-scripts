@@ -121,15 +121,7 @@ A. Preparation
 
         ###
 
-      # (b) VB
-        mount -v -t ext4 /dev/sdb2 $LFS
-
-        ###
-
-        /etc/fstab
-          /dev/sdb2   /mnt/lfs  ...
-
-      # (c) PC
+      # (b) VB & PC
         mount -v -t ext4 /dev/sdb2 $LFS
 
         ###
