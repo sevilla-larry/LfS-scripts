@@ -1,5 +1,5 @@
 # a.08.52.Python-3.13.0.sh
-# errata
+# errata update
 #
 
 export PKG="Python-3.13.0"
