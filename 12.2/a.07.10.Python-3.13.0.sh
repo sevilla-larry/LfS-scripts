@@ -1,4 +1,4 @@
-a.07.10.Python-3.13.0.sh
+# a.07.10.Python-3.13.0.sh
 # errata update
 #
 
