@@ -1,8 +1,8 @@
-# a.08.52.Python-3.12.7.sh
-# svn due to errata of Firefox
+# a.08.52.Python-3.13.0.sh
+# errata
 #
 
-export PKG="Python-3.12.7"
+export PKG="Python-3.13.0"
 export PKGLOG_DIR=$LFSLOG/08.52
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -69,14 +69,14 @@ EOF
 echo "   Install the preformatted documentation..."
 echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
 echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.12.7/html \
+install -v -dm755 /usr/share/doc/python-3.13.0/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --no-same-owner                                 \
-    -xvf ../python-3.12.7-docs-html.tar.bz2         \
+    -xvf ../python-3.13.0-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-cp -vR --no-preserve=mode python-3.12.7-docs-html/* \
-    /usr/share/doc/python-3.12.7/html               \
+cp -vR --no-preserve=mode python-3.13.0-docs-html/* \
+    /usr/share/doc/python-3.13.0/html               \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
