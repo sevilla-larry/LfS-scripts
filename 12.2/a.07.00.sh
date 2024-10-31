@@ -53,7 +53,7 @@ echo "."
 echo "07.10.Python-3.13.0"
 echo "07.10.Python-3.13.0" >> $LFSLOG_PROCESS
 
-time { bash a.07.10.Python-3.12.7.sh ; }
+time { bash a.07.10.Python-3.13.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
