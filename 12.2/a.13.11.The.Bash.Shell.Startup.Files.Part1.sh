@@ -194,11 +194,11 @@ for i in $(locale); do
   unset ${i%=*}
 done
 
-if [[ "$TERM" = linux ]]; then
+#if [[ "$TERM" = linux ]]; then
   export LANG=C.UTF-8
 #else
 #  export LANG=<ll>_<CC>.<charmap><@modifiers>
-fi
+#fi
 EOF
 
 
