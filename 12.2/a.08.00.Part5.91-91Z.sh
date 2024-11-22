@@ -61,10 +61,10 @@ echo "."
 
 ###
 
-echo "08.91Z.WGet-1.24.5"
-echo "08.91Z.WGet-1.24.5" >> $LFSLOG_PROCESS
+echo "08.91Z.WGet-1.25.0"
+echo "08.91Z.WGet-1.25.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.91Z.WGet-1.24.5.sh ; }
+time { bash a.08.91Z.WGet-1.25.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

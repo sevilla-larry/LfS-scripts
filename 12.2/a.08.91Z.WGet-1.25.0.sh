@@ -1,7 +1,8 @@
-# a.08.91Z.WGet-1.24.5.sh
+# a.08.91Z.WGet-1.25.0.sh
+# errata update
 #
 
-export PKG="wget-1.24.5"
+export PKG="wget-1.25.0"
 export PKGLOG_DIR=$LFSLOG/08.91Z
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
