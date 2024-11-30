@@ -17,7 +17,7 @@
 # Working LfS ver: 12.0
 # Started: 2023/Sept/07
 # arch: x64, UEFI
-# Note: 2024 errata patches was NOT applied due to time constraint
+# Note: 2024 errata patches were NOT applied due to time constraint
 #
 # Working LfS ver: 11.3
 # Started: 2023/Apr/06
