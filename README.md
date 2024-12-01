@@ -7,6 +7,8 @@
 # Working LfS ver: 12.2
 # Started: 2024/Sept/01
 # arch: x64, UEFI
+# Note: Python 3.11.x is tested on OpenStack 2024.2
+#       Python 3.11.10 is used/installed, 3.13.0 is alternative
 #
 #
 # Working LfS ver: 12.1

@@ -49,11 +49,14 @@ echo "."
 echo "."
 
 ###
+#
+# downgraded: OpenStack 2024.2 (Dalmatian) tested Python 3.11
+#
 
-echo "07.10.Python-3.13.0"
-echo "07.10.Python-3.13.0" >> $LFSLOG_PROCESS
+echo "07.10.Python-3.11.10"
+echo "07.10.Python-3.11.10" >> $LFSLOG_PROCESS
 
-time { bash a.07.10.Python-3.13.0.sh ; }
+time { bash a.07.10.Python-3.11.10.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -61,6 +64,20 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 echo "." >> $LFSLOG_PROCESS
 echo "."
 echo "."
+
+###
+
+# echo "07.10.Python-3.13.0"
+# echo "07.10.Python-3.13.0" >> $LFSLOG_PROCESS
+
+# time { bash a.07.10.Python-3.13.0.sh ; }
+
+# date +"%Y/%b/%d %H:%M"
+# date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+# echo "." >> $LFSLOG_PROCESS
+# echo "."
+# echo "."
 
 ###
 
