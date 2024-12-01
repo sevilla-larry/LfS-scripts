@@ -117,6 +117,20 @@ echo "."
 
 ###
 
+echo "08.92H.sshpass-1.10"
+echo "08.92H.sshpass-1.10" >> $LFSLOG_PROCESS
+
+time { bash a.08.92H.sshpass-1.10.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
 # Possible conflict with elogind
 #
 # echo "08.92E.acpid-2.0.34"

@@ -461,7 +461,7 @@ B.  Generate LFS
 
         ###
 
-        bash a.08.00.Part6.92-92G.sh
+        bash a.08.00.Part6.92-92H.sh
 
         ###
 
