@@ -364,6 +364,8 @@ B.  Generate LFS
         ls -l /bin/sh         # bash
         ls -l /usr/bin/awk    # gawk
 
+        ###
+
   B.08. [LFS 7.5] Creating Directories
 
         ###
