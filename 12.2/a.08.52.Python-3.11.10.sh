@@ -71,14 +71,14 @@ EOF
 echo "   Install the preformatted documentation..."
 echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
 echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.13.0/html \
+install -v -dm755 /usr/share/doc/python-3.11.10/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --no-same-owner                                 \
-    -xvf ../python-3.13.0-docs-html.tar.bz2         \
+    -xvf ../python-3.11.10-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-cp -vR --no-preserve=mode python-3.13.0-docs-html/* \
-    /usr/share/doc/python-3.13.0/html               \
+cp -vR --no-preserve=mode python-3.11.10-docs-html/* \
+    /usr/share/doc/python-3.11.10/html               \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
