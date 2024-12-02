@@ -35,7 +35,7 @@ echo "3. pip3 Install ..." >> $LFSLOG_PROCESS
 echo "3. pip3 Install ..." >> $PKGLOG_ERROR
 pip3 install    --no-index              \
                 --no-user               \
-                --find-links=dist       \
+                --find-links dist       \
                 flit_core               \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
@@ -44,6 +44,6 @@ cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
 unset PKGLOG_INSTALL PKGLOG_BUILD
-#PKGLOG_CONFIG
+# PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

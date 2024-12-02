@@ -35,7 +35,7 @@ echo "3. pip3 Install ..." >> $LFSLOG_PROCESS
 echo "3. pip3 Install ..." >> $PKGLOG_ERROR
 pip3 install    --no-index              \
                 --no-user               \
-                --find-links=dist       \
+                --find-links dist       \
                 Markupsafe              \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 

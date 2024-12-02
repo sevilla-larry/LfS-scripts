@@ -34,7 +34,8 @@ echo "3. pip3 Install ..."
 echo "3. pip3 Install ..." >> $LFSLOG_PROCESS
 echo "3. pip3 Install ..." >> $PKGLOG_ERROR
 pip3 install    --no-index              \
-                --find-links=dist       \
+                --no-user               \
+                --find-links dist       \
                 wheel                   \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
@@ -42,8 +43,7 @@ pip3 install    --no-index              \
 cd ..
 rm -rf $PKG
 unset LFSLOG_PROCESS
-unset PKGLOG_INSTALL
-unset PKGLOG_BUILD
+unset PKGLOG_INSTALL PKGLOG_BUILD
 # PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG
