@@ -1,8 +1,8 @@
-# a.08.91B.p11-kit-0.25.5.sh
+# a.08.91D.p11-kit-0.25.5.sh
 #
 
 export PKG="p11-kit-0.25.5"
-export PKGLOG_DIR=$LFSLOG/08.91B
+export PKGLOG_DIR=$LFSLOG/08.91D
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

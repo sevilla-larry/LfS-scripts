@@ -5,8 +5,14 @@ https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz
 https://github.com/rhboot/efibootmgr/archive/18/efibootmgr-18.tar.gz
 https://unifoundry.com/pub/unifont/unifont-15.1.05/font-builds/unifont-15.1.05.pcf.gz
 https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz
+https://archive.mozilla.org/pub/nspr/releases/v4.35/src/nspr-4.35.tar.gz
+https://archive.mozilla.org/pub/security/nss/releases/NSS_3_103_RTM/src/nss-3.103.tar.gz
+https://www.linuxfromscratch.org/patches/blfs/12.2/nss-3.103-standalone-1.patch
 https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz
 https://github.com/lfs-book/make-ca/archive/v1.14/make-ca-1.14.tar.gz
+https://ftp.gnu.org/gnu/libunistring/libunistring-1.2.tar.xz
+https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
+https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
 https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
 https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.bz2
 https://anduin.linuxfromscratch.org/BLFS/gpm/gpm-1.20.7.tar.bz2

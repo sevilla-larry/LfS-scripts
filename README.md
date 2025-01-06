@@ -9,6 +9,9 @@
 # arch: x64, UEFI
 # Note: Python 3.11.x is tested on OpenStack 2024.2
 #       Python 3.11.10 is used/installed, 3.13.0 is alternative
+# some updates based on sequence/dependencies by:
+#		https://www.linuxfromscratch.org/glfs/
+#		https://glfs-book.github.io/glfs/
 #
 #
 # Working LfS ver: 12.1
