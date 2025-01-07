@@ -2,7 +2,7 @@
 #
 
 export PKG="nss-3.103"
-export PKGLOG_DIR=$LFSLOG/08.91B
+export PKGLOG_DIR=$LFSLOG/08.91C
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
