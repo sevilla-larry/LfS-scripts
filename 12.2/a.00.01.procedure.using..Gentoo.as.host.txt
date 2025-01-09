@@ -387,7 +387,11 @@ B.  Generate LFS
 
         ###
 
-        bash a.07.00.sh
+      # bash a.07.00.sh
+      # pick one version of Python
+        bash a.07.00.py.3.11.sh
+        bash a.07.00.py.3.12.sh
+        bash a.07.00.py.3.13.sh
 
         ###
 
@@ -438,7 +442,11 @@ B.  Generate LFS
 
         ###
 
-        bash a.08.00.Part3.37-82.sh
+      # bash a.08.00.Part3.37-82.sh
+      # pick same version of Python
+        bash a.08.00.Part3.37-82.py.3.11.sh
+        bash a.08.00.Part3.37-82.py.3.12.sh
+        bash a.08.00.Part3.37-82.py.3.13.sh
 
         ###
 

@@ -235,20 +235,6 @@ echo "."
 
 ###
 
-# echo "08.52.Python-3.13.0"
-# echo "08.52.Python-3.13.0" >> $LFSLOG_PROCESS
-
-# time { bash a.08.52.Python-3.13.0.sh ; }
-
-# date +"%Y/%b/%d %H:%M"
-# date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-# echo "." >> $LFSLOG_PROCESS
-# echo "."
-# echo "."
-
-###
-
 echo "08.53.Flit-Core-3.9.0"
 echo "08.53.Flit-Core-3.9.0" >> $LFSLOG_PROCESS
 

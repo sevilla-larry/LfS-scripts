@@ -1,8 +1,8 @@
-# a.07.10.Python-3.13.0.sh
-# errata update
+# a.07.10.Python-3.13.1.sh
+# errata upgrade to 3.13.x
 #
 
-export PKG="Python-3.13.0"
+export PKG="Python-3.13.1"
 export PKGLOG_DIR=$LFSLOG/07.10
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
