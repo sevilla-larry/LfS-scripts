@@ -1,8 +1,8 @@
-# a.08.91F.libunistring-1.2.sh
+# a.08.91H.libidn2-2.3.7.sh
 #
 
-export PKG="libunistring-1.2"
-export PKGLOG_DIR=$LFSLOG/08.91F
+export PKG="libidn2-2.3.7"
+export PKGLOG_DIR=$LFSLOG/08.91H
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -17,7 +17,7 @@ mkdir $PKGLOG_DIR
 echo "1. Extract tar..."
 echo "1. Extract tar..." >> $LFSLOG_PROCESS
 echo "1. Extract tar..." >> $PKGLOG_ERROR
-tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
@@ -26,7 +26,6 @@ echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr       \
             --disable-static    \
-            --docdir=/usr/share/doc/libunistring-1.2    \
         > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."

@@ -1,8 +1,8 @@
-# a.08.91C.NSS-3.103.sh
+# a.08.91D.NSS-3.103.sh
 #
 
 export PKG="nss-3.103"
-export PKGLOG_DIR=$LFSLOG/08.91C
+export PKGLOG_DIR=$LFSLOG/08.91D
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -36,8 +36,8 @@ make BUILD_OPT=1                      \
   ZLIB_LIBS=-lz                       \
   NSS_ENABLE_WERROR=0                 \
   $([ $(uname -m) = x86_64 ] && echo USE_64=1) \
+  $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1)  \
         > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-#  $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1)  \
 
 # Test TOO long
 #

@@ -6,6 +6,7 @@ e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
 da47e9c7a2cec3b68a0fad5d2a341dcc unifont-15.1.05.pcf.gz
 f701ab57eb8e7d9c105b2cd5d809b29a libtasn1-4.19.0.tar.gz
 5e0acf9fbdde85181bddd510f4624841 nspr-4.35.tar.gz
+bde7df8c2a4bce82dbf42f7e4dda0e21 sqlite-autoconf-3460100.tar.gz
 2823082a44b9dd71d6281108e0bab03f nss-3.103.tar.gz
 #NSS-patch
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz

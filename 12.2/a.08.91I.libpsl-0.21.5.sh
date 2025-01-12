@@ -1,8 +1,8 @@
-# a.08.91H.libpsl-0.21.5.sh
+# a.08.91I.libpsl-0.21.5.sh
 #
 
 export PKG="libpsl-0.21.5"
-export PKGLOG_DIR=$LFSLOG/08.91H
+export PKGLOG_DIR=$LFSLOG/08.91I
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

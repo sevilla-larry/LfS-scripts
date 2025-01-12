@@ -47,24 +47,10 @@ echo "."
 
 ###
 
-echo "08.91C.NSS-3.103"
-echo "08.91C.NSS-3.103" >> $LFSLOG_PROCESS
+echo "a.08.91C.SQLite-3.46.1"
+echo "a.08.91C.SQLite-3.46.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.91C.NSS-3.103.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91D.p11-kit-0.25.5"
-echo "08.91D.p11-kit-0.25.5" >> $LFSLOG_PROCESS
-
-time { bash a.08.91D.p11-kit-0.25.5.sh ; }
+time { bash a.08.91C.SQLite-3.46.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -75,24 +61,10 @@ echo "."
 
 ###
 
-echo "08.91E.make-ca-1.14"
-echo "08.91E.make-ca-1.14" >> $LFSLOG_PROCESS
+echo "08.91D.NSS-3.103"
+echo "08.91D.NSS-3.103" >> $LFSLOG_PROCESS
 
-time { bash a.08.91E.make-ca-1.14.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91F.libunistring-1.2"
-echo "08.91F.libunistring-1.2" >> $LFSLOG_PROCESS
-
-time { bash a.08.91F.libunistring-1.2.sh ; }
+time { bash a.08.91D.NSS-3.103.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -103,10 +75,10 @@ echo "."
 
 ###
 
-echo "08.91G.libidn2-2.3.7"
-echo "08.91G.libidn2-2.3.7" >> $LFSLOG_PROCESS
+echo "08.91E.p11-kit-0.25.5"
+echo "08.91E.p11-kit-0.25.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.91G.libidn2-2.3.7.sh ; }
+time { bash a.08.91E.p11-kit-0.25.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -117,10 +89,52 @@ echo "."
 
 ###
 
-echo "08.91H.libpsl-0.21.5"
-echo "08.91H.libpsl-0.21.5" >> $LFSLOG_PROCESS
+echo "08.91F.make-ca-1.14"
+echo "08.91F.make-ca-1.14" >> $LFSLOG_PROCESS
 
-time { bash a.08.91H.libpsl-0.21.5.sh ; }
+time { bash a.08.91F.make-ca-1.14.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91G.libunistring-1.2"
+echo "08.91G.libunistring-1.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.91G.libunistring-1.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91H.libidn2-2.3.7"
+echo "08.91H.libidn2-2.3.7" >> $LFSLOG_PROCESS
+
+time { bash a.08.91H.libidn2-2.3.7.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91I.libpsl-0.21.5"
+echo "08.91I.libpsl-0.21.5" >> $LFSLOG_PROCESS
+
+time { bash a.08.91I.libpsl-0.21.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
