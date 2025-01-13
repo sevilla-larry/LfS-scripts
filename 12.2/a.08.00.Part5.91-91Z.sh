@@ -45,19 +45,19 @@ echo "." >> $LFSLOG_PROCESS
 echo "."
 echo "."
 
-###
+###	No SQLite on OpenStack
 
-echo "a.08.91C.SQLite-3.46.1"
-echo "a.08.91C.SQLite-3.46.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.91C.SQLite-3.46.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
+# echo "a.08.91C.SQLite-3.46.1"
+# echo "a.08.91C.SQLite-3.46.1" >> $LFSLOG_PROCESS
+# 
+# time { bash a.08.91C.SQLite-3.46.1.sh ; }
+# 
+# date +"%Y/%b/%d %H:%M"
+# date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+# 
+# echo "." >> $LFSLOG_PROCESS
+# echo "."
+# echo "."
 
 ###
 
