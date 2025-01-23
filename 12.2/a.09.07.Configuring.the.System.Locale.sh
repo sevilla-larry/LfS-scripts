@@ -9,7 +9,9 @@ for i in $(locale); do
 done
 
 #if [[ "$TERM" = linux ]]; then
-  export LANG=C.UTF-8
+#  export LANG=C.UTF-8
+  export LANG=en_US.UTF-8
+  export LC_ALL=C.utf8
 #else
 #  export LANG=<ll>_<CC>.<charmap><@modifiers>
 #fi

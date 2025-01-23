@@ -42,8 +42,9 @@ fi
 
 # Set up user specific i18n variables
 #export LANG=<ll>_<CC>.<charmap><@modifiers>
+#  export LANG=C.UTF-8
   export LANG=en_US.UTF-8
-  export LC_ALL=C
+  export LC_ALL=C.utf8
 # End ~/.profile
 EOF
 
