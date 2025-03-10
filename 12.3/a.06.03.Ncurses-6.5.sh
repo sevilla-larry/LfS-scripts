@@ -10,6 +10,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -21,19 +22,14 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "   First, ensure that gawk is found first during configuration..."
-echo "   First, ensure that gawk is found first during configuration..." >> $LFSLOG_PROCESS
-echo "   First, ensure that gawk is found first during configuration..." >> $PKGLOG_ERROR
-sed -i s/mawk// configure   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
 echo "2. Build tic ..."
 echo "2. Build tic ..." >> $LFSLOG_PROCESS
 echo "2. Build tic ..." >> $PKGLOG_ERROR
 mkdir build
 pushd build
-  ../configure       > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-  make -C include    > $PKGLOG_BUILD  2>> $PKGLOG_ERROR
-  make -C progs tic >> $PKGLOG_BUILD  2>> $PKGLOG_ERROR
+  ../configure AWK=gawk   > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+  make -C include         > $PKGLOG_BUILD  2>> $PKGLOG_ERROR
+  make -C progs tic      >> $PKGLOG_BUILD  2>> $PKGLOG_ERROR
 popd
 
 echo "3. Configure ncurses ..."
@@ -50,6 +46,7 @@ echo "3. Configure ncurses ..." >> $PKGLOG_ERROR
             --without-debug               \
             --without-ada                 \
             --disable-stripping           \
+            AWK=gawk                      \
             >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            --enable-widec                \
 
@@ -70,8 +67,9 @@ sed -e 's/^#if.*XOPEN.*$/#if 1/'                          \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

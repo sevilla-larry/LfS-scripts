@@ -39,6 +39,7 @@ cp -rv usr/include $LFS/usr                     \
 
 cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 # PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

@@ -102,6 +102,7 @@ cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
 
 cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

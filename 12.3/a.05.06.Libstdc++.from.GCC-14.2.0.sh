@@ -57,6 +57,7 @@ rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la   >> $PKGLOG_OTHERS 2>> $PKGLO
 
 cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG 

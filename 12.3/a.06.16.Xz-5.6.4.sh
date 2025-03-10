@@ -1,13 +1,14 @@
-# a.05.02.Binutils-2.44-Pass1.sh
+# a.06.16.Xz-5.6.4.sh
 #
 
-export PKG="binutils-2.44"
-export PKGLOG_DIR=$LFSLOG/05.02
+export PKG="xz-5.6.4"
+export PKGLOG_DIR=$LFSLOG/06.16
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 export SOURCES=`pwd`
 
@@ -21,21 +22,15 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-mkdir build
-cd    build
-
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-../configure --prefix=$LFS/tools    \
-             --with-sysroot=$LFS    \
-             --target=$LFS_TGT      \
-             --disable-nls          \
-             --enable-gprofng=no    \
-             --disable-werror       \
-             --enable-new-dtags     \
-             --enable-default-hash-style=gnu    \
-             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+./configure --prefix=/usr                       \
+            --host=$LFS_TGT                     \
+            --build=$(build-aux/config.guess)   \
+            --disable-static                    \
+            --docdir=/usr/share/doc/xz-5.6.4    \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -45,13 +40,20 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Install ..."
 echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
-make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make DESTDIR=$LFS install   \
+    > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+echo "   Remove the libtool archive file because it is harmful for cross compilation..."
+echo "   Remove the libtool archive file because it is harmful for cross compilation..." >> $LFSLOG_PROCESS
+echo "   Remove the libtool archive file because it is harmful for cross compilation..." >> $PKGLOG_ERROR
+rm -v $LFS/usr/lib/liblzma.la   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES
 rm -rf $PKG
 unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG
