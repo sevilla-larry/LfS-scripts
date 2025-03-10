@@ -1,0 +1,934 @@
+A. Preparation
+
+  A.01. Prepare a Gentoo (LFS) host with:
+
+      # (a) Qemu/KVM VM
+        Q35, UEFI
+        50Gb VM.Gentoo.host.qcow2   /dev/vda
+
+      # (b) Virtualbox VB
+        ICH9, EFI
+        60Gb VM.Gentoo.host.vdi     /dev/sda
+
+      # (c) PC
+        UEFI
+        /dev/sda
+
+      Install Gentoo x64 with UEFI
+      ( Big topic )
+
+      /etc/portage/package.mask
+        >=sys-devel/gcc-14.3.0
+      # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
+
+      # check kernel .config on CONFIG_CRYPTO_SHA256_SSSE3
+      #                         CONFIG_SCSI_DEBUG           as module
+      # https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/util-linux.html
+
+  A.02. [LFS 2.2] Host System Requirements
+
+      # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
+      # check the corresponding versions
+
+      bash a.02.02.version-check.sh
+
+      # shut down Gentoo (LFS) host
+
+  A.03. attach disk(s)
+
+      # (a) VM - 3 Virtual Disks
+        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdc
+        2.      80Gb      VM.LfS.src.qcow2        /dev/vdd
+        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vde    ( will be used after installation )
+
+      # (b) VB - 2 Virtual Disks
+        1.      50Gb      VM.LfS.sys.vdi          /dev/sdb
+        2.      80Gb      VM.LfS.src.qcow2        /dev/sdc
+
+      # (c) PC - 2nd Disk
+        /dev/sdb
+
+  A.04. [LFS 2.4] Partition the newly attached VDs
+
+        set as GPT ( UEFI )
+
+      # (a) VM
+        /dev/vdc1   256M            VFAT / UEFI / EFI System
+        /dev/vdc2   remaining       Linux filesystem
+
+        /dev/vdd1   all             Linux filesystem
+
+        /dev/vde1   all             swap
+
+      # (b) VB
+        /dev/sdb1   256M            VFAT / UEFI / EFI System
+        /dev/sdb2   Max - RAM*2     Linux filesystem
+        /dev/sdb3   RAM*2           swap
+
+        /dev/sdc1   all             Linux filesystem
+
+      # (c) PC
+        /dev/sdb1   256M            VFAT / UEFI / EFI System
+        /dev/sdb2   Max - RAM*2     Linux filesystem
+        /dev/sdb3   RAM*2           swap
+
+  A.05. [LFS 2.5] Creating File Systems on the Partitions
+
+        ###
+        # execute as root user
+        ###
+
+        ###
+
+      # (a) VM
+        mkfs.vfat -v -F 32 -n BOOT /dev/vdc1
+        mkfs.ext4 -v -L ROOT /dev/vdc2
+        mkfs.ext4 -v -L SOURCES /dev/vdd1
+        mkswap -L SWAP /dev/vde1
+
+      # (b) VB
+        mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
+        mkfs.ext4 -v -L ROOT /dev/sdb2
+        mkswap -L SWAP /dev/sdb3
+        mkfs.ext4 -v -L SOURCES /dev/sdc1
+
+      # (c) PC
+        mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
+        mkfs.ext4 -v -L ROOT /dev/sdb2
+        mkswap -L SWAP /dev/sdb3
+
+        ###
+
+  A.06. [LFS 2.6] Setting the $LFS variable
+
+        ###
+        export LFS=/mnt/lfs
+        ###
+
+  A.07. [LFS 2.7] Mounting the New Partition
+
+        ###
+
+        mkdir -pv $LFS
+
+      # (a) VM
+        mount -v -t ext4 /dev/vdc2 $LFS
+
+        ###
+
+        /etc/fstab
+          /dev/vdc2   /mnt/lfs  ...
+
+        ###
+
+      # (b) VB & PC
+        mount -v -t ext4 /dev/sdb2 $LFS
+
+        ###
+
+        /etc/fstab
+          /dev/sdb2   /mnt/lfs  ...
+
+        ###
+
+  A.08. [LFS 3.1] Packages ( Sources )
+
+        ###
+
+      # (a) VM
+        mkdir -pv $LFS/mnt/Src
+        mount -v /dev/vdd1 $LFS/mnt/Src
+
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
+
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
+
+        ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
+
+      # (b) VB
+        mkdir -pv $LFS/mnt/Src
+        mount -v /dev/sdc1 $LFS/mnt/Src
+
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
+
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
+
+        ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
+
+      # (c) PC
+        mkdir -pv $LFS/usr/src/lfs
+
+        chmod -v a+wt $LFS/usr/src/lfs
+
+        ln -svf $LFS/usr/src/lfs $LFS/sources
+
+        ###
+
+        cd $LFS/sources
+
+        ###
+
+        ( download wget-list & md5sums )
+
+        ###
+
+        wget --input-file=wget-list-sysv --continue --directory-prefix=$LFS/sources
+        md5sum -c md5sums
+
+        ###
+
+  A.09. Copy all script files and Download additional Packages
+
+        copy all script files to $LFS/sources
+
+        ###
+
+        wget --input-file=a.03.01.wget-list-sysv.additional.txt --continue --directory-prefix=$LFS/sources
+        md5sum -c a.03.02.md5sums.additional.txt
+
+        ###
+
+  A.10. [LFS 4.2] Creating a limited directory layout in LFS filesystem
+
+        ###
+
+        bash a.04.02.Creating.a.Limited.Directory.Layout.in.the.LFS.Filesystem.sh
+
+        ###
+
+  A.11. [LFS 4.3] Adding the LFS user
+
+        ###
+
+        groupadd lfs
+        useradd -s /bin/bash -g lfs -m -k /dev/null lfs
+
+        passwd lfs
+
+        bash a.04.03.2.Changing.Ownership.to.LFS.User.sh
+
+        ###
+
+        # ( Logging )
+
+      # (a) VM & VB
+        bash a.04.03.3.1.Add.Logging.Requirement.VM.VB.sh
+
+      # (b) PC
+        bash a.04.03.3.2.Add.Logging.Requirement.PC.sh
+
+        ###
+
+  A.12. [LFS 4.3] Start a shell running as user "lfs"
+
+        ###
+        su - lfs
+        ###
+
+  A.13. [LFS 4.4] Setting Up the Environment
+        ( Note: change the MAKEFLAGS based on the number of threads )
+
+        $$$
+        $ execute as lfs user
+        $$$
+
+        $$$
+
+        export LFS=/mnt/lfs
+
+        cd $LFS/sources
+
+        bash a.04.04.Setting.Up.the.Environment.sh
+
+        source ~/.bash_profile
+
+        cd $LFS/sources
+
+        $$$
+
+B.  Generate LFS
+
+  B.01. [LFS pre-5] General Compilation Instructions / Checking Environment
+
+        $$$
+
+        echo $LFS             # /mnt/lfs
+        echo $LFSLOG          # /mnt/lfs/var/log/lfs
+        echo $MAKEFLAGS       # -j$(nproc)
+
+        echo $SHELL           # /bin/bash
+        ls -l /bin/sh         # bash
+        ls -l /usr/bin/awk    # gawk
+        ls -l /usr/bin/yacc   # yacc.bison
+
+        cd $LFS/sources
+
+        $$$
+
+        ( display )
+        lfs@VMGentooHostname /mnt/lfs/sources $
+
+  B.02. [LFS 5.x & 6.x] Chapter 5 & 6
+
+        $$$
+
+        bash a.05.00.sh
+        bash a.06.00.sh
+
+        $$$
+
+  B.03. [LFS 7.2] Exit as lfs user and login as root
+
+        $$$
+        exit
+        $$$
+
+  B.04. [LFS 7.2] Change Ownership to root
+
+        ( check environment should be )
+
+        ###
+
+        echo $LFS             #/mnt/lfs
+
+        ###
+
+        bash a.07.02.Changing.Ownership.to.root.User.sh
+
+        chown -vR root:root $LFS/var/log
+
+      # (a) VM & VB
+        chown -vR root:root $LFS/mnt/Src/lfs.log
+
+        ###
+
+  B.05. [LFS 7.3] Preparing Virtual Kernel File Systems
+
+        ###
+
+        bash a.07.03.Preparing.Virtual.Kernel.File.Systems.sh
+
+        ###
+
+  B.06. [LFS 7.4] Entering the Chroot Environment
+
+        ###
+
+        chroot "$LFS" /usr/bin/env -i   \
+            HOME=/root                  \
+            TERM="$TERM"                \
+            PS1='(lfs chroot) \u:\w\$ ' \
+            PATH=/usr/bin:/usr/sbin     \
+            MAKEFLAGS="-j$(nproc)"      \
+            TESTSUITEFLAGS="-j$(nproc)" \
+            /bin/bash --login
+
+        ###
+        #
+        # Note: prompt "I have no name!" is normal
+        #
+        ###
+
+  B.07. [before LFS 7.5] Adjust links and checking environment
+        ( Note: change the MAKEFLAGS based on the number of threads )
+
+        ###
+
+      # (a) VM & VB
+        rm -v /sources
+        ln -svf /mnt/Src/lfs.src /sources
+        rm -v /var/log/lfs
+        ln -svf /mnt/Src/lfs.log /var/log/lfs
+
+      # (b) PC
+        rm -v /sources
+        ln -svf /usr/src/lfs /sources
+
+        ###
+
+        export LFSLOG=/var/log/lfs
+
+        cd /sources
+
+        ###
+
+        echo $LFSLOG          # /var/log/lfs
+        echo $MAKEFLAGS       # -j$(nproc)
+        echo $TESTSUITEFLAGS  # -j$(nproc)
+
+        echo $SHELL           # /bin/bash
+        ls -l /bin/sh         # bash
+        ls -l /usr/bin/awk    # gawk
+
+        ###
+
+  B.08. [LFS 7.5] Creating Directories
+
+        ###
+
+        bash a.07.05.Creating.Directories.sh
+
+        ###
+
+  B.09. [LFS 7.6] Creating Essential Files and Symlinks
+
+        ###
+
+        bash a.07.06.Creating.Essential.Files.and.Symlinks.sh
+
+        exec /usr/bin/bash --login
+        # ( I have no name! ) - removed
+
+  B.10. [LFS 7.7-7.12] Chapter 7
+
+        ###
+
+      # bash a.07.00.sh
+      # pick one version of Python
+        bash a.07.00.py.3.11.sh
+        bash a.07.00.py.3.12.sh
+        bash a.07.00.py.3.13.sh
+
+        ###
+
+  B.11. [LFS 8.03-8.28] Chapter 8 Part 1
+
+        ###
+
+        bash a.08.00.Part1.03-28.sh
+
+        ###
+
+  B.12. [LFS 8.28 .2 & .3] Configuring Shadow & Setting the Root password
+
+        ###
+
+        pwconv
+
+        grpconv
+
+        mkdir -p /etc/default
+        useradd -D --gid 999
+
+        ###
+
+        passwd root
+
+        ###
+
+  B.13. [LFS 8.29-8.36] Chapter 8 Part 2
+
+        ###
+
+        bash a.08.00.Part2.29-36.sh
+
+        Note: read https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/gcc.html specially the 29/*.log files
+
+        ###
+
+  B.14. [LFS 8.36] run the newly compiled BASH program
+
+        ###
+
+        exec /usr/bin/bash --login
+
+        ###
+
+  B.15. [LFS 8.37-8.82] Chapter 8 Part 3
+
+        ###
+
+      # bash a.08.00.Part3.37-82.sh
+      # pick same version of Python
+        bash a.08.00.Part3.37-82.py.3.11.sh
+        bash a.08.00.Part3.37-82.py.3.12.sh
+        bash a.08.00.Part3.37-82.py.3.13.sh
+
+        ###
+
+  B.16. [LFS 8.62] Chapter 8 Part 4 GRUB
+        ( based on: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-efi.html )
+
+        ###
+
+        bash a.08.00.Part4.90-90Z.sh
+
+        ###
+
+  B.17. Additional Applications needed - WGet
+
+        ###
+
+        bash a.08.00.Part5.91-91Z.sh
+
+        ###
+
+  B.18. Additional Applications needed - misc
+
+        ###
+
+        bash a.08.00.Part6.92-92H.sh
+
+        ###
+
+  B.19. Additional Applications needed - NTP
+
+        ###
+
+        bash a.08.00.Part7.93-93Z.sh
+
+        ###
+
+  B.20. Additional Applications needed by BLFS - Linux-PAM ( & reBuild Shadow )
+
+        ###
+
+        bash a.08.00.Part8.94-94C.sh
+
+        ###
+
+
+C. Finishing Up
+
+  C.01. [LFS 9.2] LFS-Bootscripts
+
+        ###
+
+        cd /sources
+
+        bash a.09.02.LFS-Bootscripts-20240825.sh
+
+        ###
+
+  C.02. [LFS 9.5] General Network Configuration
+         ( change the network, hostname appropriately )
+
+
+        ###
+
+        cd /etc/sysconfig/
+
+
+        cat > ifconfig.eth0 << "EOF"
+        ONBOOT=yes
+        IFACE=eth0
+        SERVICE=ipv4-static
+        IP=192.168.xxx.yyy
+        GATEWAY=192.168.xxx.1
+        PREFIX=24
+        BROADCAST=192.168.xxx.255
+        EOF
+
+
+        cat > /etc/resolv.conf << "EOF"
+        # Begin /etc/resolv.conf
+
+        # domain <Your Domain Name>
+        # nameserver <IP address of your primary nameserver>
+        # nameserver <IP address of your secondary nameserver>
+
+        nameserver 192.168.xxx.1
+        nameserver 8.8.8.8
+
+        # End /etc/resolv.conf
+        EOF
+
+
+        echo "XX-LFS" > /etc/hostname
+
+
+        cat > /etc/hosts << "EOF"
+        # Begin /etc/hosts
+
+        127.0.0.1 localhost.localdomain localhost
+        # 127.0.1.1 <FQDN> <HOSTNAME>
+        # <192.168.1.1> <FQDN> <HOSTNAME> [alias1] [alias2 ...]
+        ::1       localhost ip6-localhost ip6-loopback
+        ff02::1   ip6-allnodes
+        ff02::2   ip6-allrouters
+
+        # End /etc/hosts
+        EOF
+
+        ###
+
+  C.03. Make - Certificate Authority
+        ( execute after 9.5 General Network Configuration )
+        ( if there's NO net, Start networking )
+
+        ###
+        /usr/sbin/make-ca -g
+        ###
+
+  C.04. [LFS 9.6] System V Bootscript Usage and Configuration
+
+        ###
+
+        cd /sources
+
+        bash a.09.06.System.V.Bootscript.Usage.and.Configuration.sh
+
+        # PC
+        # modify /etc/sysconfig/clock with UTC=0
+        #
+
+        ###
+
+        # modify /etc/sysconfig/rc.site, UNcomment some settings
+
+        ###
+
+  C.05. [LFS 9.7] Configuring the System Locale /etc/profile
+
+        ###
+
+        bash a.09.07.Configuring.the.System.Locale.sh
+
+        ###
+
+  C.06. [LFS 9.8] /etc/inputrc
+
+        ###
+
+        bash a.09.08.Creating.the.etc.inputrc.File.sh
+
+        ###
+
+  C.07. [LFS 9.9] /etc/shells
+
+        ###
+
+        bash a.09.09.Creating.the.etc.shells.File.sh
+
+        ###
+
+  C.08. BLFS-Bootscripts
+
+        ###
+
+        bash a.09.99.BLFS-Bootscripts-20240416.extract.only.sh
+
+        cd blfs-bootscripts-20240416
+
+        ###
+
+  C.09. GPM bootscripts
+
+        ###
+
+        make install-gpm
+
+        ###
+
+  C.10. OpenSSH bootscripts
+
+
+        ###
+
+        make install-sshd
+
+        ###
+
+  C.11. NTP bootscripts
+
+
+        ###
+
+        make install-ntpd
+
+        ###
+
+#  C.12. acpid bootscripts
+#
+#        ###
+#           Possible conflict with
+#           elogind
+#
+#        make install-acpid
+#
+#        ###
+
+D. [LFS 10.x] Making the LFS System Bootable
+
+  D.01. [LFS 10.2] /etc/fstab
+
+        ###
+
+        cat > /etc/fstab << "EOF"
+        # Begin /etc/fstab
+
+        # file system  mount-point  type     options             dump  fsck
+        #                                                              order
+
+        #/dev/<xxx>     /            <fff>    defaults            1     1
+        #/dev/<yyy>     swap         swap     pri=1               0     0
+
+
+        # for VMs
+        /dev/vda1       /efi        vfat  codepage=437,iocharset=iso8859-1,discard  0 2
+        /dev/vda2       /           ext4  defaults,noatime,discard                  0 1
+
+        /dev/vdb1       /mnt/Src    ext4  noatime,discard                           0 3
+
+        /dev/vdc1       none        swap  sw,discard                                0 0
+
+        # for VBs
+        /dev/sda1       /efi        vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda2       /           ext4  defaults,noatime                          0 1
+        /dev/sda3       none        swap  sw                                        0 0
+
+        /dev/sdb1       /mnt/Src    ext4  noatime                                   0 3
+
+        # for PCs
+        /dev/sda1       /efi        vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda2       /           ext4  defaults,noatime                          0 1
+        /dev/sda3       none        swap  sw                                        0 0
+
+
+        /dev/cdrom      /mnt/cdrom  auto  noauto,user                               0 0
+
+        proc           /proc          proc     nosuid,noexec,nodev 0     0
+        sysfs          /sys           sysfs    nosuid,noexec,nodev 0     0
+        devpts         /dev/pts       devpts   gid=5,mode=620      0     0
+        tmpfs          /run           tmpfs    defaults            0     0
+        devtmpfs       /dev           devtmpfs mode=0755,nosuid    0     0
+        tmpfs          /dev/shm       tmpfs    nosuid,nodev        0     0
+        cgroup2        /sys/fs/cgroup cgroup2  nosuid,noexec,nodev 0     0
+
+        # End /etc/fstab
+        EOF
+
+        ###
+
+        mkdir /mnt/cdrom
+
+        ###
+
+
+  D.02. [LFS 10.3] Linux-6.10.5 Kernel
+
+        ###
+
+        cd /sources
+
+        bash a.10.03.Linux-6.10.5.extract.only.sh
+
+        cd linux-6.10.5
+
+        make mrproper
+        make defconfig
+
+        # VM only
+        make kvm_guest.config
+
+        make MENUCONFIG_COLOR=blackbg menuconfig
+
+        ( Note the flags needed )
+        https://www.linuxfromscratch.org/lfs/view/12.3/chapter10/kernel.html
+        https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-setup.html
+        https://www.linuxfromscratch.org/blfs/view/12.3/general/gpm.html
+        https://wiki.gentoo.org/wiki/QEMU/Linux_guest           # for Qemu/KVM guest
+        https://wiki.gentoo.org/wiki/VirtualBox#Gentoo_guests   # for VirtualBox guest
+        https://www.linuxfromscratch.org/blfs/view/12.3/x/mesa.html
+        https://www.linuxfromscratch.org/blfs/view/12.3/x/xorg-server.html
+        https://www.linuxfromscratch.org/blfs/view/12.3/x/x7driver.html#libevdev
+        https://www.linuxfromscratch.org/blfs/view/12.3/general/elogind.html
+        
+        ( additional )
+
+        Device Drivers --->
+          Graphics Support --->
+            [*] Bootup logo
+
+        Kernel hacking --->
+          Memory Debugging
+            [ ] Stack Utilitization Instrumentation
+
+        make
+        make modules_install
+
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.10.5-lfs-12.3-r00
+        cp -iv System.map /boot/System.map-6.10.5-lfs-12.3-r00
+        cp -iv .config /boot/config-6.10.5-lfs-12.3-r00
+
+        cp -r Documentation -T /usr/share/doc/linux-6.10.5
+
+        ###
+
+  D.03. [LFS 10.4] Using GRUB to Set Up the Boot Process with UEFI
+        ( https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-setup.html )
+
+        ###
+
+        #mkdir -v /efi
+        #mount -v -t vfat /dev/vdb1 /efi    # Qemu/KVM VM
+        #mount -v -t vfat /dev/sdb1 /efi    # PC & VB
+
+        mount --mkdir -v -t vfat /dev/vdc1 -o codepage=437,iocharset=iso8859-1 /efi    # Qemu/KVM VM
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # VB
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PC
+
+        grub-install --target=x86_64-efi --efi-directory=/efi --removable
+
+
+        cat > /boot/grub/grub.cfg << EOF
+        # Begin /boot/grub/grub.cfg
+        set default=0
+        set timeout=5
+
+        insmod part_gpt
+        insmod ext2
+        set root=(hd0,2)
+
+        insmod efi_gop
+        insmod efi_uga
+        if loadfont /boot/grub/fonts/unicode.pf2; then
+          terminal_output gfxterm
+        fi
+
+        menuentry "GNU/Linux, Linux 6.10.5-lfs-12.3-r00" {
+          linux   /boot/vmlinuz-6.10.5-lfs-12.3-r00 root=/dev/vda2 ro   # Qemu/KVM VM
+          linux   /boot/vmlinuz-6.10.5-lfs-12.3-r00 root=/dev/sda2 ro   # PC & VB
+        }
+
+        menuentry "Firmware Setup" {
+          fwsetup
+        }
+        EOF
+
+        ###
+
+E. The End
+
+  E.01. [LFS 11.1] The End
+
+        ###
+
+        echo 12.3 > /etc/lfs-release
+
+
+        cat > /etc/lsb-release << "EOF"
+        DISTRIB_ID="Linux From Scratch"
+        DISTRIB_RELEASE="12.3"
+        DISTRIB_CODENAME="<your name here>"
+        DISTRIB_DESCRIPTION="Linux From Scratch"
+        EOF
+
+
+        cat > /etc/os-release << "EOF"
+        NAME="Linux From Scratch"
+        VERSION="12.3"
+        ID=lfs
+        PRETTY_NAME="Linux From Scratch 12.3"
+        VERSION_CODENAME="<your name here>"
+        HOME_URL="https://www.linuxfromscratch.org/lfs/"
+        EOF
+
+        ###
+
+  E.02. Adding user
+
+        # substitute <user> with the desired username
+
+        ###
+
+        useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user>
+
+        # No USB in LfS
+        # useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user>
+
+        passwd <user>
+
+        ###
+
+  E.03. Clean Up
+
+        # Based on:
+        #
+        #   https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/stripping.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/cleanup.html
+        #
+        #   https://www.linuxfromscratch.org/blfs/view/12.3/introduction/notes-on-building.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.3/introduction/la-files.html
+        #
+
+        ###
+
+        cd /sources
+
+        bash a.12.00.sh
+
+        ###
+
+  E.04. Bash shell
+
+        # Based on: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/profile.html
+
+        ### as root
+
+        cd /sources
+
+        bash a.13.01.root.sh
+
+        $$$ as user
+
+        su - <user>
+
+        cd /sources
+
+        bash a.13.02.user.sh
+
+        logout
+
+        ###
+
+  E.05. [LFS 11.3] UnMounting
+
+        ###
+
+        logout    #
+        cd
+
+        umount -v $LFS/dev/pts
+        mountpoint -q $LFS/dev/shm && umount -v $LFS/dev/shm
+        umount -v $LFS/dev
+        umount -v $LFS/run
+        umount -v $LFS/proc
+        umount -v $LFS/sys
+
+        umount -v $LFS/mnt/Src  # for VMs
+        umount -v $LFS/efi
+
+        umount -v $LFS
+
+        poweroff         ( --- the VM/PC Gentoo Host )
+
+        ###
+
+  E.06. Detaching
+      # (a) VM - 3 Virtual Disks
+        Detach the 3 VDs from host
+
+      # (b) VB - 2 Virtual Disks
+        Detach the 2 VDs from host
+
+      # (c) PC - 2nd Disk
+        Detach the 1st Disk
+
+F. Deploying
+      # (a) VM - 3 Virtual Disks
+        Create a new VM for LFS and run it
+        VM.LFS.sys.qcow2 as vda
+        VM.LFS.src.qcow2 as vdb
+        VM.LFS.swp.qcow2 as vdc
+
+      # (b) VB - 2 Virtual Disks
+        Create a new VB for LFS and run it
+        VM.LFS.sys.qcow2 as sda
+        VM.LFS.src.qcow2 as sdb
+
+      # (c) PC - 2nd Disk
+        Start-up the PC from the newly installed LFS drive.
+
+Note: Copying LFS use tar
+read: 8.2.3 Deploying LFS on Multiple Systems
