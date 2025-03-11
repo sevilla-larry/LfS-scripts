@@ -4,6 +4,12 @@
 #  eMail: sevilla.larry.prg@gmail.com
 #
 #
+# Encoding LfS ver: 12.3
+# Started: 2025/Mar/10
+# arch: x64, UEFI
+#
+#
+#
 # Working LfS ver: 12.2
 # Started: 2024/Sept/01
 # arch: x64, UEFI
