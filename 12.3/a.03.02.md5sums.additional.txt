@@ -1,4 +1,5 @@
-9eb581845590ad70ba89c04509c7a386 nano-8.1.tar.xz
+e64276780e23efb273480c4279050f74 nano-8.3.tar.xz
+
 eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz
 f0adf24e8fdef5f3e332191f653e422a mandoc-1.14.6.tar.gz
 a8fc3e79336cd6e738ab44f9bc96a5aa efivar-39.tar.gz
