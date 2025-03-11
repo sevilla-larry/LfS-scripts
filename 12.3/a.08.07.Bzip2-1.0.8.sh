@@ -1,0 +1,97 @@
+# a.08.07.Bzip2-1.0.8.sh
+#
+
+export PKG="bzip2-1.0.8"
+export PKGLOG_DIR=$LFSLOG/08.07
+export PKGLOG_TAR=$PKGLOG_DIR/tar.log
+#export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
+export PKGLOG_BUILD=$PKGLOG_DIR/build.log
+export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
+export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
+export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
+
+rm -r $PKGLOG_DIR 2> /dev/null
+mkdir $PKGLOG_DIR
+
+echo "1. Extract tar..."
+echo "1. Extract tar..." >> $LFSLOG_PROCESS
+echo "1. Extract tar..." >> $PKGLOG_ERROR
+tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+cd $PKG
+
+
+echo "2. Patching for documentation..."
+echo "2. Patching for documentation..." >> $LFSLOG_PROCESS
+echo "2. Patching for documentation..." >> $PKGLOG_ERROR
+patch -Np1 -i ../bzip2-1.0.8-install_docs-1.patch   \
+     > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "   Ensure installation of symbolic links are relative..."
+echo "   Ensure installation of symbolic links are relative..." >> $LFSLOG_PROCESS
+echo "   Ensure installation of symbolic links are relative..." >> $PKGLOG_ERROR
+sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile     \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "   Ensure the man pages are installed into the correct location..."
+echo "   Ensure the man pages are installed into the correct location..." >> $LFSLOG_PROCESS
+echo "   Ensure the man pages are installed into the correct location..." >> $PKGLOG_ERROR
+sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "3. Make Build libbz2 ..."
+echo "3. Make Build libbz2 ..." >> $LFSLOG_PROCESS
+echo "3. Make Build libbz2 ..." >> $PKGLOG_ERROR
+make -f Makefile-libbz2_so  \
+    > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+
+echo "4. Make Clean-up ..."
+echo "4. Make Clean-up ..." >> $LFSLOG_PROCESS
+echo "4. Make Clean-up ..." >> $PKGLOG_ERROR
+make clean >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "5. Make Build ..."
+echo "5. Make Build ..." >> $LFSLOG_PROCESS
+echo "5. Make Build ..." >> $PKGLOG_ERROR
+make >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+
+echo "6. Make Install ..."
+echo "6. Make Install ..." >> $LFSLOG_PROCESS
+echo "6. Make Install ..." >> $PKGLOG_ERROR
+make PREFIX=/usr install    \
+    > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+echo "   Install the shared library..."
+echo "   Install the shared library..."         >> $LFSLOG_PROCESS
+echo "   Install the shared library..."         >> $PKGLOG_ERROR
+cp -av libbz2.so.* /usr/lib                     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+ln -sv libbz2.so.1.0.8 /usr/lib/libbz2.so       >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "   Install the shared bzip2 binary into the /usr/bin directory..."
+echo "   Install the shared bzip2 binary into the /usr/bin directory..." >> $LFSLOG_PROCESS
+echo "   Install the shared bzip2 binary into the /usr/bin directory..." >> $PKGLOG_ERROR
+cp  -v bzip2-shared /usr/bin/bzip2              >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "   and replace two copies of bzip2 with symlinks..."
+echo "   and replace two copies of bzip2 with symlinks..." >> $LFSLOG_PROCESS
+echo "   and replace two copies of bzip2 with symlinks..." >> $PKGLOG_ERROR
+for i in /usr/bin/{bzcat,bunzip2}; do
+  ln -sfv bzip2 $i                              >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+done
+
+echo "   Remove a useless static library..."
+echo "   Remove a useless static library..."    >> $LFSLOG_PROCESS
+echo "   Remove a useless static library..."    >> $PKGLOG_ERROR
+rm -fv /usr/lib/libbz2.a                        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+
+cd $SOURCES
+rm -rf $PKG
+unset SOURCES
+unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
+unset PKGLOG_INSTALL PKGLOG_BUILD
+# PKGLOG_CONFIG
+unset PKGLOG_ERROR PKGLOG_TAR
+unset PKGLOG_DIR PKG

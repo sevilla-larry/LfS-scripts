@@ -1,7 +1,7 @@
-# a.08.05.Glibc-2.40.sh
+# a.08.05.Glibc-2.41.sh
 #
 
-export PKG="glibc-2.40"
+export PKG="glibc-2.41"
 export PKGLOG_DIR=$LFSLOG/08.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -11,6 +11,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 #Modify the next line for your local time zone
 export LOCAL_TIME_ZONE=Asia/Manila
@@ -28,7 +29,7 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.40-fhs-1.patch \
+patch -Np1 -i ../glibc-2.41-fhs-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
@@ -44,7 +45,7 @@ echo "3. Configure ..." >> $LFSLOG_PROCESS
 echo "3. Configure ..." >> $PKGLOG_ERROR
 ../configure --prefix=/usr                      \
              --disable-werror                   \
-             --enable-kernel=4.19               \
+             --enable-kernel=5.4                \
              --enable-stack-protector=strong    \
              --disable-nscd                     \
              libc_cv_slibdir=/usr/lib           \
@@ -155,7 +156,7 @@ EOF
 echo "9. Setting Time Zone ..."
 echo "9. Setting Time Zone ..." >> $LFSLOG_PROCESS
 echo "9. Setting Time Zone ..." >> $PKGLOG_ERROR
-tar -xvf ../../tzdata2024a.tar.gz    \
+tar -xvf ../../tzdata2025a.tar.gz    \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ZONEINFO=/usr/share/zoneinfo
@@ -172,7 +173,8 @@ cp zone.tab zone1970.tab iso3166.tab $ZONEINFO
 zic -d $ZONEINFO -p $LOCAL_TIME_ZONE
 unset ZONEINFO
 
-ln -sf /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime
+ln -sfv /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime     \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "10. Configuring the Dynamic Loader ..."
 echo "10. Configuring the Dynamic Loader ..." >> $LFSLOG_PROCESS
@@ -191,12 +193,13 @@ include /etc/ld.so.conf.d/*.conf
 
 EOF
 
-mkdir -p /etc/ld.so.conf.d
+mkdir -pv /etc/ld.so.conf.d     \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LOCAL_TIME_ZONE
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS

@@ -1,7 +1,7 @@
-# a.08.16.Tcl-8.6.14.sh
+# a.08.16.Tcl-8.6.16.sh
 #
 
-export PKG="tcl8.6.14"
+export PKG="tcl8.6.16"
 export PKGLOG_DIR=$LFSLOG/08.16
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -11,6 +11,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -47,17 +48,17 @@ sed -e "s|$SRCDIR/unix|/usr/lib|"   \
     -i tclConfig.sh                 \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed -e "s|$SRCDIR/unix/pkgs/tdbc1.1.7|/usr/lib/tdbc1.1.7|"  \
-    -e "s|$SRCDIR/pkgs/tdbc1.1.7/generic|/usr/include|"     \
-    -e "s|$SRCDIR/pkgs/tdbc1.1.7/library|/usr/lib/tcl8.6|"  \
-    -e "s|$SRCDIR/pkgs/tdbc1.1.7|/usr/include|"             \
-    -i pkgs/tdbc1.1.7/tdbcConfig.sh                         \
+sed -e "s|$SRCDIR/unix/pkgs/tdbc1.1.10|/usr/lib/tdbc1.1.10|"    \
+    -e "s|$SRCDIR/pkgs/tdbc1.1.10/generic|/usr/include|"        \
+    -e "s|$SRCDIR/pkgs/tdbc1.1.10/library|/usr/lib/tcl8.6|"     \
+    -e "s|$SRCDIR/pkgs/tdbc1.1.10|/usr/include|"                \
+    -i pkgs/tdbc1.1.10/tdbcConfig.sh                            \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed -e "s|$SRCDIR/unix/pkgs/itcl4.2.4|/usr/lib/itcl4.2.4|"  \
-    -e "s|$SRCDIR/pkgs/itcl4.2.4/generic|/usr/include|"     \
-    -e "s|$SRCDIR/pkgs/itcl4.2.4|/usr/include|"             \
-    -i pkgs/itcl4.2.4/itclConfig.sh                         \
+sed -e "s|$SRCDIR/unix/pkgs/itcl4.3.2|/usr/lib/itcl4.3.2|"      \
+    -e "s|$SRCDIR/pkgs/itcl4.3.2/generic|/usr/include|"         \
+    -e "s|$SRCDIR/pkgs/itcl4.3.2|/usr/include|"                 \
+    -i pkgs/itcl4.3.2/itclConfig.sh                             \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 unset SRCDIR
@@ -99,15 +100,16 @@ echo "8. Extract html tar..."
 echo "8. Extract html tar..." >> $LFSLOG_PROCESS
 echo "8. Extract html tar..." >> $PKGLOG_ERROR
 cd ..
-tar -xvf ../tcl8.6.14-html.tar.gz   \
+tar -xvf ../tcl8.6.16-html.tar.gz   \
     --strip-components=1            \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-mkdir -pv /usr/share/doc/tcl-8.6.14         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-cp -vr ./html/* /usr/share/doc/tcl-8.6.14   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+mkdir -vp /usr/share/doc/tcl-8.6.16         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cp -vr ./html/* /usr/share/doc/tcl-8.6.16   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_CHECK

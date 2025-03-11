@@ -43,6 +43,9 @@ patch -Np1 -i ../glibc-2.41-fhs-1.patch \
 mkdir build
 cd    build
 
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..."
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..." >> $LFSLOG_PROCESS
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..." >> $PKGLOG_ERROR
 echo "rootsbindir=/usr/sbin" > configparms
 
 echo "2. Configure ..."

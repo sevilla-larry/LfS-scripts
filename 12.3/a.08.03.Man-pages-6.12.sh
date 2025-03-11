@@ -1,7 +1,7 @@
-# a.08.03.Man-pages-6.9.1.sh
+# a.08.03.Man-pages-6.12.sh
 #
 
-export PKG="man-pages-6.9.1"
+export PKG="man-pages-6.12"
 export PKGLOG_DIR=$LFSLOG/08.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -10,6 +10,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -32,12 +33,13 @@ rm -v man3/crypt*   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 echo "2. Make Install ..."
 echo "2. Make Install ..." >> $LFSLOG_PROCESS
 echo "2. Make Install ..." >> $PKGLOG_ERROR
-make prefix=/usr install    \
+make -R GIT=false prefix=/usr install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL
