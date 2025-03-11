@@ -418,7 +418,7 @@ B.  Generate LFS
 
         bash a.08.00.Part2.29-36.sh
 
-        Note: read https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/gcc.html specially the 29/*.log files
+        # Note: read https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/gcc.html specially the 29/*.log files
 
         ###
 

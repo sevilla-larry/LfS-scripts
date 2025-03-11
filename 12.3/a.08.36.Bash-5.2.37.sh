@@ -1,0 +1,75 @@
+# a.08.36.Bash-5.2.37.sh
+#
+
+export PKG="bash-5.2.37"
+export PKGLOG_DIR=$LFSLOG/08.36
+export PKGLOG_TAR=$PKGLOG_DIR/tar.log
+export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
+export PKGLOG_BUILD=$PKGLOG_DIR/build.log
+export PKGLOG_CHECK=$PKGLOG_DIR/check.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
+export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
+export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
+
+rm -r $PKGLOG_DIR 2> /dev/null
+mkdir $PKGLOG_DIR
+
+echo "1. Extract tar..."
+echo "1. Extract tar..." >> $LFSLOG_PROCESS
+echo "1. Extract tar..." >> $PKGLOG_ERROR
+tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+cd $PKG
+
+
+echo "2. Configure ..."
+echo "2. Configure ..." >> $LFSLOG_PROCESS
+echo "2. Configure ..." >> $PKGLOG_ERROR
+./configure --prefix=/usr                       \
+            --without-bash-malloc               \
+            --with-installed-readline           \
+            --docdir=/usr/share/doc/bash-5.2.37 \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            bash_cv_strtold_broken=no           \ LfS 12.2
+
+echo "3. Make Build ..."
+echo "3. Make Build ..." >> $LFSLOG_PROCESS
+echo "3. Make Build ..." >> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+
+echo "4. Test ..."
+echo "4. Test ..." >> $LFSLOG_PROCESS
+echo "4. Test ..." >> $PKGLOG_ERROR
+
+echo "   Ensure that the tester user can write to the sources tree..."
+echo "   Ensure that the tester user can write to the sources tree..." >> $LFSLOG_PROCESS
+echo "   Ensure that the tester user can write to the sources tree..." >> $PKGLOG_ERROR
+chown -vR tester . > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+
+su -s /usr/bin/expect tester << EOF >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+set timeout -1
+spawn make tests
+expect eof
+lassign [wait] _ _ _ value
+exit $value
+EOF
+
+echo "5. Make Install ..."
+echo "5. Make Install ..." >> $LFSLOG_PROCESS
+echo "5. Make Install ..." >> $PKGLOG_ERROR
+make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+# "Read and Execute 8.36 LAST line"
+# Run: exec /usr/bin/bash --login
+
+
+cd $SOURCES
+rm -rf $PKG
+unset SOURCES
+unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
+unset PKGLOG_CHECK
+unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
+unset PKGLOG_ERROR PKGLOG_TAR
+unset PKGLOG_DIR PKG
