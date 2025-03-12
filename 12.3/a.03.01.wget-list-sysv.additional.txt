@@ -27,6 +27,7 @@ https://www.sudo.ws/dist/sudo-1.9.16p2.tar.gz
 https://ftp.gnu.org/gnu/which/which-2.23.tar.gz
 https://mj.ucw.cz/download/linux/pci/pciutils-3.13.0.tar.gz
 https://github.com/vcrhonek/hwdata/archive/v0.392/hwdata-0.392.tar.gz
+https://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz
 
 https://github.com/linux-pam/linux-pam/releases/download/v1.6.1/Linux-PAM-1.6.1.tar.xz
 https://github.com/linux-pam/linux-pam/releases/download/v1.6.1/Linux-PAM-1.6.1-docs.tar.xz
@@ -37,4 +38,3 @@ https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.088.tar.gz
 https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p18.tar.gz
 https://prdownloads.sourceforge.net/expat/expat-2.6.3.tar.xz
 https://github.com/openssl/openssl/releases/download/openssl-3.3.2/openssl-3.3.2.tar.gz
-https://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz
