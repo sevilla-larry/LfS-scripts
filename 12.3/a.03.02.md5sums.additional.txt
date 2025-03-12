@@ -1,21 +1,24 @@
 e64276780e23efb273480c4279050f74 nano-8.3.tar.xz
 
 eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz
-f0adf24e8fdef5f3e332191f653e422a mandoc-1.14.6.tar.gz
+#f0adf24e8fdef5f3e332191f653e422a mandoc-1.14.6.tar.gz
 a8fc3e79336cd6e738ab44f9bc96a5aa efivar-39.tar.gz
 e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
 007ffa7aab47ed3f270caee84d12148b unifont-16.0.01.pcf.gz
 
-f701ab57eb8e7d9c105b2cd5d809b29a libtasn1-4.19.0.tar.gz
-5e0acf9fbdde85181bddd510f4624841 nspr-4.35.tar.gz
-2823082a44b9dd71d6281108e0bab03f nss-3.103.tar.gz
-#NSS-patch
+87a41a0773ab2a5f5c8f01aec16df24c nspr-4.36.tar.gz
+8d77d0779bcd9993eaef33431e2e0c30 sqlite-autoconf-3490100.tar.gz
+#8d3e207489b544a8687e3faf8db26291 sqlite-doc-3490100.zip
+9208c05e756a06be19ce0e683777466e nss-3.108.tar.gz
+#nss-standalone-1.patch
+930f71d788cf37505a0327c1b84741be libtasn1-4.20.0.tar.gz
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz
-e99d2985ead0037caedb765fd66b33f0 make-ca-1.14.tar.gz
-6b4ea63617bf09d76e5234379e75e7f9 libunistring-1.2.tar.xz
+1af805d92b55091b5f11fd7db77c9b0e make-ca-1.15.tar.gz
+57dfd9e4eba93913a564aa14eab8052e libunistring-1.3.tar.xz
 de2818c7dea718a4f264f463f595596b libidn2-2.3.7.tar.gz
 870a798ee9860b6e77896548428dba7b libpsl-0.21.5.tar.gz
 c70ba58b36f944e8ba1d655ace552881 wget-1.25.0.tar.gz
+
 3ce01505e82626ca4d7291d7e649c4c9 lynx2.9.2.tar.bz2
 bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
 ##gpm-1.20.7-consolidated-1.patch
