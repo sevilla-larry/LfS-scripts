@@ -4,7 +4,8 @@ eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz
 f0adf24e8fdef5f3e332191f653e422a mandoc-1.14.6.tar.gz
 a8fc3e79336cd6e738ab44f9bc96a5aa efivar-39.tar.gz
 e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
-da47e9c7a2cec3b68a0fad5d2a341dcc unifont-15.1.05.pcf.gz
+007ffa7aab47ed3f270caee84d12148b unifont-16.0.01.pcf.gz
+
 f701ab57eb8e7d9c105b2cd5d809b29a libtasn1-4.19.0.tar.gz
 5e0acf9fbdde85181bddd510f4624841 nspr-4.35.tar.gz
 2823082a44b9dd71d6281108e0bab03f nss-3.103.tar.gz
