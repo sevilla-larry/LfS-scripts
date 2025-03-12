@@ -534,7 +534,7 @@ C. Finishing Up
 
         127.0.0.1 localhost.localdomain localhost
         # 127.0.1.1 <FQDN> <HOSTNAME>
-        # <192.168.1.1> <FQDN> <HOSTNAME> [alias1] [alias2 ...]
+        # <192.168.1.2> <FQDN> <HOSTNAME> [alias1] [alias2 ...]
         ::1       localhost ip6-localhost ip6-loopback
         ff02::1   ip6-allnodes
         ff02::2   ip6-allrouters
@@ -598,9 +598,9 @@ C. Finishing Up
 
         ###
 
-        bash a.09.99.BLFS-Bootscripts-20240416.extract.only.sh
+        bash a.09.99.BLFS-Bootscripts-20250225.extract.only.sh
 
-        cd blfs-bootscripts-20240416
+        cd blfs-bootscripts-20250225
 
         ###
 
@@ -657,7 +657,7 @@ D. [LFS 10.x] Making the LFS System Bootable
 
 
         # for VMs
-        /dev/vda1       /efi        vfat  codepage=437,iocharset=iso8859-1,discard  0 2
+        /dev/vda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1,discard  0 2
         /dev/vda2       /           ext4  defaults,noatime,discard                  0 1
 
         /dev/vdb1       /mnt/Src    ext4  noatime,discard                           0 3
@@ -665,14 +665,14 @@ D. [LFS 10.x] Making the LFS System Bootable
         /dev/vdc1       none        swap  sw,discard                                0 0
 
         # for VBs
-        /dev/sda1       /efi        vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
         /dev/sda2       /           ext4  defaults,noatime                          0 1
         /dev/sda3       none        swap  sw                                        0 0
 
         /dev/sdb1       /mnt/Src    ext4  noatime                                   0 3
 
         # for PCs
-        /dev/sda1       /efi        vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
         /dev/sda2       /           ext4  defaults,noatime                          0 1
         /dev/sda3       none        swap  sw                                        0 0
 
@@ -697,15 +697,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] Linux-6.10.5 Kernel
+  D.02. [LFS 10.3] Linux-6.13.4 Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.10.5.extract.only.sh
+        bash a.10.03.Linux-6.13.4.extract.only.sh
 
-        cd linux-6.10.5
+        cd linux-6.13.4
 
         make mrproper
         make defconfig
@@ -739,11 +739,11 @@ D. [LFS 10.x] Making the LFS System Bootable
         make
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.10.5-lfs-12.3-r00
-        cp -iv System.map /boot/System.map-6.10.5-lfs-12.3-r00
-        cp -iv .config /boot/config-6.10.5-lfs-12.3-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.4-lfs-12.3-r00
+        cp -iv System.map /boot/System.map-6.13.4-lfs-12.3-r00
+        cp -iv .config /boot/config-6.13.4-lfs-12.3-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.10.5
+        cp -r Documentation -T /usr/share/doc/linux-6.13.4
 
         ###
 
@@ -756,9 +756,9 @@ D. [LFS 10.x] Making the LFS System Bootable
         #mount -v -t vfat /dev/vdb1 /efi    # Qemu/KVM VM
         #mount -v -t vfat /dev/sdb1 /efi    # PC & VB
 
-        mount --mkdir -v -t vfat /dev/vdc1 -o codepage=437,iocharset=iso8859-1 /efi    # Qemu/KVM VM
-        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # VB
-        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /efi    # PC
+        mount --mkdir -v -t vfat /dev/vdc1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # Qemu/KVM VM
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # VB
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # PC
 
         grub-install --target=x86_64-efi --efi-directory=/efi --removable
 
@@ -778,9 +778,9 @@ D. [LFS 10.x] Making the LFS System Bootable
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.10.5-lfs-12.3-r00" {
-          linux   /boot/vmlinuz-6.10.5-lfs-12.3-r00 root=/dev/vda2 ro   # Qemu/KVM VM
-          linux   /boot/vmlinuz-6.10.5-lfs-12.3-r00 root=/dev/sda2 ro   # PC & VB
+        menuentry "GNU/Linux, Linux 6.13.4-lfs-12.3-r00" {
+          linux   /boot/vmlinuz-6.13.4-lfs-12.3-r00 root=/dev/vda2 ro   # Qemu/KVM VM
+          linux   /boot/vmlinuz-6.13.4-lfs-12.3-r00 root=/dev/sda2 ro   # PC & VB
         }
 
         menuentry "Firmware Setup" {
@@ -814,6 +814,7 @@ E. The End
         PRETTY_NAME="Linux From Scratch 12.3"
         VERSION_CODENAME="<your name here>"
         HOME_URL="https://www.linuxfromscratch.org/lfs/"
+        RELEASE_TYPE="stable"
         EOF
 
         ###
@@ -878,7 +879,7 @@ E. The End
 
         ###
 
-        logout    #
+        logout
         cd
 
         umount -v $LFS/dev/pts
@@ -889,7 +890,7 @@ E. The End
         umount -v $LFS/sys
 
         umount -v $LFS/mnt/Src  # for VMs
-        umount -v $LFS/efi
+        umount -v $LFS/boot/efi
 
         umount -v $LFS
 

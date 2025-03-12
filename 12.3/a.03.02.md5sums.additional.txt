@@ -10,7 +10,7 @@ e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
 8d77d0779bcd9993eaef33431e2e0c30 sqlite-autoconf-3490100.tar.gz
 #8d3e207489b544a8687e3faf8db26291 sqlite-doc-3490100.zip
 9208c05e756a06be19ce0e683777466e nss-3.108.tar.gz
-#nss-standalone-1.patch
+###nss-standalone-1.patch
 930f71d788cf37505a0327c1b84741be libtasn1-4.20.0.tar.gz
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz
 1af805d92b55091b5f11fd7db77c9b0e make-ca-1.15.tar.gz
@@ -27,15 +27,14 @@ f617b95fe278bfea8d004589c7a68a85 openssh-9.9p2.tar.gz
 1963b85914132d78373f02a84cdb3c86 which-2.23.tar.gz
 1edb865de7a2de84e67508911010091b pciutils-3.13.0.tar.gz
 14cee546bfc1f6cb83c4339df1cbe4b9 hwdata-0.392.tar.gz
-#sshpass
+###sshpass
 
 1b22c764e5a094c6261e37a4b1f148ce Net-SSLeay-1.94.tar.gz
 1e9cf40beaaafa502de8f3b560a9adee IO-Socket-SSL-2.089.tar.gz
 516bdabd94ab7c824e9771390761a46c ntp-4.2.8p18.tar.gz
 
-8ad1e72d1ff6480d8e0af658e2d7b768 Linux-PAM-1.6.1.tar.xz
-46dc9f9a27ef73a2fbe3b667877e88da Linux-PAM-1.6.1-docs.tar.xz
-59a5aba60d99621963d0109f95b622f2 libtirpc-1.3.5.tar.bz2
-##blfs-bootscripts-20240416.tar.xz
-3812d9fe29a5a6d64de3fa6e6509fdad expat-2.6.3.tar.xz
-015fca2692596560b6fe8a2d8fecd84b openssl-3.3.2.tar.gz
+8de9e6af16c4bc65ba40d0924745f5b7 libtirpc-1.3.6.tar.bz2
+c1e41d59d6852e45d0f953c8c8f869d6 Linux-PAM-1.7.0.tar.xz
+dba9e555df98004fe9cea233c927a551 Linux-PAM-1.7.0-docs.tar.xz
+
+###blfs-bootscripts-20250225.tar.xz
