@@ -43,9 +43,10 @@ wheel:x:97:
 users:x:999:
 nogroup:x:65534:
 EOF
+# usb:x:14:
 
 # residual from LfS 12.2
-localedef -i C -f UTF-8 C.UTF-8
+# localedef -i C -f UTF-8 C.UTF-8
 
 echo "tester:x:101:101::/home/tester:/bin/bash" >> /etc/passwd
 echo "tester:x:101:" >> /etc/group

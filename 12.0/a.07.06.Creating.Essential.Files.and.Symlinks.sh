@@ -55,5 +55,5 @@ chmod 664  /var/log/lastlog
 chmod 600  /var/log/btmp
 
 echo "."
-echo "exec /usr/bin/bash --login"
+echo "run: exec /usr/bin/bash --login"
 echo "."

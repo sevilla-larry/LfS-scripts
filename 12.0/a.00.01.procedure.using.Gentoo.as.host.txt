@@ -285,15 +285,16 @@ B.  Generate LFS
 
         ###
 
-        echo $LFS             /mnt/lfs
+        echo $LFS             # /mnt/lfs
 
         ###
 
         bash a.07.02.Changing.Ownership.to.root.User.sh
 
-        chown -v root:root $LFS/var/log
-        chown -v root:root $LFS/mnt/src/lfs.log
-        chown -v root:root $LFS/mnt/src/lfs.log/*
+        chown -vR root:root $LFS/var/log
+
+      # (a) VM & VB
+        chown -vR root:root $LFS/mnt/Src/lfs.log
 
         ###
 
@@ -317,29 +318,39 @@ B.  Generate LFS
             /bin/bash --login
 
         ###
+        #
+        # Note: prompt "I have no name!" is normal
+        #
+        ###
 
   B.07. [before LFS 7.5] Adjust links and checking environment
         ( Note: change the MAKEFLAGS based on the number of threads )
 
         ###
 
-        rm /sources
-        ln -sf /mnt/src/lfs.src /sources
+      # (a) VM & VB
+        rm -v /sources
+        ln -svf /mnt/Src/lfs.src /sources
+        rm -v /var/log/lfs
+        ln -svf /mnt/Src/lfs.log /var/log/lfs
 
-        rm /var/log/lfs
-        ln -sf /mnt/src/lfs.log /var/log/lfs
+      # (b) PC
+        rm -v /sources
+        ln -svf /usr/src/lfs /sources
+
+        ###
 
         export LFSLOG=/var/log/lfs
-        export MAKEFLAGS="-j8"
-        export NPROC="8"
+        export MAKEFLAGS="-j$(nproc)"
+        export TESTSUITEFLAGS="-j$(nproc)"
 
         cd /sources
 
         ###
 
         echo $LFSLOG          # /var/log/lfs
-        echo $MAKEFLAGS       # -j8
-        echo $NPROC           # 8
+        echo $MAKEFLAGS       # -j$(nproc)
+        echo $TESTSUITEFLAGS  # -j$(nproc)
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash

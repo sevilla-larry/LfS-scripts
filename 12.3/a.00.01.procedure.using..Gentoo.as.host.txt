@@ -289,7 +289,7 @@ B.  Generate LFS
 
         ###
 
-        echo $LFS             #/mnt/lfs
+        echo $LFS             # /mnt/lfs
 
         ###
 

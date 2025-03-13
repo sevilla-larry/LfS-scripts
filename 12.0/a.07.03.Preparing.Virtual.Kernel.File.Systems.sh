@@ -13,5 +13,5 @@ mount -vt tmpfs tmpfs $LFS/run
 if [ -h $LFS/dev/shm ]; then
   mkdir -pv $LFS/$(readlink $LFS/dev/shm)
 else
-  mount -t tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
+  mount -vt tmpfs -o nosuid,nodev tmpfs $LFS/dev/shm
 fi
