@@ -11,7 +11,7 @@ export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
-
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -53,13 +53,11 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
       libc_cv_slibdir=/usr/lib              \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
-export OLD_MAKEFLAGS=$MAKEFLAGS
-export MAKEFLAGS="-j1"
-
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+#make -j1
 
 echo "4. Make Install ..."
 echo "4. Make Install ..." >> $LFSLOG_PROCESS
@@ -71,19 +69,17 @@ echo "Fix hard code path in 'ldd' script" >> $PKGLOG_OTHERS
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-export MAKEFLAGS=$OLD_MAKEFLAGS
-unset OLD_MAKEFLAGS
-
 echo 'int main(){}' | $LFS_TGT-gcc -xc -    \
      > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 readelf -l a.out | grep ld-linux            \
     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-rm a.out
+rm -v a.out                                 \
+    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_CHECK

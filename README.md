@@ -4,7 +4,7 @@
 #  eMail: sevilla.larry.prg@gmail.com
 #
 #
-# Encoding LfS ver: 12.3
+# Testing LfS ver: 12.3
 # Started: 2025/Mar/10
 # arch: x64, UEFI
 #
@@ -38,7 +38,7 @@
 # Working LfS ver: 12.0
 # Started: 2023/Sept/07
 # arch: x64, UEFI
-# Note: 2024 errata patches were NOT applied due to time constraint
+# Note: 2025 updating, to be used for OpenStack, which uses Python 3.11.x
 #
 # Working LfS ver: 11.3
 # Started: 2023/Apr/06
@@ -56,7 +56,7 @@
 #
 # based on: https://www.linuxfromscratch.org/lfs/
 #
-# Creating/using scripts instead of manually encoding all lines
+# Using scripts instead of manually encoding all lines
 #
 #
 # For scripts of Chapters 5 & 6, the scripts assumed you finished executing up to Chapter 4.
@@ -67,14 +67,11 @@
 #
 #
 # For scripts of Chapter 7 & up,
-# the scripts assumed you finished executing Chapter/Section 7.2 to 7.6,
 # the username should be "root", should had CHROOTed,
 # and the location should be "/sources" directory.  That means the prompt should be:
 #
 #   root:/sources#
 #
-
-
 
 #
 # copy the script files ( *.sh ) in the said directory

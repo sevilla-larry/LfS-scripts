@@ -52,7 +52,8 @@ make DESTDIR=$LFS install   \
 echo "   Remove the libtool archive file because it is harmful for cross compilation..."
 echo "   Remove the libtool archive file because it is harmful for cross compilation..." >> $LFSLOG_PROCESS
 echo "   Remove the libtool archive file because it is harmful for cross compilation..." >> $PKGLOG_ERROR
-rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la   \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

@@ -2,40 +2,75 @@ A. Preparation
 
   A.01. Prepare a Gentoo VM (LFS) host with:
 
+      # (a) Qemu/KVM VM
         Q35, UEFI
-        50Gb VM.Gentoo.host.qcow2       /dev/vda
-        Install Gentoo x64 with UEFI
-        ( Big topic )
+        50Gb VM.Gentoo.host.qcow2   /dev/vda
 
-        /etc/portage/package.mask
-          >sys-devel/gcc-13.2
-        ( requirement of LFS 12.0 )
+      # (b) Virtualbox VB
+        ICH9, EFI
+        60Gb VM.Gentoo.host.vdi     /dev/sda
+
+      # (c) PC
+        UEFI
+        /dev/sda
+
+      Install Gentoo x64 with UEFI
+      ( Big topic )
+
+      /etc/portage/package.mask
+        >sys-devel/gcc-13.2
+      # (based on https://www.linuxfromscratch.org/lfs/view/12.0/chapter02/hostreqs.html )
+
+      # check kernel .config on CONFIG_CRYPTO_SHA256_SSSE3
+      #                         CONFIG_SCSI_DEBUG           as module
+      # https://www.linuxfromscratch.org/lfs/view/12.0/chapter08/util-linux.html
 
   A.02. [LFS 2.2] Host System Requirements
 
-        (based on https://www.linuxfromscratch.org/lfs/view/12.0/chapter02/hostreqs.html )
-        check the corresponding versions
+      # (based on https://www.linuxfromscratch.org/lfs/view/12.0/chapter02/hostreqs.html )
+      #  check the corresponding versions
 
-        bash a.02.02.version-check.sh
+      bash a.02.02.version-check.sh
 
-        shut down Gentoo VM (LFS) host
+      # shut down Gentoo VM (LFS) host
 
   A.03. attach 3 Virtual Disks
 
-        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdb
-        2.      40Gb      VM.LfS.src.qcow2        /dev/vdc
-        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vdd    ( will be used after installation )
+      # (a) VM - 3 Virtual Disks
+        1.      40Gb      VM.LfS.sys.qcow2        /dev/vdc
+        2.      80Gb      VM.LfS.src.qcow2        /dev/vdd
+        3. (RAM*2)Gb      VM.LfS.swp.qcow2        /dev/vde    ( will be used after installation )
+
+      # (b) VB - 2 Virtual Disks
+        1.      50Gb      VM.LfS.sys.vdi          /dev/sdb
+        2.      80Gb      VM.LfS.src.qcow2        /dev/sdc
+
+      # (c) PC - 2nd Disk
+        /dev/sdb
 
   A.04. [LFS 2.4] Partition the newly attached VDs
 
         set as GPT ( UEFI )
 
-        /dev/vdb1   256M      VFAT / UEFI / EFI System
-        /dev/vdb2   remaining Linux filesystem
+      # (a) VM
+        /dev/vdc1   256M            VFAT / UEFI / EFI System
+        /dev/vdc2   remaining       Linux filesystem
 
-        /dev/vdc1   all       Linux filesystem
+        /dev/vdd1   all             Linux filesystem
 
-        /dev/vdd1   all       swap
+        /dev/vde1   all             swap
+
+      # (b) VB
+        /dev/sdb1   256M            VFAT / UEFI / EFI System
+        /dev/sdb2   Max - RAM*2     Linux filesystem
+        /dev/sdb3   RAM*2           swap
+
+        /dev/sdc1   all             Linux filesystem
+
+      # (c) PC
+        /dev/sdb1   256M            VFAT / UEFI / EFI System
+        /dev/sdb2   Max - RAM*2     Linux filesystem
+        /dev/sdb3   RAM*2           swap
 
   A.05. [LFS 2.5] Creating File Systems on the Partitions
 
@@ -45,10 +80,22 @@ A. Preparation
 
         ###
 
-        mkfs.vfat -v -F 32 -n BOOT /dev/vdb1
-        mkfs.ext4 -v -L ROOT /dev/vdb2
-        mkfs.ext4 -v -L SOURCES /dev/vdc1
-        mkswap -L SWAP /dev/vdd1
+      # (a) VM
+        mkfs.vfat -v -F 32 -n BOOT /dev/vdc1
+        mkfs.ext4 -v -L ROOT /dev/vdc2
+        mkfs.ext4 -v -L SOURCES /dev/vdd1
+        mkswap -L SWAP /dev/vde1
+
+      # (b) VB
+        mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
+        mkfs.ext4 -v -L ROOT /dev/sdb2
+        mkswap -L SWAP /dev/sdb3
+        mkfs.ext4 -v -L SOURCES /dev/sdc1
+
+      # (c) PC
+        mkfs.vfat -v -F 32 -n BOOT /dev/sdb1
+        mkfs.ext4 -v -L ROOT /dev/sdb2
+        mkswap -L SWAP /dev/sdb3
 
         ###
 
@@ -63,25 +110,59 @@ A. Preparation
         ###
 
         mkdir -pv $LFS
-        mount -v -t ext4 /dev/vdb2 $LFS
+
+      # (a) VM
+        mount -v -t ext4 /dev/vdc2 $LFS
 
         ###
 
         /etc/fstab
-          /dev/vdb2   /mnt/lfs  ...
+          /dev/vdc2   /mnt/lfs  ...
+
+        ###
+
+      # (b) VB & PC
+        mount -v -t ext4 /dev/sdb2 $LFS
+
+        ###
+
+        /etc/fstab
+          /dev/sdb2   /mnt/lfs  ...
+
+        ###
 
   A.08. [LFS 3.1] Packages ( Sources )
 
         ###
 
-        mkdir -pv $LFS/mnt/src
-        mount /dev/vdc1 $LFS/mnt/src
+      # (a) VM
+        mkdir -pv $LFS/mnt/Src
+        mount -v /dev/vdd1 $LFS/mnt/Src
 
-        mkdir -v $LFS/mnt/src/lfs.{src,log}
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
 
-        chmod -v a+wt $LFS/mnt/src/lfs.{src,log}
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
 
-        ln -sf $LFS/mnt/src/lfs.src $LFS/sources
+        ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
+
+      # (b) VB
+        mkdir -pv $LFS/mnt/Src
+        mount -v /dev/sdc1 $LFS/mnt/Src
+
+        mkdir -v $LFS/mnt/Src/lfs.{src,log}
+
+        chmod -v a+wt $LFS/mnt/Src/lfs.{src,log}
+
+        ln -svf $LFS/mnt/Src/lfs.src $LFS/sources
+
+      # (c) PC
+        mkdir -pv $LFS/usr/src/lfs
+
+        chmod -v a+wt $LFS/usr/src/lfs
+
+        ln -svf $LFS/usr/src/lfs $LFS/sources
+
+        ###
 
         cd $LFS/sources
 
@@ -103,6 +184,7 @@ A. Preparation
         ###
 
         wget --input-file=a.03.01.wget-list-sysv.additional.txt --continue --directory-prefix=$LFS/sources
+        md5sum -c a.03.02.md5sums.additional.txt
 
         ###
 
@@ -168,8 +250,7 @@ B.  Generate LFS
 
         echo $LFS             # /mnt/lfs
         echo $LFSLOG          # /mnt/lfs/var/log/lfs
-        echo $MAKEFLAGS       # -j8
-        echo $NPROC           # 8
+        echo $MAKEFLAGS       # -j$(nproc)
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash

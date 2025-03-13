@@ -10,6 +10,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -21,17 +22,18 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-
 echo "1.1 Extract tar MPFR ."
 echo "1.1 Extract tar MPFR ." >> $LFSLOG_PROCESS
 echo "1.1 Extract tar MPFR ." >> $PKGLOG_ERROR
 tar -xf ../mpfr-4.2.0.tar.xz  >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv mpfr-4.2.0 mpfr
+
 echo "1.2 Extract tar GMP ."
 echo "1.2 Extract tar GMP ." >> $LFSLOG_PROCESS
 echo "1.2 Extract tar GMP ." >> $PKGLOG_ERROR
 tar -xf ../gmp-6.3.0.tar.xz   >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv gmp-6.3.0 gmp
+
 echo "1.3 Extract tar MPC ."
 echo "1.3 Extract tar MPC ." >> $LFSLOG_PROCESS
 echo "1.3 Extract tar MPC ." >> $PKGLOG_ERROR
@@ -86,11 +88,13 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h
+  `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include/limits.h  \
+   2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

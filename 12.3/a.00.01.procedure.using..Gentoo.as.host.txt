@@ -17,7 +17,7 @@ A. Preparation
       Install Gentoo x64 with UEFI
       ( Big topic )
 
-      /etc/portage/package.mask
+      /etc/portage/package.mask/gcc
         >=sys-devel/gcc-14.3.0
       # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
 
