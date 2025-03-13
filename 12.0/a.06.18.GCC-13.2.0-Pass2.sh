@@ -8,7 +8,9 @@ export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -25,11 +27,13 @@ echo "1.1 Extract tar MPFR ." >> $LFSLOG_PROCESS
 echo "1.1 Extract tar MPFR ." >> $PKGLOG_ERROR
 tar -xf ../mpfr-4.2.0.tar.xz  >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv mpfr-4.2.0 mpfr
+
 echo "1.2 Extract tar GMP ."
 echo "1.2 Extract tar GMP ." >> $LFSLOG_PROCESS
 echo "1.2 Extract tar GMP ." >> $PKGLOG_ERROR
 tar -xf ../gmp-6.3.0.tar.xz  >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 mv gmp-6.3.0 gmp
+
 echo "1.3 Extract tar MPC ."
 echo "1.3 Extract tar MPC ." >> $LFSLOG_PROCESS
 echo "1.3 Extract tar MPC ." >> $PKGLOG_ERROR
@@ -40,10 +44,11 @@ case $(uname -m) in
   x86_64)
     sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64
   ;;
-esac
+esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 sed '/thread_header =/s/@.*@/gthr-posix.h/' \
-    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in
+    -i libgcc/Makefile.in libstdc++-v3/include/Makefile.in  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -82,13 +87,15 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install \
   > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-ln -s gcc $LFS/usr/bin/cc
+ln -sv gcc $LFS/usr/bin/cc  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

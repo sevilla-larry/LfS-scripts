@@ -9,6 +9,7 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -48,6 +49,8 @@ echo "3. Configure ncurses ..." >> $PKGLOG_ERROR
             --disable-stripping           \
             --enable-widec                \
             >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            AWK=gawk                      \  LfS 12.3
+
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS
@@ -59,11 +62,13 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so
+echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so       \
+    2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

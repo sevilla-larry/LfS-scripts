@@ -48,7 +48,7 @@ echo "3. Configure ncurses ..." >> $PKGLOG_ERROR
             --disable-stripping           \
             AWK=gawk                      \
             >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#            --enable-widec                \
+#            --enable-widec                \  LfS 12.1
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS

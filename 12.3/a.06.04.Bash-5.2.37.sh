@@ -30,7 +30,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --host=$LFS_TGT                     \
             --without-bash-malloc               \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#            bash_cv_strtold_broken=no           \
+#            bash_cv_strtold_broken=no           \  LfS 12.2
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
