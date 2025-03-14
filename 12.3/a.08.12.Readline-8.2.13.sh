@@ -34,24 +34,24 @@ echo "   Prevent hard coding library search paths (rpath) into the shared librar
 echo "   Prevent hard coding library search paths (rpath) into the shared libraries..." >> $PKGLOG_ERROR
 sed -i 's/-Wl,-rpath,[^ ]*//'   support/shobj-conf      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "3. Configure ..."
-echo "3. Configure ..." >> $LFSLOG_PROCESS
-echo "3. Configure ..." >> $PKGLOG_ERROR
+echo "2. Configure ..."
+echo "2. Configure ..." >> $LFSLOG_PROCESS
+echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                           \
             --disable-static                        \
             --with-curses                           \
             --docdir=/usr/share/doc/readline-8.2.13 \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
-echo "4. Make Build ..."
-echo "4. Make Build ..." >> $LFSLOG_PROCESS
-echo "4. Make Build ..." >> $PKGLOG_ERROR
+echo "3. Make Build ..."
+echo "3. Make Build ..." >> $LFSLOG_PROCESS
+echo "3. Make Build ..." >> $PKGLOG_ERROR
 make SHLIB_LIBS="-lncursesw"    \
     > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "5. Make Install ..."
-echo "5. Make Install ..." >> $LFSLOG_PROCESS
-echo "5. Make Install ..." >> $PKGLOG_ERROR
+echo "4. Make Install ..."
+echo "4. Make Install ..." >> $LFSLOG_PROCESS
+echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 #make SHLIB_LIBS="-lncursesw" install    \ LfS 12.2

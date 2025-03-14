@@ -330,10 +330,10 @@ echo "."
 
 ###
 
-echo "08.26.Shadow-4.13.Part1"
-echo "08.26.Shadow-4.13.Part1" >> $LFSLOG_PROCESS
+echo "08.26.Shadow-4.13"
+echo "08.26.Shadow-4.13" >> $LFSLOG_PROCESS
 
-time { bash a.08.26.Shadow-4.13.Part1.sh ; }
+time { bash a.08.26.Shadow-4.13.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -344,10 +344,10 @@ echo "."
 
 ###
 
-echo "08.26.Shadow-4.13.Part9"
-echo "08.26.Shadow-4.13.Part9" >> $LFSLOG_PROCESS
+echo "08.26.Shadow-4.13.note"
+echo "08.26.Shadow-4.13.note" >> $LFSLOG_PROCESS
 
-bash a.08.26.Shadow-4.13.Part9.sh
+bash a.08.26.Shadow-4.13.note.sh
 
 echo "." >> $LFSLOG_PROCESS
 echo "."

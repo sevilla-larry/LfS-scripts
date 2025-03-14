@@ -76,7 +76,8 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 echo "   Make the installed library writable so debugging symbols can be removed later..."
 echo "   Make the installed library writable so debugging symbols can be removed later..." >> $LFSLOG_PROCESS
 echo "   Make the installed library writable so debugging symbols can be removed later..." >> $PKGLOG_ERROR
-chmod -v u+w /usr/lib/libtcl8.6.so  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+chmod -v u+w /usr/lib/libtcl8.6.so  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "7. Make Install Private Headers..."
 echo "7. Make Install Private Headers..." >> $LFSLOG_PROCESS

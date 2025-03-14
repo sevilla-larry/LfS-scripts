@@ -10,6 +10,7 @@ export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 #export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -27,17 +28,22 @@ cd    build
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-../configure --prefix=/usr > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-makeinfo --html --no-split -o doc/dejagnu.html ../doc/dejagnu.texi
-makeinfo --plaintext       -o doc/dejagnu.txt  ../doc/dejagnu.texi
+../configure --prefix=/usr  \
+    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+makeinfo --html --no-split -o doc/dejagnu.html ../doc/dejagnu.texi  \
+     > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+makeinfo --plaintext       -o doc/dejagnu.txt  ../doc/dejagnu.texi  \
+    >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 echo "3. Make Build & Install..."
 echo "3. Make Build & Install..." >> $LFSLOG_PROCESS
 echo "3. Make Build & Install..." >> $PKGLOG_ERROR
-make install > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-install -dm755  /usr/share/doc/dejagnu-1.6.3
-install -m644   doc/dejagnu.{html,txt}  \
-    /usr/share/doc/dejagnu-1.6.3
+make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+install -v -dm755  /usr/share/doc/dejagnu-1.6.3 \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+install -v -m644   doc/dejagnu.{html,txt}       \
+    /usr/share/doc/dejagnu-1.6.3                \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
@@ -45,9 +51,9 @@ echo "4. Make Check ..." >> $PKGLOG_ERROR
 make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_CHECK
 #unset PKGLOG_INSTALL

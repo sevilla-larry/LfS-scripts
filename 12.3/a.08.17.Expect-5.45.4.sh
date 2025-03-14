@@ -22,6 +22,7 @@ echo "1. Extract tar..." >> $PKGLOG_ERROR
 tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
+
 echo "   Expect needs PTYs to work. Verify that the PTYs are working properly"
 echo "   Expect needs PTYs to work. Verify that the PTYs are working properly"  >> $LFSLOG_PROCESS
 echo "   Expect needs PTYs to work. Verify that the PTYs are working properly"  >> $PKGLOG_ERROR
@@ -71,7 +72,8 @@ cd $SOURCES
 rm -rf $PKG
 unset SOURCES
 unset LFSLOG_PROCESS
-unset PKGLOG_CHECK PKGLOG_OTHERS
+unset PKGLOG_OTHERS
+unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

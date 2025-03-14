@@ -10,6 +10,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -27,9 +28,11 @@ echo "2. Patching for documentation..." >> $PKGLOG_ERROR
 patch -Np1 -i ../bzip2-1.0.8-install_docs-1.patch   \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
+sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
+sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Make Build libbz2 ..."
 echo "3. Make Build libbz2 ..." >> $LFSLOG_PROCESS
@@ -53,19 +56,21 @@ echo "6. Make Install ..." >> $PKGLOG_ERROR
 make PREFIX=/usr install    \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-cp -a libbz2.so.* /usr/lib
-ln -s libbz2.so.1.0.8 /usr/lib/libbz2.so
+cp -av libbz2.so.* /usr/lib               >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+ln -sv libbz2.so.1.0.8 /usr/lib/libbz2.so >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cp  bzip2-shared /usr/bin/bzip2
+cp  -v bzip2-shared /usr/bin/bzip2        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 for i in /usr/bin/{bzcat,bunzip2}; do
-  ln -sf bzip2 $i
+  ln -sfv bzip2 $i                        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 done
 
-rm -f /usr/lib/libbz2.a
+rm -fv /usr/lib/libbz2.a                  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD

@@ -9,7 +9,9 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -20,13 +22,6 @@ echo "1. Extract tar..." >> $PKGLOG_ERROR
 tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
-
-# Verify that the PTYs are working properly
-# inside chroot environment
-#
-# pls see check.log
-# output should be "spawn ls"
-# expect -c "spawn ls" > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -44,6 +39,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
              --enable-64-bit-bfd    \
              --with-system-zlib     \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#             --enable-default-hash-style=gnu    \  LfS 12.3
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -65,13 +61,15 @@ echo "5. Make Install ..." >> $PKGLOG_ERROR
 make tooldir=/usr install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-rm -f /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a
+rm -fv /usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

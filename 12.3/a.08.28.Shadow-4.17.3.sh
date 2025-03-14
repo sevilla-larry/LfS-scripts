@@ -49,10 +49,11 @@ sed -e 's:#ENCRYPT_METHOD DES:ENCRYPT_METHOD YESCRYPT:' \
     -i etc/login.defs                                   \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
+touch /usr/bin/passwd
+
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-touch /usr/bin/passwd
 ./configure --sysconfdir=/etc   \
             --disable-static    \
             --with-{b,yes}crypt \

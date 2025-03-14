@@ -105,6 +105,8 @@ A. Preparation
         export LFS=/mnt/lfs
         ###
 
+        umask 022
+
   A.07. [LFS 2.7] Mounting the New Partition
 
         ###

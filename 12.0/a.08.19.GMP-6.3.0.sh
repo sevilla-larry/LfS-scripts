@@ -9,7 +9,9 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -43,7 +45,8 @@ make check > $PKGLOG_CHECK 2>&1 | tee gmp-check-log
 cat gmp-check-log >> $PKGLOG_ERROR
 
 awk '/# PASS:/{total+=$3} ; END{print total}'   \
-    gmp-check-log
+    gmp-check-log                               \         
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
@@ -52,9 +55,11 @@ make install       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 make install-html >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

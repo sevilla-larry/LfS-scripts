@@ -1,6 +1,5 @@
 # a.08.05.Glibc-2.38.sh
-#
-# Development version due to: Errata 12.0 018 Glibc (LFS) 2023-10-03 High
+# errata
 #
 
 export PKG="glibc-2.38"
@@ -13,6 +12,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 #Modify the next line for your local time zone
 export LOCAL_TIME_ZONE=Asia/Manila
@@ -64,9 +64,10 @@ echo "5. Make Check ..." >> $LFSLOG_PROCESS
 echo "5. Make Check ..." >> $PKGLOG_ERROR
 make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-touch /etc/ld.so.conf
+touch /etc/ld.so.conf   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "6. Make Install ..."
 echo "6. Make Install ..." >> $LFSLOG_PROCESS
@@ -76,9 +77,9 @@ echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install DESTDIR=$PWD/dest > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 # Errata 12.0 018 Glibc (LFS) 2023-10-03 High
-install -m755 dest/usr/lib/ld-linux* /usr/lib
+install -m755 dest/usr/lib/ld-linux* /usr/lib   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd
+sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 # cp ../nscd/nscd.conf /etc/nscd.conf           --- Excluded ( see Development version )
 # mkdir -p /var/cache/nscd
@@ -123,16 +124,11 @@ localedef -i zh_CN -f GB18030 zh_CN.GB18030
 localedef -i zh_HK -f BIG5-HKSCS zh_HK.BIG5-HKSCS
 localedef -i zh_TW -f UTF-8 zh_TW.UTF-8
 
-echo "8. Make Install Locales ..."
-echo "8. Make Install Locales ..." >> $LFSLOG_PROCESS
-echo "8. Make Install Locales ..." >> $PKGLOG_ERROR
-make localedata/install-locales \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+echo "8. Adding nsswitch.conf ..."
+echo "8. Adding nsswitch.conf ..." >> $LFSLOG_PROCESS
+echo "8. Adding nsswitch.conf ..." >> $PKGLOG_ERROR
 
-localedef -i POSIX -f UTF-8 C.UTF-8 2> /dev/null || true
-localedef -i ja_JP -f SHIFT_JIS ja_JP.SJIS 2> /dev/null || true
-
-cat > /etc/nsswitch.conf << "EOF"
+cat > /etc/nsswitch.conf << "EOF" 2>> $PKGLOG_ERROR
 # Begin /etc/nsswitch.conf
 
 passwd: files
@@ -153,7 +149,7 @@ EOF
 echo "9. Setting Time Zone ..."
 echo "9. Setting Time Zone ..." >> $LFSLOG_PROCESS
 echo "9. Setting Time Zone ..." >> $PKGLOG_ERROR
-tar -xf ../../tzdata2023c.tar.gz    \
+tar -xvf ../../tzdata2023c.tar.gz    \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ZONEINFO=/usr/share/zoneinfo
@@ -170,27 +166,29 @@ cp zone.tab zone1970.tab iso3166.tab $ZONEINFO
 zic -d $ZONEINFO -p $LOCAL_TIME_ZONE
 unset ZONEINFO
 
-ln -sf /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime
+ln -sfv /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cat > /etc/ld.so.conf << "EOF"
+cat > /etc/ld.so.conf << "EOF" 2>> $PKGLOG_ERROR
 # Begin /etc/ld.so.conf
 /usr/local/lib
 /opt/lib
 
 EOF
 
-cat >> /etc/ld.so.conf << "EOF"
+cat >> /etc/ld.so.conf << "EOF" 2>> $PKGLOG_ERROR
 # Add an include directory
 include /etc/ld.so.conf.d/*.conf
 
 EOF
 
-mkdir -p /etc/ld.so.conf.d
+mkdir -pv /etc/ld.so.conf.d     \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LOCAL_TIME_ZONE
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
