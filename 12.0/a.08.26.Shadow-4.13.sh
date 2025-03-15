@@ -67,8 +67,8 @@ make -C man install-man         \
 cd $SOURCES
 rm -rf $PKG
 unset SOURCES
-unset PKGLOG_OTHERS
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 #unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

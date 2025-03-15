@@ -120,10 +120,10 @@ echo "."
 
 ###
 
-echo "08.35.Bash-5.2.15.Part1"
-echo "08.35.Bash-5.2.15.Part1" >> $LFSLOG_PROCESS
+echo "08.35.Bash-5.2.15"
+echo "08.35.Bash-5.2.15" >> $LFSLOG_PROCESS
 
-time { bash a.08.35.Bash-5.2.15.Part1.sh ; }
+time { bash a.08.35.Bash-5.2.15.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -134,10 +134,10 @@ echo "."
 
 ###
 
-echo "08.35.Bash-5.2.15.Part9"
-echo "08.35.Bash-5.2.15.Part9" >> $LFSLOG_PROCESS
+echo "08.35.Bash-5.2.15.note"
+echo "08.35.Bash-5.2.15.note" >> $LFSLOG_PROCESS
 
-bash a.08.35.Bash-5.2.15.Part9.sh
+bash a.08.35.Bash-5.2.15.note.sh
 
 echo "." >> $LFSLOG_PROCESS
 echo "."

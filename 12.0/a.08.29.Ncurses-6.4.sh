@@ -9,7 +9,9 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 #export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -45,27 +47,39 @@ echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$PWD/dest install  \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -m755 dest/usr/lib/libncursesw.so.6.4 /usr/lib
-rm dest/usr/lib/libncursesw.so.6.4
-cp -a dest/* /
+install -vm755 dest/usr/lib/libncursesw.so.6.4 /usr/lib \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+rm -v dest/usr/lib/libncursesw.so.6.4                   \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+cp -av dest/* /                                         \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 for lib in ncurses form panel menu ; do
-    rm -f                       /usr/lib/lib${lib}.so
-    echo "INPUT(-l${lib}w)" >   /usr/lib/lib${lib}.so
-    ln -sf ${lib}w.pc           /usr/lib/pkgconfig/${lib}.pc
+    rm -vf                      /usr/lib/lib${lib}.so           \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    echo "INPUT(-l${lib}w)" >   /usr/lib/lib${lib}.so           \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    ln -sfv ${lib}w.pc          /usr/lib/pkgconfig/${lib}.pc    \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 done
 
-rm -f                       /usr/lib/libcursesw.so
-echo "INPUT(-lncursesw)" >  /usr/lib/libcursesw.so
-ln -sf libncurses.so        /usr/lib/libcurses.so
+rm -vf                      /usr/lib/libcursesw.so  \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+echo "INPUT(-lncursesw)" >  /usr/lib/libcursesw.so  \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+ln -sfv libncurses.so       /usr/lib/libcurses.so   \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cp -R doc -T /usr/share/doc/ncurses-6.4
+cp -R doc -T /usr/share/doc/ncurses-6.4 \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
-#unset PKGLOG_CHECK
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
+#unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

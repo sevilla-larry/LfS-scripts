@@ -35,6 +35,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --enable-pc-files       \
             --with-pkg-config-libdir=/usr/lib/pkgconfig \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --enable-widec          \  LfS 12.0
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -50,7 +51,7 @@ install -vm755 dest/usr/lib/libncursesw.so.6.5 /usr/lib \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 rm -v dest/usr/lib/libncursesw.so.6.5   \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+sed -e 's/^#if.*XOPEN.*$/#if 1/'        \
     -i dest/usr/include/curses.h        \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 cp -av dest/* /                         \
@@ -79,9 +80,9 @@ cp -v -R doc -T /usr/share/doc/ncurses-6.5 \
 cd $SOURCES
 rm -rf $PKG
 unset SOURCES
-#unset PKGLOG_CHECK
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
+#unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

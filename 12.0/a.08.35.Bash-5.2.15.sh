@@ -11,6 +11,7 @@ export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -40,7 +41,7 @@ echo "4. Test ..."
 echo "4. Test ..." >> $LFSLOG_PROCESS
 echo "4. Test ..." >> $PKGLOG_ERROR
 
-chown -R tester .
+chown -vR tester . > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 su -s /usr/bin/expect tester << EOF > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 set timeout -1
@@ -55,9 +56,13 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
+# "Read and Execute 8.35 LAST line"
+# Run: exec /usr/bin/bash --login
 
-cd ..
+
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
