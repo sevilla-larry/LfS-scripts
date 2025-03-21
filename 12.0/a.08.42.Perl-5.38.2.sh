@@ -10,6 +10,7 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -28,19 +29,19 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 sh Configure -des                                           \
-             -Dprefix=/usr                                  \
-             -Dvendorprefix=/usr                            \
-             -Dprivlib=/usr/lib/perl5/5.38/core_perl        \
-             -Darchlib=/usr/lib/perl5/5.38/core_perl        \
-             -Dsitelib=/usr/lib/perl5/5.38/site_perl        \
-             -Dsitearch=/usr/lib/perl5/5.38/site_perl       \
-             -Dvendorlib=/usr/lib/perl5/5.38/vendor_perl    \
-             -Dvendorarch=/usr/lib/perl5/5.38/vendor_perl   \
-             -Dman1dir=/usr/share/man/man1                  \
-             -Dman3dir=/usr/share/man/man3                  \
-             -Dpager="/usr/bin/less -isR"                   \
-             -Duseshrplib                                   \
-             -Dusethreads                                   \
+             -D prefix=/usr                                 \
+             -D vendorprefix=/usr                           \
+             -D privlib=/usr/lib/perl5/5.38/core_perl       \
+             -D archlib=/usr/lib/perl5/5.38/core_perl       \
+             -D sitelib=/usr/lib/perl5/5.38/site_perl       \
+             -D sitearch=/usr/lib/perl5/5.38/site_perl      \
+             -D vendorlib=/usr/lib/perl5/5.38/vendor_perl   \
+             -D vendorarch=/usr/lib/perl5/5.38/vendor_perl  \
+             -D man1dir=/usr/share/man/man1                 \
+             -D man3dir=/usr/share/man/man3                 \
+             -D pager="/usr/bin/less -isR"                  \
+             -D useshrplib                                  \
+             -D usethreads                                  \
              > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
@@ -51,7 +52,7 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-TEST_JOBS=$NPROC make test_harness > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+TEST_JOBS=$(nproc) make test_harness > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
@@ -61,8 +62,9 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 unset BUILD_ZLIB BUILD_BZIP2
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

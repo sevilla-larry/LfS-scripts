@@ -4,12 +4,13 @@
 export PKG="ninja-1.11.1"
 export PKGLOG_DIR=$LFSLOG/08.54
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
-#export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -22,20 +23,22 @@ cd $PKG
 
 
 #Number of Parallel processes
-export NINJAJOBS=8
+export NINJAJOBS=$(nproc)
 
 sed -i '/int Guess/a \
   int   j = 0;\
   char* jobs = getenv( "NINJAJOBS" );\
   if ( jobs != NULL ) j = atoi( jobs );\
   if ( j > 0 ) return j;\
-' src/ninja.cc
+' src/ninja.cc                          \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Build ..."
 echo "2. Build ..." >> $LFSLOG_PROCESS
 echo "2. Build ..." >> $PKGLOG_ERROR
 python3 configure.py    \
         --bootstrap     \
+        --verbose       \
     > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 echo "3. Test ..."
@@ -59,11 +62,12 @@ install -vDm644 misc/zsh-completion                 \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD
-# PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG

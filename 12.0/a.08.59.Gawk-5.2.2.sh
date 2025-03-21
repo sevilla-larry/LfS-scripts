@@ -9,7 +9,9 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -21,7 +23,8 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-sed -i 's/extras//' Makefile.in
+sed -i 's/extras//' Makefile.in    \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
@@ -37,7 +40,8 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-chown -R tester .
+chown -vR tester .                      \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 su tester -c "PATH=$PATH make check"    \
      > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
@@ -47,15 +51,20 @@ echo "5. Make Install ..." >> $PKGLOG_ERROR
 make LN='ln -f' install  \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-ln -s gawk.1 /usr/share/man/man1/awk.1
+ln -sv gawk.1 /usr/share/man/man1/awk.1 \
+          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-mkdir -p                                /usr/share/doc/gawk-5.2.2
-cp doc/{awkforai.txt,*.{eps,pdf,jpg}}   /usr/share/doc/gawk-5.2.2
+mkdir     -pv                                     /usr/share/doc/gawk-5.2.2     \
+          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+cp        -v doc/{awkforai.txt,*.{eps,pdf,jpg}}   /usr/share/doc/gawk-5.2.2     \
+          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

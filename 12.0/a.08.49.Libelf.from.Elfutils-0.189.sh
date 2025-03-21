@@ -10,6 +10,7 @@ export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -44,12 +45,17 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make -C libelf install   \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -m644 config/libelf.pc /usr/lib/pkgconfig
-rm /usr/lib/libelf.a
+
+install -vm644 config/libelf.pc /usr/lib/pkgconfig     \
+     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+rm -v /usr/lib/libelf.a                                \
+     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

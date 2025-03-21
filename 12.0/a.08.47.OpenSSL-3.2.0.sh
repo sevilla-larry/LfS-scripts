@@ -10,7 +10,9 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -40,23 +42,29 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-HARNESS_JOBS=$NPROC make test > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+HARNESS_JOBS=$(nproc) make test    \
+     > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-make MANSUFFIX=ssl install    \
+sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile    \
+     > $PKGLOG_OTHERS  2>> $PKGLOG_ERROR
+make MANSUFFIX=ssl install                                  \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-mv /usr/share/doc/openssl /usr/share/doc/openssl-3.2.0
+mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.2.0   \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cp -fr doc/* /usr/share/doc/openssl-3.2.0
+cp -vfr doc/* /usr/share/doc/openssl-3.2.0                  \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

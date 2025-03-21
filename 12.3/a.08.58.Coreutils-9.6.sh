@@ -33,12 +33,12 @@ echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS
 echo "3. Configure ..." >> $PKGLOG_ERROR
 autoreconf -fv  > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-automake -af   >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-FORCE_UNSAFE_CONFIGURE=1      \
-               ./configure    \
-               --prefix=/usr                           \
-               --enable-no-install-program=kill,uptime \
-               >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+automake -afv  >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+FORCE_UNSAFE_CONFIGURE=1                     \
+     ./configure                             \
+     --prefix=/usr                           \
+     --enable-no-install-program=kill,uptime \
+     >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS

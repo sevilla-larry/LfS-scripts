@@ -41,7 +41,7 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-HARNESS_JOBS=$(nproc) make test \
+HARNESS_JOBS=$(nproc) make test    \
     > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
@@ -49,7 +49,7 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile    \
       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-make MANSUFFIX=ssl install    \
+make MANSUFFIX=ssl install                                  \
      >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 echo "   Add the version to the documentation directory name..."
@@ -61,7 +61,7 @@ mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.4.1   \
 echo "   Install some additional documentation..."
 echo "   Install some additional documentation..." >> $LFSLOG_PROCESS
 echo "   Install some additional documentation..." >> $PKGLOG_ERROR
-cp -vfr doc/* /usr/share/doc/openssl-3.4.1   \
+cp -vfr doc/* /usr/share/doc/openssl-3.4.1                  \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

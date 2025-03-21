@@ -173,7 +173,7 @@ done
 
 cp zone.tab zone1970.tab iso3166.tab $ZONEINFO
 zic -d $ZONEINFO -p $LOCAL_TIME_ZONE
-unset ZONEINFO
+unset ZONEINFO tz
 
 ln -sfv /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime     \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
