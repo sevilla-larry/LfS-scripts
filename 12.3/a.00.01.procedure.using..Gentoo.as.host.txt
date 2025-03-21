@@ -738,7 +738,7 @@ D. [LFS 10.x] Making the LFS System Bootable
           Memory Debugging
             [ ] Stack Utilitization Instrumentation
 
-        make
+        make -j($nproc)
         make modules_install
 
         cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.4-lfs-12.3-r00
