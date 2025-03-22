@@ -74,7 +74,7 @@ sed -e 's/no-pic /&-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c   \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-sed -e 's/{ target nonpic } //' \
+sed -e 's/{ target nonpic } //'                                                             \
     -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c         \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
