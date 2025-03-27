@@ -4,7 +4,7 @@
 # https://www.nano-editor.org/dist/v8/nano-8.3.tar.xz
 #
 
-export PKG="nano-8.1"
+export PKG="nano-8.3"
 export PKGLOG_DIR=$LFSLOG/08.73a
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
