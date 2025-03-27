@@ -60,7 +60,7 @@ echo "4. Make Check ..." >> $PKGLOG_ERROR
 touch /etc/fstab
 chown -vR tester .            \
      > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-su tester -c "make -k check"  \
+su tester -c "make -k check TESTOPTS='--timeout 120'"  \
     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
