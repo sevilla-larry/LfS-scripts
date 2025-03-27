@@ -1,4 +1,4 @@
-# a.08.73a.Nano-8.1.sh
+# a.08.73a.Nano-8.3.sh
 #
 # Don't forget to download
 # https://www.nano-editor.org/dist/v8/nano-8.3.tar.xz
