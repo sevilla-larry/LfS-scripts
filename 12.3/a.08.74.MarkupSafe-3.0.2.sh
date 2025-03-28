@@ -1,7 +1,7 @@
 # a.08.74.MarkupSafe-3.0.2.sh
 #
 
-export PKG="MarkupSafe-3.0.2"
+export PKG="markupsafe-3.0.2"
 export PKGLOG_DIR=$LFSLOG/08.74
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
