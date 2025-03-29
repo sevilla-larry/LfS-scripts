@@ -564,11 +564,14 @@ C. Finishing Up
 
         # PC
         # modify /etc/sysconfig/clock with UTC=0
-        #
 
         ###
 
         # modify /etc/sysconfig/rc.site, UNcomment some settings
+        #
+        # Console parameters
+        # UNICODE=1
+        # FONT="Lat2-Terminus16"
 
         ###
 
@@ -738,7 +741,7 @@ D. [LFS 10.x] Making the LFS System Bootable
           Memory Debugging
             [ ] Stack Utilitization Instrumentation
 
-        make -j($nproc)
+        make -j$(nproc)
         make modules_install
 
         cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.4-lfs-12.3-r00
@@ -762,7 +765,8 @@ D. [LFS 10.x] Making the LFS System Bootable
         mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # VB
         mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # PC
 
-        grub-install --target=x86_64-efi --efi-directory=/efi --removable
+      # grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
+        grub-install --target=x86_64-efi --removable  # default to /boot/efi
 
 
         cat > /boot/grub/grub.cfg << EOF
