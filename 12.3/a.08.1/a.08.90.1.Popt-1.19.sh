@@ -1,8 +1,8 @@
-# a.08.90A.Popt-1.19.sh
+# a.08.90.1.Popt-1.19.sh
 #
 
 export PKG="popt-1.19"
-export PKGLOG_DIR=$LFSLOG/08.90A
+export PKGLOG_DIR=$LFSLOG/08.90.1
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

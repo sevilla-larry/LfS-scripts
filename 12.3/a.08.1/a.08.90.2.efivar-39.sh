@@ -1,8 +1,8 @@
-# a.08.90C.efivar-39.sh
+# a.08.90.2.efivar-39.sh
 #
 
 export PKG="efivar-39"
-export PKGLOG_DIR=$LFSLOG/08.90C
+export PKGLOG_DIR=$LFSLOG/08.90.2
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

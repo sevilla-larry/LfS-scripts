@@ -1,15 +1,15 @@
-# a.08.91I.libpsl-0.21.5.sh
+# a.08.92.10.libpsl-0.21.5.sh
 #
 
 export PKG="libpsl-0.21.5"
-export PKGLOG_DIR=$LFSLOG/08.91I
+export PKGLOG_DIR=$LFSLOG/a.08.92.10
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
-export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
+#export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 export SOURCES=`pwd`
 
@@ -53,7 +53,7 @@ cd $SOURCES
 rm -rf $PKG
 unset SOURCES
 unset LFSLOG_PROCESS
-unset PKGLOG_OTHERS
+#unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_CHECK
 unset PKGLOG_ERROR PKGLOG_TAR

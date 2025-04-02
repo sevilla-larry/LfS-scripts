@@ -1,27 +1,8 @@
-# b10.17.21.nghttp2-1.64.0.sh
-#
-
-#
-# Dependencies Recommended:
-#
-#               b10.09.72 libxml2-2.13.6
-#
-# Dependencies Optional:
-#
-#               b10.09.07 boost-1.87.0
-#               b10.17.08 libevent-2.1.12
-#
-#               ???.17.01 c-ares-1.34.2     (circular)
-#
-
-#
-# Recommended by:
-#
-#               g11.09.80 Node.js-20.18.0 (svn)
+# a.08.92.13.nghttp2-1.64.0.sh
 #
 
 export PKG="nghttp2-1.64.0"
-export PKGLOG_DIR=$LFSLOG/17.21
+export PKGLOG_DIR=$LFSLOG/08.92.13
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

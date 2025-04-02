@@ -737,9 +737,22 @@ D. [LFS 10.x] Making the LFS System Bootable
           Graphics Support --->
             [*] Bootup logo
 
+        Cryptographic
+            Accelerated
+                SSSE 256
+
         Kernel hacking --->
           Memory Debugging
             [ ] Stack Utilitization Instrumentation
+
+        Device Drivers
+            SCSI
+                low-level
+                    M debugging
+                    
+        Networking
+
+                Netlink
 
         make -j$(nproc)
         make modules_install

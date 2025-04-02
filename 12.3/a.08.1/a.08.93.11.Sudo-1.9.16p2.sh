@@ -1,8 +1,8 @@
-# a.08.92D.Sudo-1.9.16p2.sh
+# a.08.93.11.Sudo-1.9.16p2.sh
 #
 
 export PKG="sudo-1.9.16p2"
-export PKGLOG_DIR=$LFSLOG/08.92D
+export PKGLOG_DIR=$LFSLOG/08.93.11
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

@@ -1,8 +1,8 @@
-# a.08.90D.efibootmgr-18.sh
+# a.08.90.3.efibootmgr-18.sh
 #
 
 export PKG="efibootmgr-18"
-export PKGLOG_DIR=$LFSLOG/08.90D
+export PKGLOG_DIR=$LFSLOG/08.90.3
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

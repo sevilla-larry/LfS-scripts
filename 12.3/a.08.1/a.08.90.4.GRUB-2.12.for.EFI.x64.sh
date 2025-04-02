@@ -1,8 +1,8 @@
-# a.08.80Z.GRUB-2.12 for EFI.x64.sh
+# a.08.80.4.GRUB-2.12 for EFI.x64.sh
 #
 
 export PKG="grub-2.12"
-export PKGLOG_DIR=$LFSLOG/08.90Z
+export PKGLOG_DIR=$LFSLOG/08.90.4
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
