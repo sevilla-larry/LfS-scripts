@@ -1,0 +1,3 @@
+# 05.05 & 08.05 
+be81e87f72b5ea2c0ffe2bedfeb680c6 glibc-2.39.tar.xz
+2349edd8335245525cc082f2755d5bf4 tzdata2024a.tar.gz

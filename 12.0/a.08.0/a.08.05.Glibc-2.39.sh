@@ -1,8 +1,8 @@
-# a.08.05.Glibc-2.38.sh
+# a.08.05.Glibc-2.39.sh
 # errata
 #
 
-export PKG="glibc-2.38"
+export PKG="glibc-2.39"
 export PKGLOG_DIR=$LFSLOG/08.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -30,12 +30,8 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.38-fhs-1.patch \
+patch -Np1 -i ../glibc-2.39-fhs-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-#glibc-2.38-memalign_fix-1.patch --- Errata
-patch -Np1 -i ../glibc-2.38-upstream_fixes-3.patch  \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -47,12 +43,12 @@ echo "3. Configure ..." >> $LFSLOG_PROCESS
 echo "3. Configure ..." >> $PKGLOG_ERROR
 ../configure --prefix=/usr                      \
              --disable-werror                   \
-             --enable-kernel=4.14               \
+             --enable-kernel=4.19               \
              --enable-stack-protector=strong    \
-             --with-headers=/usr/include        \
              --disable-nscd                     \
              libc_cv_slibdir=/usr/lib           \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#             --with-headers=/usr/include        \  2.38
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS
@@ -72,14 +68,10 @@ sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile \
 echo "6. Make Install ..."
 echo "6. Make Install ..." >> $LFSLOG_PROCESS
 echo "6. Make Install ..." >> $PKGLOG_ERROR
-#make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-#Errata 12.0 018 Glibc (LFS) 2023-10-03 High
-make install DESTDIR=$PWD/dest > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-# Errata 12.0 018 Glibc (LFS) 2023-10-03 High
-install -m755 dest/usr/lib/ld-linux* /usr/lib   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed '/RTLDLIST=/s@/usr@@g' -i /usr/bin/ldd  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 # cp ../nscd/nscd.conf /etc/nscd.conf           --- Excluded ( see Development version )
 # mkdir -p /var/cache/nscd
@@ -88,7 +80,7 @@ echo "7. Locale Definitions ..."
 echo "7. Locale Definitions ..." >> $LFSLOG_PROCESS
 echo "7. Locale Definitions ..." >> $PKGLOG_ERROR
 mkdir -p /usr/lib/locale
-localedef -i POSIX -f UTF-8 C.UTF-8 2> /dev/null || true
+localedef -i C -f UTF-8 C.UTF-8
 localedef -i cs_CZ -f UTF-8 cs_CZ.UTF-8
 localedef -i de_DE -f ISO-8859-1 de_DE
 localedef -i de_DE@euro -f ISO-8859-15 de_DE@euro
@@ -149,21 +141,27 @@ EOF
 echo "9. Setting Time Zone ..."
 echo "9. Setting Time Zone ..." >> $LFSLOG_PROCESS
 echo "9. Setting Time Zone ..." >> $PKGLOG_ERROR
-tar -xvf ../../tzdata2023c.tar.gz    \
+tar -xvf ../../tzdata2024a.tar.gz    \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ZONEINFO=/usr/share/zoneinfo
-mkdir -p $ZONEINFO/{posix,right}
+mkdir -pv $ZONEINFO/{posix,right}   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 for tz in etcetera southamerica northamerica europe africa antarctica   \
           asia australasia backward; do
-    zic -L /dev/null   -d $ZONEINFO       ${tz}
-    zic -L /dev/null   -d $ZONEINFO/posix ${tz}
-    zic -L leapseconds -d $ZONEINFO/right ${tz}
+    zic -L /dev/null   -d $ZONEINFO       ${tz}     \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    zic -L /dev/null   -d $ZONEINFO/posix ${tz}     \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    zic -L leapseconds -d $ZONEINFO/right ${tz}     \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 done
 
-cp zone.tab zone1970.tab iso3166.tab $ZONEINFO
-zic -d $ZONEINFO -p $LOCAL_TIME_ZONE
+cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+zic -d $ZONEINFO -p $LOCAL_TIME_ZONE                \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 unset ZONEINFO
 
 ln -sfv /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime  \

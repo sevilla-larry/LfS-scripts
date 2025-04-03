@@ -1,7 +1,8 @@
-# a.5.05.Glibc-2.38.sh
+# a.05.05.Glibc-2.39.sh
+# errata
 #
 
-export PKG="glibc-2.38"
+export PKG="glibc-2.39"
 export PKGLOG_DIR=$LFSLOG/05.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -33,7 +34,7 @@ case $(uname -m) in
 esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "Patch 2 FHS-compliant"            >> $PKGLOG_OTHERS
-patch -Np1 -i ../glibc-2.38-fhs-1.patch >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+patch -Np1 -i ../glibc-2.39-fhs-1.patch >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -47,7 +48,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
       --prefix=/usr                         \
       --host=$LFS_TGT                       \
       --build=$(../scripts/config.guess)    \
-      --enable-kernel=4.14                  \
+      --enable-kernel=4.19                  \
       --with-headers=$LFS/usr/include       \
       --disable-nscd                        \
       libc_cv_slibdir=/usr/lib              \
