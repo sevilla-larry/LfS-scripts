@@ -1,4 +1,4 @@
-# 08.73a
+# 08.73a Nano-8.3
 e64276780e23efb273480c4279050f74 nano-8.3.tar.xz
 
 # 08.90.1 Popt-1.19
@@ -13,7 +13,7 @@ e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
 ea5e8d7208616b1609018db290a67419 cmake-3.31.5.tar.gz
 # 08.91.02 GPM-1.20.7
 bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
-##gpm-1.20.7-consolidated-1.patch
+#								 gpm-1.20.7-consolidated-1.patch
 # 08.91.03 Which-2.23
 1963b85914132d78373f02a84cdb3c86 which-2.23.tar.gz
 # 08.91.04 Zip-3.0
@@ -26,15 +26,14 @@ b02099b0d63f06b3fe370f4edfc0c085 patchelf-0.18.0.tar.gz
 857fdafff8127139cc175a3ec9b43bd6 icu4c-76_1-src.tgz
 # 08.91.08 libxml2-2.13.6
 85dffa2387ff756bdf8b3b247594914a libxml2-2.13.6.tar.xz
-#libxml2-2.13.6-upstream_fix-2.patch
-#xmlts20130923.tar.gz
+#								 xmlts20130923.tar.gz
 # 08.91.09 LZO-2.10
 39d3f3f9c55c87b1e5d6888e1420f4b5 lzo-2.10.tar.gz
 # 08.91.10 Nettle-3.10.1
 c3dc1729cfa65fcabe2023dfbff60beb nettle-3.10.1.tar.gz
 # 08.91.11 PCRE2-10.45
 f71abbe1b5adf25cd9af5d26ef223b66 pcre2-10.45.tar.bz2
-# 08.91.12 libarchive-3.7.7 (errata)
+# 08.91.12 libarchive-3.7.7
 50c4dea9eba9a0add25ac1cfc9ba2cdb libarchive-3.7.7.tar.xz
 # 08.91.13 libuv-1.50.0
 d346e03fe1ca89d877f9d1431ef97cec libuv-v1.50.0.tar.gz
@@ -49,9 +48,6 @@ bf908de360308d909e9cc469402ff2ef rpcsvc-proto-1.4.4.tar.xz
 # 08.91.18 SQLite-3.49.1
 8d77d0779bcd9993eaef33431e2e0c30 sqlite-autoconf-3490100.tar.gz
 8d3e207489b544a8687e3faf8db26291 sqlite-doc-3490100.zip
-# 08.91.19 Python-3.13.2
-4c2d9202ab4db02c9d0999b14655dfe5 Python-3.13.2.tar.xz
-d6aede88f480a018d26b3206f21654ae python-3.13.2-docs-html.tar.bz2
 
 # 08.91.20 Python Modules & Dependencies
 # 08.91.20.01 Packaging-24.2
@@ -95,9 +91,8 @@ c6ee254bcdf1e2fdb13d87e0ee4166ba numpy-2.2.3.tar.gz
 3a6a3dba82a3604792d3cb0bd41bca60 brotli-1.1.0.tar.gz
 # 08.91.23 boost-1.87.0
 c2ffeab30889999f55cf72e1107611aa boost-1.87.0-b2-nodocs.tar.xz
-# boost-1.86.0-upstream_fixes-1.patch
 
-# Perl Modules & Dependencies
+# 08.91.30 Perl Modules & Dependencies
 # 08.91.30.01 Capture::Tiny-0.50
 92c96fdff1b972a663cc2b3e206ca853 Capture-Tiny-0.50.tar.gz
 # 08.91.30.02 Try::Tiny-0.32
@@ -112,81 +107,83 @@ c2ffeab30889999f55cf72e1107611aa boost-1.87.0-b2-nodocs.tar.xz
 0c7735fa09e74c7f2ec93d1890b8c6c0 MIME-Base32-1.303.tar.gz
 # 08.91.30.07 URI-5.31
 b5388d5b86e1870a80ad95c153bf41fd URI-5.31.tar.gz
-# 08.91.30.08.Net-SSLeay-1.94
+# 08.91.30.08 Net::SSLeay-1.94
 1b22c764e5a094c6261e37a4b1f148ce Net-SSLeay-1.94.tar.gz
-# 08.91.30.09.IO-Socket-SSL-2.089
+# 08.91.30.09 IO::Socket::SSL-2.089
 1e9cf40beaaafa502de8f3b560a9adee IO-Socket-SSL-2.089.tar.gz
 
-# 08.91.41.NSPR-4.36
+# 08.91.41 NSPR-4.36
 87a41a0773ab2a5f5c8f01aec16df24c nspr-4.36.tar.gz
-# 08.91.42.NSS-3.108
+# 08.91.42 NSS-3.108
 9208c05e756a06be19ce0e683777466e nss-3.108.tar.gz
-###nss-standalone-1.patch
-# 08.91.43.libtasn1-4.20.0
+#								 nss-standalone-1.patch
+# 08.91.43 libtasn1-4.20.0
 930f71d788cf37505a0327c1b84741be libtasn1-4.20.0.tar.gz
-# 08.91.44.libgpg-error-1.51
+# 08.91.44 libgpg-error-1.51
 74b73ea044685ce9fd6043a8cc885eac libgpg-error-1.51.tar.bz2
-# 08.91.45.libgcrypt-1.11.0
+# 08.91.45 libgcrypt-1.11.0
 321c4975cfd6a496f0530b65a673f9a4 libgcrypt-1.11.0.tar.bz2
-# 08.91.46.docbook-xml-4.5
+# 08.91.46 docbook-xml-4.5
 03083e288e87a7e829e437358da7ef9e docbook-xml-4.5.zip
-# 08.91.47.docbook-xsl-nons-1.79.2
+# 08.91.47 docbook-xsl-nons-1.79.2
 2666d1488d6ced1551d15f31d7ed8c38 docbook-xsl-nons-1.79.2.tar.bz2
+#								 docbook-xsl-nons-1.79.2-stack_fix-1.patch
 62375ca864fc198cb2b17d98209d0b8c docbook-xsl-doc-1.79.2.tar.bz2
-# 08.91.48.libxslt-1.1.42
+# 08.91.48 libxslt-1.1.42
 56bc5d89aa39d62002961c150fec08a0 libxslt-1.1.42.tar.xz
-# 08.91.49.p11-kit-0.25.5
+# 08.91.49 p11-kit-0.25.5
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz
-# 08.91.50.make-ca-1.15
+# 08.91.50 make-ca-1.15
 1af805d92b55091b5f11fd7db77c9b0e make-ca-1.15.tar.gz
-# 08.91.51.libunistring-1.3
+# 08.91.51 libunistring-1.3
 57dfd9e4eba93913a564aa14eab8052e libunistring-1.3.tar.xz
-# 08.91.52.libidn2-2.3.7
+# 08.91.52 libidn2-2.3.7
 de2818c7dea718a4f264f463f595596b libidn2-2.3.7.tar.gz
-# 08.91.53.GnuTLS-3.8.9
+# 08.91.53 GnuTLS-3.8.9
 33f4c800c20af2983c45223a803da865 gnutls-3.8.9.tar.xz
-# 08.91.54.libpsl-0.21.5
+# 08.91.54 libpsl-0.21.5
 870a798ee9860b6e77896548428dba7b libpsl-0.21.5.tar.gz
 # 08.91.55 c-ares-1.34.4
 136230025fc9c9d510cb29fdc998a6ea c-ares-1.34.4.tar.gz
 # 08.91.56 Jansson-2.14
 3f90473d7d54ebd1cb6a2757396641df jansson-2.14.tar.bz2
-# 08.91.57.nghttp2-1.64.0
+# 08.91.57 nghttp2-1.64.0
 0cf8f819f4b717de7dde9f8164d0b466 nghttp2-1.64.0.tar.xz
-# 08.91.58.libssh2-1.11.1
+# 08.91.58 libssh2-1.11.1
 38857d10b5c5deb198d6989dacace2e6 libssh2-1.11.1.tar.gz
-#libssh2-1.11.0-security_fixes-1.patch
 
-# 08.91.61.pciutils-3.13.0
+# 08.91.61 pciutils-3.13.0
 1edb865de7a2de84e67508911010091b pciutils-3.13.0.tar.gz
-# 08.91.62.hwdata-0.392
+# 08.91.62 hwdata-0.392
 14cee546bfc1f6cb83c4339df1cbe4b9 hwdata-0.392.tar.gz
-###sshpass
+# 08.91.63 sshpass-1.10
+#								 sshpass-1.10.tar.gz
 
-# 08.92.01.Linux-PAM-1.7.0
+# 08.92.01 Linux-PAM-1.7.0
 c1e41d59d6852e45d0f953c8c8f869d6 Linux-PAM-1.7.0.tar.xz
 dba9e555df98004fe9cea233c927a551 Linux-PAM-1.7.0-docs.tar.xz
 # 08.92.02 Shadow-4.17.3
-0da190e53ecee76237e4c8f3f39531ed shadow-4.17.3.tar.xz
+#								 main download
 
-# 08.92.11.Sudo-1.9.16p2
+# 08.92.11 Sudo-1.9.16p2
 52681ba928fb7aba46998f061d9ba85c sudo-1.9.16p2.tar.gz
-# 08.92.12.OpenSSH-9.9p2
+# 08.92.12 OpenSSH-9.9p2
 f617b95fe278bfea8d004589c7a68a85 openssh-9.9p2.tar.gz
 # 08.92.13 libcap-2.73 with PAM
-0e186df9de9b1e925593a96684fe2e32 libcap-2.73.tar.xz
+#								 main download
 
-# 08.93.01.ntp-4.2.8p18
+# 08.93.01 ntp-4.2.8p18
 516bdabd94ab7c824e9771390761a46c ntp-4.2.8p18.tar.gz
-# 08.93.02.WGet-1.25.0
+# 08.93.02 WGet-1.25.0
 c70ba58b36f944e8ba1d655ace552881 wget-1.25.0.tar.gz
-# 08.93.03.Lynx-2.9.2
+# 08.93.03 Lynx-2.9.2
 3ce01505e82626ca4d7291d7e649c4c9 lynx2.9.2.tar.bz2
-# 08.93.04.cURL-8.12.1
+# 08.93.04 cURL-8.12.1
 7940975dd510399c4b27831165ab62e0 curl-8.12.1.tar.xz
 # 08.93.05 Git-2.48.1
 99656f1481e70701198257ada703a480 git-2.48.1.tar.xz
-# manpages
-# htmldocs
+#								 manpages
+#								 htmldocs
 
-###blfs-bootscripts-20250225.tar.xz
+# 09.99 BLFS-Bootscripts-20250225
+#								 blfs-bootscripts-20250225.tar.xz
