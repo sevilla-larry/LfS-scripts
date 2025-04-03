@@ -33,6 +33,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --with-openssl                  \
             --with-ca-path=/etc/ssl/certs   \
             --enable-ares                   \
+            --with-libssh2                  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            --enable-threaded-resolver      \ 8.10.1 ver
 
