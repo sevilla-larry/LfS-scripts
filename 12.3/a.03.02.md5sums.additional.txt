@@ -17,7 +17,7 @@ bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
 # 08.91.03 Which-2.23
 1963b85914132d78373f02a84cdb3c86 which-2.23.tar.gz
 # 08.91.04 Zip-3.0
-7b74551e63f8ee6aab6fbc86676c0d37 zip-3.0.tar.gz
+7b74551e63f8ee6aab6fbc86676c0d37 zip30.tar.gz
 # 08.91.05 Patchelf-0.18.0
 b02099b0d63f06b3fe370f4edfc0c085 patchelf-0.18.0.tar.gz
 # 08.91.06 Net-tools-2.10
