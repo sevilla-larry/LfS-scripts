@@ -111,17 +111,17 @@ https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.31.tar.gz
 https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz
 # 08.91.30.09 IO::Socket::SSL-2.089
 https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
-# 08.91.30.08.Net-SSLeay-1.94
+# 08.91.30.08 Net-SSLeay-1.94
 https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz
-# 08.91.30.09.IO-Socket-SSL-2.089
+# 08.91.30.09 IO-Socket-SSL-2.089
 https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
 
-# 08.91.41.NSPR-4.36
+# 08.91.41 NSPR-4.36
 https://archive.mozilla.org/pub/nspr/releases/v4.36/src/nspr-4.36.tar.gz
-# 08.91.42.NSS-3.108
+# 08.91.42 NSS-3.108
 https://archive.mozilla.org/pub/security/nss/releases/NSS_3_108_RTM/src/nss-3.108.tar.gz
 https://www.linuxfromscratch.org/patches/blfs/12.3/nss-standalone-1.patch
-# 08.91.43.libtasn1-4.20.0
+# 08.91.43 libtasn1-4.20.0
 https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz
 # 08.91.44 libgpg-error-1.51
 https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2
@@ -135,7 +135,7 @@ https://www.linuxfromscratch.org/patches/blfs/12.3/docbook-xsl-nons-1.79.2-stack
 https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-doc-1.79.2.tar.bz2
 # 08.91.48 libxslt-1.1.42
 https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.42.tar.xz
-# 08.91.49.p11-kit-0.25.5
+# 08.91.49 p11-kit-0.25.5
 https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz
 # 08.91.50.make-ca-1.15
 https://github.com/lfs-book/make-ca/archive/v1.15/make-ca-1.15.tar.gz
@@ -158,12 +158,12 @@ https://www.libssh2.org/download/libssh2-1.11.1.tar.gz
 
 # 08.91.61.pciutils-3.13.0
 https://mj.ucw.cz/download/linux/pci/pciutils-3.13.0.tar.gz
-# 08.91.62.hwdata-0.392
+# 08.91.62 hwdata-0.392
 https://github.com/vcrhonek/hwdata/archive/v0.392/hwdata-0.392.tar.gz
 # 08.91.63.sshpass-1.10
 https://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz
 
-# 08.92.01.Linux-PAM-1.7.0
+# 08.92.01 Linux-PAM-1.7.0
 https://github.com/linux-pam/linux-pam/releases/download/v1.7.0/Linux-PAM-1.7.0.tar.xz
 https://anduin.linuxfromscratch.org/BLFS/Linux-PAM/Linux-PAM-1.7.0-docs.tar.xz
 # 08.92.11 Sudo-1.9.16p2
