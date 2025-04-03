@@ -1,41 +1,8 @@
-# d10.09.74.libxslt-1.1.42.sh
-#
-
-#
-# Dependencies Required:
-#
-#               b10.09.72 libxml2-2.13.3
-#
-# Dependencies Recommended (at runtime):
-#
-#               b10.49.01 docbook-xml-4.5
-#               b10.49.04 docbook-xsl-nons-1.79.2
-#
-# Dependencies Optional:
-#
-#               b10.09.42 libgcrypt-1.11.0
-#
-
-#
-#   Recommended but needed by:
-#
-#               d10.09.17 GLib-2.80.4
-#
-#   Recommended by:
-#
-#               d10.04.20 Polkit-126
-#               g12.39.03 LibreOffice-24.8.0
-#
-#   Optional by:
-#
-#               d20.24.03 xorgproto-2024.1
-#				d20.24.05 libXdmcp-1.1.5
-#				d20.24.07 libxcb-1.17.0
-#               d20.25.34 Libdrm-2.4.122
+# a.08.91.48.libxslt-1.1.42.sh
 #
 
 export PKG="libxslt-1.1.42"
-export PKGLOG_DIR=$LFSLOG/09.74
+export PKGLOG_DIR=$LFSLOG/08.91.48
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

@@ -1,8 +1,8 @@
-# a.08.92.12.Jansson-2.14.sh
+# a.08.91.56.Jansson-2.14.sh
 #
 
 export PKG="jansson-2.14"
-export PKGLOG_DIR=$LFSLOG/08.92.12
+export PKGLOG_DIR=$LFSLOG/08.91.56
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

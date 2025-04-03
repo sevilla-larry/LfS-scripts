@@ -1,8 +1,8 @@
-# a.08.94.04.cURL-8.12.1.sh
+# a.08.93.04.cURL-8.12.1.sh
 #
 
 export PKG="curl-8.12.1"
-export PKGLOG_DIR=$LFSLOG/08.94.04
+export PKGLOG_DIR=$LFSLOG/08.93.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

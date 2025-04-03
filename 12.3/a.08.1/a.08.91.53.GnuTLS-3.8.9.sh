@@ -1,8 +1,8 @@
-# a.08.92.08.GnuTLS-3.8.9.sh
+# a.08.91.53.GnuTLS-3.8.9.sh
 #
 
 export PKG="gnutls-3.8.9"
-export PKGLOG_DIR=$LFSLOG/08.92.08
+export PKGLOG_DIR=$LFSLOG/08.91.53
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

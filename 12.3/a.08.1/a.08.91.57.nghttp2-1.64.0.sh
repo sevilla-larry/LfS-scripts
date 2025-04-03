@@ -1,8 +1,8 @@
-# a.08.92.13.nghttp2-1.64.0.sh
+# a.08.91.57.nghttp2-1.64.0.sh
 #
 
 export PKG="nghttp2-1.64.0"
-export PKGLOG_DIR=$LFSLOG/08.92.13
+export PKGLOG_DIR=$LFSLOG/08.91.57
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

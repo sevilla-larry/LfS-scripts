@@ -1,8 +1,8 @@
-# a.08.92.02.NSS-3.108.sh
+# a.08.91.42.NSS-3.108.sh
 #
 
 export PKG="nss-3.108"
-export PKGLOG_DIR=$LFSLOG/08.92.02
+export PKGLOG_DIR=$LFSLOG/08.91.42
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

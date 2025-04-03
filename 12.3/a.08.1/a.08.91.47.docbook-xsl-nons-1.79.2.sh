@@ -1,24 +1,8 @@
-# d10.49.04.docbook-xsl-nons-1.79.2.sh
-#
-
-#
-# Dependencies Recommended:
-#
-#               b10.09.72 libxml2-2.13.6
-#
-# Dependencies Optional:
-#
-#               b10.09.74 libxslt-1.1.42
-#
-
-#
-# Recommended (at runtime) by:
-#
-#               b10.09.74 libxslt-1.1.42
+# a.08.91.47.docbook-xsl-nons-1.79.2.sh
 #
 
 export PKG="docbook-xsl-nons-1.79.2"
-export PKGLOG_DIR=$LFSLOG/49.04
+export PKGLOG_DIR=$LFSLOG/08.91.47
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log

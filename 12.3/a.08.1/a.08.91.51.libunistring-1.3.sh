@@ -1,8 +1,8 @@
-# a.08.92.06.libunistring-1.3.sh
+# a.08.91.51.libunistring-1.3.sh
 #
 
 export PKG="libunistring-1.3"
-export PKGLOG_DIR=$LFSLOG/08.92.06
+export PKGLOG_DIR=$LFSLOG/08.91.51
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

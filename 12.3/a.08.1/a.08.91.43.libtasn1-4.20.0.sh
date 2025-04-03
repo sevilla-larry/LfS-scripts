@@ -1,8 +1,8 @@
-# a.08.92.03.libtasn1-4.20.0.sh
+# a.08.91.43.libtasn1-4.20.0.sh
 #
 
 export PKG="libtasn1-4.20.0"
-export PKGLOG_DIR=$LFSLOG/08.92.03
+export PKGLOG_DIR=$LFSLOG/08.91.43
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

@@ -1,8 +1,8 @@
-# a.08.94.02.WGet-1.25.0.sh
+# a.08.92.11.Sudo-1.9.16p2.sh
 #
 
-export PKG="wget-1.25.0"
-export PKGLOG_DIR=$LFSLOG/08.94.02
+export PKG="sudo-1.9.16p2"
+export PKGLOG_DIR=$LFSLOG/08.92.11
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -26,9 +26,12 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr          \
-            --sysconfdir=/etc      \
-            --with-ssl=openssl     \
+./configure --prefix=/usr           \
+            --libexecdir=/usr/lib   \
+            --with-secure-path      \
+            --with-env-editor       \
+            --docdir=/usr/share/doc/sudo-1.9.16p2           \
+            --with-passprompt="[sudo] password for %p: "    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
@@ -36,15 +39,20 @@ echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Make Check ..."
-echo "4. Make Check ..." >> $LFSLOG_PROCESS
-echo "4. Make Check ..." >> $PKGLOG_ERROR
-make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo "4. Make Test ..."
+echo "4. Make Test ..." >> $LFSLOG_PROCESS
+echo "4. Make Test ..." >> $PKGLOG_ERROR
+env LC_ALL=C make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+cat > /etc/sudoers.d/00-sudo << "EOF"       2>> $PKGLOG_ERROR
+Defaults secure_path="/usr/sbin:/usr/bin"
+%wheel ALL=(ALL) ALL
+EOF
 
 
 cd $SOURCES

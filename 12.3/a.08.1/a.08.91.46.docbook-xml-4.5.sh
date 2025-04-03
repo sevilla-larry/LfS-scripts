@@ -1,25 +1,8 @@
-# d10.49.01.docbook-xml-4.5.sh
-#
-
-#
-# Dependencies Required:
-#
-#               b10.09.72 libxml2-2.13.3
-#               d10.12.36 UnZip-6.0
-#
-
-#
-# Required by:
-#
-#               f21.49.05 itstool-2.0.7
-#
-# Recommended (at runtime) by:
-#
-#               d10.09.74 libxslt-1.1.42
+# a.08.91.46.docbook-xml-4.5.sh
 #
 
 export PKG="docbook-xml-4.5"
-export PKGLOG_DIR=$LFSLOG/49.01
+export PKGLOG_DIR=$LFSLOG/08.91.46
 export PKGLOG_ZIP=$PKGLOG_DIR/zip.log
 #xport PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 #xport PKGLOG_BUILD=$PKGLOG_DIR/build.log

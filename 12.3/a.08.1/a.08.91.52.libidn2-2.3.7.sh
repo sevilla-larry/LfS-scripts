@@ -1,8 +1,8 @@
-# a.08.92.07.libidn2-2.3.7.sh
+# a.08.91.52.libidn2-2.3.7.sh
 #
 
 export PKG="libidn2-2.3.7"
-export PKGLOG_DIR=$LFSLOG/08.92.07
+export PKGLOG_DIR=$LFSLOG/08.91.52
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

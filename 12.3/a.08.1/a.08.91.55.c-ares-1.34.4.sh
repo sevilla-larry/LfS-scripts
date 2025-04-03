@@ -1,8 +1,8 @@
-# a.08.92.11.c-ares-1.34.4.sh
+# a.08.91.55.c-ares-1.34.4.sh
 #
 
 export PKG="c-ares-1.34.4"
-export PKGLOG_DIR=$LFSLOG/08.92.11
+export PKGLOG_DIR=$LFSLOG/08.91.55
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

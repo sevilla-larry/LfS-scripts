@@ -1,8 +1,8 @@
-# a.08.93.02.Shadow-4.17.3.sh
+# a.08.92.02.Shadow-4.17.3.sh
 #
 
 export PKG="shadow-4.17.3"
-export PKGLOG_DIR=$LFSLOG/a.08.93.02
+export PKGLOG_DIR=$LFSLOG/a.08.92.02
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

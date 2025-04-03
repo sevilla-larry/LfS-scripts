@@ -1,8 +1,8 @@
-# a.08.92.16.libssh2-1.11.1.sh
+# a.08.91.58.libssh2-1.11.1.sh
 #
 
 export PKG="libssh2-1.11.1"
-export PKGLOG_DIR=$LFSLOG/08.92.16
+export PKGLOG_DIR=$LFSLOG/08.91.58
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

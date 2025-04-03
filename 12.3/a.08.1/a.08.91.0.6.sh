@@ -8,24 +8,10 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.91.01.CMake-3.31.5.Pass1"
-echo "08.91.01.CMake-3.31.5.Pass1" >> $LFSLOG_PROCESS
+echo "08.91.41.NSPR-4.36"
+echo "08.91.41.NSPR-4.36" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.01.CMake-3.31.5.Pass1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.02.GPM-1.20.7"
-echo "08.91.02.GPM-1.20.7" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.02.GPM-1.20.7.sh ; }
+time { bash a.08.91.41.NSPR-4.36.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -36,24 +22,10 @@ echo "."
 
 ###
 
-echo "08.91.03.Which-2.23"
-echo "08.91.03.Which-2.23" >> $LFSLOG_PROCESS
+echo "08.91.42.NSS-3.108"
+echo "08.91.42.NSS-3.108" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.03.Which-2.23.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.04.Zip-3.0"
-echo "08.91.04.Zip-3.0" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.04.Zip-3.0.sh ; }
+time { bash a.08.91.42.NSS-3.108.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -64,24 +36,10 @@ echo "."
 
 ###
 
-echo "08.91.05.Patchelf-0.18.0"
-echo "08.91.05.Patchelf-0.18.0" >> $LFSLOG_PROCESS
+echo "08.91.43.libtasn1-4.20.0"
+echo "08.91.43.libtasn1-4.20.0" >> $LFSLOG_PROCESS
 
-time { a.08.91.05.Patchelf-0.18.0.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.06.Net-tools-2.10"
-echo "08.91.06.Net-tools-2.10" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.06.Net-tools-2.10.sh ; }
+time { bash a.08.91.43.libtasn1-4.20.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -92,24 +50,10 @@ echo "."
 
 ###
 
-echo "08.91.07.icu-76.1"
-echo "08.91.07.icu-76.1" >> $LFSLOG_PROCESS
+echo "08.91.44.libgpg-error-1.51"
+echo "08.91.44.libgpg-error-1.51" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.07.icu-76.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.08.libxml2-2.13.6"
-echo "08.91.08.libxml2-2.13.6" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.08.libxml2-2.13.6.sh ; }
+time { bash a.08.91.44.libgpg-error-1.51.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -120,24 +64,10 @@ echo "."
 
 ###
 
-echo "08.91.09.LZO-2.10"
-echo "08.91.09.LZO-2.10" >> $LFSLOG_PROCESS
+echo "08.91.45.libgcrypt-1.11.0"
+echo "08.91.45.libgcrypt-1.11.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.09.LZO-2.10.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.10.Nettle-3.10.1"
-echo "08.91.10.Nettle-3.10.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.10.Nettle-3.10.1.sh ; }
+time { bash a.08.91.45.libgcrypt-1.11.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -148,24 +78,10 @@ echo "."
 
 ###
 
-echo "08.91.11.PCRE2-10.45"
-echo "08.91.11.PCRE2-10.45" >> $LFSLOG_PROCESS
+echo "08.91.46.docbook-xml-4.5"
+echo "08.91.46.docbook-xml-4.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.11.PCRE2-10.45.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.12.libarchive-3.7.7"
-echo "08.91.12.libarchive-3.7.7" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.12.libarchive-3.7.7.sh ; }
+time { bash a.08.91.46.docbook-xml-4.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -176,24 +92,10 @@ echo "."
 
 ###
 
-echo "08.91.13.libuv-1.50.0"
-echo "08.91.13.libuv-1.50.0" >> $LFSLOG_PROCESS
+echo "08.91.47.docbook-xsl-nons-1.79.2"
+echo "08.91.47.docbook-xsl-nons-1.79.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.13.libuv-1.50.0.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.14.libevent-2.1.12"
-echo "08.91.14.libevent-2.1.12" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.14.libevent-2.1.12.sh ; }
+time { bash a.08.91.47.docbook-xsl-nons-1.79.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -204,24 +106,10 @@ echo "."
 
 ###
 
-echo "08.91.15.libtirpc-1.3.6"
-echo "08.91.15.libtirpc-1.3.6" >> $LFSLOG_PROCESS
+echo "08.91.48.libxslt-1.1.42"
+echo "08.91.48.libxslt-1.1.42" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.15.libtirpc-1.3.6.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.16.libnsl-2.0.1"
-echo "08.91.16.libnsl-2.0.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.16.libnsl-2.0.1.sh ; }
+time { bash a.08.91.48.libxslt-1.1.42.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -232,24 +120,10 @@ echo "."
 
 ###
 
-echo "08.91.17.SQLite-3.49.1"
-echo "08.91.17.SQLite-3.49.1" >> $LFSLOG_PROCESS
+echo "08.91.49.p11-kit-0.25.5"
+echo "08.91.49.p11-kit-0.25.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.17.SQLite-3.49.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.18.Python-3.13.2"
-echo "08.91.18.Python-3.13.2" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.18.Python-3.13.2.sh ; }
+time { bash a.08.91.49.p11-kit-0.25.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -260,19 +134,129 @@ echo "."
 
 ###
 
-# Possible conflict with elogind
-#
-# echo "08.92I.acpid-2.0.34"
-# echo "08.92I.acpid-2.0.34" >> $LFSLOG_PROCESS
+echo "08.91.50.make-ca-1.15"
+echo "08.91.50.make-ca-1.15" >> $LFSLOG_PROCESS
 
-# time { bash a.08.92I.acpid-2.0.34.sh ; }
+time { bash a.08.91.50.make-ca-1.15.sh ; }
 
-# date +"%Y/%b/%d %H:%M"
-# date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
-# echo "." >> $LFSLOG_PROCESS
-# echo "."
-# echo "."
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.51.libunistring-1.3"
+echo "08.91.51.libunistring-1.3" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.51.libunistring-1.3.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.52.libidn2-2.3.7"
+echo "08.91.52.libidn2-2.3.7" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.52.libidn2-2.3.7.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.53.GnuTLS-3.8.9"
+echo "08.91.53.GnuTLS-3.8.9" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.53.GnuTLS-3.8.9.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.54.libpsl-0.21.5"
+echo "08.92.54.libpsl-0.21.5" >> $LFSLOG_PROCESS
+
+time { bash a.08.92.54.libpsl-0.21.5.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.55.c-ares-1.34.4"
+echo "08.91.55.c-ares-1.34.4" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.55.c-ares-1.34.4.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.56.Jansson-2.14"
+echo "08.91.56.Jansson-2.14" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.56.Jansson-2.14.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.57.nghttp2-1.64.0"
+echo "08.91.57.nghttp2-1.64.0" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.57.nghttp2-1.64.0.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.58.libssh2-1.11.1"
+echo "08.91.58.libssh2-1.11.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.58.libssh2-1.11.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
 
 #####
 
