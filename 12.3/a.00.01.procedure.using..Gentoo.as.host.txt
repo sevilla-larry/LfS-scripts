@@ -445,39 +445,39 @@ B.  Generate LFS
 
         ###
 
-        bash a.08.00.Part4.90-90Z.sh
+        bash a.08.90.0.sh
 
         ###
 
-  B.17. Additional Applications needed - WGet
+  B.17. Additional Applications needed - Misc Support Applications
 
         ###
 
-        bash a.08.00.Part5.91-91Z.sh
+        bash a.08.91.0.0.sh
 
         ###
 
-  B.18. Additional Applications needed - misc
+  B.18. Additional Applications needed - Linux-PAM ( & reBuild Shadow )
 
         ###
 
-        bash a.08.00.Part6.92-92H.sh
+        bash a.08.92.0.sh
 
         ###
 
-  B.19. Additional Applications needed - NTP
+  B.19. Additional Applications needed - net Applications
 
         ###
 
-        bash a.08.00.Part7.93-93Z.sh
+        bash a.08.93.0.sh
 
         ###
 
-  B.20. Additional Applications needed by BLFS - Linux-PAM ( & reBuild Shadow )
+  B.20. reBuild CMake with cURL, libarchive, libuv & nghttp2
 
         ###
 
-        bash a.08.00.Part8.94-94C.sh
+        bash a.08.94.0.sh
 
         ###
 

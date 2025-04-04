@@ -67,7 +67,7 @@ echo "."
 echo "08.91.05.Patchelf-0.18.0"
 echo "08.91.05.Patchelf-0.18.0" >> $LFSLOG_PROCESS
 
-time { a.08.91.05.Patchelf-0.18.0.sh ; }
+time { bash a.08.91.05.Patchelf-0.18.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -232,24 +232,10 @@ echo "."
 
 ###
 
-echo "08.91.17.SQLite-3.49.1"
-echo "08.91.17.SQLite-3.49.1" >> $LFSLOG_PROCESS
+echo "08.91.17.rpcsvc-proto-1.4.4"
+echo "08.91.17.rpcsvc-proto-1.4.4" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.17.SQLite-3.49.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.18.Python-3.13.2"
-echo "08.91.18.Python-3.13.2" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.18.Python-3.13.2.sh ; }
+time { bash a.08.91.17.rpcsvc-proto-1.4.4.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -260,19 +246,31 @@ echo "."
 
 ###
 
-# Possible conflict with elogind
-#
-# echo "08.92I.acpid-2.0.34"
-# echo "08.92I.acpid-2.0.34" >> $LFSLOG_PROCESS
+echo "08.91.18.SQLite-3.49.1"
+echo "08.91.18.SQLite-3.49.1" >> $LFSLOG_PROCESS
 
-# time { bash a.08.92I.acpid-2.0.34.sh ; }
+time { bash a.08.91.18.SQLite-3.49.1.sh ; }
 
-# date +"%Y/%b/%d %H:%M"
-# date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
-# echo "." >> $LFSLOG_PROCESS
-# echo "."
-# echo "."
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.19.Python-3.13.2"
+echo "08.91.19.Python-3.13.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.19.Python-3.13.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
 
 #####
 

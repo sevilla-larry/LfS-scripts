@@ -1,7 +1,7 @@
 # a.08.91.09.LZO-2.10.sh
 #
 
-export PKG="LZO-2.10"
+export PKG="lzo-2.10"
 export PKGLOG_DIR=$LFSLOG/08.91.09
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

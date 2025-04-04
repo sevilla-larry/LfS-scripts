@@ -50,7 +50,7 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 install -v -m755 -d /usr/share/doc/sqlite-3.49.1            \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-cp -v -R sqlite-doc-3490100/* /usr/share/doc/sqlite-3.49.1
+cp -v -R sqlite-doc-3490100/* /usr/share/doc/sqlite-3.49.1  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
