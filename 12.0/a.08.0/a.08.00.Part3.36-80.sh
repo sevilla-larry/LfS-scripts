@@ -49,11 +49,12 @@ echo "."
 echo "."
 
 ###
+#   Expat-2.6.0 (errata)
 
-echo "08.39.Expat-2.5.0"
-echo "08.39.Expat-2.5.0" >> $LFSLOG_PROCESS
+echo "08.39.Expat-2.6.0"
+echo "08.39.Expat-2.6.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.39.Expat-2.5.0.sh ; }
+time { bash a.08.39.Expat-2.6.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -287,6 +288,7 @@ echo "."
 echo "."
 
 ###
+#	Coreutils-9.3 with errata
 
 echo "08.56.Coreutils-9.3"
 echo "08.56.Coreutils-9.3" >> $LFSLOG_PROCESS
@@ -513,11 +515,12 @@ echo "."
 echo "."
 
 ###
+#   Jinja2-3.1.3 (errata)
 
-echo "08.73.Jinja2-3.1.2"
-echo "08.73.Jinja2-3.1.2" >> $LFSLOG_PROCESS
+echo "08.73.Jinja2-3.1.3"
+echo "08.73.Jinja2-3.1.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.73.Jinja2-3.1.2.sh ; }
+time { bash a.08.73.Jinja2-3.1.3.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

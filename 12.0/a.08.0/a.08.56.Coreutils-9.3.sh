@@ -1,5 +1,5 @@
 # a.08.56.Coreutils-9.3.sh
-#
+# errata
 
 export PKG="coreutils-9.3"
 export PKGLOG_DIR=$LFSLOG/08.56
@@ -26,7 +26,14 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../coreutils-9.3-i18n-1.patch \
+patch -Np1 -i ../coreutils-9.3-i18n-1.patch         \
+     > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "   Errata Fix ..."
+echo "   Errata Fix ..." >> $LFSLOG_PROCESS
+echo "   Errata Fix ..." >> $PKGLOG_ERROR
+sed -e '/n_out += n_hold/,+4 s|.*bufsize.*|//&|'    \
+    -i src/split.c                                  \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Configure ..."

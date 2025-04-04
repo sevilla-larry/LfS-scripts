@@ -1,7 +1,7 @@
-# a.08.29.Ncurses-6.4.sh
+# a.08.29.Ncurses-6.4.20230520.sh
 #
 
-export PKG="ncurses-6.4"
+export PKG="ncurses-6.4-20230520"
 export PKGLOG_DIR=$LFSLOG/08.29
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

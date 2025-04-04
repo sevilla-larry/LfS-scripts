@@ -8,6 +8,7 @@ export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
 export SOURCES=`pwd`
 
@@ -43,16 +44,21 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-mv $LFS/usr/bin/chroot              $LFS/usr/sbin
-mkdir -p $LFS/usr/share/man/man8
-mv $LFS/usr/share/man/man1/chroot.1 $LFS/usr/share/man/man8/chroot.8
-sed -i 's/"1"/"8"/'                 $LFS/usr/share/man/man8/chroot.8
+mv     -v   $LFS/usr/bin/chroot                     $LFS/usr/sbin                       \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+mkdir -pv   $LFS/usr/share/man/man8                                                     \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+mv     -v   $LFS/usr/share/man/man1/chroot.1        $LFS/usr/share/man/man8/chroot.8    \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed    -i   's/"1"/"8"/'                            $LFS/usr/share/man/man8/chroot.8    \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES
 rm -rf $PKG
 unset SOURCES
 unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
 unset PKGLOG_DIR PKG
