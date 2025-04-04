@@ -191,9 +191,9 @@ echo "."
 ###
 
 echo "08.91.54.libpsl-0.21.5"
-echo "08.92.54.libpsl-0.21.5" >> $LFSLOG_PROCESS
+echo "08.91.54.libpsl-0.21.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.92.54.libpsl-0.21.5.sh ; }
+time { bash a.08.91.54.libpsl-0.21.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

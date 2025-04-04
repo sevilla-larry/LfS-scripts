@@ -35,7 +35,8 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS
 echo "4. Make Test ..." >> $PKGLOG_ERROR
-make test || true > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#make test || true > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+make test > $PKGLOG_CHECK 2>> $PKGLOG_ERROR || true
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
