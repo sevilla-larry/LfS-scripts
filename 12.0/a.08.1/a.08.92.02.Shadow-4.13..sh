@@ -1,0 +1,243 @@
+# a.08.92.02.Shadow-4.13.sh
+#
+
+export PKG="shadow-4.13"
+export PKGLOG_DIR=$LFSLOG/a.08.92.02
+export PKGLOG_TAR=$PKGLOG_DIR/tar.log
+export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
+export PKGLOG_BUILD=$PKGLOG_DIR/build.log
+#export PKGLOG_CHECK=$PKGLOG_DIR/check.log
+export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
+export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
+export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
+
+rm -r $PKGLOG_DIR 2> /dev/null
+mkdir $PKGLOG_DIR
+
+echo "1. Extract tar..."
+echo "1. Extract tar..." >> $LFSLOG_PROCESS
+echo "1. Extract tar..." >> $PKGLOG_ERROR
+tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+cd $PKG
+
+
+sed -i 's/groups$(EXEEXT) //' src/Makefile.in   \
+    > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {}  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {}  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {}  >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' \
+    -e 's@/var/spool/mail@/var/mail@'                   \
+    -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
+    -i etc/login.defs                                   \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+echo "2. Configure ..."
+echo "2. Configure ..." >> $LFSLOG_PROCESS
+echo "2. Configure ..." >> $PKGLOG_ERROR
+./configure --sysconfdir=/etc               \
+            --disable-static                \
+            --without-libbsd                \
+            --with-{b,yes}crypt             \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+
+echo "3. Make Build ..."
+echo "3. Make Build ..." >> $LFSLOG_PROCESS
+echo "3. Make Build ..." >> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+
+echo "4. Make Install ..."
+echo "4. Make Install ..." >> $LFSLOG_PROCESS
+echo "4. Make Install ..." >> $PKGLOG_ERROR
+make exec_prefix=/usr pamddir= install   \
+     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+# The man pages were installed in LFS,
+# but if reinstallation is desired,
+# run (as the root user):
+#
+#make -C man install-man         \
+#     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+### Configurations
+
+install -v -m644 /etc/login.defs /etc/login.defs.orig   \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+for FUNCTION in FAIL_DELAY               \
+                FAILLOG_ENAB             \
+                LASTLOG_ENAB             \
+                MAIL_CHECK_ENAB          \
+                OBSCURE_CHECKS_ENAB      \
+                PORTTIME_CHECKS_ENAB     \
+                QUOTAS_ENAB              \
+                CONSOLE MOTD_FILE        \
+                FTMP_FILE NOLOGINS_FILE  \
+                ENV_HZ PASS_MIN_LEN      \
+                SU_WHEEL_ONLY            \
+                PASS_CHANGE_TRIES        \
+                PASS_ALWAYS_WARN         \
+                CHFN_AUTH ENCRYPT_METHOD \
+                ENVIRON_FILE
+do
+    sed -i "s/^${FUNCTION}/# &/" /etc/login.defs    \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+done
+#                CRACKLIB_DICTPATH        \
+
+# 'login'
+cat > /etc/pam.d/login << "EOF" 2>> $PKGLOG_ERROR
+# Begin /etc/pam.d/login
+
+# Set failure delay before next prompt to 3 seconds
+auth      optional    pam_faildelay.so  delay=3000000
+
+# Check to make sure that the user is allowed to login
+auth      requisite   pam_nologin.so
+
+# Check to make sure that root is allowed to login
+# Disabled by default. You will need to create /etc/securetty
+# file for this module to function. See man 5 securetty.
+#auth      required    pam_securetty.so
+
+# Additional group memberships - disabled by default
+#auth      optional    pam_group.so
+
+# include system auth settings
+auth      include     system-auth
+
+# check access for the user
+account   required    pam_access.so
+
+# include system account settings
+account   include     system-account
+
+# Set default environment variables for the user
+session   required    pam_env.so
+
+# Set resource limits for the user
+session   required    pam_limits.so
+
+# Display the message of the day - Disabled by default
+#session   optional    pam_motd.so
+
+# Check user's mail - Disabled by default
+#session   optional    pam_mail.so      standard quiet
+
+# include system session and password settings
+session   include     system-session
+password  include     system-password
+
+# End /etc/pam.d/login
+EOF
+
+# 'passwd'
+cat > /etc/pam.d/passwd << "EOF"    2>> $PKGLOG_ERROR
+# Begin /etc/pam.d/passwd
+
+password  include     system-password
+
+# End /etc/pam.d/passwd
+EOF
+
+# 'su'
+cat > /etc/pam.d/su << "EOF"        2>> $PKGLOG_ERROR
+# Begin /etc/pam.d/su
+
+# always allow root
+auth      sufficient  pam_rootok.so
+
+# Allow users in the wheel group to execute su without a password
+# disabled by default
+#auth      sufficient  pam_wheel.so trust use_uid
+
+# include system auth settings
+auth      include     system-auth
+
+# limit su to users in the wheel group
+# disabled by default
+#auth      required    pam_wheel.so use_uid
+
+# include system account settings
+account   include     system-account
+
+# Set default environment variables for the service user
+session   required    pam_env.so
+
+# include system session settings
+session   include     system-session
+
+# End /etc/pam.d/su
+EOF
+
+# 'chpasswd'
+cat > /etc/pam.d/chpasswd << "EOF"  2>> $PKGLOG_ERROR
+# Begin /etc/pam.d/chpasswd
+
+# always allow root
+auth      sufficient  pam_rootok.so
+
+# include system auth and account settings
+auth      include     system-auth
+account   include     system-account
+password  include     system-password
+
+# End /etc/pam.d/chpasswd
+EOF
+
+# 'newusers'
+sed -e s/chpasswd/newusers/ /etc/pam.d/chpasswd     \
+    > /etc/pam.d/newusers   2>> $PKGLOG_ERROR
+
+# 'chage'
+cat > /etc/pam.d/chage << "EOF"     2>> $PKGLOG_ERROR
+# Begin /etc/pam.d/chage
+
+# always allow root
+auth      sufficient  pam_rootok.so
+
+# include system auth and account settings
+auth      include     system-auth
+account   include     system-account
+
+# End /etc/pam.d/chage
+EOF
+
+# other shawdow utilities
+for PROGRAM in chfn chgpasswd chsh groupadd groupdel \
+               groupmems groupmod useradd userdel usermod
+do
+    install -v -m644 /etc/pam.d/chage /etc/pam.d/${PROGRAM} \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    sed -i "s/chage/$PROGRAM/" /etc/pam.d/${PROGRAM}        \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+done
+
+# Configuring Login Access
+if [ -f /etc/login.access ]
+    then mv -v /etc/login.access{,.NOUSE}   \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+fi  
+
+# Configuring Resource Limits
+if [ -f /etc/limits ]
+    then mv -v /etc/limits{,.NOUSE}         \
+        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+fi
+
+# read: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/shadow.html
+
+
+cd $SOURCES
+rm -rf $PKG
+unset SOURCES
+unset LFSLOG_PROCESS
+unset PKGLOG_OTHERS
+#unset PKGLOG_CHECK
+unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
+unset PKGLOG_ERROR PKGLOG_TAR
+unset PKGLOG_DIR PKG
