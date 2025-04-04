@@ -11,27 +11,151 @@ https://prdownloads.sourceforge.net/expat/expat-2.6.0.tar.xz
 # 08.73 Jinja2-3.1.3 (errata)
 https://pypi.org/packages/source/J/Jinja2/Jinja2-3.1.3.tar.gz
 
+# 08.71a Nano-7.2
 https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz
+
+
+# a.08.90.1.Popt-1.19
 http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz
-https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz
+# a.08.90.2.efivar-38
 https://github.com/rhboot/efivar/releases/download/38/efivar-38.tar.bz2
+# a.08.90.3 efibootmgr-18
 https://github.com/rhboot/efibootmgr/archive/18/efibootmgr-18.tar.gz
 https://unifoundry.com/pub/unifont/unifont-15.0.06/font-builds/unifont-15.0.06.pcf.gz
-https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz
-https://github.com/p11-glue/p11-kit/releases/download/0.25.0/p11-kit-0.25.0.tar.xz
-https://github.com/lfs-book/make-ca/releases/download/v1.13/make-ca-1.13.tar.xz
-https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
-https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.bz2
-https://www.linuxfromscratch.org/patches/blfs/12.0/lynx-2.8.9rel.1-security_fix-1.patch
+
+# 08.91.01 CMake-3.27.2
+https://cmake.org/files/v3.27/cmake-3.27.2.tar.gz
+# a.08.91.02.GPM-1.20.7
 https://anduin.linuxfromscratch.org/BLFS/gpm/gpm-1.20.7.tar.bz2
 https://www.linuxfromscratch.org/patches/blfs/12.0/gpm-1.20.7-consolidated-1.patch
-https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz
+
+# 08.91.03.Which-2.21
+https://ftp.gnu.org/gnu/which/which-2.21.tar.gz
+
+# 08.91.04.Zip-3.0
+https://downloads.sourceforge.net/infozip/zip30.tar.gz
+
+# 08.91.05.Patchelf-0.17.2
+https://github.com/NixOS/patchelf/releases/download/0.17.2/patchelf-0.17.2.tar.gz
+
+# 08.91.06.Net-tools-2.10.
+https://downloads.sourceforge.net/project/net-tools/net-tools-2.10.tar.xz
+
+# 08.91.07.icu-73.2
+https://github.com/unicode-org/icu/releases/download/release-73-2/icu4c-73_2-src.tgz
+
+# 08.91.08.libxml2-2.10.4.
+https://download.gnome.org/sources/libxml2/2.10/libxml2-2.10.4.tar.xz
+https://www.w3.org/XML/Test/xmlts20130923.tar.gz
+
+# 08.91.09.LZO-2.10
+https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
+
+# 08.91.10.Nettle-3.9.1
+https://ftp.gnu.org/gnu/nettle/nettle-3.9.1.tar.gz
+
+# 08.91.11.PCRE2-10.42
+https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.bz2
+
+# 08.91.12.libarchive-3.7.1
+https://github.com/libarchive/libarchive/releases/download/v3.7.1/libarchive-3.7.1.tar.xz
+
+# 08.91.13.libuv-1.46.0 
+https://dist.libuv.org/dist/v1.46.0/libuv-v1.46.0.tar.gz
+
+# 08.91.15.libtirpc-1.3.3
+https://downloads.sourceforge.net/libtirpc/libtirpc-1.3.3.tar.bz2
+
+# 08.91.16.libnsl-2.0.0
+https://github.com/thkukuk/libnsl/releases/download/v2.0.0/libnsl-2.0.0.tar.xz
+
+# 08.91.17.rpcsvc-proto-1.4.4
+https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4.4/rpcsvc-proto-1.4.4.tar.xz
+
+# 08.91.18.SQLite-3.42.0
+https://sqlite.org/2023/sqlite-autoconf-3420000.tar.gz
+https://sqlite.org/2023/sqlite-doc-3420000.zip
+
+# 08.91.20.01.Packaging-23.1
+https://files.pythonhosted.org/packages/source/p/packaging/packaging-23.1.tar.gz
+
+# 08.91.20.02.Setuptools_scm-7.1.0
+https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-7.1.0.tar.gz
+
+# 08.91.20.03.Pluggy-1.0.0
+https://files.pythonhosted.org/packages/source/p/pluggy/pluggy-1.0.0.tar.gz
+
+# 08.91.20.04.Editables-0.3
+https://files.pythonhosted.org/packages/source/e/editables/editables-0.3.tar.gz
+
+# 08.91.20.05.Pathspec-0.10.3
+https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.10.3.tar.gz
+
+# 08.91.20.07.Hatchling-1.12.2
+https://files.pythonhosted.org/packages/source/h/hatchling/hatchling-1.12.2.tar.gz
+
+# 08.91.20.08.Hatch_vcs-0.3.0
+https://files.pythonhosted.org/packages/source/h/hatch-vcs/hatch_vcs-0.3.0.tar.gz
+
+# 08.91.20.09.Iniconfig-2.0.0
+https://files.pythonhosted.org/packages/source/i/iniconfig/iniconfig-2.0.0.tar.gz
+
+# 08.91.20.10.Pytest-7.4.0
+https://files.pythonhosted.org/packages/source/p/pytest/pytest-7.4.0.tar.gz
+
+# 08.91.20.11.Cython-0.29.36
+https://github.com/cython/cython/releases/download/0.29.36/Cython-0.29.36.tar.gz
+
+# 08.91.20.12.Pyproject-Metadata-0.7.0
+https://files.pythonhosted.org/packages/source/p/pyproject-metadata/pyproject-metadata-0.7.0.tar.gz
+
+# 08.91.20.13.Meson_python-0.12.0
+https://files.pythonhosted.org/packages/source/m/meson_python/meson_python-0.12.0.tar.gz
+
+# 08.91.20.14.Pytz-2022.7.1
+https://files.pythonhosted.org/packages/source/p/pytz/pytz-2022.7.1.tar.gz
+
+
+# a.08.91.43 libtasn1-4.19.0
+https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz
+
+# a.08.91.49.p11-kit-0.25.0
+https://github.com/p11-glue/p11-kit/releases/download/0.25.0/p11-kit-0.25.0.tar.xz
+
+# a.08.91.50.make-ca-1.12
+https://github.com/lfs-book/make-ca/releases/download/v1.13/make-ca-1.12.tar.xz
+
+# a.08.93.02.WGet-1.21.4
+https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
+
+# a.08.93.03.Lynx-2.8.9rel.1
+https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.bz2
+https://www.linuxfromscratch.org/patches/blfs/12.0/lynx-2.8.9rel.1-security_fix-1.patch
+
+
+# a.08.92.12.OpenSSH-9.4p1
+https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz
+
+# a.08.92.11.Sudo-1.9.14p3
 https://www.sudo.ws/dist/sudo-1.9.14p3.tar.gz
-#https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20230824.tar.xz
-https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20231119.tar.xz
-https://www.linuxfromscratch.org/patches/downloads/glibc/glibc-2.38-upstream_fixes-3.patch
+
+
+
+
+# 
 https://www.openssl.org/source/openssl-3.2.0.tar.gz
+
 https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
 
 https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tar.xz
+
 https://www.python.org/ftp/python/doc/3.11.11/python-3.11.11-docs-html.tar.bz2
+
+# BLFS-Bootscripts-20230824
+#https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20230824.tar.xz
+https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20231119.tar.xz
+https://www.linuxfromscratch.org/patches/downloads/glibc/glibc-2.38-upstream_fixes-3.patch
+
+
+
+#https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz
