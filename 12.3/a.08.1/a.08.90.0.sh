@@ -10,17 +10,6 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.90.GRUB.for.EFI.x64"
-echo "08.90.GRUB.for.EFI.x64" >> $LFSLOG_PROCESS
-
-bash a.08.90.GRUB.for.EFI.x64.sh ;
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
 echo "08.90.1.Popt-1.19"
 echo "08.90.1.Popt-1.19" >> $LFSLOG_PROCESS
 
