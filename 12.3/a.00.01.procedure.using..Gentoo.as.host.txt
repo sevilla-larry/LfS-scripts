@@ -440,44 +440,22 @@ B.  Generate LFS
 
         ###
 
-  B.16. [LFS 8.62] Chapter 8 Part 4 GRUB
-        ( based on: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-efi.html )
+  B.16. Additional Applications needed
 
         ###
-
-        bash a.08.90.0.sh
-
+        #
+        # including [LFS 8.64] Chapter 8 Part 4 GRUB
+        # ( based on: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-efi.html )
+        #
+        # Misc Support Applications
+        #
+        # Linux-PAM and reBuilds
+        #
+        # net Applications
+        #
         ###
 
-  B.17. Additional Applications needed - Misc Support Applications
-
-        ###
-
-        bash a.08.91.0.0.sh
-
-        ###
-
-  B.18. Additional Applications needed - Linux-PAM ( & reBuild Shadow )
-
-        ###
-
-        bash a.08.92.0.sh
-
-        ###
-
-  B.19. Additional Applications needed - net Applications
-
-        ###
-
-        bash a.08.93.0.sh
-
-        ###
-
-  B.20. reBuild CMake with cURL, libarchive, libuv & nghttp2
-
-        ###
-
-        bash a.08.94.0.sh
+        bash a.08.1.sh
 
         ###
 

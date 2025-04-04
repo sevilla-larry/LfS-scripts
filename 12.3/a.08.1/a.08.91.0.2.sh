@@ -1,6 +1,6 @@
 # a.08.91.0.2.sh
 #
-# Python Modules and Python Dependencies
+# Python Modules and Dependencies
 # Pytest and dependencies
 #
 
