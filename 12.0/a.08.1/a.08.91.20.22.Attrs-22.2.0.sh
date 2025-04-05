@@ -1,8 +1,8 @@
-# a.08.91.20.10.Pytest-7.4.0.sh
+# a.08.91.20.22.Attrs-22.2.0.sh
 #
 
-export PKG="pytest-7.4.0"
-export PKGLOG_DIR=$LFSLOG/08.91.20.10
+export PKG="attrs-22.2.0"
+export PKGLOG_DIR=$LFSLOG/08.91.20.22
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -38,23 +38,22 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                pytest                  \
+                attrs                   \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "4. Tests ..."
-echo "4. Tests ..." >> $LFSLOG_PROCESS
-echo "4. Tests ..." >> $PKGLOG_ERROR
-
+echo "4. pyTest ..."
+echo "4. pyTest ..." >> $LFSLOG_PROCESS
+echo "4. pyTest ..." >> $PKGLOG_ERROR
 python3 -m venv --system-site-packages testenv  \
-                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 source testenv/bin/activate                     \
-                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-pip3 install pytest[dev] xmlschema hypothesis   \
-                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+pip3 install attrs[tests]                       \
+            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 python3 /usr/bin/pytest                         \
-                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 deactivate                                      \
-                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

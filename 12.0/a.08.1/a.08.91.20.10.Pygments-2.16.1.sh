@@ -1,8 +1,8 @@
-# a.08.91.20.03.Pluggy-1.0.0.sh
+# a.08.91.20.10.Pygments-2.16.1.sh
 #
 
-export PKG="pluggy-1.0.0"
-export PKGLOG_DIR=$LFSLOG/08.91.20.03
+export PKG="Pygments-2.16.1"
+export PKGLOG_DIR=$LFSLOG/08.91.20.10
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -34,11 +34,11 @@ pip3 wheel  -w dist                 \
 echo "3. pip3 Install ..."
 echo "3. pip3 Install ..." >> $LFSLOG_PROCESS
 echo "3. pip3 Install ..." >> $PKGLOG_ERROR
-pip3 install    --no-index              \
-                --no-user               \
-                --find-links dist       \
-                --no-cache-dir          \
-                pluggy                  \
+pip3 install    --no-index          \
+                --no-user           \
+                --find-links dist   \
+                --no-cache-dir      \
+                Pygments            \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 

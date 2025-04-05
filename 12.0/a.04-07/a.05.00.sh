@@ -49,6 +49,7 @@ echo "."
 echo "."
 
 ###
+#   Glibc-2.39 (errata)
 
 echo "05.05.Glibc-2.39"
 echo "05.05.Glibc-2.39" >> $LFSLOG_PROCESS

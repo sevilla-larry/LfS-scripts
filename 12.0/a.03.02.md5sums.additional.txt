@@ -1,12 +1,129 @@
+# Errata LfS
+
 # 05.05 & 08.05 Glibc-2.39 (errata)
 be81e87f72b5ea2c0ffe2bedfeb680c6 glibc-2.39.tar.xz
+9a5997c3452909b1769918c759eff8a2 glibc-2.39-fhs-1.patch
 2349edd8335245525cc082f2755d5bf4 tzdata2024a.tar.gz
-
 # 08.29 Ncurses-6.4-20230520 (errata)
 c5367e829b6d9f3f97b280bb3e6bfbc3 ncurses-6.4-20230520.tar.xz
-
 # 08.39 Expat-2.6.0 (errata)
 bd169cb11f4b9bdfddadf9e88a5c4d4b expat-2.6.0.tar.xz
-
+# 07.09 & 08.42 Perl-5.38.2 (errata)
+d3957d75042918a23ec0abac4a2b7e0a perl-5.38.2.tar.xz
+a.08.47 OpenSSL-3.2.1 (errata)
+c239213887804ba00654884918b37441 openssl-3.2.1.tar.gz
 # 08.73 Jinja2-3.1.3 (errata)
 caf5418c851eac59e70a78d9730d4cea Jinja2-3.1.3.tar.gz
+# 08.76 Procps-ng-4.0.4 (errata)
+2f747fc7df8ccf402d03e375c565cf96 procps-ng-4.0.4.tar.xz
+# 07.10, 08.51 & 08.91.19 Python-3.11.11 (errata / latest bug fix)
+#								 Python-3.11.11.tar.xz
+#								 python-3.11.11-docs-html.tar.bz2
+
+#####
+
+# Additional from BLfS
+
+# 08.71a Nano-7.2
+13742c686c6ddb0b7b294634f0c13cec nano-7.2.tar.xz
+
+# 08.90.1 Popt-1.19
+eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz
+# 08.90.2 efivar-38
+243fdbc48440212695cb9c6e6fd0f44f efivar-38.tar.bz2
+# 08.90.3 efibootmgr-18
+e170147da25e1d5f72721ffc46fe4e06 efibootmgr-18.tar.gz
+# 08.90.4 GRUB-2.06 (additional)
+94ff8cb4d5674cd2f38b00cede5e06d5 unifont-15.0.06.pcf.gz
+
+# 08.91.01 CMake-3.27.2
+07786cd23c3d0aa9c2fef69efb13662b cmake-3.27.2.tar.gz
+# 08.91.02 GPM-1.20.7
+bf84143905a6a903dbd4d4b911a2a2b8 gpm-1.20.7.tar.bz2
+#								 gpm-1.20.7-consolidated-1.patch
+# 08.91.03 Which-2.21
+097ff1a324ae02e0a3b0369f07a7544a which-2.21.tar.gz
+# 08.91.04 Zip-3.0
+7b74551e63f8ee6aab6fbc86676c0d37 zip30.tar.gz
+# 08.91.05 Patchelf-0.17.2
+63e6f761af0bfda2bfe08a568d1e2e76 patchelf-0.17.2.tar.gz
+# 08.91.06 Net-tools-2.10
+78aae762c95e2d731faf88d482e4cde5 net-tools-2.10.tar.xz
+# 08.91.07 icu-73.2
+b8a4b8cf77f2e2f6e1341eac0aab2fc4 icu4c-73_2-src.tgz
+# 08.91.08 libxml2-2.12.5 (errata)
+329138464b69422815c11e62acbc10dd libxml2-2.12.5.tar.xz
+#								 xmlts20130923.tar.gz
+# 08.91.09 LZO-2.10
+39d3f3f9c55c87b1e5d6888e1420f4b5 lzo-2.10.tar.gz
+# 08.91.10 Nettle-3.9.1
+29fcd2dec6bf5b48e5e3ffb3cbc4779e nettle-3.9.1.tar.gz
+# 08.91.11 PCRE2-10.42
+a8e9ab2935d428a4807461f183034abe pcre2-10.42.tar.bz2
+# 08.91.12 libarchive-3.7.2 (errata)
+4f4ef6a17c7b0b484aa2c95aa6deefac libarchive-3.7.2.tar.xz
+# 08.91.13 libuv-1.48.0 (errata)
+a808517c32ebd07c561bf21a4e30aeab libuv-v1.48.0.tar.gz
+# 08.91.14 libevent-2.1.12
+b5333f021f880fe76490d8a799cd79f4 libevent-2.1.12-stable.tar.gz
+# 08.91.15 libtirpc-1.3.3
+bacdad5c27dcf6e2830b3e26a1c8ed3f libtirpc-1.3.3.tar.bz2
+# 08.91.16 libnsl-2.0.0
+1e8c0615071ea13202452304de1eaab9 libnsl-2.0.0.tar.xz
+# 08.91.17 rpcsvc-proto-1.4.4
+bf908de360308d909e9cc469402ff2ef rpcsvc-proto-1.4.4.tar.xz
+# 08.91.18 SQLite-3.42.0
+0c5a92bc51cf07cae45b4a1e94653dea sqlite-autoconf-3420000.tar.gz
+f3cb6b67a82bc586a096459085616e4f sqlite-doc-3420000.zip
+
+# 08.91.20.01 Typing_extensions-4.4.0
+5cfcb56ea6fc4972c3600c0030f4d136 typing_extensions-4.4.0.tar.gz
+# 08.91.20.02 Packaging-23.1
+f7d5c39c6f92cc2dfa1293ba8f6c097c packaging-23.1.tar.gz
+# 08.91.20.03 Setuptools_scm-7.1.0
+158dc741637fb4fa4b955c62bd2c08be setuptools_scm-7.1.0.tar.gz
+# 08.91.20.04 Pluggy-1.0.0
+daa6fddfb6cd364f3c82e52098911e4b pluggy-1.0.0.tar.gz
+# 08.91.20.05 Editables-0.3
+e91709fbb0ef586cb7b785042068ab67 editables-0.3.tar.gz
+# 08.91.20.06 Pathspec-0.10.3
+d89408b52aff020ac768a14c0ef1c7de pathspec-0.10.3.tar.gz
+#             trove-classifiers			NOT required by Hatchling 1.12.2
+# 08.91.20.07 Hatchling-1.12.2
+5a6e2fd0c877feea7e71b9d72bbdbed9 hatchling-1.12.2.tar.gz
+# 08.91.20.08 Hatch_vcs-0.3.0
+c2f2cbe6851b7b2969cb4aa24c4b9b2f hatch_vcs-0.3.0.tar.gz
+# 08.91.20.09 Iniconfig-2.0.0
+3c030b3f51dcc3aca585de05635600e4 iniconfig-2.0.0.tar.gz
+# 08.91.20.10 Pygments-2.16.1
+20cb967029c23389253326cf515dec8a Pygments-2.16.1.tar.gz
+# 08.91.20.11 Py-1.11.0
+bde7dcc1cb452a1e10206ef2f811ba88 py-1.11.0.tar.gz
+# 08.91.20.12 Pytest-7.4.0
+5d3fca31237efe6c2b81bc703b79659f pytest-7.4.0.tar.gz
+
+#             Hatch-Fancy-Pypi-Readme	NOT required by Attrs-22.2.0
+# 08.91.20.?? Pyproject-Metadata-0.7.0	NOT required by NumPy-1.25.2
+#             pyproject-metadata-0.7.0.tar.gz
+# 08.91.20.?? Meson_python-0.12.0		NOT required by NumPy-1.25.2
+#			  meson_python-0.12.0.tar.gz
+# 08.91.20.?? Pytz-2022.7.1				NOT optional by NumPy-1.25.2
+#			  pytz-2022.7.1.tar.gz
+
+# 08.91.20.21 Cython-0.29.36
+a4d0f9fbc9c137f1a88937cd40e8c5ee Cython-0.29.36.tar.gz
+# 08.91.20.22 Attrs-22.2.0
+eff16b3bbd0d9b72e118cca83a19d380 attrs-22.2.0.tar.gz
+# 08.91.20.23 NumPy-1.25.2
+cee1996a80032d47bdf1d9d17249c34e numpy-1.25.2.tar.gz
+
+# 08.91.21.libseccomp-2.5.4
+74008bb33234e0c2a0d998e7bee5c625 libseccomp-2.5.4.tar.gz
+# 08.91.22.brotli-1.0.9
+c2274f0c7af8470ad514637c35bcee7d brotli-1.0.9.tar.gz
+# 08.91.23.Boost-1.83.0
+406f0b870182b4eb17a23a9d8fce967d boost_1_83_0.tar.bz2
+
+
+# 08.91.30.09 IO::Socket::SSL-2.083
+673eaf709a034d4f65dce259bde02500 IO-Socket-SSL-2.083.tar.gz

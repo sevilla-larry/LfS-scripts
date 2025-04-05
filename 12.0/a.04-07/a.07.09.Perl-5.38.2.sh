@@ -26,15 +26,15 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 sh Configure -des                                           \
-             -Dprefix=/usr                                  \
-             -Dvendorprefix=/usr                            \
-             -Duseshrplib                                   \
-             -Dprivlib=/usr/lib/perl5/5.38/core_perl        \
-             -Darchlib=/usr/lib/perl5/5.38/core_perl        \
-             -Dsitelib=/usr/lib/perl5/5.38/site_perl        \
-             -Dsitearch=/usr/lib/perl5/5.38/site_perl       \
-             -Dvendorlib=/usr/lib/perl5/5.38/vendor_perl    \
-             -Dvendorarch=/usr/lib/perl5/5.38/vendor_perl   \
+             -D prefix=/usr                                 \
+             -D vendorprefix=/usr                           \
+             -D useshrplib                                  \
+             -D privlib=/usr/lib/perl5/5.38/core_perl       \
+             -D archlib=/usr/lib/perl5/5.38/core_perl       \
+             -D sitelib=/usr/lib/perl5/5.38/site_perl       \
+             -D sitearch=/usr/lib/perl5/5.38/site_perl      \
+             -D vendorlib=/usr/lib/perl5/5.38/vendor_perl   \
+             -D vendorarch=/usr/lib/perl5/5.38/vendor_perl  \
              > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."

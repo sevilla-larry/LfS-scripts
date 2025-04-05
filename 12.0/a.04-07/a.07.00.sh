@@ -35,6 +35,7 @@ echo "."
 echo "."
 
 ###
+#	Perl-5.38.2 (errata)
 
 echo "07.09.Perl-5.38.2"
 echo "07.09.Perl-5.38.2" >> $LFSLOG_PROCESS
@@ -49,11 +50,12 @@ echo "."
 echo "."
 
 ###
+#	Python-3.11.11 (errata / latest bug fix)
 
-echo "07.10.Python-3.11.5"
-echo "07.10.Python-3.11.5" >> $LFSLOG_PROCESS
+echo "07.10.Python-3.11.11"
+echo "07.10.Python-3.11.11" >> $LFSLOG_PROCESS
 
-time { bash a.07.10.Python-3.11.5.sh ; }
+time { bash a.07.10.Python-3.11.11.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

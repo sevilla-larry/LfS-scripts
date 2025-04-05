@@ -35,11 +35,12 @@ echo "."
 echo "."
 
 ###
+#	Ncurses-6.4.20230520 (errata)
 
-echo "08.29.Ncurses-6.4"
-echo "08.29.Ncurses-6.4" >> $LFSLOG_PROCESS
+echo "08.29.Ncurses-6.4.20230520"
+echo "08.29.Ncurses-6.4.20230520" >> $LFSLOG_PROCESS
 
-time { bash a.08.29.Ncurses-6.4.sh ; }
+time { bash a.08.29.Ncurses-6.4.20230520.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

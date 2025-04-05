@@ -1,8 +1,8 @@
-# a.08.91.20.11.Cython-0.29.36.sh
+# a.08.91.20.12.Pytest-7.4.0.sh
 #
 
-export PKG="cython-0.29.36"
-export PKGLOG_DIR=$LFSLOG/08.91.20.11
+export PKG="pytest-7.4.0"
+export PKGLOG_DIR=$LFSLOG/08.91.20.12
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -38,8 +38,23 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                Cython                  \
+                pytest                  \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+echo "4. Tests ..."
+echo "4. Tests ..." >> $LFSLOG_PROCESS
+echo "4. Tests ..." >> $PKGLOG_ERROR
+
+python3 -m venv --system-site-packages testenv  \
+                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+source testenv/bin/activate                     \
+                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+pip3 install pytest[dev] xmlschema hypothesis   \
+                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+python3 /usr/bin/pytest                         \
+                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+deactivate                                      \
+                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

@@ -1,4 +1,5 @@
 # a.08.51.Python-3.11.11.sh
+# errata / latest bug fix
 #
 
 export PKG="Python-3.11.11"

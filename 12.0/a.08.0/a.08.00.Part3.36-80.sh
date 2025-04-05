@@ -92,6 +92,7 @@ echo "."
 echo "."
 
 ###
+#	Perl-5.38.2 (errata)
 
 echo "08.42.Perl-5.38.2"
 echo "08.42.Perl-5.38.2" >> $LFSLOG_PROCESS
@@ -162,11 +163,12 @@ echo "."
 echo "."
 
 ###
+#	OpenSSL-3.2.1 (errata)
 
-echo "08.47.OpenSSL-3.2.0"
-echo "08.47.OpenSSL-3.2.0" >> $LFSLOG_PROCESS
+echo "08.47.OpenSSL-3.2.1"
+echo "08.47.OpenSSL-3.2.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.47.OpenSSL-3.2.0.sh ; }
+time { bash a.08.47.OpenSSL-3.2.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -558,11 +560,12 @@ echo "."
 echo "."
 
 ###
+#	Procps-ng-4.0.4 (errata)
 
-echo "08.76.Procps-ng-4.0.3"
-echo "08.76.Procps-ng-4.0.3" >> $LFSLOG_PROCESS
+echo "08.76.Procps-ng-4.0.4"
+echo "08.76.Procps-ng-4.0.4" >> $LFSLOG_PROCESS
 
-time { bash a.08.76.Procps-ng-4.0.3.sh ; }
+time { bash a.08.76.Procps-ng-4.0.4.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

@@ -1,8 +1,8 @@
-# a.08.47.OpenSSL-3.2.0.sh
+# a.08.47.OpenSSL-3.2.1.sh
 # Errata
 #
 
-export PKG="openssl-3.2.0"
+export PKG="openssl-3.2.1"
 export PKGLOG_DIR=$LFSLOG/08.47
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -53,10 +53,10 @@ sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile    \
 make MANSUFFIX=ssl install                                  \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.2.0   \
+mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.2.1   \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cp -vfr doc/* /usr/share/doc/openssl-3.2.0                  \
+cp -vfr doc/* /usr/share/doc/openssl-3.2.1                  \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

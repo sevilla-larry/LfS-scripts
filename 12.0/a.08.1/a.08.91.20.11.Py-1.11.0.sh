@@ -1,8 +1,8 @@
-# a.08.91.20.02.Setuptools_scm-7.1.0.sh
+# a.08.91.20.11.Py-1.11.0.sh
 #
 
-export PKG="setuptools_scm-7.1.0"
-export PKGLOG_DIR=$LFSLOG/08.91.20.02
+export PKG="py-1.11.0"
+export PKGLOG_DIR=$LFSLOG/08.91.20.11
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -34,11 +34,11 @@ pip3 wheel  -w dist                 \
 echo "3. pip3 Install ..."
 echo "3. pip3 Install ..." >> $LFSLOG_PROCESS
 echo "3. pip3 Install ..." >> $PKGLOG_ERROR
-pip3 install    --no-index              \
-                --no-user               \
-                --find-links dist       \
-                --no-cache-dir          \
-                setuptools_scm          \
+pip3 install    --no-index          \
+                --no-user           \
+                --find-links dist   \
+                --no-cache-dir      \
+                py                  \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 

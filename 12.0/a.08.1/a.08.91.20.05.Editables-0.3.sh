@@ -1,7 +1,7 @@
-# a.08.91.20.05.Pathspec-0.10.3.sh
+# a.08.91.20.05.Editables-0.3.sh
 #
 
-export PKG="pathspec-0.10.3"
+export PKG="editables-0.3"
 export PKGLOG_DIR=$LFSLOG/08.91.20.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -38,7 +38,7 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                pathspec                \
+                editables               \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
