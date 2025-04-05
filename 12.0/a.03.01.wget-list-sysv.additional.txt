@@ -165,6 +165,24 @@ https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz
 # 08.91.50.09 IO::Socket::SSL-2.083
 https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.083.tar.gz
 
+# 08.91.61 libunistring-1.1
+https://ftp.gnu.org/gnu/libunistring/libunistring-1.1.tar.xz
+# 08.91.62 libidn2-2.3.4
+https://ftp.gnu.org/gnu/libidn/libidn2-2.3.4.tar.gz
+# 08.91.63 GnuTLS-3.8.3 (errata)
+https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.3.tar.xz
+# 08.91.64 libpsl-0.21.2
+https://github.com/rockdaboot/libpsl/releases/download/0.21.2/libpsl-0.21.2.tar.gz
+# 08.91.65 c-ares-1.19.1
+https://c-ares.haxx.se/download/c-ares-1.19.1.tar.gz
+# 08.91.66 Jansson-2.14
+https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.bz2
+# 08.91.67 nghttp2-1.59.0 (errata)
+https://github.com/nghttp2/nghttp2/releases/download/v1.59.0/nghttp2-1.59.0.tar.xz
+a.08.91.68.libssh2-1.11.0 (errata patch)
+https://www.libssh2.org/download/libssh2-1.11.0.tar.gz
+https://www.linuxfromscratch.org/patches/blfs/12.1/libssh2-1.11.0-security_fixes-1.patch
+
 # 08.93.02 WGet-1.21.4
 https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
 

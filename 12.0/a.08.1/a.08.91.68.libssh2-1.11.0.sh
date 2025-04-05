@@ -23,6 +23,13 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+patch -Np1 -i ../libssh2-1.11.0-security_fixes-1.patch  \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -E '/^DOCKER_TEST/,/^SSHD_TEST/s/test_(auth_keyboard_info.* |hostkey |simple)/$(NOTHING)/' \
+    -i tests/Makefile.inc   \
+            >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+autoreconf -fiv >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
