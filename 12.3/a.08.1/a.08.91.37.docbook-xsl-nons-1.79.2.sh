@@ -1,8 +1,8 @@
-# a.08.91.47.docbook-xsl-nons-1.79.2.sh
+# a.08.91.37.docbook-xsl-nons-1.79.2.sh
 #
 
 export PKG="docbook-xsl-nons-1.79.2"
-export PKGLOG_DIR=$LFSLOG/08.91.47
+export PKGLOG_DIR=$LFSLOG/08.91.37
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log

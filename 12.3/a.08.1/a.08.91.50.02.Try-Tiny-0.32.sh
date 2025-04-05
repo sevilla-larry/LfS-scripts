@@ -1,8 +1,8 @@
-# a.08.91.30.07.URI-5.31.sh
+# a.08.91.50.02.Try-Tiny-0.32.sh
 #
 
-export PKG="URI-5.31"
-export PKGLOG_DIR=$LFSLOG/08.91.30.07
+export PKG="Try-Tiny-0.32"
+export PKGLOG_DIR=$LFSLOG/08.91.50.02
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

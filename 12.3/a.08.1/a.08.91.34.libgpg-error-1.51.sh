@@ -1,8 +1,8 @@
-# a.08.91.56.Jansson-2.14.sh
+# a.08.91.34.libgpg-error-1.51.sh
 #
 
-export PKG="jansson-2.14"
-export PKGLOG_DIR=$LFSLOG/08.91.56
+export PKG="libgpg-error-1.51"
+export PKGLOG_DIR=$LFSLOG/08.91.34
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -23,15 +23,10 @@ tar xvf $PKG.tar.bz2 > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-sed -e "/DT/s;| sort;| sed 's/@@libjansson.*//' &;" \
-    -i test/suites/api/check-exports                \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr           \
-            --disable-static        \
+./configure --prefix=/usr   \
           > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
@@ -48,6 +43,9 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+install -v -m644 -D README /usr/share/doc/libgpg-error-1.51/README  \
+        > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

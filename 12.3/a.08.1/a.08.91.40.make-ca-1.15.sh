@@ -1,8 +1,8 @@
-# a.08.91.50.make-ca-1.15.sh
+# a.08.91.40.make-ca-1.15.sh
 #
 
 export PKG="make-ca-1.15"
-export PKGLOG_DIR=$LFSLOG/08.91.50
+export PKGLOG_DIR=$LFSLOG/08.91.40
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 #export PKGLOG_BUILD=$PKGLOG_DIR/build.log
