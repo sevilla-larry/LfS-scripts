@@ -1,8 +1,9 @@
-# a.08.92.01.Linux-PAM-1.5.3.sh
+# a.08.92.01.Linux-PAM-1.6.0.sh
+# errata
 #
 
-export PKG="Linux-PAM-1.5.3"
-export PKGLOG_DIR=$LFSLOG/a.08.92.01
+export PKG="Linux-PAM-1.6.0"
+export PKGLOG_DIR=$LFSLOG/08.92.01
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -23,22 +24,31 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-mkdir build
-cd    build
+sed -e /service_DATA/d                      \
+    -i modules/pam_namespace/Makefile.am    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+autoreconf  -v                              \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "2. Meson Setup ..."
-echo "2. Meson Setup ..." >> $LFSLOG_PROCESS
-echo "2. Meson Setup ..." >> $PKGLOG_ERROR
-meson setup ..        \
-  --prefix=/usr       \
-  --buildtype=release \
-  -D docdir=/usr/share/doc/Linux-PAM-1.5.3  \
-        > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+tar -xvf ../Linux-PAM-1.6.0-docs.tar.xz     \
+            --strip-components=1            \
+    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
-echo "3. Ninja Build ..."
-echo "3. Ninja Build ..." >> $LFSLOG_PROCESS
-echo "3. Ninja Build ..." >> $PKGLOG_ERROR 
-ninja > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+echo "2. Configure ..."
+echo "2. Configure ..." >> $LFSLOG_PROCESS
+echo "2. Configure ..." >> $PKGLOG_ERROR
+./configure --prefix=/usr                           \
+            --sbindir=/usr/sbin                     \
+            --sysconfdir=/etc                       \
+            --libdir=/usr/lib                       \
+            --enable-securedir=/usr/lib/security    \
+            --docdir=/usr/share/doc/Linux-PAM-1.6.0 \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+
+echo "3. Make Build ..."
+echo "3. Make Build ..." >> $LFSLOG_PROCESS
+echo "3. Make Build ..." >> $PKGLOG_ERROR
+make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 # For a first-time installation
 # create a configuration file
@@ -52,29 +62,23 @@ password required       pam_deny.so
 session  required       pam_deny.so
 EOF
 
-echo "4. Ninja Test ..."
-echo "4. Ninja Test ..." >> $LFSLOG_PROCESS
-echo "4. Ninja Test ..." >> $PKGLOG_ERROR
-ninja test > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo "4. Make Check ..."
+echo "4. Make Check ..." >> $LFSLOG_PROCESS
+echo "4. Make Check ..." >> $PKGLOG_ERROR
+make check > $PKGLOG_CHECK >> $PKGLOG_ERROR
+
 
 # remove the configuration file
 rm -fv /etc/pam.d/other \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "5. Ninja Install ..."
-echo "5. Ninja Install ..." >> $LFSLOG_PROCESS
-echo "5. Ninja Install ..." >> $PKGLOG_ERROR
-ninja install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+echo "5. Make Install ..."
+echo "5. Make Install ..." >> $LFSLOG_PROCESS
+echo "5. Make Install ..." >> $PKGLOG_ERROR
+make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 chmod -v 4755 /usr/sbin/unix_chkpwd \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-# remove an unneeded directory
-rm -rfv /usr/lib/systemd            \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-tar -C / -xvf ../../Linux-PAM-1.7.0-docs.tar.xz \
-    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ### Configurations
 
@@ -131,7 +135,7 @@ session     required        pam_deny.so
 # End /etc/pam.d/other
 EOF
 
-# from https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/sudo.html
+# from https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/sudo.html
 
 cat > /etc/pam.d/sudo << "EOF"              2>> $PKGLOG_ERROR
 # Begin /etc/pam.d/sudo

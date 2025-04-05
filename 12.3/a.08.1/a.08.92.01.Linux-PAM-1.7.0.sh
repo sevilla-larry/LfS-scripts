@@ -2,7 +2,7 @@
 #
 
 export PKG="Linux-PAM-1.7.0"
-export PKGLOG_DIR=$LFSLOG/a.08.92.01
+export PKGLOG_DIR=$LFSLOG/08.92.01
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

@@ -182,3 +182,18 @@ dafc5825a92dc907e144570e4e75a908 c-ares-1.19.1.tar.gz
 a.08.91.68.libssh2-1.11.0 (errata patch)
 a01d543fd891ca48fe47726540d50b17 libssh2-1.11.0.tar.gz
 #								 libssh2-1.11.0-security_fixes-1.patch
+
+# 08.91 71.pciutils-3.10.0
+ca53b87d2a94cdbbba6e09aca90924bd pciutils-3.10.0.tar.gz
+# 08.91.72.sshpass-1.10
+#								 sshpass-1.10.tar.gz
+
+# 08.92.01 Linux-PAM-1.6.0 (errata)
+41a10af5fc35a7be472ae9864338e64a Linux-PAM-1.6.0.tar.xz
+db41b71435df078658b3db1f57bb2a49 Linux-PAM-1.6.0-docs.tar.xz
+# 08.92.02 Shadow-4.13
+b1ab01b5462ddcf43588374d57bec123 shadow-4.13.tar.xz
+# 08.92.11 Sudo-1.9.14p3
+4cc21cf7c9a89290b230954aed0d1e11 sudo-1.9.14p3.tar.gz
+# 08.92.12 OpenSSH-9.6p1 (errata)
+5e90def5af3ffb27e149ca6fff12bef3 openssh-9.6p1.tar.gz

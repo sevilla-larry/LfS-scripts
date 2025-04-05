@@ -179,9 +179,25 @@ https://c-ares.haxx.se/download/c-ares-1.19.1.tar.gz
 https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.bz2
 # 08.91.67 nghttp2-1.59.0 (errata)
 https://github.com/nghttp2/nghttp2/releases/download/v1.59.0/nghttp2-1.59.0.tar.xz
-a.08.91.68.libssh2-1.11.0 (errata patch)
+# 08.91.68 libssh2-1.11.0 (errata patch)
 https://www.libssh2.org/download/libssh2-1.11.0.tar.gz
 https://www.linuxfromscratch.org/patches/blfs/12.1/libssh2-1.11.0-security_fixes-1.patch
+
+# 08.91 71 pciutils-3.10.0
+https://mj.ucw.cz/download/linux/pci/pciutils-3.10.0.tar.gz
+# 08.91.72 sshpass-1.10
+https://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz
+
+# 08.92.01 Linux-PAM-1.6.0 (errata)
+https://github.com/linux-pam/linux-pam/releases/download/v1.6.0/Linux-PAM-1.6.0.tar.xz
+https://github.com/linux-pam/linux-pam/releases/download/v1.6.0/Linux-PAM-1.6.0-docs.tar.xz
+# 08.92.02 Shadow-4.13
+https://github.com/shadow-maint/shadow/releases/download/4.13/shadow-4.13.tar.xz
+# 08.92.11 Sudo-1.9.14p3
+https://www.sudo.ws/dist/sudo-1.9.14p3.tar.gz
+# 08.92.12 OpenSSH-9.6p1 (errata)
+https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz
+
 
 # 08.93.02 WGet-1.21.4
 https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
@@ -189,13 +205,6 @@ https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
 # 08.93.03 Lynx-2.8.9rel.1
 https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.bz2
 https://www.linuxfromscratch.org/patches/blfs/12.0/lynx-2.8.9rel.1-security_fix-1.patch
-
-
-# 08.92.12 OpenSSH-9.4p1
-https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz
-
-# 08.92.11 Sudo-1.9.14p3
-https://www.sudo.ws/dist/sudo-1.9.14p3.tar.gz
 
 
 # BLFS-Bootscripts-20230824

@@ -92,71 +92,72 @@ https://github.com/google/brotli/archive/v1.1.0/brotli-1.1.0.tar.gz
 # 08.91.23 boost-1.87.0
 https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-b2-nodocs.tar.xz
 
-# 08.91.30 Perl Modules & Dependencies
-# 08.91.30.01 Capture::Tiny-0.50
-https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.50.tar.gz
-# 08.91.30.02 Try::Tiny-0.32
-https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz
-# 08.91.30.03 Test::Fatal-0.017
-https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.017.tar.gz
-# 08.91.30.04 Test::Warnings-0.038
-https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-Warnings-0.038.tar.gz
-# 08.91.30.05 Test::Needs-0.002010
-https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002010.tar.gz
-# 08.91.30.06 MIME::Base32-1.303
-https://cpan.metacpan.org/authors/id/R/RE/REHSACK/MIME-Base32-1.303.tar.gz
-# 08.91.30.07 URI-5.31
-https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.31.tar.gz
-# 08.91.30.08 Net::SSLeay-1.94
-https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz
-# 08.91.30.09 IO::Socket::SSL-2.089
-https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
-
-# 08.91.41 NSPR-4.36
+# 08.91.31 NSPR-4.36
 https://archive.mozilla.org/pub/nspr/releases/v4.36/src/nspr-4.36.tar.gz
-# 08.91.42 NSS-3.108
+# 08.91.32 NSS-3.108
 https://archive.mozilla.org/pub/security/nss/releases/NSS_3_108_RTM/src/nss-3.108.tar.gz
 https://www.linuxfromscratch.org/patches/blfs/12.3/nss-standalone-1.patch
-# 08.91.43 libtasn1-4.20.0
+# 08.91.33 libtasn1-4.20.0
 https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz
-# 08.91.44 libgpg-error-1.51
+# 08.91.34 libgpg-error-1.51
 https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2
-# 08.91.45 libgcrypt-1.11.0
+# 08.91.35 libgcrypt-1.11.0
 https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2
-# 08.91.46 docbook-xml-4.5
+# 08.91.36 docbook-xml-4.5
 https://www.docbook.org/xml/4.5/docbook-xml-4.5.zip
-# 08.91.47 docbook-xsl-nons-1.79.2
+# 08.91.37 docbook-xsl-nons-1.79.2
 https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2
 https://www.linuxfromscratch.org/patches/blfs/12.3/docbook-xsl-nons-1.79.2-stack_fix-1.patch
 https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-doc-1.79.2.tar.bz2
-# 08.91.48 libxslt-1.1.42
+# 08.91.38 libxslt-1.1.42
 https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.42.tar.xz
-# 08.91.49 p11-kit-0.25.5
+# 08.91.39 p11-kit-0.25.5
 https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz
-# 08.91.50.make-ca-1.15
+# 08.91.40 make-ca-1.15
 https://github.com/lfs-book/make-ca/archive/v1.15/make-ca-1.15.tar.gz
-# 08.91.51 libunistring-1.3
+
+# 08.91.50 Perl Modules & Dependencies
+# 08.91.50.01 Capture::Tiny-0.50
+https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.50.tar.gz
+# 08.91.50.02 Try::Tiny-0.32
+https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.32.tar.gz
+# 08.91.50.03 Test::Fatal-0.017
+https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.017.tar.gz
+# 08.91.50.04 Test::Warnings-0.038
+https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-Warnings-0.038.tar.gz
+# 08.91.50.05 Test::Needs-0.002010
+https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002010.tar.gz
+# 08.91.50.06 MIME::Base32-1.303
+https://cpan.metacpan.org/authors/id/R/RE/REHSACK/MIME-Base32-1.303.tar.gz
+# 08.91.50.07 URI-5.31
+https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.31.tar.gz
+# 08.91.50.08 Net::SSLeay-1.94
+https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz
+# 08.91.50.09 IO::Socket::SSL-2.089
+https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
+
+# 08.91.61 libunistring-1.3
 https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.xz
-# 08.91.52 libidn2-2.3.7
+# 08.91.62 libidn2-2.3.7
 https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
-# 08.91.53 GnuTLS-3.8.9
+# 08.91.63 GnuTLS-3.8.9
 https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
-# 08.91.54 libpsl-0.21.5
+# 08.91.64 libpsl-0.21.5
 https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
-# 08.91.55 c-ares-1.34.4
+# 08.91.65 c-ares-1.34.4
 https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz
-# 08.91.56 Jansson-2.14
+# 08.91.66 Jansson-2.14
 https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.bz2
-# 08.91.57 nghttp2-1.64.0
+# 08.91.67 nghttp2-1.64.0
 https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.xz
-# 08.91.58 libssh2-1.11.1
+# 08.91.68 libssh2-1.11.1
 https://www.libssh2.org/download/libssh2-1.11.1.tar.gz
 
-# 08.91.61.pciutils-3.13.0
+# 08.91.71 pciutils-3.13.0
 https://mj.ucw.cz/download/linux/pci/pciutils-3.13.0.tar.gz
-# 08.91.62 hwdata-0.392
+# 08.91.72 hwdata-0.392
 https://github.com/vcrhonek/hwdata/archive/v0.392/hwdata-0.392.tar.gz
-# 08.91.63.sshpass-1.10
+# 08.91.73 sshpass-1.10
 https://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz
 
 # 08.92.01 Linux-PAM-1.7.0

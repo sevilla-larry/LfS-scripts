@@ -1,10 +1,10 @@
-# a.08.91.73.sshpass-1.10.sh
+# a.08.91.72.sshpass-1.10.sh
 #
 # copyied from source server
 #
 
 export PKG="sshpass-1.10"
-export PKGLOG_DIR=$LFSLOG/08.91.73
+export PKGLOG_DIR=$LFSLOG/08.91.72
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
