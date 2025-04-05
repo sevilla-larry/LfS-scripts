@@ -1,16 +1,17 @@
-# a.08.91B.p11-kit-0.25.0.sh
+# a.08.91.39.p11-kit-0.25.0.sh
 #
 
 export PKG="p11-kit-0.25.0"
-export PKGLOG_DIR=$LFSLOG/08.91B
+export PKGLOG_DIR=$LFSLOG/08.91.39
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
-#export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -23,11 +24,13 @@ cd $PKG
 
 
 sed 's/if (gi/& \&\& gi != C_GetInterface/' \
-    -i p11-kit/modules.c
+    -i p11-kit/modules.c                    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-sed '20,$ d' -i trust/trust-extract-compat
+sed '20,$ d' -i trust/trust-extract-compat  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-cat >> trust/trust-extract-compat << "EOF"
+cat >> trust/trust-extract-compat << "EOF"  2>> $PKGLOG_ERROR
 # Copy existing anchor modifications to /etc/ssl/local
 /usr/libexec/make-ca/copy-trust-modifications
 
@@ -41,10 +44,11 @@ cd    p11-build
 echo "2. Meson Configure ..."
 echo "2. Meson Configure ..." >> $LFSLOG_PROCESS
 echo "2. Meson Configure ..." >> $PKGLOG_ERROR
-meson --prefix=/usr                     \
-      --buildtype=release               \
-      -Dtrust_paths=/etc/pki/anchors    \
-            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+meson setup ..                          \
+        --prefix=/usr                   \
+        --buildtype=release             \
+        -D trust_paths=/etc/pki/anchors \
+        > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Ninja Build ..."
 echo "3. Ninja Build ..." >> $LFSLOG_PROCESS
@@ -61,15 +65,16 @@ echo "5. Ninja Install ..." >> $LFSLOG_PROCESS
 echo "5. Ninja Install ..." >> $PKGLOG_ERROR
 ninja install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-ln -sf /usr/libexec/p11-kit/trust-extract-compat \
-        /usr/bin/update-ca-certificates
+ln -sfv /usr/libexec/p11-kit/trust-extract-compat   \
+        /usr/bin/update-ca-certificates             \
+         >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
-#unset PKGLOG_OTHERS
+unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR

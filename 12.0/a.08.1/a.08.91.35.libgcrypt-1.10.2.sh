@@ -1,8 +1,8 @@
-# a.08.91.45.libgcrypt-1.10.2.sh
+# a.08.91.35.libgcrypt-1.10.2.sh
 #
 
 export PKG="libgcrypt-1.10.2"
-export PKGLOG_DIR=$LFSLOG/08.91.45
+export PKGLOG_DIR=$LFSLOG/08.91.35
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -59,7 +59,7 @@ echo "6. Make Install ..." >> $LFSLOG_PROCESS
 echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -v -dm755   /usr/share/doc/libgcrypt-1.10.20                \
+install -v -dm755   /usr/share/doc/libgcrypt-1.10.2                 \
                     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 install -v -m644    README doc/{README.apichanges,fips*,libgcrypt*} \
                     /usr/share/doc/libgcrypt-1.10.2                 \

@@ -1,8 +1,8 @@
-# a.08.91.47.docbook-xsl-nons-1.79.2.sh
+# a.08.91.37.docbook-xsl-nons-1.79.2.sh
 #
 
 export PKG="docbook-xsl-nons-1.79.2"
-export PKGLOG_DIR=$LFSLOG/08.91.47
+export PKGLOG_DIR=$LFSLOG/08.91.37
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
@@ -40,7 +40,7 @@ cp -v -R VERSION assembly common eclipse epub epub3 extensions fo           \
          highlighting html htmlhelp images javahelp lib manpages params     \
          profiling roundtrip slides template tests tools webhelp website    \
          xhtml xhtml-1_1 xhtml5                                             \
-        /usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2                 \
+        /usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2                  \
         >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 ln -vs VERSION /usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2/VERSION.xsl   \
@@ -53,67 +53,66 @@ install -v -m644    RELEASE-NOTES* NEWS* \
                     /usr/share/doc/docbook-xsl-nons-1.79.2                  \
         >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-cp -v -R doc/* /usr/share/doc/docbook-xsl-nons-1.79.2   \
+cp -v -R doc/* /usr/share/doc/docbook-xsl-nons-1.79.2                       \
         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 if [ ! -d /etc/xml ]; then
-    install -v -m755 -d /etc/xml    \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR ;
+    install -v -m755 -d /etc/xml                    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 fi
 
 if [ ! -f /etc/xml/catalog ]; then
-    xmlcatalog --noout --create /etc/xml/catalog
+    xmlcatalog --noout --create /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 fi
 
 xmlcatalog --noout --add "rewriteSystem" \
-           "http://cdn.docbook.org/release/xsl-nons/1.79.2" \
-           "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
-
-xmlcatalog --noout --add "rewriteSystem" \
            "https://cdn.docbook.org/release/xsl-nons/1.79.2" \
            "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
-
-xmlcatalog --noout --add "rewriteURI" \
-           "http://cdn.docbook.org/release/xsl-nons/1.79.2" \
-           "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 xmlcatalog --noout --add "rewriteURI" \
            "https://cdn.docbook.org/release/xsl-nons/1.79.2" \
            "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
-
-xmlcatalog --noout --add "rewriteSystem" \
-           "http://cdn.docbook.org/release/xsl-nons/current" \
-           "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 xmlcatalog --noout --add "rewriteSystem" \
            "https://cdn.docbook.org/release/xsl-nons/current" \
            "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
-
-xmlcatalog --noout --add "rewriteURI" \
-           "http://cdn.docbook.org/release/xsl-nons/current" \
-           "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 xmlcatalog --noout --add "rewriteURI" \
            "https://cdn.docbook.org/release/xsl-nons/current" \
            "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 xmlcatalog --noout --add "rewriteSystem" \
            "http://docbook.sourceforge.net/release/xsl/current" \
            "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 xmlcatalog --noout --add "rewriteURI" \
            "http://docbook.sourceforge.net/release/xsl/current" \
            "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
-    /etc/xml/catalog
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    
+xmlcatalog --noout --add "rewriteSystem" \
+           "http://docbook.sourceforge.net/release/xsl/1.79.2" \
+           "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+xmlcatalog --noout --add "rewriteURI" \
+           "http://docbook.sourceforge.net/release/xsl/1.79.2" \
+           "/usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2" \
+    /etc/xml/catalog    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

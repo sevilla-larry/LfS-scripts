@@ -1,8 +1,8 @@
-# a.08.91.50.04.Test-Warnings-0.038.sh
+# a.08.91.50.03.Test-Fatal-0.017.sh
 #
 
-export PKG="Test-Warnings-0.038"
-export PKGLOG_DIR=$LFSLOG/08.91.50.04
+export PKG="Test-Fatal-0.017"
+export PKGLOG_DIR=$LFSLOG/08.91.50.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

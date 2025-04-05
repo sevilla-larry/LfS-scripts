@@ -1,8 +1,8 @@
-# a.08.91.46.docbook-xml-4.5.sh
+# a.08.91.36.docbook-xml-4.5.sh
 #
 
 export PKG="docbook-xml-4.5"
-export PKGLOG_DIR=$LFSLOG/08.91.46
+export PKGLOG_DIR=$LFSLOG/08.91.36
 export PKGLOG_ZIP=$PKGLOG_DIR/zip.log
 #xport PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 #xport PKGLOG_BUILD=$PKGLOG_DIR/build.log

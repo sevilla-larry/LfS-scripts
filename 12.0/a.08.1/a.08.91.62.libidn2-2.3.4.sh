@@ -1,8 +1,8 @@
-# a.08.91.57.nghttp2-1.55.1.sh
+# a.08.91.62.libidn2-2.3.4.sh
 #
 
-export PKG="nghttp2-1.55.1"
-export PKGLOG_DIR=$LFSLOG/08.91.57
+export PKG="libidn2-2.3.4"
+export PKGLOG_DIR=$LFSLOG/08.91.62
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -18,7 +18,7 @@ mkdir $PKGLOG_DIR
 echo "1. Extract tar..."
 echo "1. Extract tar..." >> $LFSLOG_PROCESS
 echo "1. Extract tar..." >> $PKGLOG_ERROR
-tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
@@ -27,9 +27,7 @@ echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr       \
             --disable-static    \
-            --enable-lib-only   \
-            --docdir=/usr/share/doc/nghttp2-1.55.1  \
-            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+        > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

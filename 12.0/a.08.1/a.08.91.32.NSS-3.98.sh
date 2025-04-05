@@ -1,8 +1,9 @@
-# a.08.91.42.NSS-3.92.sh
+# a.08.91.32.NSS-3.98.sh
+# errata
 #
 
-export PKG="nss-3.92"
-export PKGLOG_DIR=$LFSLOG/08.91.42
+export PKG="nss-3.98"
+export PKGLOG_DIR=$LFSLOG/08.91.32
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -23,7 +24,7 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-patch -Np1 -i ../nss-standalone-1.patch \
+patch -Np1 -i ../nss-3.98-standalone-1.patch    \
             > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 cd nss
@@ -76,7 +77,7 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig    \
 ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so    \
             >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-# read: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/nss.html
+# read: https://www.linuxfromscratch.org/blfs/view/12.1/postlfs/nss.html
 # chk on make-ca...
 
 

@@ -8,24 +8,10 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.91.31.pciutils-3.13.0"
-echo "08.91.31.pciutils-3.13.0" >> $LFSLOG_PROCESS
+echo "08.91.61.libunistring-1.1"
+echo "08.91.61.libunistring-1.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.31.pciutils-3.13.0.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.32.hwdata-0.392"
-echo "08.91.32.hwdata-0.392" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.32.hwdata-0.392.sh ; }
+time { bash a.08.91.61.libunistring-1.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -36,10 +22,94 @@ echo "."
 
 ###
 
-echo "08.91.33.sshpass-1.10"
-echo "08.91.33.sshpass-1.10" >> $LFSLOG_PROCESS
+echo "08.91.62.libidn2-2.3.4"
+echo "08.91.62.libidn2-2.3.4" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.33.sshpass-1.10.sh ; }
+time { bash a.08.91.62.libidn2-2.3.4.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.63.GnuTLS-3.8.1"
+echo "08.91.63.GnuTLS-3.8.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.63.GnuTLS-3.8.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.64.libpsl-0.21.2"
+echo "08.91.64.libpsl-0.21.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.64.libpsl-0.21.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.65.c-ares-1.19.1"
+echo "08.91.65.c-ares-1.19.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.65.c-ares-1.19.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.66.Jansson-2.14"
+echo "08.91.66.Jansson-2.14" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.66.Jansson-2.14.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.67.nghttp2-1.55.1"
+echo "08.91.67.nghttp2-1.55.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.67.nghttp2-1.55.1.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.91.68.libssh2-1.11.0"
+echo "08.91.68.libssh2-1.11.0" >> $LFSLOG_PROCESS
+
+time { bash a.08.91.68.libssh2-1.11.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

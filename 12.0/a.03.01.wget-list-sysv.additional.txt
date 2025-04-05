@@ -124,18 +124,46 @@ https://github.com/google/brotli/archive/v1.0.9/brotli-1.0.9.tar.gz
 # 08.91.23.Boost-1.83.0
 https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2
 
-
-# 08.91.30.09 IO::Socket::SSL-2.083
-https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.083.tar.gz
-
-# 08.91.43 libtasn1-4.19.0
+# 08.91.31.NSPR-4.35
+https://archive.mozilla.org/pub/nspr/releases/v4.35/src/nspr-4.35.tar.gz
+# 08.91.32.NSS-3.98	(errata)
+https://archive.mozilla.org/pub/security/nss/releases/NSS_3_98_RTM/src/nss-3.98.tar.gz
+https://www.linuxfromscratch.org/patches/blfs/12.1/nss-3.98-standalone-1.patch
+# 08.91.33 libtasn1-4.19.0
 https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.19.0.tar.gz
-
+# 08.91.34.libgpg-error-1.47
+https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2
+# 08.91.35.libgcrypt-1.10.2
+https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2
+# 08.91.36.docbook-xml-4.5
+https://www.docbook.org/xml/4.5/docbook-xml-4.5.zip
+# 08.91.37.docbook-xsl-nons-1.79.2
+https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2
+https://www.linuxfromscratch.org/patches/blfs/12.0/docbook-xsl-nons-1.79.2-stack_fix-1.patch
+https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-doc-1.79.2.tar.bz2
+# 08.91.38.libxslt-1.1.38
+https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.38.tar.xz
 # 08.91.49 p11-kit-0.25.0
 https://github.com/p11-glue/p11-kit/releases/download/0.25.0/p11-kit-0.25.0.tar.xz
-
 # 08.91.50 make-ca-1.12
 https://github.com/lfs-book/make-ca/releases/download/v1.13/make-ca-1.12.tar.xz
+
+# 08.91.50.01 Capture::Tiny-0.48
+https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
+# 08.91.50.02 Try::Tiny-0.31
+https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.31.tar.gz
+# 08.91.50.03 Test::Fatal-0.017
+https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Test-Fatal-0.017.tar.gz
+# 08.91.50.04 Test::Needs-0.002010
+https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002010.tar.gz
+# 08.91.50.05 Test::Warnings-0.031
+https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-Warnings-0.031.tar.gz
+# 08.91.50.07 URI-5.17
+https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.17.tar.gz
+# 08.91.50.08 Net::SSLeay-1.92
+https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz
+# 08.91.50.09 IO::Socket::SSL-2.083
+https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.083.tar.gz
 
 # 08.93.02 WGet-1.21.4
 https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
@@ -151,17 +179,6 @@ https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz
 # 08.92.11 Sudo-1.9.14p3
 https://www.sudo.ws/dist/sudo-1.9.14p3.tar.gz
 
-
-
-
-# 
-https://www.openssl.org/source/openssl-3.2.0.tar.gz
-
-https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
-
-https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tar.xz
-
-https://www.python.org/ftp/python/doc/3.11.11/python-3.11.11-docs-html.tar.bz2
 
 # BLFS-Bootscripts-20230824
 #https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20230824.tar.xz
