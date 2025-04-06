@@ -719,10 +719,6 @@ D. [LFS 10.x] Making the LFS System Bootable
             Accelerated
                 SSSE 256
 
-        Kernel hacking --->
-          Memory Debugging
-            [ ] Stack Utilitization Instrumentation
-
         Device Drivers
             SCSI
                 low-level
@@ -731,6 +727,10 @@ D. [LFS 10.x] Making the LFS System Bootable
         Networking
 
                 Netlink
+
+        Kernel hacking --->
+          Memory Debugging
+            [ ] Stack Utilitization Instrumentation
 
         make -j$(nproc)
         make modules_install
@@ -824,7 +824,7 @@ E. The End
 
         useradd -m -G users,wheel,audio,cdrom,video         -s /bin/bash <user>
 
-        # No USB in LfS
+        # No USB in LfS 12.2 & up
         # useradd -m -G users,wheel,audio,cdrom,usb,video     -s /bin/bash <user>
 
         passwd <user>

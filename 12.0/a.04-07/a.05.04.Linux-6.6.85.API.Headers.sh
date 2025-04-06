@@ -1,7 +1,8 @@
-# a.05.04.Linux-6.4.12.API.Headers.sh
+# a.05.04.Linux-6.6.85.API.Headers.sh
+# latest longterm 6.6.xx
 #
 
-export PKG="linux-6.4.12"
+export PKG="linux-6.6.85"
 export PKGLOG_DIR=$LFSLOG/05.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

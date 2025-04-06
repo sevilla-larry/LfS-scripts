@@ -1,9 +1,10 @@
-# a.10.03.Linux-6.4.12.extract.only.sh
+# a.10.03.Linux-6.6.85.extract.only.sh
+# latest longterm 6.6.xx
 #
 # This will only extract the .tar.xz file
 # and will NOT delete the source directory
 
-export PKG="linux-6.4.12"
+export PKG="linux-6.6.85"
 export PKGLOG_DIR=$LFSLOG/10.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

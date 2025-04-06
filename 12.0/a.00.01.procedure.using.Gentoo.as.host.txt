@@ -105,6 +105,8 @@ A. Preparation
         export LFS=/mnt/lfs
         ###
 
+        umask 022
+
   A.07. [LFS 2.7] Mounting the New Partition
 
         ###
@@ -211,9 +213,11 @@ A. Preparation
 
         # ( Logging )
 
-        bash a.04.03.3.1.Add.Logging.Requirement.VMs.sh
+      # (a) VM & VB
+        bash a.04.03.3.1.Add.Logging.Requirement.VM.VB.sh
 
-        export LFSLOG=$LFS/var/log/lfs
+      # (b) PC
+        bash a.04.03.3.2.Add.Logging.Requirement.PC.sh
 
         ###
 
@@ -231,6 +235,8 @@ A. Preparation
         $$$
 
         $$$
+
+        export LFS=/mnt/lfs
 
         cd $LFS/sources
 
@@ -356,6 +362,8 @@ B.  Generate LFS
         ls -l /bin/sh         # bash
         ls -l /usr/bin/awk    # gawk
 
+        ###
+
   B.08. [LFS 7.5] Creating Directories
 
         ###
@@ -412,6 +420,8 @@ B.  Generate LFS
 
         bash a.08.00.Part2.27-35.sh
 
+        # Note: read https://www.linuxfromscratch.org/lfs/view/12.0/chapter08/gcc.html specially the 29/*.log files
+
         ###
 
   B.14. [LFS 8.35] run the newly compiled BASH program
@@ -430,30 +440,25 @@ B.  Generate LFS
 
         ###
 
-  B.16. [LFS 8.62] Chapter 8 Part 4 GRUB
-        ( based on: https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/grub-efi.html )
+  B.16. Additional Applications needed
+
+        ###
+        #
+        # including [LFS 8.62] Chapter 8 Part 4 GRUB
+        # ( based on: https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/grub-efi.html )
+        #
+        # Misc Support Applications
+        #
+        # Linux-PAM and reBuilds
+        #
+        # net Applications
+        #
+        ###
+
+        bash a.08.1.sh
 
         ###
 
-        bash a.08.00.Part4.90-90Y.sh
-
-        ###
-
-  B.17. Additional Applications needed - WGet
-
-        ###
-
-        bash a.08.00.Part5.91-91Z.sh
-
-        ###
-
-  B.18. Additional Applications needed - misc
-
-        ###
-
-        bash a.08.00.Part6.92-92E.sh
-
-        ###
 
 C. Finishing Up
 
@@ -535,13 +540,28 @@ C. Finishing Up
 
         bash a.09.06.System.V.Bootscript.Usage.and.Configuration.sh
 
+        # PC
+        # modify /etc/sysconfig/clock with UTC=0
+
         ###
 
         # modify /etc/sysconfig/rc.site, UNcomment some settings
+        #
+        # Console parameters       from LfS 12.3
+        # UNICODE=1
+        # FONT="Lat2-Terminus16"
 
         ###
 
-  C.05. [LFS 9.8] /etc/inputrc
+  C.05. [LFS 9.7] The Bash Shell Startup Files /etc/profile
+
+        ###
+
+        bash a.09.07.The.Bash.Shell.Startup.Files.sh
+
+        ###
+
+  C.06. [LFS 9.8] /etc/inputrc
 
         ###
 
@@ -549,7 +569,7 @@ C. Finishing Up
 
         ###
 
-  C.06. [LFS 9.9] /etc/shells
+  C.07. [LFS 9.9] /etc/shells
 
         ###
 
@@ -557,7 +577,7 @@ C. Finishing Up
 
         ###
 
-  C.07. BLFS-Bootscripts
+  C.08. BLFS-Bootscripts
 
         ###
 
@@ -567,7 +587,7 @@ C. Finishing Up
 
         ###
 
-  C.08. GPM bootscripts
+  C.09. GPM bootscripts
 
         ###
 
@@ -575,7 +595,7 @@ C. Finishing Up
 
         ###
 
-  C.09. OpenSSH bootscripts
+  C.10. OpenSSH bootscripts
 
 
         ###
@@ -584,7 +604,16 @@ C. Finishing Up
 
         ###
 
-#  C.10. acpid bootscripts
+  C.11. NTP bootscripts
+
+
+        ###
+
+        make install-ntpd
+
+        ###
+
+#  C.12. acpid bootscripts
 #
 #        ###
 #           Possible conflict with
@@ -609,12 +638,27 @@ D. [LFS 10.x] Making the LFS System Bootable
         #/dev/<xxx>     /            <fff>    defaults            1     1
         #/dev/<yyy>     swap         swap     pri=1               0     0
 
-        /dev/vda1       /boot/efi   vfat  defaults,discard      0 2
-        /dev/vda2       /           ext4  defaults,noatime,discard               0 1
 
-        /dev/vdb1       /mnt/src    ext4  noatime,discard               0 3
+        # for VMs
+        /dev/vda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1,discard  0 2
+        /dev/vda2       /           ext4  defaults,noatime,discard                  0 1
 
-        /dev/vdc1       none        swap  sw,discard                    0 0
+        /dev/vdb1       /mnt/Src    ext4  noatime,discard                           0 3
+
+        /dev/vdc1       none        swap  sw,discard                                0 0
+
+        # for VBs
+        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda2       /           ext4  defaults,noatime                          0 1
+        /dev/sda3       none        swap  sw                                        0 0
+
+        /dev/sdb1       /mnt/Src    ext4  noatime                                   0 3
+
+        # for PCs
+        /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
+        /dev/sda2       /           ext4  defaults,noatime                          0 1
+        /dev/sda3       none        swap  sw                                        0 0
+
 
         /dev/cdrom      /mnt/cdrom  auto  noauto,user                   0 0
 
@@ -636,26 +680,30 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] Linux-6.4.12 Kernel
+  D.02. [LFS 10.3] latest Linux-6.6.xx Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.4.12.extract.only.sh
+        bash a.10.03.Linux-6.6.85.extract.only.sh
 
-        cd linux-6.4.12
+        cd linux-6.6.85
 
         make mrproper
         make defconfig
+
+        # VM only
         make kvm_guest.config
+
         make MENUCONFIG_COLOR=blackbg menuconfig
 
         ( Note the flags needed )
         https://www.linuxfromscratch.org/lfs/view/12.0/chapter10/kernel.html
         https://www.linuxfromscratch.org/blfs/view/12.0/postlfs/grub-setup.html
         https://www.linuxfromscratch.org/blfs/view/12.0/general/gpm.html
-        https://wiki.gentoo.org/wiki/QEMU/Linux_guest
+        https://wiki.gentoo.org/wiki/QEMU/Linux_guest           # for Qemu/KVM guest
+        https://wiki.gentoo.org/wiki/VirtualBox#Gentoo_guests   # for VirtualBox guest
         https://www.linuxfromscratch.org/blfs/view/12.0/x/mesa.html
         https://www.linuxfromscratch.org/blfs/view/12.0/x/xorg-server.html
         https://www.linuxfromscratch.org/blfs/view/12.0/x/x7driver.html#libevdev
@@ -667,18 +715,31 @@ D. [LFS 10.x] Making the LFS System Bootable
           Graphics Support --->
             [*] Bootup logo
 
+        Cryptographic
+            Accelerated
+                SSSE 256
+
+        Device Drivers
+            SCSI
+                low-level
+                    M debugging
+                    
+        Networking
+
+                Netlink
+
         Kernel hacking --->
           Memory Debugging
             [ ] Stack Utilitization Instrumentation
 
-        make
+        make -j$(nproc)
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.4.12-lfs-12.0-r00
-        cp -iv System.map /boot/System.map-6.4.12-lfs-12.0-r00
-        cp -iv .config /boot/config-6.4.12-lfs-12.0-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.6.85-lfs-12.0-r00
+        cp -iv System.map /boot/System.map-6.6.85-lfs-12.0-r00
+        cp -iv .config /boot/config-6.6.85-lfs-12.0-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.4.12
+        cp -r Documentation -T /usr/share/doc/linux-6.6.85
 
         ###
 
@@ -687,10 +748,16 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         ###
 
-        mkdir -pv /boot/efi
-        mount -v -t vfat /dev/vdb1 /boot/efi
+        #mkdir -v /efi
+        #mount -v -t vfat /dev/vdb1 /efi    # Qemu/KVM VM
+        #mount -v -t vfat /dev/sdb1 /efi    # PC & VB
 
-        grub-install --target=x86_64-efi --removable
+        mount --mkdir -v -t vfat /dev/vdc1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # Qemu/KVM VM
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # VB
+        mount --mkdir -v -t vfat /dev/sdb1 -o codepage=437,iocharset=iso8859-1 /boot/efi    # PC
+
+      # grub-install --target=x86_64-efi --efi-directory=/boot/efi --removable
+        grub-install --target=x86_64-efi --removable  # default to /boot/efi
 
 
         cat > /boot/grub/grub.cfg << EOF
@@ -707,8 +774,9 @@ D. [LFS 10.x] Making the LFS System Bootable
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.4.12-lfs-12.0-r00"  {
-          linux   /boot/vmlinuz-6.4.12-lfs-12.0-r00 root=/dev/vda2 ro
+        menuentry "GNU/Linux, Linux 6.6.85-lfs-12.0-r00"  {
+          linux   /boot/vmlinuz-6.6.85-lfs-12.0-r00 root=/dev/vda2 ro   # Qemu/KVM VM
+          linux   /boot/vmlinuz-6.6.85-lfs-12.0-r00 root=/dev/sda2 ro   # PC & VB
         }
 
         menuentry "Firmware Setup" {
@@ -813,7 +881,7 @@ E. The End
         umount -v $LFS/proc
         umount -v $LFS/sys
 
-        umount -v $LFS/mnt/src
+        umount -v $LFS/mnt/src      # for VMs
         umount -v $LFS/boot/efi
 
         umount -v $LFS
@@ -822,9 +890,30 @@ E. The End
 
         ###
 
-  E.06. Detach the 3 VDs from host
+  E.06. Detaching
+      # (a) VM - 3 Virtual Disks
+        Detach the 3 VDs from host
 
-F. Create a new VM for LFS and run it
-      VM.LFS.sys.qcow2 as vda
-      VM.LFS.src.qcow2 as vdb
-      VM.LFS.swp.qcow2 as vdc
+      # (b) VB - 2 Virtual Disks
+        Detach the 2 VDs from host
+
+      # (c) PC - 2nd Disk
+        Detach the 1st Disk
+
+F. Deploying
+      # (a) VM - 3 Virtual Disks
+        Create a new VM for LFS and run it
+        VM.LFS.sys.qcow2 as vda
+        VM.LFS.src.qcow2 as vdb
+        VM.LFS.swp.qcow2 as vdc
+
+      # (b) VB - 2 Virtual Disks
+        Create a new VB for LFS and run it
+        VM.LFS.sys.qcow2 as sda
+        VM.LFS.src.qcow2 as sdb
+
+      # (c) PC - 2nd Disk
+        Start-up the PC from the newly installed LFS drive.
+
+Note: Copying LFS use tar
+read: 8.2.3 Deploying LFS on Multiple Systems
