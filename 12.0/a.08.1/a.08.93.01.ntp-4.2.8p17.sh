@@ -35,10 +35,12 @@ useradd -c "Network Time Protocol" -d /var/lib/ntp -u 87    \
 echo "   Fix a type issue ..."
 echo "   Fix a type issue ..." >> $LFSLOG_PROCESS
 echo "   Fix a type issue ..." >> $PKGLOG_ERROR
-sed -e "s;pthread_detach(NULL);pthread_detach(0);"  \
-    -i configure                                    \
-       sntp/configure                               \
-       >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -e 's/"(\\S+)"/"?([^\\s"]+)"?/'         \
+    -i scripts/update-leap/update-leap.in   \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+sed -e 's/#ifndef __sun/#if !defined(__sun) \&\& !defined(__GLIBC__)/'  \
+    -i libntp/work_thread.c                 \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS

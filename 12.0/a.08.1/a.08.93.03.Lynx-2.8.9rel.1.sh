@@ -1,8 +1,8 @@
-# a.08.92A.Lynx-2.8.9rel.1.sh
+# a.08.93.03.Lynx-2.8.9rel.1.sh
 #
 
 export PKG="lynx2.8.9rel.1"
-export PKGLOG_DIR=$LFSLOG/08.92A
+export PKGLOG_DIR=$LFSLOG/08.93.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -11,6 +11,7 @@ export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -51,11 +52,14 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install-full   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-chgrp -R root /usr/share/doc/lynx-2.8.9rel.1/lynx_doc
+
+chgrp -R root /usr/share/doc/lynx-2.8.9rel.1/lynx_doc   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 #unset PKGLOG_CHECK

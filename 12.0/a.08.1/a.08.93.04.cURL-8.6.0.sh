@@ -1,7 +1,7 @@
-# a.08.93.04.cURL-8.2.1.sh
+# a.08.93.04.cURL-8.6.0.sh
 #
 
-export PKG="curl-8.2.1"
+export PKG="curl-8.6.0"
 export PKGLOG_DIR=$LFSLOG/08.93.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -61,7 +61,7 @@ find docs \( -name Makefile\* -o        \
              -name CMakeLists.txt \) -delete    \
     >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
-cp -v -R docs -T /usr/share/doc/curl-8.2.1     \
+cp -v -R docs -T /usr/share/doc/curl-8.6.0     \
     >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
 

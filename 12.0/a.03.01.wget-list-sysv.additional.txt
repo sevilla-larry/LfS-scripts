@@ -165,6 +165,25 @@ https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.92.tar.gz
 # 08.91.50.09 IO::Socket::SSL-2.083
 https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.083.tar.gz
 
+# 08.91.50.11 LWP::MediaTypes-6.04
+https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
+# 08.91.50.12 IO::HTML-1.004
+https://cpan.metacpan.org/authors/id/C/CJ/CJM/IO-HTML-1.004.tar.gz
+# 08.91.50.13 TimeDate-2.33
+https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/TimeDate-2.33.tar.gz
+# 08.91.50.14 HTTP::Date-6.05
+https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.05.tar.gz
+# 08.91.50.15 Encode::Locale-1.05
+https://cpan.metacpan.org/authors/id/G/GA/GAAS/Encode-Locale-1.05.tar.gz
+# 08.91.50.16 B::COW-0.007
+https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/B-COW-0.007.tar.gz
+# 08.91.50.17 Clone-0.46
+https://cpan.metacpan.org/authors/id/G/GA/GARU/Clone-0.46.tar.gz
+# 08.91.50.18 HTTP::Message-6.44
+https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.44.tar.gz
+# 08.91.50.19 HTTP::Daemon-6.16
+https://www.cpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-6.16.tar.gz
+
 # 08.91.61 libunistring-1.1
 https://ftp.gnu.org/gnu/libunistring/libunistring-1.1.tar.xz
 # 08.91.62 libidn2-2.3.4
@@ -198,19 +217,17 @@ https://www.sudo.ws/dist/sudo-1.9.14p3.tar.gz
 # 08.92.12 OpenSSH-9.6p1 (errata)
 https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz
 
-
+# 08.93.01 ntp-4.2.8p17
+https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p17.tar.gz
 # 08.93.02 WGet-1.21.4
 https://ftp.gnu.org/gnu/wget/wget-1.21.4.tar.gz
-
 # 08.93.03 Lynx-2.8.9rel.1
 https://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.9rel.1.tar.bz2
 https://www.linuxfromscratch.org/patches/blfs/12.0/lynx-2.8.9rel.1-security_fix-1.patch
+# 08.93.04 cURL-8.6.0 (errata)
+https://curl.se/download/curl-8.6.0.tar.xz
+# 08.93.05 Git-2.41.0
+https://www.kernel.org/pub/software/scm/git/git-2.41.0.tar.xz
 
-
-# BLFS-Bootscripts-20230824
-#https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20230824.tar.xz
-https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20231119.tar.xz
-
-
-
-#https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz
+# 09.99 BLFS-Bootscripts-20230824
+https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20230824.tar.xz
