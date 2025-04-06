@@ -24,10 +24,10 @@ echo "."
 
 ###
 
-echo "08.91.32.NSS-3.92"
-echo "08.91.32.NSS-3.92" >> $LFSLOG_PROCESS
+echo "08.91.32.NSS-3.98"
+echo "08.91.32.NSS-3.98" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.32.NSS-3.92.sh ; }
+time { bash a.08.91.32.NSS-3.98.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

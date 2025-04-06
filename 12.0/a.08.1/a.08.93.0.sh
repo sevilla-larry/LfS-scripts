@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "08.93.04.cURL-8.2.1"
-echo "08.93.04.cURL-8.2.1" >> $LFSLOG_PROCESS
+echo "08.93.04.cURL-8.6.0"
+echo "08.93.04.cURL-8.6.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.93.04.cURL-8.2.1.sh ; }
+time { bash a.08.93.04.cURL-8.6.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

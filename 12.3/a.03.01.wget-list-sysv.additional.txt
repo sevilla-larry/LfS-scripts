@@ -1,3 +1,9 @@
+# Errata LfS
+
+#####
+
+# Additional from BLfS
+
 # 08.73a Nano-8.3
 https://www.nano-editor.org/dist/v8/nano-8.3.tar.xz
 
@@ -135,6 +141,25 @@ https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.31.tar.gz
 https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz
 # 08.91.50.09 IO::Socket::SSL-2.089
 https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
+
+# 08.91.50.11 LWP::MediaTypes-6.04
+https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
+# 08.91.50.12 IO::HTML-1.004
+https://cpan.metacpan.org/authors/id/C/CJ/CJM/IO-HTML-1.004.tar.gz
+# 08.91.50.13 TimeDate-2.33
+https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/TimeDate-2.33.tar.gz
+# 08.91.50.14 HTTP::Date-6.06
+https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Date-6.06.tar.gz
+# 08.91.50.15 Encode::Locale-1.05
+https://cpan.metacpan.org/authors/id/G/GA/GAAS/Encode-Locale-1.05.tar.gz
+# 08.91.50.16 B::COW-0.007
+https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/B-COW-0.007.tar.gz
+# 08.91.50.17 Clone-0.47
+https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.47.tar.gz
+# 08.91.50.18 HTTP::Message-7.00
+https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-7.00.tar.gz
+# 08.91.50.19 HTTP::Daemon-6.16
+https://www.cpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-6.16.tar.gz
 
 # 08.91.61 libunistring-1.3
 https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.xz

@@ -8,10 +8,10 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.92.01.Linux-PAM-1.5.3"
-echo "08.92.01.Linux-PAM-1.5.3" >> $LFSLOG_PROCESS
+echo "08.92.01.Linux-PAM-1.6.0"
+echo "08.92.01.Linux-PAM-1.6.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.92.01.Linux-PAM-1.5.3.sh ; }
+time { bash a.08.92.01.Linux-PAM-1.6.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "08.92.12.OpenSSH-9.4p1"
-echo "08.92.12.OpenSSH-9.4p1" >> $LFSLOG_PROCESS
+echo "08.92.12.OpenSSH-9.6p1"
+echo "08.92.12.OpenSSH-9.6p1" >> $LFSLOG_PROCESS
 
-time { bash a.08.92.12.OpenSSH-9.4p1.sh ; }
+time { bash a.08.92.12.OpenSSH-9.6p1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

@@ -36,10 +36,10 @@ echo "."
 
 ###
 
-echo "08.91.63.GnuTLS-3.8.1"
-echo "08.91.63.GnuTLS-3.8.1" >> $LFSLOG_PROCESS
+echo "08.91.63.GnuTLS-3.8.3"
+echo "08.91.63.GnuTLS-3.8.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.63.GnuTLS-3.8.1.sh ; }
+time { bash a.08.91.63.GnuTLS-3.8.3.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -92,10 +92,10 @@ echo "."
 
 ###
 
-echo "08.91.67.nghttp2-1.55.1"
-echo "08.91.67.nghttp2-1.55.1" >> $LFSLOG_PROCESS
+echo "08.91.67.nghttp2-1.59.0"
+echo "08.91.67.nghttp2-1.59.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.67.nghttp2-1.55.1.sh ; }
+time { bash a.08.91.67.nghttp2-1.59.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

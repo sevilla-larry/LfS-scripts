@@ -106,10 +106,10 @@ echo "."
 
 ###
 
-echo "08.91.08.libxml2-2.10.4"
-echo "08.91.08.libxml2-2.10.4" >> $LFSLOG_PROCESS
+echo "08.91.08.libxml2-2.12.5"
+echo "08.91.08.libxml2-2.12.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.08.libxml2-2.10.4.sh ; }
+time { bash a.08.91.08.libxml2-2.12.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -162,10 +162,10 @@ echo "."
 
 ###
 
-echo "08.91.12.libarchive-3.7.1"
-echo "08.91.12.libarchive-3.7.1" >> $LFSLOG_PROCESS
+echo "08.91.12.libarchive-3.7.2"
+echo "08.91.12.libarchive-3.7.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.12.libarchive-3.7.1.sh ; }
+time { bash a.08.91.12.libarchive-3.7.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -176,10 +176,10 @@ echo "."
 
 ###
 
-echo "08.91.13.libuv-1.46.0"
-echo "08.91.13.libuv-1.46.0" >> $LFSLOG_PROCESS
+echo "08.91.13.libuv-1.48.0"
+echo "08.91.13.libuv-1.48.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.13.libuv-1.46.0.sh ; }
+time { bash a.08.91.13.libuv-1.48.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
