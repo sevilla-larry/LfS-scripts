@@ -1,7 +1,7 @@
-# a.06.03.Ncurses-6.4.sh
+# a.06.03.Ncurses-6.4-20230520.sh
 #
 
-export PKG="ncurses-6.4"
+export PKG="ncurses-6.4-20230520"
 export PKGLOG_DIR=$LFSLOG/06.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -51,7 +51,6 @@ echo "3. Configure ncurses ..." >> $PKGLOG_ERROR
             >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            AWK=gawk                      \  LfS 12.3
 
-
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS
 echo "4. Make Build ..." >> $PKGLOG_ERROR
@@ -61,9 +60,12 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install   \
-    > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so       \
-    2>> $PKGLOG_ERROR
+     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+ln -sv libncursesw.so $LFS/usr/lib/libncurses.so            \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+sed -e 's/^#if.*XOPEN.*$/#if 1/'                            
+    -i $LFS/usr/include/curses.h                            \
+    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

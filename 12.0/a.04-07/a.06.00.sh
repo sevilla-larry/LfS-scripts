@@ -22,10 +22,10 @@ echo "."
 
 ###
 
-echo "06.03.Ncurses-6.4"
-echo "06.03.Ncurses-6.4" >> $LFSLOG_PROCESS
+echo "06.03.Ncurses-6.4-20230520"
+echo "06.03.Ncurses-6.4-20230520" >> $LFSLOG_PROCESS
 
-time { bash a.06.03.Ncurses-6.4.sh ; }
+time { bash a.06.03.Ncurses-6.4-20230520.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

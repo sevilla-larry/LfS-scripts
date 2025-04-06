@@ -4,7 +4,7 @@
 https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.xz
 https://www.linuxfromscratch.org/patches/lfs/12.1/glibc-2.39-fhs-1.patch
 https://www.iana.org/time-zones/repository/releases/tzdata2024a.tar.gz
-# 08.29 Ncurses-6.4-20230520 (errata)
+# 06.03 & 08.29 Ncurses-6.4-20230520 (errata)
 https://anduin.linuxfromscratch.org/LFS/ncurses-6.4-20230520.tar.xz
 # 08.39 Expat-2.6.0 (errata)
 https://prdownloads.sourceforge.net/expat/expat-2.6.0.tar.xz
