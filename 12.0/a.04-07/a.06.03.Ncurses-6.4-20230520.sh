@@ -63,7 +63,7 @@ make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install   \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 ln -sv libncursesw.so $LFS/usr/lib/libncurses.so            \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-sed -e 's/^#if.*XOPEN.*$/#if 1/'                            
+sed -e 's/^#if.*XOPEN.*$/#if 1/'                            \
     -i $LFS/usr/include/curses.h                            \
     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
