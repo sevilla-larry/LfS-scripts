@@ -7,7 +7,7 @@ https://www.iana.org/time-zones/repository/releases/tzdata2024a.tar.gz
 # 08.29 Ncurses-6.4-20230520 (errata)
 https://anduin.linuxfromscratch.org/LFS/ncurses-6.4-20230520.tar.xz
 # 08.39 Expat-2.6.0 (errata)
-https://prdownloads.sourceforge.net/expat/expat-2.6.0.tar.xz
+https://toolchains.bootlin.com/downloads/releases/sources/expat-2.6.0/expat-2.6.0.tar.xz
 # 07.09 & 08.42 Perl-5.38.2 (errata)
 https://www.cpan.org/src/5.0/perl-5.38.2.tar.xz
 a.08.47 OpenSSL-3.2.1 (errata)
@@ -95,9 +95,9 @@ https://files.pythonhosted.org/packages/source/e/editables/editables-0.3.tar.gz
 https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.10.3.tar.gz
 #             trove-classifiers			NOT required by Hatchling 1.12.2
 # 08.91.20.07 Hatchling-1.12.2
-# https://files.pythonhosted.org/packages/source/h/hatchling/hatchling-1.12.2.tar.gz
+https://files.pythonhosted.org/packages/source/h/hatchling/hatchling-1.12.2.tar.gz
 # 08.91.20.08 Hatch_vcs-0.3.0
-# https://files.pythonhosted.org/packages/source/h/hatch-vcs/hatch_vcs-0.3.0.tar.gz
+https://files.pythonhosted.org/packages/source/h/hatch-vcs/hatch_vcs-0.3.0.tar.gz
 # 08.91.20.09 Iniconfig-2.0.0
 https://files.pythonhosted.org/packages/source/i/iniconfig/iniconfig-2.0.0.tar.gz
 # 08.91.20.10 Pygments-2.16.1
@@ -151,7 +151,7 @@ https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.38.tar.xz
 # 08.91.49 p11-kit-0.25.0
 https://github.com/p11-glue/p11-kit/releases/download/0.25.0/p11-kit-0.25.0.tar.xz
 # 08.91.50 make-ca-1.12
-https://github.com/lfs-book/make-ca/releases/download/v1.13/make-ca-1.12.tar.xz
+https://github.com/lfs-book/make-ca/releases/download/v1.12/make-ca-1.12.tar.xz
 
 # 08.91.50.01 Capture::Tiny-0.48
 https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.48.tar.gz
@@ -198,7 +198,7 @@ https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.3.tar.xz
 # 08.91.64 libpsl-0.21.2
 https://github.com/rockdaboot/libpsl/releases/download/0.21.2/libpsl-0.21.2.tar.gz
 # 08.91.65 c-ares-1.19.1
-https://c-ares.haxx.se/download/c-ares-1.19.1.tar.gz
+https://github.com/c-ares/c-ares/releases/download/cares-1_19_1/c-ares-1.19.1.tar.gz
 # 08.91.66 Jansson-2.14
 https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.bz2
 # 08.91.67 nghttp2-1.59.0 (errata)
