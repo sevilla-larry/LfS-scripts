@@ -10,7 +10,7 @@ c5367e829b6d9f3f97b280bb3e6bfbc3 ncurses-6.4-20230520.tar.xz
 bd169cb11f4b9bdfddadf9e88a5c4d4b expat-2.6.0.tar.xz
 # 07.09 & 08.42 Perl-5.38.2 (errata)
 d3957d75042918a23ec0abac4a2b7e0a perl-5.38.2.tar.xz
-a.08.47 OpenSSL-3.2.1 (errata)
+# 08.47 OpenSSL-3.2.1 (errata)
 c239213887804ba00654884918b37441 openssl-3.2.1.tar.gz
 # 08.73 Jinja2-3.1.3 (errata)
 caf5418c851eac59e70a78d9730d4cea Jinja2-3.1.3.tar.gz
@@ -127,7 +127,7 @@ cee1996a80032d47bdf1d9d17249c34e numpy-1.25.2.tar.gz
 # 08.91.22.brotli-1.0.9
 c2274f0c7af8470ad514637c35bcee7d brotli-1.0.9.tar.gz
 # 08.91.23.Boost-1.83.0
-406f0b870182b4eb17a23a9d8fce967d boost_1_83_0.tar.bz2
+2cca3c15a09b6a2fb437d76a90b66417 boost_1_83_0.tar.bz2
 
 # 08.91.31.NSPR-4.35
 5e0acf9fbdde85181bddd510f4624841 nspr-4.35.tar.gz
@@ -203,7 +203,7 @@ dafc5825a92dc907e144570e4e75a908 c-ares-1.19.1.tar.gz
 3f90473d7d54ebd1cb6a2757396641df jansson-2.14.tar.bz2
 # 08.91.67 nghttp2-1.59.0 
 97c1931900eee69ac6dd1e1c09f22e30 nghttp2-1.59.0.tar.xz
-a.08.91.68.libssh2-1.11.0 (errata patch)
+# 08.91.68 libssh2-1.11.0 (errata patch)
 a01d543fd891ca48fe47726540d50b17 libssh2-1.11.0.tar.gz
 #								 libssh2-1.11.0-security_fixes-1.patch
 
