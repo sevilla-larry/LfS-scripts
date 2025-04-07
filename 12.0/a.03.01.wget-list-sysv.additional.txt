@@ -3,6 +3,7 @@
 # 05.05 & 08.05 Glibc-2.39 (errata)
 https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.xz
 https://www.linuxfromscratch.org/patches/lfs/12.1/glibc-2.39-fhs-1.patch
+https://www.linuxfromscratch.org/patches/downloads/glibc/glibc-2.39-upstream_fix-2.patch
 https://www.iana.org/time-zones/repository/releases/tzdata2024a.tar.gz
 # 06.03 & 08.29 Ncurses-6.4-20230520 (errata)
 https://anduin.linuxfromscratch.org/LFS/ncurses-6.4-20230520.tar.xz

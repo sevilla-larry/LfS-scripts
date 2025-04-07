@@ -3,6 +3,7 @@
 # 05.05 & 08.05 Glibc-2.39 (errata)
 be81e87f72b5ea2c0ffe2bedfeb680c6 glibc-2.39.tar.xz
 9a5997c3452909b1769918c759eff8a2 glibc-2.39-fhs-1.patch
+#                                glibc-2.39-upstream_fix-2.patch
 2349edd8335245525cc082f2755d5bf4 tzdata2024a.tar.gz
 # 08.29 Ncurses-6.4-20230520 (errata)
 c5367e829b6d9f3f97b280bb3e6bfbc3 ncurses-6.4-20230520.tar.xz
