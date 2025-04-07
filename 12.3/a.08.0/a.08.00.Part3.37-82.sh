@@ -204,10 +204,24 @@ echo "."
 
 ###
 
-echo "08.51.Python-3.13.2"
-echo "08.51.Python-3.13.2" >> $LFSLOG_PROCESS
+if	 [ "$PYVER" -eq 11 ]; then
 
-time { bash a.08.51.Python-3.13.2.sh ; }
+	echo "08.51.Python-3.11.11"
+	echo "08.51.Python-3.11.11" >> $LFSLOG_PROCESS
+	time { bash a.08.51.Python-3.11.11.sh ; }
+
+elif [ "$PYVER" -eq 13 ]; then
+
+	echo "08.51.Python-3.13.2"
+	echo "08.51.Python-3.13.2" >> $LFSLOG_PROCESS
+	time { bash a.08.51.Python-3.13.2.sh ; }
+
+else
+
+	echo "Error: PYVER must be 11 or 13"
+	echo "Error: PYVER must be 11 or 13" >> $LFSLOG_PROCESS
+
+fi
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

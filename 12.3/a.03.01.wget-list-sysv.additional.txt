@@ -2,6 +2,12 @@
 
 #####
 
+# 07.10, 08.51 & 08.91.19 Python-3.11.11 (latest)
+https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tar.xz
+https://www.python.org/ftp/python/doc/3.11.11/python-3.11.11-docs-html.tar.bz2
+
+#####
+
 # Additional from BLfS
 
 # 08.73a Nano-8.3
