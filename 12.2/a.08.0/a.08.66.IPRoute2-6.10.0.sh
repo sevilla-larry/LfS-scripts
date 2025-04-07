@@ -10,6 +10,7 @@ export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -48,8 +49,9 @@ cp -v COPYING README*	/usr/share/doc/iproute2-6.10.0	\
 	>> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 #unset PKGLOG_CHECK

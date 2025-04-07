@@ -11,6 +11,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -79,9 +80,9 @@ ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so    \
 # chk on make-ca...
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD

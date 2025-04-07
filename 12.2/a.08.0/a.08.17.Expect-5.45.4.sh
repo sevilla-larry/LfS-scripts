@@ -11,6 +11,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -58,8 +59,9 @@ ln -svf expect5.45.4/libexpect5.45.4.so /usr/lib    \
      >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_CHECK PKGLOG_OTHERS
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG

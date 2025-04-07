@@ -11,6 +11,7 @@ export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 
 rm -r $PKGLOG_DIR 2> /dev/null
@@ -84,9 +85,9 @@ rm -v a.out                                 \
     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_CHECK

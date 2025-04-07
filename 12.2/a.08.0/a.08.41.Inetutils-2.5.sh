@@ -10,6 +10,7 @@ export PKGLOG_CHECK=$PKGLOG_DIR/check.log
 export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
+export SOURCES=`pwd`
 
 rm -r $PKGLOG_DIR 2> /dev/null
 mkdir $PKGLOG_DIR
@@ -62,8 +63,10 @@ echo "   Move a program to the proper location..." >> $PKGLOG_ERROR
 mv -v /usr/{,s}bin/ifconfig >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
-cd ..
+
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
 unset PKGLOG_CHECK

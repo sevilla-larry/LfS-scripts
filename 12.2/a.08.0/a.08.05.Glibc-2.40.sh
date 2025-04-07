@@ -11,6 +11,7 @@ export PKGLOG_INSTALL=$PKGLOG_DIR/install.log
 export PKGLOG_ERROR=$PKGLOG_DIR/error.log
 export PKGLOG_OTHERS=$PKGLOG_DIR/others.log
 export LFSLOG_PROCESS=$LFSLOG/process.log
+export SOURCES=`pwd`
 
 #Modify the next line for your local time zone
 export LOCAL_TIME_ZONE=Asia/Manila
@@ -194,9 +195,9 @@ EOF
 mkdir -p /etc/ld.so.conf.d
 
 
-cd ..
-cd ..
+cd $SOURCES
 rm -rf $PKG
+unset SOURCES
 unset LOCAL_TIME_ZONE
 unset LFSLOG_PROCESS
 unset PKGLOG_OTHERS
