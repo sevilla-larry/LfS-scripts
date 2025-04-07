@@ -680,15 +680,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] latest Linux-6.6.xx Kernel
+  D.02. [LFS 10.3] latest Linux-6.4.16 Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.6.85.extract.only.sh
+        bash a.10.03.Linux-6.4.16.extract.only.sh
 
-        cd linux-6.6.85
+        cd linux-6.4.16
 
         make mrproper
         make defconfig
@@ -735,11 +735,11 @@ D. [LFS 10.x] Making the LFS System Bootable
         make -j$(nproc)
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.6.85-lfs-12.0-r00
-        cp -iv System.map /boot/System.map-6.6.85-lfs-12.0-r00
-        cp -iv .config /boot/config-6.6.85-lfs-12.0-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.4.16-lfs-12.0-r00
+        cp -iv System.map /boot/System.map-6.4.16-lfs-12.0-r00
+        cp -iv .config /boot/config-6.4.16-lfs-12.0-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.6.85
+        cp -r Documentation -T /usr/share/doc/linux-6.4.16
 
         ###
 
