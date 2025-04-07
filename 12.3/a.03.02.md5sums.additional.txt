@@ -121,8 +121,8 @@ c2ffeab30889999f55cf72e1107611aa boost-1.87.0-b2-nodocs.tar.xz
 2666d1488d6ced1551d15f31d7ed8c38 docbook-xsl-nons-1.79.2.tar.bz2
 #								 docbook-xsl-nons-1.79.2-stack_fix-1.patch
 62375ca864fc198cb2b17d98209d0b8c docbook-xsl-doc-1.79.2.tar.bz2
-# 08.91.38 libxslt-1.1.42
-56bc5d89aa39d62002961c150fec08a0 libxslt-1.1.42.tar.xz
+# 08.91.38 libxslt-1.1.43 (errata)
+5dc0179c81be7a3082b43030ecfdebd4 libxslt-1.1.43.tar.xz
 # 08.91.39 p11-kit-0.25.5
 e9c5675508fcd8be54aa4c8cb8e794fc p11-kit-0.25.5.tar.xz
 # 08.91.40 make-ca-1.15

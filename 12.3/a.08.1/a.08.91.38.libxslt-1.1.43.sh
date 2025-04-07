@@ -1,7 +1,8 @@
-# a.08.91.38.libxslt-1.1.42.sh
+# a.08.91.38.libxslt-1.1.43.sh
+# errata
 #
 
-export PKG="libxslt-1.1.42"
+export PKG="libxslt-1.1.43"
 export PKGLOG_DIR=$LFSLOG/08.91.38
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -27,7 +28,7 @@ echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                          \
             --disable-static                       \
-            --docdir=/usr/share/doc/libxslt-1.1.42 \
+            --docdir=/usr/share/doc/libxslt-1.1.43 \
           > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            PYTHON=/usr/bin/python3                \
 

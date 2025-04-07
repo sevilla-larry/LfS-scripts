@@ -108,10 +108,10 @@ echo "."
 
 ###
 
-echo "08.91.38.libxslt-1.1.42"
-echo "08.91.38.libxslt-1.1.42" >> $LFSLOG_PROCESS
+echo "08.91.38.libxslt-1.1.43"
+echo "08.91.38.libxslt-1.1.43" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.38.libxslt-1.1.42.sh ; }
+time { bash a.08.91.38.libxslt-1.1.43.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
