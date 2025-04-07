@@ -8,6 +8,13 @@
 # Started: 2025/Mar/10
 # arch: x64, UEFI
 #
+# Note: select Python version:
+#
+#       Python 3.11.x  is used/tested on OpenStack 2025.1 Epoxy
+#       Python 3.11.11 is the latest, used/installed
+#
+#       Python 3.13.2  is LfS 12.3 book version
+#
 #
 #
 # Working LfS ver: 12.2
@@ -38,7 +45,7 @@
 # Working LfS ver: 12.0
 # Started: 2023/Sept/07
 # arch: x64, UEFI
-# Note: 2025 updating, to be used for OpenStack, which uses Python 3.11.x
+# Note: 2025 updating, alternate, to be used for OpenStack 2025.1 Expoxy, which uses Python 3.11.x
 #
 # Working LfS ver: 11.3
 # Started: 2023/Apr/06
