@@ -1,7 +1,8 @@
-# a.08.91.20.01.Typing_extensions-4.4.0.sh
+# a.08.91.20.01.Typing_extensions-4.12.2.sh
+# (OpenStackSDK 4.4.0 of OS 2025.1 Epoxy, ver >= 4.12.0)
 #
 
-export PKG="typing_extensions-4.4.0"
+export PKG="typing_extensions-4.12.2"
 export PKGLOG_DIR=$LFSLOG/08.91.20.01
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log

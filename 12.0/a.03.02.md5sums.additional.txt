@@ -83,7 +83,7 @@ bf908de360308d909e9cc469402ff2ef rpcsvc-proto-1.4.4.tar.xz
 f3cb6b67a82bc586a096459085616e4f sqlite-doc-3420000.zip
 
 # 08.91.20.01 Typing_extensions-4.4.0
-5cfcb56ea6fc4972c3600c0030f4d136 typing_extensions-4.4.0.tar.gz
+cf64c2313f5fa5eb04c1deb3fc93abe9 typing_extensions-4.12.2.tar.gz
 # 08.91.20.02 Packaging-23.1
 f7d5c39c6f92cc2dfa1293ba8f6c097c packaging-23.1.tar.gz
 # 08.91.20.03 Setuptools_scm-7.1.0
