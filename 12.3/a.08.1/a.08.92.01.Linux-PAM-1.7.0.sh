@@ -116,21 +116,6 @@ password  required    pam_unix.so       yescrypt shadow try_first_pass
 # End /etc/pam.d/system-password
 EOF
 
-cat > /etc/pam.d/other << "EOF"             2>> $PKGLOG_ERROR
-# Begin /etc/pam.d/other
-
-auth        required        pam_warn.so
-auth        required        pam_deny.so
-account     required        pam_warn.so
-account     required        pam_deny.so
-password    required        pam_warn.so
-password    required        pam_deny.so
-session     required        pam_warn.so
-session     required        pam_deny.so
-
-# End /etc/pam.d/other
-EOF
-
 # from https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/sudo.html
 
 cat > /etc/pam.d/sudo << "EOF"              2>> $PKGLOG_ERROR
