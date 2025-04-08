@@ -52,7 +52,6 @@ echo "3. Configure ..." >> $PKGLOG_ERROR
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #             --with-headers=/usr/include        \ LfS 12.0
 
-
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS
 echo "4. Make Build ..." >> $PKGLOG_ERROR
