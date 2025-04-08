@@ -1,8 +1,8 @@
-# a.05.05.Glibc-2.39.sh
-# errata
+# a.5.05.Glibc-2.41.sh
+# errata (from LfS 12.3)
 #
 
-export PKG="glibc-2.39"
+export PKG="glibc-2.41"
 export PKGLOG_DIR=$LFSLOG/05.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -24,7 +24,9 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "Symbolic Link"        >> $PKGLOG_OTHERS
+echo "   Symbolic Link..."
+echo "   Symbolic Link..." >> $LFSLOG_PROCESS
+echo "   Symbolic Link..." >> $PKGLOG_ERROR
 case $(uname -m) in
     i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
     ;;
@@ -33,16 +35,18 @@ case $(uname -m) in
     ;;
 esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "Patch 1 FHS-compliant"    >> $PKGLOG_OTHERS
-patch -Np1 -i ../glibc-2.39-fhs-1.patch             \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-echo "Patch 2 upstream"         >> $PKGLOG_OTHERS
-patch -Np1 -i ../glibc-2.39-upstream_fix-2.patch    \
+echo "   Patch to FHS-compliant..."
+echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
+echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
+patch -Np1 -i ../glibc-2.41-fhs-1.patch \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
 
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..."
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..." >> $LFSLOG_PROCESS
+echo "   Ensure that the ldconfig and sln utilities will be installed into /usr/sbin..." >> $PKGLOG_ERROR
 echo "rootsbindir=/usr/sbin" > configparms
 
 echo "2. Configure ..."
@@ -52,7 +56,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
       --prefix=/usr                         \
       --host=$LFS_TGT                       \
       --build=$(../scripts/config.guess)    \
-      --enable-kernel=4.19                  \
+      --enable-kernel=5.4                   \
       --with-headers=$LFS/usr/include       \
       --disable-nscd                        \
       libc_cv_slibdir=/usr/lib              \
@@ -70,7 +74,9 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make DESTDIR=$LFS install   \
     > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "Fix hard code path in 'ldd' script" >> $PKGLOG_OTHERS
+echo "   Fix hard code path in ldd script..."
+echo "   Fix hard code path in ldd script..." >> $LFSLOG_PROCESS
+echo "   Fix hard code path in ldd script..." >> $PKGLOG_ERROR
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 

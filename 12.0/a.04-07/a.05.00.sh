@@ -49,12 +49,12 @@ echo "."
 echo "."
 
 ###
-#   Glibc-2.39 (errata)
+#   Glibc-2.41 (errata, from LfS 12.3)
 
-echo "05.05.Glibc-2.39"
-echo "05.05.Glibc-2.39" >> $LFSLOG_PROCESS
+echo "05.05.Glibc-2.41"
+echo "05.05.Glibc-2.41" >> $LFSLOG_PROCESS
 
-time { bash a.05.05.Glibc-2.39.sh ; }
+time { bash a.05.05.Glibc-2.41.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
