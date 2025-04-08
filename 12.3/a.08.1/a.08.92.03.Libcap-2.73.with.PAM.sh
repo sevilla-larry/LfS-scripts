@@ -1,8 +1,8 @@
-# a.08.92.13.Libcap-2.73.with.PAM.sh
+# a.08.92.03.Libcap-2.73.with.PAM.sh
 #
 
 export PKG="libcap-2.73"
-export PKGLOG_DIR=$LFSLOG/08.92.13
+export PKGLOG_DIR=$LFSLOG/08.92.03
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
