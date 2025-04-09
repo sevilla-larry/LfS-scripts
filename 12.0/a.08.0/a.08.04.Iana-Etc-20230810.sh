@@ -23,7 +23,7 @@ cd $PKG
 
 echo "2. Copy files ..."
 echo "2. Copy files ..." >> $LFSLOG_PROCESS
-echo "2. Copy files ..." >> $LFSLOG_PROCESS
+echo "2. Copy files ..." >> $LFSLOG_ERROR
 cp -v services protocols /etc	> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
