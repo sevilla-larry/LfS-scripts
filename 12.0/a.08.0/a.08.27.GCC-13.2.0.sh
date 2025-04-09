@@ -62,7 +62,7 @@ echo "4. Make Check 1 ..." >> $LFSLOG_PROCESS
 echo "4. Make Check 1 ..." >> $PKGLOG_ERROR
 ulimit -s 32768
 
-chown -Rv tester . > $PKGLOG_CHOWN 2>> $PKGLOG_ERROR
+chown -Rv tester . > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 su tester -c "PATH=$PATH make -k check" \
   > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
@@ -77,7 +77,7 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 chown -v -R root:root                                         \
     /usr/lib/gcc/$(gcc -dumpmachine)/13.2.0/include{,-fixed}  \
-    >> $PKGLOG_CHOWN 2>> $PKGLOG_ERROR
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 ln -svr /usr/bin/cpp /usr/lib   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
@@ -145,4 +145,4 @@ unset PKGLOG_OTHERS
 unset PKGLOG_CHECK
 unset PKGLOG_INSTALL PKGLOG_BUILD PKGLOG_CONFIG
 unset PKGLOG_ERROR PKGLOG_TAR
-unset PKGLOG_DIR PKGLOG_CHOWN PKG
+unset PKGLOG_DIR PKG
