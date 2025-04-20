@@ -353,9 +353,9 @@ B.  Generate LFS
         # PYVER values are:
         #
         # 11 = Python-3.11.xx
-        # 12 = Python-3.12.xx
+        # 12 = Python-3.12.xx   best suited for OpenStack 2025.1 Epoxy
         # 13 = Python-3.13.xx
-        export PYVER=11
+        export PYVER=12
 
         cd /sources
 

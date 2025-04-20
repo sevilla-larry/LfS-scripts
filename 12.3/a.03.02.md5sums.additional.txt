@@ -2,9 +2,17 @@
 
 #####
 
-# 07.10, 08.51 & 08.91.19		 Python-3.11.11 (latest)
-#								 Python-3.11.11.tar.xz
+# 07.10, 08.51 & 08.91.19		 Python-3.11.11
+#3e497037b170fe4be5f462c4964596f2 Python-3.11.11.tar.xz
 #								 python-3.11.11-docs-html.tar.bz2
+
+# 07.10, 08.51 & 08.91.19		 Python-3.11.12 (latest 2025/Apr/20)
+7fc6fee008b0b933052c89946377e319 Python-3.11.12.tar.xz
+#								 python-3.11.12-docs-html.tar.bz2
+
+# 07.10, 08.51 & 08.91.19		 Python-3.12.10 (latest 2025/Apr/20)
+0c0a6cce86d7611aed691d61e0599de0 Python-3.12.10.tar.xz
+#								 python-3.12.10-docs-html.tar.bz2
 
 #####
 

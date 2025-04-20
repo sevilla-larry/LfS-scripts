@@ -1,8 +1,8 @@
-# a.08.51.Python-3.11.11.sh
-# latest
+# a.08.51.Python-3.11.12.sh
+# latest 2025/Apr/20
 #
 
-export PKG="Python-3.11.11"
+export PKG="Python-3.11.12"
 export PKGLOG_DIR=$LFSLOG/08.51
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -27,7 +27,7 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-CXX="/usr/bin/g++"                  \
+#CXX="/usr/bin/g++"                  \
 ./configure --prefix=/usr           \
             --enable-shared         \
             --with-system-expat     \

@@ -52,9 +52,15 @@ echo "."
 
 if	 [ "$PYVER" -eq 11 ]; then
 
-	echo "07.10.Python-3.11.11"
-	echo "07.10.Python-3.11.11" >> $LFSLOG_PROCESS
-	time { bash a.07.10.Python-3.11.11.sh ; }
+	echo "07.10.Python-3.11.12"
+	echo "07.10.Python-3.11.12" >> $LFSLOG_PROCESS
+	time { bash a.07.10.Python-3.11.12.sh ; }
+
+elif [ "$PYVER" -eq 12 ]; then
+
+	echo "07.10.Python-3.12.10"
+	echo "07.10.Python-3.12.10" >> $LFSLOG_PROCESS
+	time { bash a.07.10.Python-3.12.10.sh ; }
 
 elif [ "$PYVER" -eq 13 ]; then
 
@@ -64,8 +70,8 @@ elif [ "$PYVER" -eq 13 ]; then
 
 else
 
-	echo "Error: PYVER must be 11 or 13"
-	echo "Error: PYVER must be 11 or 13" >> $LFSLOG_PROCESS
+	echo "Error: PYVER must be 11, 12 or 13"
+	echo "Error: PYVER must be 11, 12 or 13" >> $LFSLOG_PROCESS
 
 fi
 

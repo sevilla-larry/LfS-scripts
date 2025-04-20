@@ -1,10 +1,10 @@
-# a.08.91.19.Python-3.11.11.sh
-# latest
+# a.08.91.19.Python-3.12.10.sh
+# latest 2025/Apr/20
 #
 # ReBuild Python with SQLite
 #
 
-export PKG="Python-3.11.11"
+export PKG="Python-3.12.10"
 export PKGLOG_DIR=$LFSLOG/08.91.19
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -33,19 +33,25 @@ CXX="/usr/bin/g++"                  \
 ./configure --prefix=/usr           \
             --enable-shared         \
             --with-system-expat     \
-            --with-system-ffi       \
             --enable-optimizations  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --with-system-ffi       \  LfS 12.0
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-#
-# based on succeeding versions of LfS ( 12.3 )
-# try --timeout 120
-#
+echo "   Some tests are known to occasionally hang indefinitely ..."
+echo "   Some tests are known to occasionally hang indefinitely ..."    >> $LFSLOG_PROCESS
+echo "   Some tests are known to occasionally hang indefinitely ..."    >> $PKGLOG_ERROR
+echo "   So to test the results, run the test suite ..."
+echo "   So to test the results, run the test suite ..."                >> $LFSLOG_PROCESS
+echo "   So to test the results, run the test suite ..."                >> $PKGLOG_ERROR
+echo "   but set a 2-minute time limit for each test case ..."
+echo "   but set a 2-minute time limit for each test case ..."          >> $LFSLOG_PROCESS
+echo "   but set a 2-minute time limit for each test case ..."          >> $PKGLOG_ERROR
+
 echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS
 echo "4. Make Test ..." >> $PKGLOG_ERROR
@@ -56,6 +62,10 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+# Documentation already Installed
+
+# Read: https://www.linuxfromscratch.org/blfs/view/12.3/general/python3.html
 
 
 cd $SOURCES
