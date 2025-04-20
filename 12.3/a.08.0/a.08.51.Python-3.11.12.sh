@@ -69,14 +69,14 @@ EOF
 
 echo "5. Extract documentation tar..."
 
-install -v -dm755 /usr/share/doc/python-3.11.11/html    \
+install -v -dm755 /usr/share/doc/python-3.11.12/html    \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --strip-components=1                        \
     --no-same-owner                             \
     --no-same-permissions                       \
-    -C /usr/share/doc/python-3.11.11/html       \
-    -xvf ../python-3.11.11-docs-html.tar.bz2    \
+    -C /usr/share/doc/python-3.11.12/html       \
+    -xvf ../python-3.11.12-docs-html.tar.bz2    \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 
