@@ -54,6 +54,27 @@ Defaults secure_path="/usr/sbin:/usr/bin"
 %wheel ALL=(ALL) ALL
 EOF
 
+cat > /etc/pam.d/sudo << "EOF"              2>> $PKGLOG_ERROR
+# Begin /etc/pam.d/sudo
+
+# include the default auth settings
+auth      include     system-auth
+
+# include the default account settings
+account   include     system-account
+
+# Set default environment variables for the service user
+session   required    pam_env.so
+
+# include system session defaults
+session   include     system-session
+
+# End /etc/pam.d/sudo
+EOF
+
+chmod -v 644 /etc/pam.d/sudo    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 
 cd $SOURCES
 rm -rf $PKG

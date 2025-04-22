@@ -133,8 +133,8 @@ https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/d
 https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.43.tar.xz
 # 08.91.39 p11-kit-0.25.5
 https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz
-# 08.91.40 make-ca-1.15
-https://github.com/lfs-book/make-ca/archive/v1.15/make-ca-1.15.tar.gz
+# 08.91.40 make-ca-1.16 (errata)
+https://github.com/lfs-book/make-ca/archive/v1.16/make-ca-1.16.tar.gz
 
 # 08.91.50 Perl Modules & Dependencies
 # 08.91.50.01 Capture::Tiny-0.50
