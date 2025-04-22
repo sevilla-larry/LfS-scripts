@@ -47,7 +47,7 @@ auth      optional    pam_cap.so
 EOF
 
 tail -n +3 /etc/pam.d/system-auth.bak >> /etc/pam.d/system-auth \
-         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+        2>> $PKGLOG_ERROR
 
 # Read: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/libcap.html Configuring Libcap
 
