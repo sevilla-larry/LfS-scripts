@@ -50,30 +50,52 @@ echo "."
 
 ###
 
-if	 [ "$PYVER" -eq 11 ]; then
+# if	 [ "$PYVER" -eq 11 ]; then
+#
+# 	echo "07.10.Python-3.11.12"
+# 	echo "07.10.Python-3.11.12" >> $LFSLOG_PROCESS
+# 	time { bash a.07.10.Python-3.11.12.sh ; }
+#
+# elif [ "$PYVER" -eq 12 ]; then
+#
+# 	echo "07.10.Python-3.12.10"
+# 	echo "07.10.Python-3.12.10" >> $LFSLOG_PROCESS
+# 	time { bash a.07.10.Python-3.12.10.sh ; }
+#
+# elif [ "$PYVER" -eq 13 ]; then
+#
+# 	echo "07.10.Python-3.13.2"
+# 	echo "07.10.Python-3.13.2" >> $LFSLOG_PROCESS
+# 	time { bash a.07.10.Python-3.13.2.sh ; }
+#
+# else
+#
+# 	echo "Error: PYVER must be 11, 12 or 13"
+# 	echo "Error: PYVER must be 11, 12 or 13" >> $LFSLOG_PROCESS
+#
+# fi
 
-	echo "07.10.Python-3.11.12"
-	echo "07.10.Python-3.11.12" >> $LFSLOG_PROCESS
-	time { bash a.07.10.Python-3.11.12.sh ; }
-
-elif [ "$PYVER" -eq 12 ]; then
-
-	echo "07.10.Python-3.12.10"
-	echo "07.10.Python-3.12.10" >> $LFSLOG_PROCESS
-	time { bash a.07.10.Python-3.12.10.sh ; }
-
-elif [ "$PYVER" -eq 13 ]; then
-
-	echo "07.10.Python-3.13.2"
-	echo "07.10.Python-3.13.2" >> $LFSLOG_PROCESS
-	time { bash a.07.10.Python-3.13.2.sh ; }
-
-else
-
-	echo "Error: PYVER must be 11, 12 or 13"
-	echo "Error: PYVER must be 11, 12 or 13" >> $LFSLOG_PROCESS
-
-fi
+case "$PYVER" in
+    11)
+		echo "07.10.Python-3.11.12"
+		echo "07.10.Python-3.11.12" >> $LFSLOG_PROCESS
+		time { bash a.07.10.Python-3.11.12.sh ; }
+        ;;
+    12)
+		echo "07.10.Python-3.12.10"
+		echo "07.10.Python-3.12.10" >> $LFSLOG_PROCESS
+		time { bash a.07.10.Python-3.12.10.sh ; }
+        ;;
+    13)
+		echo "07.10.Python-3.13.2"
+		echo "07.10.Python-3.13.2" >> $LFSLOG_PROCESS
+		time { bash a.07.10.Python-3.13.2.sh ; }
+        ;;
+    *)
+		echo "Error: PYVER must be 11, 12 or 13"
+		echo "Error: PYVER must be 11, 12 or 13" >> $LFSLOG_PROCESS
+        ;;
+esac
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
