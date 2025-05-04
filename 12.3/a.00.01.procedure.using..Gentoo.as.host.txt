@@ -688,15 +688,15 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] Linux-6.13.4 Kernel
+  D.02. [LFS 10.3] Linux-6.13.12 Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.13.4.extract.only.sh
+        bash a.10.03.Linux-6.13.12.extract.only.sh
 
-        cd linux-6.13.4
+        cd linux-6.13.12
 
         make mrproper
         make defconfig
@@ -743,11 +743,11 @@ D. [LFS 10.x] Making the LFS System Bootable
         make -j$(nproc)
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.4-lfs-12.3-r00
-        cp -iv System.map /boot/System.map-6.13.4-lfs-12.3-r00
-        cp -iv .config /boot/config-6.13.4-lfs-12.3-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.12-lfs-12.3-r00
+        cp -iv System.map /boot/System.map-6.13.12-lfs-12.3-r00
+        cp -iv .config /boot/config-6.13.12-lfs-12.3-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.13.4
+        cp -r Documentation -T /usr/share/doc/linux-6.13.12
 
         ###
 
@@ -783,9 +783,9 @@ D. [LFS 10.x] Making the LFS System Bootable
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.13.4-lfs-12.3-r00" {
-          linux   /boot/vmlinuz-6.13.4-lfs-12.3-r00 root=/dev/vda2 ro   # Qemu/KVM VM
-          linux   /boot/vmlinuz-6.13.4-lfs-12.3-r00 root=/dev/sda2 ro   # PC & VB
+        menuentry "GNU/Linux, Linux 6.13.12-lfs-12.3-r00" {
+          linux   /boot/vmlinuz-6.13.12-lfs-12.3-r00 root=/dev/vda2 ro   # Qemu/KVM VM
+          linux   /boot/vmlinuz-6.13.12-lfs-12.3-r00 root=/dev/sda2 ro   # PC & VB
         }
 
         menuentry "Firmware Setup" {
