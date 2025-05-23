@@ -725,16 +725,19 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         Cryptographic
             Accelerated
-                SSSE 256
+                [*] Hash functions SHA-224 & SHA-256 SSSE3
 
         Device Drivers
             SCSI
                 low-level
-                    M debugging
+                    [M] debugging
                     
         Networking
 
                 Netlink
+
+        Security Options --->
+            [*] Diffie-Hellman operations on retained keys
 
         Kernel hacking --->
           Memory Debugging
