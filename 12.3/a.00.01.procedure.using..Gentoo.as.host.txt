@@ -18,7 +18,7 @@ A. Preparation
       ( Big topic )
 
       /etc/portage/package.mask/gcc
-        >=sys-devel/gcc-14.3.0
+        >=sys-devel/gcc-14.3
       # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
 
       # check kernel .config on CONFIG_CRYPTO_SHA256_SSSE3
@@ -181,7 +181,7 @@ A. Preparation
 
   A.09. Copy all script files and Download additional Packages
 
-        copy all script files to $LFS/sources
+        ##  copy all script files to $LFS/sources
 
         ###
 
