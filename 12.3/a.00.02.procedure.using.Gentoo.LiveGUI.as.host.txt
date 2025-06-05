@@ -8,8 +8,12 @@ A. Preparation
         
       sudo su
 
+      net-setup eth0 # or equivalent
+      
       useradd -m -G users,wheel,audio,cdrom,cdrw,portage,usb,video -s /bin/bash user
       passwd user
+
+      rc-service sshd start         # for remote login
 
   A.02. [LFS 2.2] Host System Requirements
 
