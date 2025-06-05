@@ -8,6 +8,9 @@ A. Preparation
         
       sudo su
 
+      useradd -m -G users,wheel,audio,cdrom,cdrw,portage,usb,video -s /bin/bash user
+      passwd user
+
   A.02. [LFS 2.2] Host System Requirements
 
       # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
