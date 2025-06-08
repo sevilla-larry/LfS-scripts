@@ -113,7 +113,7 @@ A. Preparation
 
         ###
 
-      # (a) VM & VB
+      # (a) VM
         mkdir -pv $LFS/mnt/Src
         mount -v /dev/vdb1 $LFS/mnt/Src
 
