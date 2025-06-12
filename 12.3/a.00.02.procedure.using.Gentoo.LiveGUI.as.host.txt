@@ -597,6 +597,14 @@ C. Finishing Up
 
         ###
 
+        ### edit /etc/ntp.conf
+        ### update settings
+
+        nano /etc/ntp.conf
+
+        ###
+
+
 #  C.12. acpid bootscripts
 #
 #        ###
