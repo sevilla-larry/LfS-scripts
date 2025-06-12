@@ -605,7 +605,6 @@ C. Finishing Up
 
   C.10. OpenSSH bootscripts
 
-
         ###
 
         make install-sshd
@@ -614,10 +613,16 @@ C. Finishing Up
 
   C.11. NTP bootscripts
 
-
         ###
 
         make install-ntpd
+
+        ###
+
+        ### edit /etc/ntp.conf
+        ### update settings
+
+        nano /etc/ntp.conf
 
         ###
 

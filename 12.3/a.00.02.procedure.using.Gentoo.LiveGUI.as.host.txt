@@ -581,7 +581,6 @@ C. Finishing Up
 
   C.10. OpenSSH bootscripts
 
-
         ###
 
         make install-sshd
@@ -589,7 +588,6 @@ C. Finishing Up
         ###
 
   C.11. NTP bootscripts
-
 
         ###
 
@@ -603,7 +601,6 @@ C. Finishing Up
         nano /etc/ntp.conf
 
         ###
-
 
 #  C.12. acpid bootscripts
 #
