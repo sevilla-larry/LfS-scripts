@@ -1,7 +1,8 @@
-# a.08.93.04.cURL-8.12.1.sh
+# a.08.93.04.cURL-8.14.1.sh
+# (errata)
 #
 
-export PKG="curl-8.12.1"
+export PKG="curl-8.14.1"
 export PKGLOG_DIR=$LFSLOG/08.93.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -32,8 +33,8 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --disable-static                \
             --with-openssl                  \
             --with-ca-path=/etc/ssl/certs   \
-            --enable-ares                   \
             --with-libssh2                  \
+            --enable-ares                   \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            --enable-threaded-resolver      \ 8.10.1 ver
 
@@ -61,7 +62,7 @@ find docs \( -name Makefile\* -o        \
              -name CMakeLists.txt \) -delete    \
     >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
-cp -v -R docs -T /usr/share/doc/curl-8.12.1     \
+cp -v -R docs -T /usr/share/doc/curl-8.14.1     \
     >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
 

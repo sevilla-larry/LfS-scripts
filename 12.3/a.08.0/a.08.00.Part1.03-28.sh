@@ -78,10 +78,10 @@ echo "."
 
 ###
 
-echo "08.08.Xz-5.6.4"
-echo "08.08.Xz-5.6.4" >> $LFSLOG_PROCESS
+echo "08.08.Xz-5.8.1"
+echo "08.08.Xz-5.8.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.08.Xz-5.6.4.sh ; }
+time { bash a.08.08.Xz-5.8.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

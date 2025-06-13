@@ -1,9 +1,11 @@
-# a.08.52.Python-3.12.10.sh
-# latest 2025/Apr/20
+# a.08.91.19.Python-3.12.11.sh
+# latest 2025/Jun/13
+#
+# ReBuild Python with SQLite
 #
 
-export PKG="Python-3.12.10"
-export PKGLOG_DIR=$LFSLOG/08.51
+export PKG="Python-3.12.11"
+export PKGLOG_DIR=$LFSLOG/08.91.19
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -27,7 +29,7 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-#CXX="/usr/bin/g++"                  \
+CXX="/usr/bin/g++"                  \
 ./configure --prefix=/usr           \
             --enable-shared         \
             --with-system-expat     \
@@ -43,9 +45,12 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "   Some tests are known to occasionally hang indefinitely ..."
 echo "   Some tests are known to occasionally hang indefinitely ..."    >> $LFSLOG_PROCESS
 echo "   Some tests are known to occasionally hang indefinitely ..."    >> $PKGLOG_ERROR
-echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."
-echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."   >> $LFSLOG_PROCESS
-echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."   >> $PKGLOG_ERROR
+echo "   So to test the results, run the test suite ..."
+echo "   So to test the results, run the test suite ..."                >> $LFSLOG_PROCESS
+echo "   So to test the results, run the test suite ..."                >> $PKGLOG_ERROR
+echo "   but set a 2-minute time limit for each test case ..."
+echo "   but set a 2-minute time limit for each test case ..."          >> $LFSLOG_PROCESS
+echo "   but set a 2-minute time limit for each test case ..."          >> $PKGLOG_ERROR
 
 echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS
@@ -58,28 +63,9 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-# Read: https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/Python.html
-echo "   Suppress warnings..."
-echo "   Suppress warnings..." >> $LFSLOG_PROCESS
-echo "   Suppress warnings..." >> $PKGLOG_ERROR
-cat > /etc/pip.conf << EOF 2>> $PKGLOG_ERROR
-[global]
-root-user-action = ignore
-disable-pip-version-check = true
-EOF
+# Documentation already Installed
 
-echo "   Install the preformatted documentation..."
-echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
-echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.12.10/html \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-tar --no-same-owner                                 \
-    -xvf ../python-3.12.10-docs-html.tar.bz2         \
-    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-cp -vR --no-preserve=mode python-3.12.10-docs-html/* \
-    /usr/share/doc/python-3.12.10/html               \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+# Read: https://www.linuxfromscratch.org/blfs/view/12.3/general/python3.html
 
 
 cd $SOURCES

@@ -1,8 +1,8 @@
-# a.07.10.Python-3.12.10.sh
-# latest 2025/Apr/20
+# a.07.10.Python-3.13.4.sh
+# latest 2025/Jun/13
 #
 
-export PKG="Python-3.12.10"
+export PKG="Python-3.13.4"
 export PKGLOG_DIR=$LFSLOG/07.10
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

@@ -1,7 +1,8 @@
-# a.08.51.Python-3.13.2.sh
+# a.08.51.Python-3.13.4.sh
+# latest 2025/Jun/13
 #
 
-export PKG="Python-3.13.2"
+export PKG="Python-3.13.4"
 export PKGLOG_DIR=$LFSLOG/08.51
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -70,14 +71,14 @@ EOF
 echo "   Install the preformatted documentation..."
 echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
 echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
-install -v -dm755 /usr/share/doc/python-3.13.2/html \
+install -v -dm755 /usr/share/doc/python-3.13.4/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 tar --strip-components=1  \
     --no-same-owner       \
     --no-same-permissions \
-    -C /usr/share/doc/python-3.13.2/html    \
-    -xvf ../python-3.13.2-docs-html.tar.bz2 \
+    -C /usr/share/doc/python-3.13.4/html    \
+    -xvf ../python-3.13.4-docs-html.tar.bz2 \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 

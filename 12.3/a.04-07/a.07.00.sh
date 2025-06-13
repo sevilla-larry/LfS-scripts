@@ -77,19 +77,19 @@ echo "."
 
 case "$PYVER" in
     11)
-		echo "07.10.Python-3.11.12"
-		echo "07.10.Python-3.11.12" >> $LFSLOG_PROCESS
-		time { bash a.07.10.Python-3.11.12.sh ; }
+		echo "07.10.Python-3.11.13"
+		echo "07.10.Python-3.11.13" >> $LFSLOG_PROCESS
+		time { bash a.07.10.Python-3.11.13.sh ; }
         ;;
     12)
-		echo "07.10.Python-3.12.10"
-		echo "07.10.Python-3.12.10" >> $LFSLOG_PROCESS
-		time { bash a.07.10.Python-3.12.10.sh ; }
+		echo "07.10.Python-3.12.11"
+		echo "07.10.Python-3.12.11" >> $LFSLOG_PROCESS
+		time { bash a.07.10.Python-3.12.11.sh ; }
         ;;
     13)
-		echo "07.10.Python-3.13.2"
-		echo "07.10.Python-3.13.2" >> $LFSLOG_PROCESS
-		time { bash a.07.10.Python-3.13.2.sh ; }
+		echo "07.10.Python-3.13.4"
+		echo "07.10.Python-3.13.4" >> $LFSLOG_PROCESS
+		time { bash a.07.10.Python-3.13.4.sh ; }
         ;;
     *)
 		echo "Error: PYVER must be 11, 12 or 13"

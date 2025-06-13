@@ -1,8 +1,8 @@
-# a.08.51.Python-3.11.12.sh
-# latest 2025/Apr/20
+# a.08.52.Python-3.12.11.sh
+# latest 2025/Jun/13
 #
 
-export PKG="Python-3.11.12"
+export PKG="Python-3.12.11"
 export PKGLOG_DIR=$LFSLOG/08.51
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -31,24 +31,22 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr           \
             --enable-shared         \
             --with-system-expat     \
-            --with-system-ffi       \
             --enable-optimizations  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --with-system-ffi       \  LfS 12.0
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-#
-# Running the tests at this point is NOT recommended.
-# The tests are known to hang indefinitely in the partial LfS environment.
-# If desired, the tests can be re-Run at the end of this chapter,
-#   or when Python 3 is re-Installed in BLfS.
-#
-# based on succeeding versions of LfS ( 12.3 )
-# try --timeout 120
-#
+echo "   Some tests are known to occasionally hang indefinitely ..."
+echo "   Some tests are known to occasionally hang indefinitely ..."    >> $LFSLOG_PROCESS
+echo "   Some tests are known to occasionally hang indefinitely ..."    >> $PKGLOG_ERROR
+echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."
+echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."   >> $LFSLOG_PROCESS
+echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."   >> $PKGLOG_ERROR
+
 echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS
 echo "4. Make Test ..." >> $PKGLOG_ERROR
@@ -60,24 +58,28 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-# Read: https://www.linuxfromscratch.org/lfs/view/12.0/chapter08/Python.html
-cat > /etc/pip.conf << EOF  2>> $PKGLOG_ERROR
+# Read: https://www.linuxfromscratch.org/lfs/view/12.2/chapter08/Python.html
+echo "   Suppress warnings..."
+echo "   Suppress warnings..." >> $LFSLOG_PROCESS
+echo "   Suppress warnings..." >> $PKGLOG_ERROR
+cat > /etc/pip.conf << EOF 2>> $PKGLOG_ERROR
 [global]
 root-user-action = ignore
 disable-pip-version-check = true
 EOF
 
-echo "5. Extract documentation tar..."
-
-install -v -dm755 /usr/share/doc/python-3.11.12/html    \
+echo "   Install the preformatted documentation..."
+echo "   Install the preformatted documentation..." >> $LFSLOG_PROCESS
+echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
+install -v -dm755 /usr/share/doc/python-3.12.11/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-tar --strip-components=1                        \
-    --no-same-owner                             \
-    --no-same-permissions                       \
-    -C /usr/share/doc/python-3.11.12/html       \
-    -xvf ../python-3.11.12-docs-html.tar.bz2    \
+tar --no-same-owner                                 \
+    -xvf ../python-3.12.11-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+cp -vR --no-preserve=mode python-3.12.11-docs-html/* \
+    /usr/share/doc/python-3.12.11/html               \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

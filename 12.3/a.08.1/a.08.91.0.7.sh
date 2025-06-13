@@ -64,10 +64,10 @@ echo "."
 
 ###
 
-echo "08.91.65.c-ares-1.34.4"
-echo "08.91.65.c-ares-1.34.4" >> $LFSLOG_PROCESS
+echo "08.91.65.c-ares-1.34.5"
+echo "08.91.65.c-ares-1.34.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.65.c-ares-1.34.4.sh ; }
+time { bash a.08.91.65.c-ares-1.34.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

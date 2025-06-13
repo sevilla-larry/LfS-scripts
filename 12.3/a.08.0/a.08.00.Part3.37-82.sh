@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "08.40.Expat-2.6.4"
-echo "08.40.Expat-2.6.4" >> $LFSLOG_PROCESS
+echo "08.40.Expat-2.7.1"
+echo "08.40.Expat-2.7.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.40.Expat-2.6.4.sh ; }
+time { bash a.08.40.Expat-2.7.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -92,10 +92,10 @@ echo "."
 
 ###
 
-echo "08.43.Perl-5.40.1"
-echo "08.43.Perl-5.40.1" >> $LFSLOG_PROCESS
+echo "08.43.Perl-5.40.2"
+echo "08.43.Perl-5.40.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.43.Perl-5.40.1.sh ; }
+time { bash a.08.43.Perl-5.40.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -231,19 +231,19 @@ echo "."
 
 case "$PYVER" in
     11)
-		echo "08.51.Python-3.11.12"
-		echo "08.51.Python-3.11.12" >> $LFSLOG_PROCESS
-		time { bash a.08.51.Python-3.11.12.sh ; }
+		echo "08.51.Python-3.11.13"
+		echo "08.51.Python-3.11.13" >> $LFSLOG_PROCESS
+		time { bash a.08.51.Python-3.11.13.sh ; }
         ;;
     12)
-		echo "08.51.Python-3.12.10"
-		echo "08.51.Python-3.12.10" >> $LFSLOG_PROCESS
-		time { bash a.08.51.Python-3.12.10.sh ; }
+		echo "08.51.Python-3.12.11"
+		echo "08.51.Python-3.12.11" >> $LFSLOG_PROCESS
+		time { bash a.08.51.Python-3.12.11.sh ; }
         ;;
     13)
-		echo "08.51.Python-3.13.2"
-		echo "08.51.Python-3.13.2" >> $LFSLOG_PROCESS
-		time { bash a.08.51.Python-3.13.2.sh ; }
+		echo "08.51.Python-3.13.4"
+		echo "08.51.Python-3.13.4" >> $LFSLOG_PROCESS
+		time { bash a.08.51.Python-3.13.4.sh ; }
         ;;
     *)
 		echo "Error: PYVER must be 11, 12 or 13"
@@ -344,10 +344,10 @@ echo "."
 
 ###
 
-echo "08.58.Coreutils-9.6"
-echo "08.58.Coreutils-9.6" >> $LFSLOG_PROCESS
+echo "08.58.Coreutils-9.7"
+echo "08.58.Coreutils-9.7" >> $LFSLOG_PROCESS
 
-time { bash a.08.58.Coreutils-9.6.sh ; }
+time { bash a.08.58.Coreutils-9.7.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

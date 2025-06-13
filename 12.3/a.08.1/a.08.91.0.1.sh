@@ -106,10 +106,10 @@ echo "."
 
 ###
 
-echo "08.91.08.libxml2-2.13.6"
-echo "08.91.08.libxml2-2.13.6" >> $LFSLOG_PROCESS
+echo "08.91.08.libxml2-2.14.3"
+echo "08.91.08.libxml2-2.14.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.08.libxml2-2.13.6.sh ; }
+time { bash a.08.91.08.libxml2-2.14.3.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -162,10 +162,10 @@ echo "."
 
 ###
 
-echo "08.91.12.libarchive-3.7.7"
-echo "08.91.12.libarchive-3.7.7" >> $LFSLOG_PROCESS
+echo "08.91.12.libarchive-3.8.1"
+echo "08.91.12.libarchive-3.8.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.12.libarchive-3.7.7.sh ; }
+time { bash a.08.91.12.libarchive-3.8.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -287,19 +287,19 @@ echo "."
 
 case "$PYVER" in
     11)
-		echo "08.91.19.Python-3.11.12"
-		echo "08.91.19.Python-3.11.12" >> $LFSLOG_PROCESS
-		time { bash a.08.91.19.Python-3.11.12.sh ; }
+		echo "08.91.19.Python-3.11.13"
+		echo "08.91.19.Python-3.11.13" >> $LFSLOG_PROCESS
+		time { bash a.08.91.19.Python-3.11.13.sh ; }
         ;;
     12)
-		echo "08.91.19.Python-3.12.10"
-		echo "08.91.19.Python-3.12.10" >> $LFSLOG_PROCESS
-		time { bash a.08.91.19.Python-3.12.10.sh ; }
+		echo "08.91.19.Python-3.12.11"
+		echo "08.91.19.Python-3.12.11" >> $LFSLOG_PROCESS
+		time { bash a.08.91.19.Python-3.12.11.sh ; }
         ;;
     13)
-		echo "08.91.19.Python-3.13.2"
-		echo "08.91.19.Python-3.13.2" >> $LFSLOG_PROCESS
-		time { bash a.08.91.19.Python-3.13.2.sh ; }
+		echo "08.91.19.Python-3.13.4"
+		echo "08.91.19.Python-3.13.4" >> $LFSLOG_PROCESS
+		time { bash a.08.91.19.Python-3.13.4.sh ; }
         ;;
     *)
 		echo "Error: PYVER must be 11, 12 or 13"

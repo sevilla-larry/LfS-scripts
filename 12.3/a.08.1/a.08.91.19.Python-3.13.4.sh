@@ -1,10 +1,10 @@
-# a.08.91.19.Python-3.12.10.sh
-# latest 2025/Apr/20
+# a.08.91.19.Python-3.13.4.sh
+# latest 2025/Jun/13
 #
 # ReBuild Python with SQLite
 #
 
-export PKG="Python-3.12.10"
+export PKG="Python-3.13.4"
 export PKGLOG_DIR=$LFSLOG/08.91.19
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

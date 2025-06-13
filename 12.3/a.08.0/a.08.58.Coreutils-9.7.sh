@@ -1,7 +1,8 @@
-# a.08.58.Coreutils-9.6.sh
+# a.08.58.Coreutils-9.7.sh
+# (errata)
 #
 
-export PKG="coreutils-9.6"
+export PKG="coreutils-9.7"
 export PKGLOG_DIR=$LFSLOG/08.58
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -26,8 +27,10 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../coreutils-9.6-i18n-1.patch \
-     > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+patch -Np1 -i ../coreutils-9.7-upstream_fix-1.patch \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+patch -Np1 -i ../coreutils-9.7-i18n-1.patch \
+     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS
