@@ -101,7 +101,7 @@ https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4.4/rpcsvc-proto-1.
 https://sqlite.org/2025/sqlite-autoconf-3490100.tar.gz
 https://sqlite.org/2025/sqlite-doc-3490100.zip
 
-# Python Modules & Dependencies
+# 08.91.20 Python Modules & Dependencies
 # 08.91.20.01 Packaging-24.2
 https://files.pythonhosted.org/packages/source/p/packaging/packaging-24.2.tar.gz
 # 08.91.20.02 Setuptools_scm-8.1.0

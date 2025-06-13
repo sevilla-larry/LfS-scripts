@@ -1,5 +1,17 @@
 # Errata LfS
 
+# 08.08 Xz-5.8.1
+cf5e1feb023d22c6bdaa30e84ef3abe3 xz-5.8.1.tar.xz
+# 08.40 Expat-2.7.1
+9f0c266ff4b9720beae0c6bd53ae4469 expat-2.7.1.tar.xz
+# 08.43 Perl-5.40.2
+9ad7a269dc4053cdbeecd4fde444291b perl-5.40.2.tar.xz
+1983b48fee837a98db47fb5dba934744 perl-5.40.2-upstream_fix-1.patch
+# 08.59 Coreutils-9.7
+6b7285faf7d5eb91592bdd689270d3f1 coreutils-9.7.tar.xz
+96382a5aa85d6651a74f94ffb61785d9 coreutils-9.7-upstream_fix-1.patch
+33ebfad32b2dfb8417c3335c08671206 coreutils-9.7-i18n-1.patch
+
 #####
 
 # 07.10, 08.51 & 08.91.19		 Python-3.11.11
