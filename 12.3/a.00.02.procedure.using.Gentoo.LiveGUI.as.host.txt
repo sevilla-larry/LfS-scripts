@@ -8,6 +8,11 @@ A. Preparation
         
       sudo su
 
+      passwd root
+
+      update TimeZone
+      update Date & Time
+
       net-setup eth0 # or equivalent
       
       useradd -m -G users,wheel,audio,cdrom,cdrw,portage,usb,video -s /bin/bash user
