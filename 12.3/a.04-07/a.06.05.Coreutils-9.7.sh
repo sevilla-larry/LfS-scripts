@@ -1,7 +1,8 @@
-# a.06.05.Coreutils-9.6.sh
+# a.06.05.Coreutils-9.7.sh
+# (errata)
 #
 
-export PKG="coreutils-9.6"
+export PKG="coreutils-9.7"
 export PKGLOG_DIR=$LFSLOG/06.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -47,13 +48,16 @@ make DESTDIR=$LFS install   \
 echo "   Move programs to their final expected locations..."
 echo "   Move programs to their final expected locations..."    >> $LFSLOG_PROCESS
 echo "   Move programs to their final expected locations..."    >> $PKGLOG_ERROR
-mv    -v    $LFS/usr/bin/chroot                 $LFS/usr/sbin                       \
+mv    -v    $LFS/usr/bin/chroot                 \
+            $LFS/usr/sbin                       \
             >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-mkdir -pv   $LFS/usr/share/man/man8                                                 \
+mkdir -pv   $LFS/usr/share/man/man8             \
             >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-mv    -v    $LFS/usr/share/man/man1/chroot.1    $LFS/usr/share/man/man8/chroot.8    \
+mv    -v    $LFS/usr/share/man/man1/chroot.1    \
+            $LFS/usr/share/man/man8/chroot.8    \
             >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-sed         -i 's/"1"/"8"/'                     $LFS/usr/share/man/man8/chroot.8    \
+sed         -i 's/"1"/"8"/'                     \
+            $LFS/usr/share/man/man8/chroot.8    \
             >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

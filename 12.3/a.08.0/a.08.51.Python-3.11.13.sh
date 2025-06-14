@@ -33,6 +33,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --with-system-expat     \
             --with-system-ffi       \
             --enable-optimizations  \
+            --without-static-libpython  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."

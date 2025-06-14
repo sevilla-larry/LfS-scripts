@@ -34,6 +34,7 @@ CXX="/usr/bin/g++"                  \
             --enable-shared         \
             --with-system-expat     \
             --enable-optimizations  \
+            --without-static-libpython  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            --with-system-ffi       \  LfS 12.0
 

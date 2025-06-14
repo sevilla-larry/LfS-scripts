@@ -28,7 +28,8 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr       \
             --enable-shared     \
             --without-ensurepip \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+            --without-static-libpython  \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

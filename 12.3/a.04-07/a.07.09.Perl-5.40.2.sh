@@ -1,7 +1,8 @@
-# a.07.09.Perl-5.40.1.sh
+# a.07.09.Perl-5.40.2.sh
+# (errata)
 #
 
-export PKG="perl-5.40.1"
+export PKG="perl-5.40.2"
 export PKGLOG_DIR=$LFSLOG/07.09
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

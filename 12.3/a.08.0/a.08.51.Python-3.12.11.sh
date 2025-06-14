@@ -32,6 +32,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --enable-shared         \
             --with-system-expat     \
             --enable-optimizations  \
+            --without-static-libpython  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            --with-system-ffi       \  LfS 12.0
 
@@ -74,7 +75,7 @@ echo "   Install the preformatted documentation..." >> $PKGLOG_ERROR
 install -v -dm755 /usr/share/doc/python-3.12.11/html \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-tar --no-same-owner                                 \
+tar --no-same-owner                                  \
     -xvf ../python-3.12.11-docs-html.tar.bz2         \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cp -vR --no-preserve=mode python-3.12.11-docs-html/* \
