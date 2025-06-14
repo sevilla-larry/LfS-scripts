@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "06.05.Coreutils-9.6"
-echo "06.05.Coreutils-9.6" >> $LFSLOG_PROCESS
+echo "06.05.Coreutils-9.7"
+echo "06.05.Coreutils-9.7" >> $LFSLOG_PROCESS
 
-time { bash a.06.05.Coreutils-9.6.sh ; }
+time { bash a.06.05.Coreutils-9.7.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -204,10 +204,10 @@ echo "."
 
 ###
 
-echo "06.16.Xz-5.6.4"
-echo "06.16.Xz-5.6.4" >> $LFSLOG_PROCESS
+echo "06.16.Xz-5.8.1"
+echo "06.16.Xz-5.8.1" >> $LFSLOG_PROCESS
 
-time { bash a.06.16.Xz-5.6.4.sh ; }
+time { bash a.06.16.Xz-5.8.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

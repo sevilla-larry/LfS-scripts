@@ -1,13 +1,13 @@
 # Errata LfS
 
-# 08.08 Xz-5.8.1
+# 06.16 & 08.08 Xz-5.8.1
 https://github.com//tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.xz
 # 08.40 Expat-2.7.1
 https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.xz
 # 08.43 Perl-5.40.2
 https://www.cpan.org/src/5.0/perl-5.40.2.tar.xz
 https://www.linuxfromscratch.org/patches/lfs/development/perl-5.40.2-upstream_fix-1.patch
-# 08.59 Coreutils-9.7
+# 06.05 & 08.58 Coreutils-9.7
 https://ftp.gnu.org/gnu/coreutils/coreutils-9.7.tar.xz
 https://www.linuxfromscratch.org/patches/lfs/development/coreutils-9.7-upstream_fix-1.patch
 https://www.linuxfromscratch.org/patches/lfs/development/coreutils-9.7-i18n-1.patch

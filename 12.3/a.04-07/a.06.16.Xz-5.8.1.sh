@@ -1,7 +1,7 @@
-# a.06.16.Xz-5.6.4.sh
+# a.06.16.Xz-5.8.1.sh
 #
 
-export PKG="xz-5.6.4"
+export PKG="xz-5.8.1"
 export PKGLOG_DIR=$LFSLOG/06.16
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -29,7 +29,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --host=$LFS_TGT                     \
             --build=$(build-aux/config.guess)   \
             --disable-static                    \
-            --docdir=/usr/share/doc/xz-5.6.4    \
+            --docdir=/usr/share/doc/xz-5.8.1    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
