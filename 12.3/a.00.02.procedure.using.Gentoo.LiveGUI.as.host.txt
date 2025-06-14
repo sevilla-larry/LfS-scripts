@@ -13,7 +13,7 @@ A. Preparation
       update TimeZone
       update Date & Time
 
-      net-setup eth0 # or equivalent
+      net-setup
       
       useradd -m -G users,wheel,audio,cdrom,cdrw,portage,usb,video -s /bin/bash user
       passwd user
