@@ -8,10 +8,10 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.92.01.Linux-PAM-1.7.0"
-echo "08.92.01.Linux-PAM-1.7.0" >> $LFSLOG_PROCESS
+echo "08.92.01.Linux-PAM-1.7.1"
+echo "08.92.01.Linux-PAM-1.7.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.92.01.Linux-PAM-1.7.0.sh ; }
+time { bash a.08.92.01.Linux-PAM-1.7.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

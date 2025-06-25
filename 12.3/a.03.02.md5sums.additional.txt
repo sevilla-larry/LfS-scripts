@@ -234,8 +234,11 @@ de2818c7dea718a4f264f463f595596b libidn2-2.3.7.tar.gz
 #								 sshpass-1.10.tar.gz
 
 # 08.92.01 Linux-PAM-1.7.0
-c1e41d59d6852e45d0f953c8c8f869d6 Linux-PAM-1.7.0.tar.xz
-dba9e555df98004fe9cea233c927a551 Linux-PAM-1.7.0-docs.tar.xz
+# c1e41d59d6852e45d0f953c8c8f869d6 Linux-PAM-1.7.0.tar.xz
+# dba9e555df98004fe9cea233c927a551 Linux-PAM-1.7.0-docs.tar.xz
+# 08.92.01 Linux-PAM-1.7.1	(errata)
+92812d7dd414d816fba8d649e84e68ca Linux-PAM-1.7.1.tar.xz
+f147017efb39a670bad3e8b614df50f0 Linux-PAM-1.7.1-docs.tar.xz
 # 08.92.02 Shadow-4.17.3
 #								 main download
 

@@ -1,7 +1,8 @@
-# a.08.92.01.Linux-PAM-1.7.0.sh
+# a.08.92.01.Linux-PAM-1.7.1.sh
+# errata
 #
 
-export PKG="Linux-PAM-1.7.0"
+export PKG="Linux-PAM-1.7.1"
 export PKGLOG_DIR=$LFSLOG/08.92.01
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -32,7 +33,7 @@ echo "2. Meson Setup ..." >> $PKGLOG_ERROR
 meson setup ..        \
   --prefix=/usr       \
   --buildtype=release \
-  -D docdir=/usr/share/doc/Linux-PAM-1.7.0  \
+  -D docdir=/usr/share/doc/Linux-PAM-1.7.1  \
         > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Ninja Build ..."
@@ -73,7 +74,7 @@ chmod -v 4755 /usr/sbin/unix_chkpwd \
 rm -rfv /usr/lib/systemd            \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-tar -C / -xvf ../../Linux-PAM-1.7.0-docs.tar.xz \
+tar -C / -xvf ../../Linux-PAM-1.7.1-docs.tar.xz \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ### Configurations
