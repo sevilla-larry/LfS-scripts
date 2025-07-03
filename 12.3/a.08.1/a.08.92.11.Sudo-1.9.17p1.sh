@@ -1,7 +1,8 @@
-# a.08.92.11.Sudo-1.9.16p2.sh
+# a.08.92.11.Sudo-1.9.17p1.sh
+# errata
 #
 
-export PKG="sudo-1.9.16p2"
+export PKG="sudo-1.9.17p1"
 export PKGLOG_DIR=$LFSLOG/08.92.11
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -30,7 +31,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --libexecdir=/usr/lib   \
             --with-secure-path      \
             --with-env-editor       \
-            --docdir=/usr/share/doc/sudo-1.9.16p2           \
+            --docdir=/usr/share/doc/sudo-1.9.17p1           \
             --with-passprompt="[sudo] password for %p: "    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
@@ -43,6 +44,8 @@ echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS
 echo "4. Make Test ..." >> $PKGLOG_ERROR
 env LC_ALL=C make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+
+# grep failed $PKGLOG_CHECK
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
