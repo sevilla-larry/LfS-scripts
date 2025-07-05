@@ -50,10 +50,10 @@ echo "."
 
 ###
 
-echo "08.92.11.Sudo-1.9.16p2"
-echo "08.92.11.Sudo-1.9.16p2" >> $LFSLOG_PROCESS
+echo "08.92.11.Sudo-1.9.17p1"
+echo "08.92.11.Sudo-1.9.17p1" >> $LFSLOG_PROCESS
 
-time { bash a.08.92.11.Sudo-1.9.16p2.sh ; }
+time { bash a.08.92.11.Sudo-1.9.17p1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
