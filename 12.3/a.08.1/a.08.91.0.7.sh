@@ -36,10 +36,10 @@ echo "."
 
 ###
 
-echo "08.91.63.GnuTLS-3.8.9"
-echo "08.91.63.GnuTLS-3.8.9" >> $LFSLOG_PROCESS
+echo "08.91.63.GnuTLS-3.8.10"
+echo "08.91.63.GnuTLS-3.8.10" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.63.GnuTLS-3.8.9.sh ; }
+time { bash a.08.91.63.GnuTLS-3.8.10.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

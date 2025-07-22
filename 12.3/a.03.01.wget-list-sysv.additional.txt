@@ -75,7 +75,9 @@ https://github.com/unicode-org/icu/releases/download/release-76-1/icu4c-76_1-src
 # 08.91.08 libxml2-2.13.6
 # https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz
 # 08.91.08 libxml2-2.14.3		(errata/svn)
-https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.3.tar.xz
+# https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.3.tar.xz
+# 08.91.08 libxml2-2.14.5		(errata)
+https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.5.tar.xz
 https://www.w3.org/XML/Test/xmlts20130923.tar.gz
 # 08.91.09 LZO-2.10
 https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
@@ -212,7 +214,9 @@ https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.xz
 # 08.91.62 libidn2-2.3.7
 https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
 # 08.91.63 GnuTLS-3.8.9
-https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
+# https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
+# 08.91.63 GnuTLS-3.8.10	(errata)
+https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz
 # 08.91.64 libpsl-0.21.5
 https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
 # 08.91.65 c-ares-1.34.4
@@ -262,9 +266,13 @@ https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.bz2
 # 08.93.04 cURL-8.14.1	(errata)
 https://curl.se/download/curl-8.14.1.tar.xz
 # 08.93.05 Git-2.48.1
-https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
-https://www.kernel.org/pub/software/scm/git/git-manpages-2.48.1.tar.xz
-https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.48.1.tar.xz
+# https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
+# https://www.kernel.org/pub/software/scm/git/git-manpages-2.48.1.tar.xz
+# https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.48.1.tar.xz
+# 08.93.05 Git-2.50.1	(errata)
+https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
+#https://www.kernel.org/pub/software/scm/git/git-manpages-2.50.1.tar.xz
+#https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.50.1.tar.xz
 
 # 09.99 BLFS-Bootscripts-20250225
 https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20250225.tar.xz

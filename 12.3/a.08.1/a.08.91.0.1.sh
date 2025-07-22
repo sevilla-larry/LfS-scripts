@@ -106,10 +106,10 @@ echo "."
 
 ###
 
-echo "08.91.08.libxml2-2.14.3"
-echo "08.91.08.libxml2-2.14.3" >> $LFSLOG_PROCESS
+echo "08.91.08.libxml2-2.14.5"
+echo "08.91.08.libxml2-2.14.5" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.08.libxml2-2.14.3.sh ; }
+time { bash a.08.91.08.libxml2-2.14.5.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

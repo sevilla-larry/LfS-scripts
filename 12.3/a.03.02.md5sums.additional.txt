@@ -75,7 +75,9 @@ b02099b0d63f06b3fe370f4edfc0c085 patchelf-0.18.0.tar.gz
 # 08.91.08 libxml2-2.13.6
 # 85dffa2387ff756bdf8b3b247594914a libxml2-2.13.6.tar.xz
 # 08.91.08 libxml2-2.14.3		(errata/svn)
-f4565c71729761927cb371ca112978bc libxml2-2.14.3.tar.xz
+# f4565c71729761927cb371ca112978bc libxml2-2.14.3.tar.xz
+# 08.91.08 libxml2-2.14.5		(errata)
+59aac4e5d1d350ba2c4bddf1f7bc5098 libxml2-2.14.5.tar.xz
 #								 xmlts20130923.tar.gz
 # 08.91.09 LZO-2.10
 39d3f3f9c55c87b1e5d6888e1420f4b5 lzo-2.10.tar.gz
@@ -212,7 +214,9 @@ fcfdb8e4ee34bcf62aed429b4a23db27 Encode-Locale-1.05.tar.gz
 # 08.91.62 libidn2-2.3.7
 de2818c7dea718a4f264f463f595596b libidn2-2.3.7.tar.gz
 # 08.91.63 GnuTLS-3.8.9
-33f4c800c20af2983c45223a803da865 gnutls-3.8.9.tar.xz
+# 33f4c800c20af2983c45223a803da865 gnutls-3.8.9.tar.xz
+# 08.91.63 GnuTLS-3.8.10	(errata)
+803c6f5c9cbe55c64fbb46690d329a77 gnutls-3.8.10.tar.xz
 # 08.91.64 libpsl-0.21.5
 870a798ee9860b6e77896548428dba7b libpsl-0.21.5.tar.gz
 # 08.91.65 c-ares-1.34.4
@@ -262,9 +266,13 @@ c70ba58b36f944e8ba1d655ace552881 wget-1.25.0.tar.gz
 # 08.93.04 cURL-8.14.1			 (errata)
 cba9ea54bccefed639a529b1b5b17405 curl-8.14.1.tar.xz
 # 08.93.05 Git-2.48.1
-99656f1481e70701198257ada703a480 git-2.48.1.tar.xz
+# 99656f1481e70701198257ada703a480 git-2.48.1.tar.xz
 #								 manpages
 #								 htmldocs
+# 08.93.05 Git-2.50.1
+2cb96fae126d66f8ff23a68f8dd5d748 git-2.50.1.tar.xz
+#								 git-manpages-2.50.1.tar.xz
+#								 git-htmldocs-2.50.1.tar.xz
 
 # 09.99 BLFS-Bootscripts-20250225
 #								 blfs-bootscripts-20250225.tar.xz

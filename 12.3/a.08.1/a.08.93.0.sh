@@ -64,10 +64,10 @@ echo "."
 
 ###
 
-echo "08.93.05.Git-2.48.1"
-echo "08.93.05.Git-2.48.1" >> $LFSLOG_PROCESS
+echo "08.93.05.Git-2.50.1"
+echo "08.93.05.Git-2.50.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.93.05.Git-2.48.1.sh ; }
+time { bash a.08.93.05.Git-2.50.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

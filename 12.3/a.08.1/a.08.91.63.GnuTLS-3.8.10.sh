@@ -1,7 +1,7 @@
-# a.08.91.63.GnuTLS-3.8.9.sh
+# a.08.91.63.GnuTLS-3.8.10.sh
 #
 
-export PKG="gnutls-3.8.9"
+export PKG="gnutls-3.8.10"
 export PKGLOG_DIR=$LFSLOG/08.91.63
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -27,7 +27,7 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                               \
-            --docdir=/usr/share/doc/gnutls-3.8.9      \
+            --docdir=/usr/share/doc/gnutls-3.8.10       \
             --with-default-trust-store-pkcs11="pkcs11:" \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
