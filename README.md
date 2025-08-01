@@ -10,10 +10,9 @@
 #
 # Note: select Python version:
 #
-#       Python 3.11.x  is used/tested on OpenStack 2025.1 Epoxy
-#       Python 3.11.11 is the latest, used/installed
-#
-#       Python 3.13.2  is LfS 12.3 book version
+#       Python 3.11.x
+#       Python 3.12.x  will be used/tested on OpenStack 2025.1 Epoxy
+#       Python 3.13.x  is LfS 12.3 book version
 #
 #
 #
