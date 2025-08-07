@@ -36,10 +36,10 @@ echo "."
 
 ###
 
-echo "08.05.Glibc-2.41"
-echo "08.05.Glibc-2.41" >> $LFSLOG_PROCESS
+echo "08.05.Glibc-2.42"
+echo "08.05.Glibc-2.42" >> $LFSLOG_PROCESS
 
-time { bash a.08.05.Glibc-2.41.sh ; }
+time { bash a.08.05.Glibc-2.42.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

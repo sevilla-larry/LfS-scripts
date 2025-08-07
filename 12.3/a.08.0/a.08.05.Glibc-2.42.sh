@@ -1,7 +1,8 @@
-# a.08.05.Glibc-2.41.sh
+# a.08.05.Glibc-2.42.sh
+# errata
 #
 
-export PKG="glibc-2.41"
+export PKG="glibc-2.42"
 export PKGLOG_DIR=$LFSLOG/08.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -29,7 +30,7 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.41-fhs-1.patch \
+patch -Np1 -i ../glibc-2.42-fhs-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
@@ -157,7 +158,7 @@ EOF
 echo "9. Setting Time Zone ..."
 echo "9. Setting Time Zone ..." >> $LFSLOG_PROCESS
 echo "9. Setting Time Zone ..." >> $PKGLOG_ERROR
-tar -xvf ../../tzdata2025a.tar.gz    \
+tar -xvf ../../tzdata2025b.tar.gz    \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ZONEINFO=/usr/share/zoneinfo
