@@ -80,17 +80,22 @@ A. Preparation
         mkfs.ext4 -v -L ROOT /dev/vda2
         mkfs.ext4 -v -L SOURCES /dev/vdb1
         mkswap -L SWAP /dev/vdc1
-
+        swapon /dev/vdc1
+        
       # (b) VB
         mkfs.vfat -v -F 32 -n BOOT /dev/sda1
         mkfs.ext4 -v -L ROOT /dev/sda2
         mkswap -L SWAP /dev/sda3
         mkfs.ext4 -v -L SOURCES /dev/sdb1
+        swapon /dev/sda3
 
       # (c) PC
         mkfs.vfat -v -F 32 -n BOOT /dev/sda1
         mkfs.ext4 -v -L ROOT /dev/sda2
-        mkswap -L SWAP /dev/sda3
+      # mkswap -L SWAP /dev/sda3
+      # swapon /dev/sda3
+        mkswap -L SWAP /dev/sdb1
+        swapon /dev/sdb1
 
         ###
 
