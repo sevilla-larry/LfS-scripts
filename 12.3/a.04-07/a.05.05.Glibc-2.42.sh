@@ -81,9 +81,8 @@ echo "   Fix hard code path in ldd script..." >> $PKGLOG_ERROR
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo 'int main(){}' | $LFS_TGT-gcc -x c -   \
-        -v -Wl,--verbose                    \
-        > $PKGLOG_CHECK1 2>> $PKGLOG_ERROR
+echo 'int main(){}' | $LFS_TGT-gcc -x c - -v -Wl,--verbose  \
+        &> $PKGLOG_CHECK1 2>> $PKGLOG_ERROR
 readelf -l a.out | grep ': /lib'            \
     >> $PKGLOG_CHECK2 2>> $PKGLOG_ERROR
 ### output should be and should NOT contain /mnt/lfs:
