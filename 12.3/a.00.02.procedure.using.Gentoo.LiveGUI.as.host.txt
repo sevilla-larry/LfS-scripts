@@ -40,8 +40,9 @@ A. Preparation
         1.      50Gb      VM.LfS.sys.vdi          /dev/sda
         2.      80Gb      VM.LfS.src.qcow2        /dev/sdb
 
-      # (c) PC - 2nd Disk
-        /dev/sda
+      # (c) PC - 2 Disks
+        1.                                        /dev/sda
+        2.                                        /dev/sdb
 
   A.04. [LFS 2.4] Partition the newly attached VDs
 
@@ -65,7 +66,10 @@ A. Preparation
       # (c) PC
         /dev/sda1   256M            VFAT / UEFI / EFI System
         /dev/sda2   Max - RAM*2     Linux filesystem
-        /dev/sda3   RAM*2           swap
+      # /dev/sda3   RAM*2           swap
+
+        /dev/sdb1   Max - RAM*2     Linux filesystem
+        /dev/sdb2   RAM*2           swap
 
   A.05. [LFS 2.5] Creating File Systems on the Partitions
 
@@ -94,8 +98,9 @@ A. Preparation
         mkfs.ext4 -v -L ROOT /dev/sda2
       # mkswap -L SWAP /dev/sda3
       # swapon /dev/sda3
-        mkswap -L SWAP /dev/sdb1
-        swapon /dev/sdb1
+        mkfs.ext4 -v -L TEMP /dev/sdb1
+        mkswap -L SWAP /dev/sdb2
+        swapon /dev/sdb2
 
         ###
 
@@ -656,8 +661,10 @@ D. [LFS 10.x] Making the LFS System Bootable
         # for PCs
         /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
         /dev/sda2       /           ext4  defaults,noatime                          0 1
-        /dev/sda3       none        swap  sw                                        0 0
+      # /dev/sda3       none        swap  sw                                        0 0
 
+        /dev/sdb1       /mnt/Temp   ext4  noatime                                   0 3
+        /dev/sdb2       none        swap  sw                                        0 0
 
         /dev/cdrom      /mnt/cdrom  auto  noauto,user                               0 0
 
