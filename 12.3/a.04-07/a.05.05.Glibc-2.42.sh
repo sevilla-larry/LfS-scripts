@@ -1,5 +1,6 @@
 # a.5.05.Glibc-2.42.sh
-# errata
+# errata, but reverted back to original config parameters
+#   --with-headers=$LFS/usr/include
 #
 
 export PKG="glibc-2.42"
@@ -58,10 +59,10 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
       --host=$LFS_TGT                       \
       --build=$(../scripts/config.guess)    \
       --enable-kernel=5.4                   \
+      --with-headers=$LFS/usr/include       \
       --disable-nscd                        \
       libc_cv_slibdir=/usr/lib              \
       > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#      --with-headers=$LFS/usr/include       \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
