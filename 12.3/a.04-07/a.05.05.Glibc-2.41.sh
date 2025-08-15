@@ -1,9 +1,9 @@
-# a.5.05.Glibc-2.42.sh
-# errata, but reverted back to original config parameters
-#   --with-headers=$LFS/usr/include
+# a.5.05.Glibc-2.41.sh
+# reverted back to original
+# LLVM giving errors with ver 2.42
 #
 
-export PKG="glibc-2.42"
+export PKG="glibc-2.41"
 export PKGLOG_DIR=$LFSLOG/05.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -40,7 +40,7 @@ esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 echo "   Patch to FHS-compliant..."
 echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
 echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.42-fhs-1.patch \
+patch -Np1 -i ../glibc-2.41-fhs-1.patch \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
