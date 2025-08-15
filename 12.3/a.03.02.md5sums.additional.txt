@@ -11,10 +11,11 @@ cf5e1feb023d22c6bdaa30e84ef3abe3 xz-5.8.1.tar.xz
 6b7285faf7d5eb91592bdd689270d3f1 coreutils-9.7.tar.xz
 96382a5aa85d6651a74f94ffb61785d9 coreutils-9.7-upstream_fix-1.patch
 33ebfad32b2dfb8417c3335c08671206 coreutils-9.7-i18n-1.patch
+# error with LLVM 19.1.7?
 # 05.05 & 08.05 Glibc-2.42 & Time Zone Data
-23c6f5a27932b435cae94e087cb8b1f5 glibc-2.42.tar.xz
-9a5997c3452909b1769918c759eff8a2 glibc-2.42-fhs-1.patch
-ad65154c48c74a9b311fe84778c5434f tzdata2025b.tar.gz
+# 23c6f5a27932b435cae94e087cb8b1f5 glibc-2.42.tar.xz
+# 9a5997c3452909b1769918c759eff8a2 glibc-2.42-fhs-1.patch
+# ad65154c48c74a9b311fe84778c5434f tzdata2025b.tar.gz
 
 #####
 
