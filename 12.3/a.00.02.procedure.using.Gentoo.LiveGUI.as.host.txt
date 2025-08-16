@@ -556,6 +556,8 @@ C. Finishing Up
 
         ###
 
+        cd /sources
+
         bash a.09.07.Configuring.the.System.Locale.sh
 
         ###
@@ -651,12 +653,14 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         /dev/vdc1       none        swap  sw,discard                                0 0
 
+
         # for VBs
         /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
         /dev/sda2       /           ext4  defaults,noatime                          0 1
         /dev/sda3       none        swap  sw                                        0 0
 
         /dev/sdb1       /mnt/Src    ext4  noatime                                   0 3
+
 
         # for PCs
         /dev/sda1       /boot/efi   vfat  codepage=437,iocharset=iso8859-1          0 2
@@ -666,7 +670,9 @@ D. [LFS 10.x] Making the LFS System Bootable
       # /dev/sdb1       /mnt/Temp   ext4  noatime                                   0 3
         /dev/sdb2       none        swap  sw                                        0 0
 
+
         /dev/cdrom      /mnt/cdrom  auto  noauto,user                               0 0
+
 
         proc           /proc          proc     nosuid,noexec,nodev 0     0
         sysfs          /sys           sysfs    nosuid,noexec,nodev 0     0
@@ -742,6 +748,7 @@ D. [LFS 10.x] Making the LFS System Bootable
             [ ] Stack Utilitization Instrumentation
 
         make -j$(nproc)
+
         make modules_install
 
         cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.12-lfs-12.3-r00
@@ -895,6 +902,7 @@ E. The End
         umount -v $LFS/sys
 
         umount -v $LFS/mnt/Src  # for VMs
+
         umount -v $LFS/boot/efi
 
         umount -v $LFS
