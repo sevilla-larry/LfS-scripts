@@ -293,7 +293,6 @@ B.  Generate LFS
         ###
 
         echo $LFS             # /mnt/lfs
-        echo $GLIBC           # 2.41 or 2.42
 
         ###
 
