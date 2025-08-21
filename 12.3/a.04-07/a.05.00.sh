@@ -50,10 +50,21 @@ echo "."
 
 ###
 
-echo "05.05.Glibc-2.41"
-echo "05.05.Glibc-2.41" >> $LFSLOG_PROCESS
+if		[ "$GLIBC" = "2.41" ]; then
 
-time { bash a.05.05.Glibc-2.41.sh ; }
+	echo "05.05.Glibc-2.41"
+	echo "05.05.Glibc-2.41" >> $LFSLOG_PROCESS
+
+	time { bash a.05.05.Glibc-2.41.sh ; }
+
+elif	[ "$GLIBC" = "2.42" ]; then
+
+	echo "05.05.Glibc-2.42"
+	echo "05.05.Glibc-2.42" >> $LFSLOG_PROCESS
+
+	time { bash a.05.05.Glibc-2.42.sh ; }
+
+fi
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

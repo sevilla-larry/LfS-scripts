@@ -1,9 +1,9 @@
-# a.08.05.Glibc-2.41.sh
-# reverted back to original
-# LLVM 19.1.7 build FAILs with ver 2.42
+# a.08.05.Glibc-2.42.sh
+# errata
+# Warning: LLVM 19.1.7 build FAILs with this version
 #
 
-export PKG="glibc-2.41"
+export PKG="glibc-2.42"
 export PKGLOG_DIR=$LFSLOG/08.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -31,8 +31,16 @@ cd $PKG
 echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.41-fhs-1.patch \
+patch -Np1 -i ../glibc-2.42-fhs-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
+# fix an issue which may break Valgrind in BLFS
+sed -e '/unistd.h/i #include <string.h>'        \
+    -e '/libc_rwlock_init/c\
+  __libc_rwlock_define_initialized (, reset_lock);\
+  memcpy (&lock, &reset_lock, sizeof (lock));'  \
+    -i stdlib/abort.c                           \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
 cd    build
@@ -122,7 +130,6 @@ localedef -i it_IT -f ISO-8859-1 it_IT
 localedef -i it_IT -f ISO-8859-15 it_IT@euro
 localedef -i it_IT -f UTF-8 it_IT.UTF-8
 localedef -i ja_JP -f EUC-JP ja_JP
-localedef -i ja_JP -f SHIFT_JIS ja_JP.SJIS 2> /dev/null || true
 localedef -i ja_JP -f UTF-8 ja_JP.UTF-8
 localedef -i nl_NL@euro -f ISO-8859-15 nl_NL@euro
 localedef -i ru_RU -f KOI8-R ru_RU.KOI8-R
@@ -159,7 +166,7 @@ EOF
 echo "9. Setting Time Zone ..."
 echo "9. Setting Time Zone ..." >> $LFSLOG_PROCESS
 echo "9. Setting Time Zone ..." >> $PKGLOG_ERROR
-tar -xvf ../../tzdata2025a.tar.gz    \
+tar -xvf ../../tzdata2025b.tar.gz    \
     >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 ZONEINFO=/usr/share/zoneinfo

@@ -11,11 +11,11 @@ https://www.linuxfromscratch.org/patches/lfs/development/perl-5.40.2-upstream_fi
 https://ftp.gnu.org/gnu/coreutils/coreutils-9.7.tar.xz
 https://www.linuxfromscratch.org/patches/lfs/development/coreutils-9.7-upstream_fix-1.patch
 https://www.linuxfromscratch.org/patches/lfs/development/coreutils-9.7-i18n-1.patch
-# error with LLVM 19.1.7?
-# 05.05 & 08.05 Glibc-2.42
-# https://ftp.gnu.org/gnu/glibc/glibc-2.42.tar.xz
-# https://www.linuxfromscratch.org/patches/lfs/development/glibc-2.42-fhs-1.patch
-# https://www.iana.org/time-zones/repository/releases/tzdata2025b.tar.gz
+# 05.05 & 08.05 Glibc-2.42	(errata)	warning: LLVM 19.1.7 build FAILs
+https://ftp.gnu.org/gnu/glibc/glibc-2.42.tar.xz
+https://www.linuxfromscratch.org/patches/lfs/development/glibc-2.42-fhs-1.patch
+# Time Zone Data
+https://www.iana.org/time-zones/repository/releases/tzdata2025b.tar.gz
 
 #####
 

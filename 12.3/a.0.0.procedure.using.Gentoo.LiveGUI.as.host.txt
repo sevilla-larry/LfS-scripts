@@ -25,7 +25,7 @@ A. Preparation
       # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
       # check the corresponding versions
 
-      bash a.02.02.version-check.sh
+      bash a.2.2.version-check.sh
 
       # shut down Gentoo LiveGUI USB Image host
 
@@ -177,7 +177,7 @@ A. Preparation
         ###
 
         wget --input-file=a.03.01.wget-list-sysv.additional.txt --continue --directory-prefix=$LFS/sources
-        md5sum -c a.03.02.md5sums.additional.txt
+        md5sum -c a.3.2.md5sums.additional.txt
 
         ###
 
@@ -237,6 +237,15 @@ A. Preparation
 
         cd $LFS/sources
 
+        ###
+        #   GLib version temporary fix
+        #
+        #   with GLibc-2.42, LLVM 19.1.7 FAILed to build
+        #
+        export GLIBC=2.41   # LLVM 19.1.7 GOOD to build
+      # export GLIBC=2.42   # try for OpenStack
+        ###
+
         $$$
 
 B.  Generate LFS
@@ -248,6 +257,7 @@ B.  Generate LFS
         echo $LFS             # /mnt/lfs
         echo $LFSLOG          # /mnt/lfs/var/log/lfs
         echo $MAKEFLAGS       # -j$(nproc)
+        echo $GLIBC           # 2.41 or 2.42
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash
@@ -283,6 +293,7 @@ B.  Generate LFS
         ###
 
         echo $LFS             # /mnt/lfs
+        echo $GLIBC           # 2.41 or 2.42
 
         ###
 
@@ -348,6 +359,15 @@ B.  Generate LFS
         # 13 = Python-3.13.xx
         export PYVER=12
 
+        ###
+        #   GLib version temporary fix
+        #
+        #   with GLibc-2.42, LLVM 19.1.7 FAILed to build
+        #
+        export GLIBC=2.41   # LLVM 19.1.7 GOOD to build
+      # export GLIBC=2.42   # try for OpenStack
+        ###
+
         cd /sources
 
         ###
@@ -356,6 +376,7 @@ B.  Generate LFS
         echo $MAKEFLAGS         # -j$(nproc)
         echo $TESTSUITEFLAGS    # -j$(nproc)
         echo $PYVER             # 11, 12 or 13
+        echo $GLIBC             # 2.41 or 2.42
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash

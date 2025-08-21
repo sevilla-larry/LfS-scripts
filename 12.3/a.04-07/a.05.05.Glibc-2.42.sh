@@ -1,9 +1,9 @@
-# a.5.05.Glibc-2.41.sh
-# reverted back to original
-# LLVM 19.1.7 build FAILs with ver 2.42
+# a.5.05.Glibc-2.42.sh
+# errata
+# Warning: LLVM 19.1.7 build FAILs with this version
 #
 
-export PKG="glibc-2.41"
+export PKG="glibc-2.42"
 export PKGLOG_DIR=$LFSLOG/05.05
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -40,7 +40,7 @@ esac >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 echo "   Patch to FHS-compliant..."
 echo "   Patch to FHS-compliant..." >> $LFSLOG_PROCESS
 echo "   Patch to FHS-compliant..." >> $PKGLOG_ERROR
-patch -Np1 -i ../glibc-2.41-fhs-1.patch \
+patch -Np1 -i ../glibc-2.42-fhs-1.patch \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 mkdir build
@@ -59,10 +59,10 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
       --host=$LFS_TGT                       \
       --build=$(../scripts/config.guess)    \
       --enable-kernel=5.4                   \
-      --with-headers=$LFS/usr/include       \
       --disable-nscd                        \
       libc_cv_slibdir=/usr/lib              \
       > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#      --with-headers=$LFS/usr/include       \  GLib-2.41
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -102,8 +102,8 @@ grep -B3 "^ $LFS/usr/include"   \
     >> $PKGLOG_CHECK2 2>> $PKGLOG_ERROR
 ### output should be:
 # #include <...> search starts here:
-#  /mnt/lfs/tools/lib/gcc/x86_64-lfs-linux-gnu/14.2.0/include
-#  /mnt/lfs/tools/lib/gcc/x86_64-lfs-linux-gnu/14.2.0/include-fixed
+#  /mnt/lfs/tools/lib/gcc/x86_64-lfs-linux-gnu/15.2.0/include
+#  /mnt/lfs/tools/lib/gcc/x86_64-lfs-linux-gnu/15.2.0/include-fixed
 #  /mnt/lfs/usr/include
 
 grep 'SEARCH.*/usr/lib' $PKGLOG_CHECK1  \
