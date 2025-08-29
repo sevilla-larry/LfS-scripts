@@ -36,7 +36,6 @@ cd $PKG
 sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake   \
     > $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
-
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
