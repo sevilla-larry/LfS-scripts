@@ -139,7 +139,7 @@ echo "."
 echo "08.91.50.11.LWP-MediaTypes-6.04"
 echo "08.91.50.11.LWP-MediaTypes-6.04" >> $LFSLOG_PROCESS
 
-time { a.08.91.50.11.LWP-MediaTypes-6.04.sh ; }
+time { bash a.08.91.50.11.LWP-MediaTypes-6.04.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

@@ -420,7 +420,8 @@ B.  Generate LFS
         #   and
         # for PCs
         #
-        export CFLAGS="-O2 -march=native -mtune=native -flto=$(nproc) -pipe -fomit-frame-pointer -ffunction-sections -fdata-sections -mavx2 -mfma"
+      # export CFLAGS="-O2 -march=native -mtune=native -flto=$(nproc) -pipe -fomit-frame-pointer -ffunction-sections -fdata-sections -mavx2 -mfma"
+        export CFLAGS="-O2 -march=native -mtune=native -pipe -fomit-frame-pointer -ffunction-sections -fdata-sections -mavx2 -mfma"
         #
         ###
 
