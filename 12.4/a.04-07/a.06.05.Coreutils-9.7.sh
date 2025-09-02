@@ -1,5 +1,4 @@
 # a.06.05.Coreutils-9.7.sh
-# (errata)
 #
 
 export PKG="coreutils-9.7"
@@ -32,7 +31,6 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --enable-install-program=hostname       \
             --enable-no-install-program=kill,uptime \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#            gl_cv_macro_MB_CUR_MAX_good=y           \  LfS 12.0
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

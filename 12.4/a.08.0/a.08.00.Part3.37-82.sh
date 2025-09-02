@@ -22,10 +22,10 @@ echo "."
 
 ###
 
-echo "08.38.GDBM-1.24"
-echo "08.38.GDBM-1.24" >> $LFSLOG_PROCESS
+echo "08.38.GDBM-1.26"
+echo "08.38.GDBM-1.26" >> $LFSLOG_PROCESS
 
-time { bash a.08.38.GDBM-1.24.sh ; }
+time { bash a.08.38.GDBM-1.26.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -36,10 +36,10 @@ echo "."
 
 ###
 
-echo "08.39.Gperf-3.1"
-echo "08.39.Gperf-3.1" >> $LFSLOG_PROCESS
+echo "08.39.Gperf-3.3"
+echo "08.39.Gperf-3.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.39.Gperf-3.1.sh ; }
+time { bash a.08.39.Gperf-3.3.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -78,10 +78,10 @@ echo "."
 
 ###
 
-echo "08.42.Less-668"
-echo "08.42.Less-668" >> $LFSLOG_PROCESS
+echo "08.42.Less-679"
+echo "08.42.Less-679" >> $LFSLOG_PROCESS
 
-time { bash a.08.42.Less-668.sh ; }
+time { bash a.08.42.Less-679.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -92,10 +92,10 @@ echo "."
 
 ###
 
-echo "08.43.Perl-5.40.2"
-echo "08.43.Perl-5.40.2" >> $LFSLOG_PROCESS
+echo "08.43.Perl-5.42.0"
+echo "08.43.Perl-5.42.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.43.Perl-5.40.2.sh ; }
+time { bash a.08.43.Perl-5.42.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -148,24 +148,10 @@ echo "."
 
 ###
 
-echo "08.47.Automake-1.17"
-echo "08.47.Automake-1.17" >> $LFSLOG_PROCESS
+echo "08.47.Automake-1.18.1"
+echo "08.47.Automake-1.18.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.47.Automake-1.17.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.48.OpenSSL-3.4.1"
-echo "08.48.OpenSSL-3.4.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.48.OpenSSL-3.4.1.sh ; }
+time { bash a.08.47.Automake-1.18.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -176,24 +162,10 @@ echo "."
 
 ###
 
-echo "08.49.Libelf.from.Elfutils-0.192"
-echo "08.49.Libelf.from.Elfutils-0.192" >> $LFSLOG_PROCESS
+echo "08.48.OpenSSL-3.5.2"
+echo "08.48.OpenSSL-3.5.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.49.Libelf.from.Elfutils-0.192.sh; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.50.Libffi-3.4.7"
-echo "08.50.Libffi-3.4.7" >> $LFSLOG_PROCESS
-
-time { bash a.08.50.Libffi-3.4.7.sh ; }
+time { bash a.08.48.OpenSSL-3.5.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -204,50 +176,67 @@ echo "."
 
 ###
 
-# if	 [ "$PYVER" -eq 11 ]; then
+echo "08.49.Libelf.from.Elfutils-0.193"
+echo "08.49.Libelf.from.Elfutils-0.193" >> $LFSLOG_PROCESS
+
+time { bash a.08.49.Libelf.from.Elfutils-0.193.sh; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.50.Libffi-3.5.2"
+echo "08.50.Libffi-3.5.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.50.Libffi-3.5.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+# if   [ "$PYVER" -eq 12 ]; then
 #
-# 	echo "08.51.Python-3.11.12"
-# 	echo "08.51.Python-3.11.12" >> $LFSLOG_PROCESS
-# 	time { bash a.08.51.Python-3.11.12.sh ; }
-#
-# elif [ "$PYVER" -eq 12 ]; then
-#
-# 	echo "08.51.Python-3.12.10"
-# 	echo "08.51.Python-3.12.10" >> $LFSLOG_PROCESS
-# 	time { bash a.08.51.Python-3.12.10.sh ; }
+# 	echo "08.51.Python-3.12.11"
+# 	echo "08.51.Python-3.12.11" >> $LFSLOG_PROCESS
+# 	time { bash a.08.51.Python-3.12.11.sh ; }
 #
 # elif [ "$PYVER" -eq 13 ]; then
 #
-# 	echo "08.51.Python-3.13.2"
-# 	echo "08.51.Python-3.13.2" >> $LFSLOG_PROCESS
-# 	time { bash a.08.51.Python-3.13.2.sh ; }
+# 	echo "08.51.Python-3.13.7"
+# 	echo "08.51.Python-3.13.7" >> $LFSLOG_PROCESS
+# 	time { bash a.08.51.Python-3.13.7.sh ; }
 #
 # else
 #
-# 	echo "Error: PYVER must be 11, 12 or 13"
-# 	echo "Error: PYVER must be 11, 12 or 13" >> $LFSLOG_PROCESS
+# 	echo "Error: PYVER must be 12 or 13"
+# 	echo "Error: PYVER must be 12 or 13" >> $LFSLOG_PROCESS
 #
 # fi
 
 case "$PYVER" in
-    11)
-		echo "08.51.Python-3.11.13"
-		echo "08.51.Python-3.11.13" >> $LFSLOG_PROCESS
-		time { bash a.08.51.Python-3.11.13.sh ; }
-        ;;
     12)
 		echo "08.51.Python-3.12.11"
 		echo "08.51.Python-3.12.11" >> $LFSLOG_PROCESS
 		time { bash a.08.51.Python-3.12.11.sh ; }
         ;;
     13)
-		echo "08.51.Python-3.13.4"
-		echo "08.51.Python-3.13.4" >> $LFSLOG_PROCESS
-		time { bash a.08.51.Python-3.13.4.sh ; }
+		echo "08.51.Python-3.13.7"
+		echo "08.51.Python-3.13.7" >> $LFSLOG_PROCESS
+		time { bash a.08.51.Python-3.13.7.sh ; }
         ;;
     *)
-		echo "Error: PYVER must be 11, 12 or 13"
-		echo "Error: PYVER must be 11, 12 or 13" >> $LFSLOG_PROCESS
+		echo "Error: PYVER must be 12 or 13"
+		echo "Error: PYVER must be 12 or 13" >> $LFSLOG_PROCESS
         ;;
 esac
 
@@ -260,24 +249,10 @@ echo "."
 
 ###
 
-echo "08.52.Flit-Core-3.11.0"
-echo "08.52.Flit-Core-3.11.0" >> $LFSLOG_PROCESS
+echo "08.52.Flit-Core-3.12.0"
+echo "08.52.Flit-Core-3.12.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.52.Flit-Core-3.11.0.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.53.Wheel-0.45.1"
-echo "08.53.Wheel-0.45.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.53.Wheel-0.45.1.sh ; }
+time { bash a.08.52.Flit-Core-3.12.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -288,24 +263,10 @@ echo "."
 
 ###
 
-echo "08.54.Setuptools-75.8.1"
-echo "08.54.Setuptools-75.8.1" >> $LFSLOG_PROCESS
+echo "a.08.53.Packaging-25.0"
+echo "a.08.53.Packaging-25.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.54.Setuptools-75.8.1.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.55.Ninja-1.12.1"
-echo "08.55.Ninja-1.12.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.55.Ninja-1.12.1.sh ; }
+time { bash a.08.53.Packaging-25.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -316,24 +277,10 @@ echo "."
 
 ###
 
-echo "08.56.Meson-1.7.0"
-echo "08.56.Meson-1.7.0" >> $LFSLOG_PROCESS
+echo "08.54.Wheel-0.46.1"
+echo "08.54.Wheel-0.46.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.56.Meson-1.7.0.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.57.Kmod-34"
-echo "08.57.Kmod-34" >> $LFSLOG_PROCESS
-
-time { bash a.08.57.Kmod-34.sh ; }
+time { bash a.08.54.Wheel-0.46.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -344,24 +291,10 @@ echo "."
 
 ###
 
-echo "08.58.Coreutils-9.7"
-echo "08.58.Coreutils-9.7" >> $LFSLOG_PROCESS
+echo "08.55.Setuptools-80.9.0"
+echo "08.55.Setuptools-80.9.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.58.Coreutils-9.7.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.59.Check-0.15.2"
-echo "08.59.Check-0.15.2" >> $LFSLOG_PROCESS
-
-time { bash a.08.59.Check-0.15.2.sh ; }
+time { bash a.08.55.Setuptools-80.9.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -372,10 +305,10 @@ echo "."
 
 ###
 
-echo "08.60.Diffutils-3.11"
-echo "08.60.Diffutils-3.11" >> $LFSLOG_PROCESS
+echo "08.56.Ninja-1.13.1"
+echo "08.56.Ninja-1.13.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.60.Diffutils-3.11.sh ; }
+time { bash a.08.56.Ninja-1.13.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -386,10 +319,66 @@ echo "."
 
 ###
 
-echo "08.61.Gawk-5.3.1"
-echo "08.61.Gawk-5.3.1" >> $LFSLOG_PROCESS
+echo "08.57.Meson-1.8.3"
+echo "08.57.Meson-1.8.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.61.Gawk-5.3.1.sh ; }
+time { bash a.08.57.Meson-1.8.3.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.58.Kmod-34.2"
+echo "08.58.Kmod-34.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.58.Kmod-34.2.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.59.Coreutils-9.7"
+echo "08.59.Coreutils-9.7" >> $LFSLOG_PROCESS
+
+time { bash a.08.59.Coreutils-9.7.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.60.Diffutils-3.12"
+echo "08.60.Diffutils-3.12" >> $LFSLOG_PROCESS
+
+time { bash a.08.60.Diffutils-3.12.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.61.Gawk-5.3.2"
+echo "08.61.Gawk-5.3.2" >> $LFSLOG_PROCESS
+
+time { bash a.08.61.Gawk-5.3.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -430,24 +419,10 @@ echo "."
 ##### 08.64.GRUB is on the later part 08.90.GRUB.....
 #####
 
-echo "08.65.Gzip-1.13"
-echo "08.65.Gzip-1.13" >> $LFSLOG_PROCESS
+echo "08.65.Gzip-1.14"
+echo "08.65.Gzip-1.14" >> $LFSLOG_PROCESS
 
-time { bash a.08.65.Gzip-1.13.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.66.IPRoute2-6.13.0"
-echo "08.66.IPRoute2-6.13.0" >> $LFSLOG_PROCESS
-
-time { bash a.08.66.IPRoute2-6.13.0.sh ; }
+time { bash a.08.65.Gzip-1.14.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -458,10 +433,24 @@ echo "."
 
 ###
 
-echo "08.67.Kbd-2.7.1"
-echo "08.67.Kbd-2.7.1" >> $LFSLOG_PROCESS
+echo "08.66.IPRoute2-6.16.0"
+echo "08.66.IPRoute2-6.16.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.67.Kbd-2.7.1.sh ; }
+time { bash a.08.66.IPRoute2-6.16.0.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.67.Kbd-2.8.0"
+echo "08.67.Kbd-2.8.0" >> $LFSLOG_PROCESS
+
+time { bash a.08.67.Kbd-2.8.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -500,10 +489,10 @@ echo "."
 
 ###
 
-echo "08.70.Patch-2.7.6"
-echo "08.70.Patch-2.7.6" >> $LFSLOG_PROCESS
+echo "08.70.Patch-2.8"
+echo "08.70.Patch-2.8" >> $LFSLOG_PROCESS
 
-time { bash a.08.70.Patch-2.7.6.sh ; }
+time { bash a.08.70.Patch-2.8.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -542,10 +531,10 @@ echo "."
 
 ###
 
-echo "08.73a.Nano-8.3"
-echo "08.73a.Nano-8.3" >> $LFSLOG_PROCESS
+echo "08.73a.Nano-8.6"
+echo "08.73a.Nano-8.6" >> $LFSLOG_PROCESS
 
-time { bash a.08.73a.Nano-8.3.sh ; }
+time { bash a.08.73a.Nano-8.6.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -570,24 +559,10 @@ echo "."
 
 ###
 
-echo "08.75.Jinja2-3.1.5"
-echo "08.75.Jinja2-3.1.5" >> $LFSLOG_PROCESS
+echo "08.75.Jinja2-3.1.6"
+echo "08.75.Jinja2-3.1.6" >> $LFSLOG_PROCESS
 
-time { bash a.08.75.Jinja2-3.1.5.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.76.Udev.from.Systemd-257.3"
-echo "08.76.Udev.from.Systemd-257.3" >> $LFSLOG_PROCESS
-
-time { bash a.08.76.Udev.from.Systemd-257.3.sh ; }
+time { bash a.08.75.Jinja2-3.1.6.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -598,10 +573,24 @@ echo "."
 
 ###
 
-echo "08.77.Man-DB-2.13.0"
-echo "08.77.Man-DB-2.13.0" >> $LFSLOG_PROCESS
+echo "08.76.Udev.from.Systemd-257.8"
+echo "08.76.Udev.from.Systemd-257.8" >> $LFSLOG_PROCESS
 
-time { bash a.08.77.Man-DB-2.13.0.sh ; }
+time { bash a.08.76.Udev.from.Systemd-257.8.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
+echo "08.77.Man-DB-2.13.1"
+echo "08.77.Man-DB-2.13.1" >> $LFSLOG_PROCESS
+
+time { bash a.08.77.Man-DB-2.13.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -626,8 +615,8 @@ echo "."
 
 ###
 
-echo "08.79.Util-linux-2.40.4"
-echo "08.79.Util-linux-2.40.4" >> $LFSLOG_PROCESS
+echo "08.79.Util-linux-2.41.1"
+echo "08.79.Util-linux-2.41.1" >> $LFSLOG_PROCESS
 
 time { bash a.08.79.Util-linux-2.40.4.sh ; }
 
@@ -640,10 +629,10 @@ echo "."
 
 ###
 
-echo "08.80.E2fsprogs-1.47.2"
-echo "08.80.E2fsprogs-1.47.2" >> $LFSLOG_PROCESS
+echo "08.80.E2fsprogs-1.47.3"
+echo "08.80.E2fsprogs-1.47.3" >> $LFSLOG_PROCESS
 
-time { bash a.08.80.E2fsprogs-1.47.2.sh ; }
+time { bash a.08.80.E2fsprogs-1.47.3.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -654,10 +643,10 @@ echo "."
 
 ###
 
-echo "08.81.Sysklogd-2.7.0"
-echo "08.81.Sysklogd-2.7.0" >> $LFSLOG_PROCESS
+echo "08.81.Sysklogd-2.7.2"
+echo "08.81.Sysklogd-2.7.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.81.Sysklogd-2.7.0.sh ; }
+time { bash a.08.81.Sysklogd-2.7.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

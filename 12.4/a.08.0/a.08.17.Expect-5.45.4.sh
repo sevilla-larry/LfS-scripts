@@ -35,7 +35,7 @@ python3 -c 'from pty import spawn; spawn(["echo", "ok"])'   \
 echo "   Patching..."
 echo "   Patching..." >> $LFSLOG_PROCESS
 echo "   Patching..." >> $PKGLOG_ERROR
-patch -Np1 -i ../expect-5.45.4-gcc14-1.patch    \
+patch -Np1 -i ../expect-5.45.4-gcc15-1.patch    \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
@@ -47,7 +47,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --disable-rpath                 \
             --mandir=/usr/share/man         \
             --with-tclinclude=/usr/include  \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

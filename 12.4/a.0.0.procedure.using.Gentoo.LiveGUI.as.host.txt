@@ -107,9 +107,11 @@ A. Preparation
   A.06. [LFS 2.6] Setting the $LFS variable
 
         ###
+
         export LFS=/mnt/lfs
 
         umask 022
+
         ###
 
   A.07. [LFS 2.7] Mounting the New Partition
@@ -118,11 +120,25 @@ A. Preparation
 
         mkdir -pv $LFS
 
+        ###
+
       # (a) VM
         mount -v -t ext4 /dev/vda2 $LFS
 
       # (b) VB & PC
         mount -v -t ext4 /dev/sda2 $LFS
+
+        ###
+
+        chown root:root $LFS
+        chmod 755 $LFS
+
+        ###
+
+        ### swapon after partition creation
+      # /sbin/swapon -v /dev/<zzz>
+
+        ###
 
   A.08. [LFS 3.1] Packages ( Sources )
 
@@ -161,7 +177,7 @@ A. Preparation
 
         ###
 
-        ( download wget-list & md5sums )
+        # ( download wget-list & md5sums )
 
         ###
 
@@ -237,15 +253,6 @@ A. Preparation
 
         cd $LFS/sources
 
-        ###
-        #   GLib version temporary fix
-        #
-        #   with GLibc-2.42, LLVM 19.1.7 FAILed to build
-        #
-        export GLIBC=2.41   # LLVM 19.1.7 GOOD to build
-      # export GLIBC=2.42   # try for OpenStack
-        ###
-
         $$$
 
 B.  Generate LFS
@@ -257,7 +264,6 @@ B.  Generate LFS
         echo $LFS             # /mnt/lfs
         echo $LFSLOG          # /mnt/lfs/var/log/lfs
         echo $MAKEFLAGS       # -j$(nproc)
-        echo $GLIBC           # 2.41 or 2.42
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash
@@ -353,19 +359,9 @@ B.  Generate LFS
 
         # PYVER values are:
         #
-        # 11 = Python-3.11.xx
         # 12 = Python-3.12.xx   best suited for OpenStack 2025.1 Epoxy
         # 13 = Python-3.13.xx
         export PYVER=12
-
-        ###
-        #   GLib version temporary fix
-        #
-        #   with GLibc-2.42, LLVM 19.1.7 FAILed to build
-        #
-        export GLIBC=2.41   # LLVM 19.1.7 GOOD to build
-      # export GLIBC=2.42   # try for OpenStack
-        ###
 
         cd /sources
 
@@ -374,8 +370,7 @@ B.  Generate LFS
         echo $LFSLOG            # /var/log/lfs
         echo $MAKEFLAGS         # -j$(nproc)
         echo $TESTSUITEFLAGS    # -j$(nproc)
-        echo $PYVER             # 11, 12 or 13
-        echo $GLIBC             # 2.41 or 2.42
+        echo $PYVER             # 12 or 13
 
         echo $SHELL           # /bin/bash
         ls -l /bin/sh         # bash

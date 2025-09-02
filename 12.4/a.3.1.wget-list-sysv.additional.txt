@@ -1,58 +1,17 @@
 # Errata LfS
 
-# 06.16 & 08.08 Xz-5.8.1
-https://github.com//tukaani-project/xz/releases/download/v5.8.1/xz-5.8.1.tar.xz
-# 08.40 Expat-2.7.1
-https://github.com/libexpat/libexpat/releases/download/R_2_7_1/expat-2.7.1.tar.xz
-# 07.09 & 08.43 Perl-5.40.2
-https://www.cpan.org/src/5.0/perl-5.40.2.tar.xz
-https://www.linuxfromscratch.org/patches/lfs/development/perl-5.40.2-upstream_fix-1.patch
-# 06.05 & 08.58 Coreutils-9.7
-https://ftp.gnu.org/gnu/coreutils/coreutils-9.7.tar.xz
-https://www.linuxfromscratch.org/patches/lfs/development/coreutils-9.7-upstream_fix-1.patch
-https://www.linuxfromscratch.org/patches/lfs/development/coreutils-9.7-i18n-1.patch
-# 05.05 & 08.05 Glibc-2.42	(errata)	warning: LLVM 19.1.7 build FAILs
-https://ftp.gnu.org/gnu/glibc/glibc-2.42.tar.xz
-https://www.linuxfromscratch.org/patches/lfs/development/glibc-2.42-fhs-1.patch
-# Time Zone Data
-https://www.iana.org/time-zones/repository/releases/tzdata2025b.tar.gz
-
 #####
 
-# 07.10, 08.51 & 08.91.19 Python-3.11.11
-# https://www.python.org/ftp/python/3.11.11/Python-3.11.11.tar.xz
-# https://www.python.org/ftp/python/doc/3.11.11/python-3.11.11-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.11.12 (latest 2025/Apr/20)
-# https://www.python.org/ftp/python/3.11.12/Python-3.11.12.tar.xz
-# https://www.python.org/ftp/python/doc/3.11.12/python-3.11.12-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.12.10 (latest 2025/Apr/20)
-# https://www.python.org/ftp/python/3.12.10/Python-3.12.10.tar.xz
-# https://www.python.org/ftp/python/doc/3.12.10/python-3.12.10-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.11.13 (latest 2025/Jun/13)
-https://www.python.org/ftp/python/3.11.13/Python-3.11.13.tar.xz
-https://www.python.org/ftp/python/doc/3.11.13/python-3.11.13-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.12.11 (latest 2025/Jun/13)
+# 07.10, 08.51 & 08.91.19 Python-3.12.11 (latest 2025/Sep)
 https://www.python.org/ftp/python/3.12.11/Python-3.12.11.tar.xz
 https://www.python.org/ftp/python/doc/3.12.11/python-3.12.11-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.13.4 (latest with doc 2025/Jun/13)
-https://www.python.org/ftp/python/3.13.4/Python-3.13.4.tar.xz
-https://www.python.org/ftp/python/doc/3.13.4/python-3.13.4-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.13.5 (latest 2025/Jun/13)
-# https://www.python.org/ftp/python/3.13.5/Python-3.13.5.tar.xz
-# none
 
 #####
 
 # Additional from BLfS
 
-# 08.73a Nano-8.3
-https://www.nano-editor.org/dist/v8/nano-8.3.tar.xz
+# 08.73a Nano-8.6
+https://www.nano-editor.org/dist/v8/nano-8.6.tar.xz
 
 # 08.90.1 Popt-1.19
 http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz

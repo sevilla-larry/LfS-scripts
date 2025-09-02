@@ -28,19 +28,21 @@ echo "2. Build for host..." >> $PKGLOG_ERROR
 
 mkdir build
 pushd build
+
   echo "2.1 Configure ..."
   echo "2.1 Configure ..." >> $LFSLOG_PROCESS
   echo "2.1 Configure ..." >> $PKGLOG_ERROR
-  ../configure --disable-bzlib      \
-               --disable-libseccomp \
-               --disable-xzlib      \
-               --disable-zlib       \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+  ../configure  --disable-bzlib         \
+                --disable-libseccomp    \
+                --disable-xzlib         \
+                --disable-zlib          \
+                > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
   
   echo "2.2 Make Build ..."
   echo "2.2 Make Build ..." >> $LFSLOG_PROCESS
   echo "2.2 Make Build ..." >> $PKGLOG_ERROR
   make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+
 popd
 
 echo "3. Configure (again)..."
@@ -49,7 +51,7 @@ echo "3. Configure (again)..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr             \
             --host=$LFS_TGT           \
             --build=$(./config.guess) \
-  >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+            >> $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS

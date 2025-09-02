@@ -22,6 +22,9 @@ echo "1. Extract tar..." >> $PKGLOG_ERROR
 tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
+#make an adjustment for compatibility with gcc-15 and later
+sed -i '/long long t1;/,+1s/()/(...)/' configure    \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
@@ -30,7 +33,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --enable-cxx                        \
             --disable-static                    \
             --docdir=/usr/share/doc/gmp-6.3.0   \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

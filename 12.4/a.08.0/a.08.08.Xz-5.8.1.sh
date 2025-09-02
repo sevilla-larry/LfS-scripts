@@ -1,5 +1,4 @@
 # a.08.08.Xz-5.8.1.sh
-# (errata)
 #
 
 export PKG="xz-5.8.1"

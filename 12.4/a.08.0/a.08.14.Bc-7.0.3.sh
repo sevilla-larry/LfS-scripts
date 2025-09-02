@@ -25,7 +25,7 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-CC=gcc  \
+CC='gcc -std=c99'   \
     ./configure --prefix=/usr   \
                 -G -O3 -r       \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR

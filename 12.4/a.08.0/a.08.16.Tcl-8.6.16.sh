@@ -72,6 +72,8 @@ echo "6. Make Install ..."
 echo "6. Make Install ..." >> $LFSLOG_PROCESS
 echo "6. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+chmod -v 644 /usr/lib/libtclstub8.6.a   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "   Make the installed library writable so debugging symbols can be removed later..."
 echo "   Make the installed library writable so debugging symbols can be removed later..." >> $LFSLOG_PROCESS

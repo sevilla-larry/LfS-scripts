@@ -1,6 +1,4 @@
 # a.08.05.Glibc-2.42.sh
-# errata
-# Warning: LLVM 19.1.7 build FAILs with this version
 #
 
 export PKG="glibc-2.42"
@@ -59,8 +57,7 @@ echo "3. Configure ..." >> $PKGLOG_ERROR
              --enable-stack-protector=strong    \
              --disable-nscd                     \
              libc_cv_slibdir=/usr/lib           \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#             --with-headers=/usr/include        \ LfS 12.0
+             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS
@@ -179,11 +176,12 @@ for tz in etcetera southamerica northamerica europe africa antarctica   \
     zic -L leapseconds -d $ZONEINFO/right ${tz}
 done
 
-cp zone.tab zone1970.tab iso3166.tab $ZONEINFO
+cp -v zone.tab zone1970.tab iso3166.tab $ZONEINFO   \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 zic -d $ZONEINFO -p $LOCAL_TIME_ZONE
 unset ZONEINFO tz
 
-ln -sfv /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime     \
+ln -sfv /usr/share/zoneinfo/$LOCAL_TIME_ZONE /etc/localtime \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "10. Configuring the Dynamic Loader ..."

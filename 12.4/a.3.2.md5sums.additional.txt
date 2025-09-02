@@ -19,40 +19,16 @@ ad65154c48c74a9b311fe84778c5434f tzdata2025b.tar.gz
 
 #####
 
-# 07.10, 08.51 & 08.91.19		 Python-3.11.11
-# 3e497037b170fe4be5f462c4964596f2 Python-3.11.11.tar.xz
-#								 python-3.11.11-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19		 Python-3.11.12 (latest 2025/Apr/20)
-# 7fc6fee008b0b933052c89946377e319 Python-3.11.12.tar.xz
-#								 python-3.11.12-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19		 Python-3.12.10 (latest 2025/Apr/20)
-# 0c0a6cce86d7611aed691d61e0599de0 Python-3.12.10.tar.xz
-#								 python-3.12.10-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.11.13 (latest 2025/Jun/13)
-ec39a8018b9eedf6f0edeb44533bd279 Python-3.11.13.tar.xz
-#								 python-3.11.13-docs-html.tar.bz2
-
 # 07.10, 08.51 & 08.91.19 Python-3.12.11 (latest 2025/Jun/13)
 9613d56b90d0d0cfd19980c7e2956a06 Python-3.12.11.tar.xz
 #								 python-3.12.11-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.13.4 (latest with doc 2025/Jun/13)
-2e2a8eb2e1be50049dc4248d99a52f89 Python-3.13.4.tar.xz
-#								 python-3.13.4-docs-html.tar.bz2
-
-# 07.10, 08.51 & 08.91.19 Python-3.13.5 (latest 2025/Jun/13)
-# missing yet Python-3.13.5-docs-html.tar.xz
-# none
 
 #####
 
 # Additional from BLfS
 
 # 08.73a Nano-8.3
-e64276780e23efb273480c4279050f74 nano-8.3.tar.xz
+3b5a70dd65ddee4bd848b620c1638526 nano-8.6.tar.xz
 
 # 08.90.1 Popt-1.19
 eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz

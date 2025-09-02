@@ -25,10 +25,10 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                       \
-            --without-guile                     \
             --host=$LFS_TGT                     \
             --build=$(build-aux/config.guess)   \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --without-guile                     \ LfS 12.3
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

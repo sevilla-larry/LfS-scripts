@@ -1,5 +1,5 @@
 # a.08.52.Python-3.12.11.sh
-# latest 2025/Jun/13
+# latest 2025/Sep/01
 #
 
 export PKG="Python-3.12.11"

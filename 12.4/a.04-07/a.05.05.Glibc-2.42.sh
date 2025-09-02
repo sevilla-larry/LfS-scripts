@@ -1,6 +1,4 @@
 # a.5.05.Glibc-2.42.sh
-# errata
-# Warning: LLVM 19.1.7 build FAILs with this version
 #
 
 export PKG="glibc-2.42"
@@ -64,6 +62,18 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
       > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #      --with-headers=$LFS/usr/include       \  GLib-2.41
 
+#
+# Warning might appear:
+#
+# configure: WARNING:
+# *** These auxiliary programs are missing or
+# *** incompatible versions: msgfmt
+# *** some features will be disabled.
+# *** Check the INSTALL file for required versions.
+#
+# msgfmt is generally harmless, which is part of Gettext pkg
+#
+
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
 echo "3. Make Build ..." >> $PKGLOG_ERROR
@@ -83,11 +93,12 @@ sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd  \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo 'int main(){}' | $LFS_TGT-gcc -x c - -v -Wl,--verbose  \
-        &> $PKGLOG_CHECK1 2>> $PKGLOG_ERROR
+        &> $PKGLOG_CHECK1
 readelf -l a.out | grep ': /lib'            \
     >> $PKGLOG_CHECK2 2>> $PKGLOG_ERROR
 ### output should be and should NOT contain /mnt/lfs:
 # [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]
+# should NOT contain /mnt/lfs
 
 grep -E -o "$LFS/lib.*/S?crt[1in].*succeeded"   \
     $PKGLOG_CHECK1                              \

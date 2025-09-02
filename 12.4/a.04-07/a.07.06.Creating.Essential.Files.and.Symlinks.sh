@@ -53,9 +53,9 @@ echo "tester:x:101:" >> /etc/group
 install -o tester -d /home/tester
 
 touch /var/log/{btmp,lastlog,faillog,wtmp}
-chgrp utmp /var/log/lastlog
-chmod 664  /var/log/lastlog
-chmod 600  /var/log/btmp
+chgrp -v utmp /var/log/lastlog
+chmod -v 664  /var/log/lastlog
+chmod -v 600  /var/log/btmp
 
 echo "."
 echo "run: exec /usr/bin/bash --login"

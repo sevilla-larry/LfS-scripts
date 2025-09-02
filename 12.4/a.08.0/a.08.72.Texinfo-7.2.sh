@@ -23,6 +23,10 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+sed 's/! $output_file eq/$output_file ne/'  \
+    -i tp/Texinfo/Convert/*.pm              \
+     > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
