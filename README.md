@@ -4,7 +4,18 @@
 #  eMail: sevilla.larry.prg@gmail.com
 #
 #
-# Testing LfS ver: 12.3
+# On-going LfS ver: 12.4
+# Started: 2025/Sep/02
+# arch: x64, UEFI
+#
+# Note: select Python version:
+#
+#       Python 3.12.x  will be used/tested on OpenStack 2025.1 Epoxy
+#       Python 3.13.x  is LfS 12.4 book version
+#
+#
+#
+# Working LfS ver: 12.3
 # Started: 2025/Mar/10
 # arch: x64, UEFI
 #
