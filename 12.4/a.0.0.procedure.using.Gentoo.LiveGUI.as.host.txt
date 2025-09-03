@@ -408,7 +408,8 @@ B.  Generate LFS
         ###
         # for VBs
         #
-        export CFLAGS="-O2 -march=nehalem -mtune=generic -flto=$(nproc) -pipe -fomit-frame-pointer -ffunction-sections -fdata-sections -msse4.2"
+      # export CFLAGS="-O2 -march=nehalem -mtune=generic -flto=$(nproc) -pipe -fomit-frame-pointer -ffunction-sections -fdata-sections -msse4.2"
+        export CFLAGS="-O2 -march=nehalem -mtune=generic -pipe -fomit-frame-pointer -msse4.2"
         #
         ###
         # for VMs
@@ -424,6 +425,14 @@ B.  Generate LFS
         export CXXFLAGS=$CFLAGS" -std=c++20"
       # export LDFLAGS="-Wl,--as-needed -Wl,--gc-sections -Wl,-O1 -Wl,--strip-all"
         export LDFLAGS="-Wl,--as-needed -Wl,-O1 -Wl,--strip-all"
+
+        ###
+
+        echo $CFLAGS
+        echo $CXXFLAGS
+        echo $LDFLAGS
+
+        ###
 
         bash a.08.00.Part1.03-28.sh
 
