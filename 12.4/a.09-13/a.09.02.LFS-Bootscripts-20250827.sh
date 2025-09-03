@@ -1,7 +1,7 @@
-# a.09.02.LFS-Bootscripts-20240825.sh
+# a.09.02.LFS-Bootscripts-20250827.sh
 #
 
-export PKG="lfs-bootscripts-20240825"
+export PKG="lfs-bootscripts-20250827"
 export PKGLOG_DIR=$LFSLOG/09.02
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

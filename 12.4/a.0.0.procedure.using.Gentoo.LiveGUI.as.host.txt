@@ -572,8 +572,8 @@ C. Finishing Up
 
         bash a.09.06.System.V.Bootscript.Usage.and.Configuration.sh
 
-        # PC
-        # modify /etc/sysconfig/clock with UTC=0
+        # PC ???
+        # modify /etc/sysconfig/clock with UTC=0 ???
 
         ###
 
@@ -725,15 +725,18 @@ D. [LFS 10.x] Making the LFS System Bootable
         ###
 
 
-  D.02. [LFS 10.3] Linux-6.13.12 Kernel
+  D.02. [LFS 10.3] Linux Kernel
 
         ###
 
         cd /sources
 
-        bash a.10.03.Linux-6.13.12.extract.only.sh
+        export LKV=6.16.1
+        export LFSV=12.4
 
-        cd linux-6.13.12
+        bash a.10.03.Linux-$LKV.extract.only.sh
+
+        cd linux-$LKV
 
         make mrproper
         make defconfig
@@ -741,18 +744,18 @@ D. [LFS 10.x] Making the LFS System Bootable
         # VM only
         make kvm_guest.config
 
-        make MENUCONFIG_COLOR=blackbg menuconfig
+        MENUCONFIG_COLOR=blackbg make menuconfig
 
         ( Note the flags needed )
-        https://www.linuxfromscratch.org/lfs/view/12.3/chapter10/kernel.html
-        https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-setup.html
-        https://www.linuxfromscratch.org/blfs/view/12.3/general/gpm.html
+        https://www.linuxfromscratch.org/lfs/view/12.4/chapter10/kernel.html
+        https://www.linuxfromscratch.org/blfs/view/12.4/postlfs/grub-setup.html
+        https://www.linuxfromscratch.org/blfs/view/12.4/general/gpm.html
         https://wiki.gentoo.org/wiki/QEMU/Linux_guest           # for Qemu/KVM guest
         https://wiki.gentoo.org/wiki/VirtualBox#Gentoo_guests   # for VirtualBox guest
-        https://www.linuxfromscratch.org/blfs/view/12.3/x/mesa.html
-        https://www.linuxfromscratch.org/blfs/view/12.3/x/xorg-server.html
-        https://www.linuxfromscratch.org/blfs/view/12.3/x/x7driver.html#libevdev
-        https://www.linuxfromscratch.org/blfs/view/12.3/general/elogind.html
+        https://www.linuxfromscratch.org/blfs/view/12.4/x/mesa.html
+        https://www.linuxfromscratch.org/blfs/view/12.4/x/xorg-server.html
+        https://www.linuxfromscratch.org/blfs/view/12.4/x/x7driver.html#libevdev
+        https://www.linuxfromscratch.org/blfs/view/12.4/general/elogind.html
         
         ( additional )
 
@@ -784,16 +787,16 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         make modules_install
 
-        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-6.13.12-lfs-12.3-r00
-        cp -iv System.map /boot/System.map-6.13.12-lfs-12.3-r00
-        cp -iv .config /boot/config-6.13.12-lfs-12.3-r00
+        cp -iv arch/x86/boot/bzImage /boot/vmlinuz-$LKV-lfs-$LFSV-r00
+        cp -iv System.map /boot/System.map-$LKV-lfs-$LFSV-r00
+        cp -iv .config /boot/config-$LKV-lfs-$LFSV-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-6.13.12
+        cp -r Documentation -T /usr/share/doc/linux-$LKV
 
         ###
 
   D.03. [LFS 10.4] Using GRUB to Set Up the Boot Process with UEFI
-        ( https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-setup.html )
+        ( https://www.linuxfromscratch.org/blfs/view/12.4/postlfs/grub-setup.html )
 
         ###
 
@@ -823,9 +826,9 @@ D. [LFS 10.x] Making the LFS System Bootable
           terminal_output gfxterm
         fi
 
-        menuentry "GNU/Linux, Linux 6.13.12-lfs-12.3-r00" {
-          linux   /boot/vmlinuz-6.13.12-lfs-12.3-r00 root=/dev/vda2 ro   # Qemu/KVM VM
-          linux   /boot/vmlinuz-6.13.12-lfs-12.3-r00 root=/dev/sda2 ro   # PC & VB
+        menuentry "GNU/Linux, Linux $LKV-lfs-$LFSV-r00" {
+          linux   /boot/vmlinuz-$LKV-lfs-$LFSV-r00 root=/dev/vda2 ro   # Qemu/KVM VM
+          linux   /boot/vmlinuz-$LKV-lfs-$LFSV-r00 root=/dev/sda2 ro   # PC & VB
         }
 
         menuentry "Firmware Setup" {
@@ -841,12 +844,12 @@ E. The End
 
         ###
 
-        echo 12.3 > /etc/lfs-release
+        echo 12.4 > /etc/lfs-release
 
 
         cat > /etc/lsb-release << "EOF"
         DISTRIB_ID="Linux From Scratch"
-        DISTRIB_RELEASE="12.3"
+        DISTRIB_RELEASE="12.4"
         DISTRIB_CODENAME="<your name here>"
         DISTRIB_DESCRIPTION="Linux From Scratch"
         EOF
@@ -854,9 +857,9 @@ E. The End
 
         cat > /etc/os-release << "EOF"
         NAME="Linux From Scratch"
-        VERSION="12.3"
+        VERSION="12.4"
         ID=lfs
-        PRETTY_NAME="Linux From Scratch 12.3"
+        PRETTY_NAME="Linux From Scratch 12.4"
         VERSION_CODENAME="<your name here>"
         HOME_URL="https://www.linuxfromscratch.org/lfs/"
         RELEASE_TYPE="stable"
@@ -883,11 +886,11 @@ E. The End
 
         # Based on:
         #
-        #   https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/stripping.html
-        #   https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/cleanup.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.4/chapter08/stripping.html
+        #   https://www.linuxfromscratch.org/lfs/view/12.4/chapter08/cleanup.html
         #
-        #   https://www.linuxfromscratch.org/blfs/view/12.3/introduction/notes-on-building.html
-        #   https://www.linuxfromscratch.org/blfs/view/12.3/introduction/la-files.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.4/introduction/notes-on-building.html
+        #   https://www.linuxfromscratch.org/blfs/view/12.4/introduction/la-files.html
         #
 
         ###
@@ -900,7 +903,7 @@ E. The End
 
   E.04. Bash shell
 
-        # Based on: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/profile.html
+        # Based on: https://www.linuxfromscratch.org/blfs/view/12.4/postlfs/profile.html
 
         ### as root
 

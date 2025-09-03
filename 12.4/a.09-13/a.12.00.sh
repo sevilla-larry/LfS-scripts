@@ -2,11 +2,11 @@
 #
 # Clean Up  Based on:
 #
-#   https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/stripping.html
-#   https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/cleanup.html
+#   https://www.linuxfromscratch.org/lfs/view/12.4/chapter08/stripping.html
+#   https://www.linuxfromscratch.org/lfs/view/12.4/chapter08/cleanup.html
 #
-#   https://www.linuxfromscratch.org/blfs/view/12.3/introduction/notes-on-building.html
-#   https://www.linuxfromscratch.org/blfs/view/12.3/introduction/la-files.html
+#   https://www.linuxfromscratch.org/blfs/view/12.4/introduction/notes-on-building.html
+#   https://www.linuxfromscratch.org/blfs/view/12.4/introduction/la-files.html
 #
 
 export LFSLOG_PROCESS=$LFSLOG/process.log

@@ -20,8 +20,8 @@ last_file=
          continue;
        fi
 
-       cp --preserve $file    ${file}.tmp
-       strip --strip-unneeded ${file}.tmp
+       cp --preserve $file ${file}.tmp
+       strip --strip-debug ${file}.tmp
        mv ${file}.tmp $file
 
        last_fs_inode="$fs $inode"
