@@ -4,7 +4,7 @@
 
 # 07.10, 08.51 & 08.91.19 Python-3.12.11 (latest 2025/Jun/13)
 9613d56b90d0d0cfd19980c7e2956a06 Python-3.12.11.tar.xz
-e2a1c6f1f3e3e2a2f7c9b3b5f1a3d9c2 python-3.12.11-docs-html.tar.bz2
+ca88b5ee2cb5aef19376ef2ec88e839b python-3.12.11-docs-html.tar.bz2
 
 #####
 

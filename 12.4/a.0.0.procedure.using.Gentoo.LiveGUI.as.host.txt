@@ -181,8 +181,8 @@ A. Preparation
 
         ###
 
-        wget --input-file=wget-list-sysv --continue --directory-prefix=$LFS/sources
-        md5sum -c md5sums
+        wget --input-file=wget-list-sysv.txt --continue --directory-prefix=$LFS/sources
+        md5sum -c md5sums.txt
 
         ###
 
