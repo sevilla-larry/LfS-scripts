@@ -21,11 +21,12 @@ https://github.com/rhboot/efivar/archive/39/efivar-39.tar.gz
 https://github.com/rhboot/efibootmgr/archive/18/efibootmgr-18.tar.gz
 https://unifoundry.com/pub/unifont/unifont-16.0.01/font-builds/unifont-16.0.01.pcf.gz
 
-# 08.91.01 CMake-3.31.5
-https://cmake.org/files/v3.31/cmake-3.31.5.tar.gz
+# 08.91.01 & 08.94 CMake-4.1.0
+https://cmake.org/files/v4.1/cmake-4.1.0.tar.gz
 # 08.91.02 GPM-1.20.7
 https://anduin.linuxfromscratch.org/BLFS/gpm/gpm-1.20.7.tar.bz2
 https://www.linuxfromscratch.org/patches/blfs/12.2/gpm-1.20.7-consolidated-1.patch
+https://www.linuxfromscratch.org/patches/blfs/12.4/gpm-1.20.7-gcc15_fixes-1.patch
 # 08.91.03 Which-2.23
 https://ftp.gnu.org/gnu/which/which-2.23.tar.gz
 # 08.91.04 Zip-3.0
@@ -34,105 +35,98 @@ https://downloads.sourceforge.net/infozip/zip30.tar.gz
 https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0.tar.gz
 # 08.91.06 Net-tools-2.10
 https://downloads.sourceforge.net/project/net-tools/net-tools-2.10.tar.xz
-# 08.91.07 icu-76.1
-https://github.com/unicode-org/icu/releases/download/release-76-1/icu4c-76_1-src.tgz
-# 08.91.08 libxml2-2.13.6
-# https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.6.tar.xz
-# 08.91.08 libxml2-2.14.3		(errata/svn)
-# https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.3.tar.xz
-# 08.91.08 libxml2-2.14.5		(errata)
+# 08.91.07 icu-77.1
+https://github.com/unicode-org/icu/releases/download/release-77-1/icu4c-77_1-src.tgz
+# 08.91.08 libxml2-2.14.5
 https://download.gnome.org/sources/libxml2/2.14/libxml2-2.14.5.tar.xz
 https://www.w3.org/XML/Test/xmlts20130923.tar.gz
 # 08.91.09 LZO-2.10
 https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
-# 08.91.10 Nettle-3.10.1
-https://ftp.gnu.org/gnu/nettle/nettle-3.10.1.tar.gz
+# 08.91.10 Nettle-3.10.2
+https://ftp.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz
 # 08.91.11 PCRE2-10.45
 https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2
-# 08.91.12 libarchive-3.7.7
-# https://github.com/libarchive/libarchive/releases/download/v3.7.7/libarchive-3.7.7.tar.xz
-# 08.91.12 libarchive-3.8.1		(errata/svn)
+# 08.91.12 libarchive-3.8.1
 https://github.com/libarchive/libarchive/releases/download/v3.8.1/libarchive-3.8.1.tar.xz
-# 08.91.13 libuv-1.50.0
-https://dist.libuv.org/dist/v1.50.0/libuv-v1.50.0.tar.gz
+# 08.91.13 libuv-1.51.0
+https://dist.libuv.org/dist/v1.51.0/libuv-v1.51.0.tar.gz
 # 08.91.14 libevent-2.1.12
 https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 # 08.91.15 libtirpc-1.3.6
 https://downloads.sourceforge.net/libtirpc/libtirpc-1.3.6.tar.bz2
+https://www.linuxfromscratch.org/patches/blfs/12.4/libtirpc-1.3.6-gcc15_fixes-1.patch
 # 08.91.16 libnsl-2.0.1
 https://github.com/thkukuk/libnsl/releases/download/v2.0.1/libnsl-2.0.1.tar.xz
 # 08.91.17 rpcsvc-proto-1.4.4
 https://github.com/thkukuk/rpcsvc-proto/releases/download/v1.4.4/rpcsvc-proto-1.4.4.tar.xz
-# 08.91.18 SQLite-3.49.1
-https://sqlite.org/2025/sqlite-autoconf-3490100.tar.gz
-https://sqlite.org/2025/sqlite-doc-3490100.zip
+# 08.91.18 SQLite-3.50.4
+https://sqlite.org/2025/sqlite-autoconf-3500400.tar.gz
+https://sqlite.org/2025/sqlite-doc-3500400.zip
 
 # 08.91.20 Python Modules & Dependencies
-# 08.91.20.01 Packaging-24.2
-https://files.pythonhosted.org/packages/source/p/packaging/packaging-24.2.tar.gz
-# 08.91.20.02 Setuptools_scm-8.1.0
-https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-8.1.0.tar.gz
-# 08.91.20.03 Pluggy-1.5.0
-https://files.pythonhosted.org/packages/source/p/pluggy/pluggy-1.5.0.tar.gz
+# 08.91.20.02 Setuptools_scm-8.3.1
+https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-8.3.1.tar.gz
+# 08.91.20.03 Pluggy-1.6.0
+https://files.pythonhosted.org/packages/source/p/pluggy/pluggy-1.6.0.tar.gz
 # 08.91.20.04 Editables-0.5
 https://files.pythonhosted.org/packages/source/e/editables/editables-0.5.tar.gz
 # 08.91.20.05 Pathspec-0.12.1
 https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.12.1.tar.gz
-# 08.91.20.06 Trove-Classifiers-2025.1.15.22
-https://files.pythonhosted.org/packages/source/t/trove_classifiers/trove_classifiers-2025.1.15.22.tar.gz
+# 08.91.20.06 Trove-Classifiers-2025.8.6.13
+https://files.pythonhosted.org/packages/source/t/trove_classifiers/trove_classifiers-2025.8.6.13.tar.gz
 # 08.91.20.07 Hatchling-1.27.0
 https://files.pythonhosted.org/packages/source/h/hatchling/hatchling-1.27.0.tar.gz
-# 08.91.20.08 Hatch_vcs-0.4.0
-https://files.pythonhosted.org/packages/source/h/hatch-vcs/hatch_vcs-0.4.0.tar.gz
-# 08.91.20.09 Iniconfig-2.0.0
-https://files.pythonhosted.org/packages/source/i/iniconfig/iniconfig-2.0.0.tar.gz
-# 08.91.20.10 Pytest-8.3.4
-https://files.pythonhosted.org/packages/source/p/pytest/pytest-8.3.4.tar.gz
-# 08.91.20.11 Cython-3.0.12
-https://github.com/cython/cython/releases/download/3.0.12/cython-3.0.12.tar.gz
-# 08.91.20.12 Pyproject-Metadata-0.9.0
-https://files.pythonhosted.org/packages/source/p/pyproject-metadata/pyproject_metadata-0.9.0.tar.gz
-# 08.91.20.13 Meson_python-0.17.1
-https://files.pythonhosted.org/packages/source/m/meson_python/meson_python-0.17.1.tar.gz
-# 08.91.20.14 Pytz-2025.1
-https://files.pythonhosted.org/packages/source/p/pytz/pytz-2025.1.tar.gz
-# 08.91.20.15 Hatch-Fancy-Pypi-Readme-24.1.0
-https://files.pythonhosted.org/packages/source/h/hatch-fancy-pypi-readme/hatch_fancy_pypi_readme-24.1.0.tar.gz
-# 08.91.20.16 Attrs-25.1.0
-https://files.pythonhosted.org/packages/source/a/attrs/attrs-25.1.0.tar.gz
-# 08.91.20.17 NumPy-2.2.3
-https://files.pythonhosted.org/packages/source/n/numpy/numpy-2.2.3.tar.gz
+# 08.91.20.08 Hatch_vcs-0.5.0
+https://files.pythonhosted.org/packages/source/h/hatch-vcs/hatch_vcs-0.5.0.tar.gz
+# 08.91.20.09 Iniconfig-2.1.0
+https://files.pythonhosted.org/packages/source/i/iniconfig/iniconfig-2.1.0.tar.gz
+# 08.91.20.10 Pytest-8.4.1
+https://files.pythonhosted.org/packages/source/p/pytest/pytest-8.4.1.tar.gz
+# 08.91.20.11 Cython-3.1.3
+https://github.com/cython/cython/releases/download/3.1.3/cython-3.1.3.tar.gz
+# 08.91.20.12 Pyproject-Metadata-0.9.1
+https://files.pythonhosted.org/packages/source/p/pyproject-metadata/pyproject_metadata-0.9.1.tar.gz
+# 08.91.20.13 Meson_python-0.18.0
+https://files.pythonhosted.org/packages/source/m/meson_python/meson_python-0.18.0.tar.gz
+# 08.91.20.14 Pytz-2025.2
+https://files.pythonhosted.org/packages/source/p/pytz/pytz-2025.2.tar.gz
+# 08.91.20.15 Hatch-Fancy-Pypi-Readme-25.1.0
+https://files.pythonhosted.org/packages/source/h/hatch-fancy-pypi-readme/hatch_fancy_pypi_readme-25.1.0.tar.gz
+# 08.91.20.16 Attrs-25.3.0
+https://files.pythonhosted.org/packages/source/a/attrs/attrs-25.3.0.tar.gz
+# 08.91.20.17 NumPy-2.3.2
+https://files.pythonhosted.org/packages/source/n/numpy/numpy-2.3.2.tar.gz
 
 # 08.91.21 libseccomp-2.6.0
 https://github.com/seccomp/libseccomp/releases/download/v2.6.0/libseccomp-2.6.0.tar.gz
 # 08.91.22 brotli-1.1.0
 https://github.com/google/brotli/archive/v1.1.0/brotli-1.1.0.tar.gz
-# 08.91.23 boost-1.87.0
-https://github.com/boostorg/boost/releases/download/boost-1.87.0/boost-1.87.0-b2-nodocs.tar.xz
+# 08.91.23 boost-1.89.0
+https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz
 
-# 08.91.31 NSPR-4.36
-https://archive.mozilla.org/pub/nspr/releases/v4.36/src/nspr-4.36.tar.gz
-# 08.91.32 NSS-3.108
-https://archive.mozilla.org/pub/security/nss/releases/NSS_3_108_RTM/src/nss-3.108.tar.gz
-https://www.linuxfromscratch.org/patches/blfs/12.3/nss-standalone-1.patch
+# 08.91.31 NSPR-4.37
+https://archive.mozilla.org/pub/nspr/releases/v4.37/src/nspr-4.37.tar.gz
+# 08.91.32 NSS-3.115
+https://archive.mozilla.org/pub/security/nss/releases/NSS_3_115_RTM/src/nss-3.115.tar.gz
+https://www.linuxfromscratch.org/patches/blfs/12.4/nss-standalone-1.patch
 # 08.91.33 libtasn1-4.20.0
 https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz
-# 08.91.34 libgpg-error-1.51
-https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2
+# 08.91.34 libgpg-error-1.55
+https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.55.tar.bz2
 # 08.91.35 libgcrypt-1.11.0
 https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2
 # 08.91.36 docbook-xml-4.5
 https://www.docbook.org/xml/4.5/docbook-xml-4.5.zip
 # 08.91.37 docbook-xsl-nons-1.79.2
 https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-nons-1.79.2.tar.bz2
-https://www.linuxfromscratch.org/patches/blfs/12.3/docbook-xsl-nons-1.79.2-stack_fix-1.patch
+https://www.linuxfromscratch.org/patches/blfs/12.4/docbook-xsl-nons-1.79.2-stack_fix-1.patch
 https://github.com/docbook/xslt10-stylesheets/releases/download/release/1.79.2/docbook-xsl-doc-1.79.2.tar.bz2
-# 08.91.38 libxslt-1.1.43	(errata)
+# 08.91.38 libxslt-1.1.43
 https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.43.tar.xz
 # 08.91.39 p11-kit-0.25.5
 https://github.com/p11-glue/p11-kit/releases/download/0.25.5/p11-kit-0.25.5.tar.xz
-# 08.91.40 make-ca-1.16		(errata)
-https://github.com/lfs-book/make-ca/archive/v1.16/make-ca-1.16.tar.gz
+# 08.91.40 make-ca-1.16.1
+https://github.com/lfs-book/make-ca/archive/v1.16.1/make-ca-1.16.1.tar.gz
 
 # 08.91.50 Perl Modules & Dependencies
 # 08.91.50.01 Capture::Tiny-0.50
@@ -147,12 +141,12 @@ https://cpan.metacpan.org/authors/id/E/ET/ETHER/Test-Warnings-0.038.tar.gz
 https://cpan.metacpan.org/authors/id/H/HA/HAARG/Test-Needs-0.002010.tar.gz
 # 08.91.50.06 MIME::Base32-1.303
 https://cpan.metacpan.org/authors/id/R/RE/REHSACK/MIME-Base32-1.303.tar.gz
-# 08.91.50.07 URI-5.31
-https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.31.tar.gz
+# 08.91.50.07 URI-5.32
+https://www.cpan.org/authors/id/O/OA/OALDERS/URI-5.32.tar.gz
 # 08.91.50.08 Net::SSLeay-1.94
 https://cpan.metacpan.org/authors/id/C/CH/CHRISN/Net-SSLeay-1.94.tar.gz
-# 08.91.50.09 IO::Socket::SSL-2.089
-https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
+# 08.91.50.09 IO::Socket::SSL-2.095
+https://www.cpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.095.tar.gz
 
 # 08.91.50.11 LWP::MediaTypes-6.04
 https://cpan.metacpan.org/authors/id/O/OA/OALDERS/LWP-MediaTypes-6.04.tar.gz
@@ -175,49 +169,41 @@ https://www.cpan.org/authors/id/O/OA/OALDERS/HTTP-Daemon-6.16.tar.gz
 
 # 08.91.61 libunistring-1.3
 https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.xz
-# 08.91.62 libidn2-2.3.7
-https://ftp.gnu.org/gnu/libidn/libidn2-2.3.7.tar.gz
-# 08.91.63 GnuTLS-3.8.9
-# https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.9.tar.xz
-# 08.91.63 GnuTLS-3.8.10	(errata)
+# 08.91.62 libidn2-2.3.8
+https://ftp.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz
+# 08.91.63 GnuTLS-3.8.10
 https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz
 # 08.91.64 libpsl-0.21.5
 https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
-# 08.91.65 c-ares-1.34.4
-# https://github.com/c-ares/c-ares/releases/download/v1.34.4/c-ares-1.34.4.tar.gz
-# 08.91.65 c-ares-1.34.5	(errata)
+# 08.91.65 c-ares-1.34.5
 https://github.com/c-ares/c-ares/releases/download/v1.34.5/c-ares-1.34.5.tar.gz
-# 08.91.66 Jansson-2.14
-https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.bz2
-# 08.91.67 nghttp2-1.64.0
-https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.xz
+# 08.91.66 Jansson-2.14.1
+https://github.com/akheron/jansson/releases/download/v2.14.1/jansson-2.14.1.tar.bz2
+# 08.91.67 nghttp2-1.66.0
+https://github.com/nghttp2/nghttp2/releases/download/v1.66.0/nghttp2-1.66.0.tar.xz
 # 08.91.68 libssh2-1.11.1
 https://www.libssh2.org/download/libssh2-1.11.1.tar.gz
 
-# 08.91.71 pciutils-3.13.0
-https://mj.ucw.cz/download/linux/pci/pciutils-3.13.0.tar.gz
-# 08.91.72 hwdata-0.392
-https://github.com/vcrhonek/hwdata/archive/v0.392/hwdata-0.392.tar.gz
-# 08.91.73 sshpass-1.10
+# 08.91.71 pciutils-3.14.0
+https://mj.ucw.cz/download/linux/pci/pciutils-3.14.0.tar.gz
+# 08.91.72 hwdata-0.398
+https://github.com/vcrhonek/hwdata/archive/v0.398/hwdata-0.398.tar.gz
+
+# 08.91.90 sshpass-1.10
 https://sourceforge.net/projects/sshpass/files/sshpass/1.10/sshpass-1.10.tar.gz
 
-# 08.92.01 Linux-PAM-1.7.0
-# https://github.com/linux-pam/linux-pam/releases/download/v1.7.0/Linux-PAM-1.7.0.tar.xz
-# https://anduin.linuxfromscratch.org/BLFS/Linux-PAM/Linux-PAM-1.7.0-docs.tar.xz
-# 08.92.01 Linux-PAM-1.7.1	(errata)
+# 08.92.01 Linux-PAM-1.7.1
 https://github.com/linux-pam/linux-pam/releases/download/v1.7.1/Linux-PAM-1.7.1.tar.xz
 https://anduin.linuxfromscratch.org/BLFS/Linux-PAM/Linux-PAM-1.7.1-docs.tar.xz
-# 08.92.02 Shadow-4.17.3
+# 08.92.02 Shadow-4.18.0
+#								 main download
+# 08.92.03.Libcap-2.76.with.PAM
 #								 main download
 
-# 08.92.11 Sudo-1.9.16p2
-# https://www.sudo.ws/dist/sudo-1.9.16p2.tar.gz
-# 08.92.11 Sudo-1.9.17p1	(errata)
-https://www.sudo.ws/dist/sudo-1.9.17p1.tar.gz
+# 08.92.11 Sudo-1.9.17p2
+https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz
 # 08.92.12 OpenSSH-9.9p2
 https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p2.tar.gz
-# 08.92.13 libcap-2.73 with PAM
-#								 main download
 
 # 08.93.01 ntp-4.2.8p18
 https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p18.tar.gz
@@ -225,21 +211,12 @@ https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p18.tar.gz
 https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
 # 08.93.03 Lynx-2.9.2
 https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.bz2
-# 08.93.04 cURL-8.12.1
-# https://curl.se/download/curl-8.12.1.tar.xz
-# 08.93.04 cURL-8.14.1	(errata)
-https://curl.se/download/curl-8.14.1.tar.xz
-# 08.93.05 Git-2.48.1
-# https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
-# https://www.kernel.org/pub/software/scm/git/git-manpages-2.48.1.tar.xz
-# https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.48.1.tar.xz
-# 08.93.05 Git-2.50.1	(errata)
+# 08.93.04 cURL-8.15.0
+https://curl.se/download/curl-8.15.0.tar.xz
+# 08.93.05 Git-2.50.1
 https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
 #https://www.kernel.org/pub/software/scm/git/git-manpages-2.50.1.tar.xz
 #https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.50.1.tar.xz
 
 # 09.99 BLFS-Bootscripts-20250225
 https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20250225.tar.xz
-
-# 10.03 Linux-6.13.12 (EOL)
-https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.13.12.tar.xz

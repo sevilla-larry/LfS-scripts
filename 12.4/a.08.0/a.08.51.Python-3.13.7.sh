@@ -45,6 +45,9 @@ echo "   Some tests are known to occasionally hang indefinitely ..."    >> $PKGL
 echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."
 echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."   >> $LFSLOG_PROCESS
 echo "   So to test the results, run the test suite but set a 2-minute time limit for each test case ..."   >> $PKGLOG_ERROR
+echo "   but set a 2-minute time limit for each test case ..."
+echo "   but set a 2-minute time limit for each test case ..."          >> $LFSLOG_PROCESS
+echo "   but set a 2-minute time limit for each test case ..."          >> $PKGLOG_ERROR
 
 echo "4. Make Test ..."
 echo "4. Make Test ..." >> $LFSLOG_PROCESS

@@ -1,5 +1,4 @@
 # a.08.91.38.libxslt-1.1.43.sh
-# errata
 #
 
 export PKG="libxslt-1.1.43"
@@ -30,7 +29,6 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --disable-static                       \
             --docdir=/usr/share/doc/libxslt-1.1.43 \
           > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#            PYTHON=/usr/bin/python3                \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

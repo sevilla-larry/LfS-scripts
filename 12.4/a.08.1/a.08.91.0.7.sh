@@ -22,10 +22,10 @@ echo "."
 
 ###
 
-echo "08.91.62.libidn2-2.3.7"
-echo "08.91.62.libidn2-2.3.7" >> $LFSLOG_PROCESS
+echo "08.91.62.libidn2-2.3.8"
+echo "08.91.62.libidn2-2.3.8" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.62.libidn2-2.3.7.sh ; }
+time { bash a.08.91.62.libidn2-2.3.8.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -78,10 +78,10 @@ echo "."
 
 ###
 
-echo "08.91.66.Jansson-2.14"
-echo "08.91.66.Jansson-2.14" >> $LFSLOG_PROCESS
+echo "08.91.66.Jansson-2.14.1"
+echo "08.91.66.Jansson-2.14.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.66.Jansson-2.14.sh ; }
+time { bash a.08.91.66.Jansson-2.14.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -92,10 +92,10 @@ echo "."
 
 ###
 
-echo "08.91.67.nghttp2-1.64.0"
-echo "08.91.67.nghttp2-1.64.0" >> $LFSLOG_PROCESS
+echo "08.91.67.nghttp2-1.66.0"
+echo "08.91.67.nghttp2-1.66.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.67.nghttp2-1.64.0.sh ; }
+time { bash a.08.91.67.nghttp2-1.66.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

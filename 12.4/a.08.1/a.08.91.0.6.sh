@@ -94,10 +94,10 @@ echo "."
 
 ###
 
-echo "08.91.50.07.URI-5.31"
-echo "08.91.50.07.URI-5.31" >> $LFSLOG_PROCESS
+echo "08.91.50.07.URI-5.32"
+echo "08.91.50.07.URI-5.32" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.50.07.URI-5.31.sh ; }
+time { bash a.08.91.50.07.URI-5.32.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -122,10 +122,10 @@ echo "."
 
 ###
 
-echo "08.91.50.09.IO-Socket-SSL-2.089"
-echo "08.91.50.09.IO-Socket-SSL-2.089" >> $LFSLOG_PROCESS
+echo "08.91.50.09.IO-Socket-SSL-2.095"
+echo "08.91.50.09.IO-Socket-SSL-2.095" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.50.09.IO-Socket-SSL-2.089.sh ; }
+time { bash a.08.91.50.09.IO-Socket-SSL-2.095.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

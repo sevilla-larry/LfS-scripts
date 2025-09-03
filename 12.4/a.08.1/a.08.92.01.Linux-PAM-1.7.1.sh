@@ -1,5 +1,4 @@
 # a.08.92.01.Linux-PAM-1.7.1.sh
-# errata
 #
 
 export PKG="Linux-PAM-1.7.1"
@@ -24,6 +23,12 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
+sed -e "s/'elinks'/'lynx'/"                         \
+    -e "s/'-no-numbering', '-no-references'/        \
+          '-force-html', '-nonumbers', '-stdin'/"   \
+    -i meson.build                                  \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+
 mkdir build
 cd    build
 
@@ -34,7 +39,7 @@ meson setup ..        \
   --prefix=/usr       \
   --buildtype=release \
   -D docdir=/usr/share/doc/Linux-PAM-1.7.1  \
-        > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+  > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "3. Ninja Build ..."
 echo "3. Ninja Build ..." >> $LFSLOG_PROCESS

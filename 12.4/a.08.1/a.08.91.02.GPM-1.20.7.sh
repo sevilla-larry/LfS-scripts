@@ -27,7 +27,9 @@ echo "2. Patching..."
 echo "2. Patching..." >> $LFSLOG_PROCESS
 echo "2. Patching..." >> $PKGLOG_ERROR
 patch -Np1 -i ../gpm-1.20.7-consolidated-1.patch    \
-    > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+patch -Np1 -i ../gpm-1.20.7-gcc15_fixes-1.patch     \
+    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "3. Autogen ..."
 echo "3. Autogen ..." >> $LFSLOG_PROCESS
@@ -72,6 +74,7 @@ install -v -m644    doc/{FAQ,HACK_GPM,README*}          \
                     /usr/share/doc/gpm-1.20.7           \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
+# Configure Mouse
 cat > /etc/sysconfig/mouse << "EOF" 2>> $PKGLOG_ERROR
 # Begin /etc/sysconfig/mouse
 

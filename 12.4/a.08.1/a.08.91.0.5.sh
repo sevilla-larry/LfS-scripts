@@ -10,10 +10,10 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 
 #####
 
-echo "08.91.31.NSPR-4.36"
-echo "08.91.31.NSPR-4.36" >> $LFSLOG_PROCESS
+echo "08.91.31.NSPR-4.37"
+echo "08.91.31.NSPR-4.37" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.31.NSPR-4.36.sh ; }
+time { bash a.08.91.31.NSPR-4.37.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -24,10 +24,10 @@ echo "."
 
 ###
 
-echo "08.91.32.NSS-3.108"
-echo "08.91.32.NSS-3.108" >> $LFSLOG_PROCESS
+echo "08.91.32.NSS-3.115"
+echo "08.91.32.NSS-3.115" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.32.NSS-3.108.sh ; }
+time { bash a.08.91.32.NSS-3.115.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -52,10 +52,10 @@ echo "."
 
 ###
 
-echo "08.91.34.libgpg-error-1.51"
-echo "08.91.34.libgpg-error-1.51" >> $LFSLOG_PROCESS
+echo "08.91.34.libgpg-error-1.55"
+echo "08.91.34.libgpg-error-1.55" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.34.libgpg-error-1.51.sh ; }
+time { bash a.08.91.34.libgpg-error-1.55.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -66,10 +66,10 @@ echo "."
 
 ###
 
-echo "08.91.35.libgcrypt-1.11.0"
-echo "08.91.35.libgcrypt-1.11.0" >> $LFSLOG_PROCESS
+echo "08.91.35.libgcrypt-1.11.2"
+echo "08.91.35.libgcrypt-1.11.2" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.35.libgcrypt-1.11.0.sh ; }
+time { bash a.08.91.35.libgcrypt-1.11.2.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
@@ -136,10 +136,10 @@ echo "."
 
 ###
 
-echo "08.91.40.make-ca-1.16"
-echo "08.91.40.make-ca-1.16" >> $LFSLOG_PROCESS
+echo "08.91.40.make-ca-1.16.1"
+echo "08.91.40.make-ca-1.16.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.40.make-ca-1.16.sh ; }
+time { bash a.08.91.40.make-ca-1.16.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

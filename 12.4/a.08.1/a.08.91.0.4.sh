@@ -38,10 +38,10 @@ echo "."
 
 ###
 
-echo "08.91.23.boost-1.87.0"
-echo "08.91.23.boost-1.87.0" >> $LFSLOG_PROCESS
+echo "08.91.23.boost-1.89.0"
+echo "08.91.23.boost-1.89.0" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.23.boost-1.87.0.sh ; }
+time { bash a.08.91.23.boost-1.89.0.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

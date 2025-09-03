@@ -43,7 +43,7 @@ GIT_UNZIP=nonexist make test -k > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
-make perllibdir=/usr/lib/perl5/5.40/site_perl install   \
+make perllibdir=/usr/lib/perl5/5.42/site_perl install   \
         > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 # documentation NOT installed

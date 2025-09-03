@@ -1,5 +1,5 @@
 # a.08.91.19.Python-3.12.11.sh
-# latest 2025/Jun/13
+# latest 2025/Sep/01
 #
 # ReBuild Python with SQLite
 #
@@ -29,7 +29,7 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-CXX="/usr/bin/g++"                  \
+#CXX="/usr/bin/g++"                  \
 ./configure --prefix=/usr           \
             --enable-shared         \
             --with-system-expat     \
@@ -66,7 +66,7 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 # Documentation already Installed
 
-# Read: https://www.linuxfromscratch.org/blfs/view/12.3/general/python3.html
+# Read: https://www.linuxfromscratch.org/blfs/view/12.2/general/python3.html
 
 
 cd $SOURCES

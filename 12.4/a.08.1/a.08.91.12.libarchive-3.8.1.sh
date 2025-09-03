@@ -1,5 +1,4 @@
 # a.08.91.12.libarchive-3.8.1.sh
-# (errata/svn)
 #
 
 export PKG="libarchive-3.8.1"

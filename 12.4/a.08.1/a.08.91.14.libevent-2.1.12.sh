@@ -26,7 +26,6 @@ cd $PKG
 sed -i 's/python/&3/' event_rpcgen.py   \
         > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR

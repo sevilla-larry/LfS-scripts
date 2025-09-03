@@ -1,5 +1,4 @@
 # a.08.91.08.libxml2-2.14.5.sh
-# (errata)
 #
 
 export PKG="libxml2-2.14.5"

@@ -28,7 +28,7 @@ echo "   Install font data..." >> $LFSLOG_PROCESS
 echo "   Install font data..." >> $PKGLOG_ERROR
 mkdir -pv /usr/share/fonts/unifont          \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-gunzip -c ../unifont-16.0.01.pcf.gz         \
+gunzip -c ../unifont-16.0.04.pcf.gz         \
     > /usr/share/fonts/unifont/unifont.pcf  \
     2>> $PKGLOG_ERROR
 
@@ -47,7 +47,6 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --target=x86_64       \
             --disable-werror      \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

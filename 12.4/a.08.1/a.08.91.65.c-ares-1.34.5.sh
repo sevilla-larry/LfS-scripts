@@ -1,5 +1,4 @@
 # a.08.91.65.c-ares-1.34.5.sh
-# (errata)
 #
 
 export PKG="c-ares-1.34.5"
