@@ -69,11 +69,11 @@ echo "   Make sure that old applications that look for -lcurses at build time ar
 echo "   Make sure that old applications that look for -lcurses at build time are still buildable..." >> $PKGLOG_ERROR
 ln -sfv libncursesw.so /usr/lib/libcurses.so    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "   Install the Ncurses documentation..."
-echo "   Install the Ncurses documentation..." >> $LFSLOG_PROCESS
-echo "   Install the Ncurses documentation..." >> $PKGLOG_ERROR
-cp -v -R doc -T /usr/share/doc/ncurses-6.5-20250809 \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Install the Ncurses documentation..."
+#echo "   Install the Ncurses documentation..." >> $LFSLOG_PROCESS
+#echo "   Install the Ncurses documentation..." >> $PKGLOG_ERROR
+#cp -v -R doc -T /usr/share/doc/ncurses-6.5-20250809 \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

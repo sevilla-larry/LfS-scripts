@@ -40,12 +40,12 @@ echo "3. Make Install ..." >> $PKGLOG_ERROR
 make SBINDIR=/usr/sbin install  \
         > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "   Install the documentation..."
-echo "   Install the documentation..." >> $LFSLOG_PROCESS
-echo "   Install the documentation..." >> $PKGLOG_ERROR
-install -vDm644 COPYING README*           \
-        -t /usr/share/doc/iproute2-6.16.0 \
-	      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Install the documentation..."
+#echo "   Install the documentation..." >> $LFSLOG_PROCESS
+#echo "   Install the documentation..." >> $PKGLOG_ERROR
+#install -vDm644 COPYING README*           \
+#        -t /usr/share/doc/iproute2-6.16.0 \
+#	      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

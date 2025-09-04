@@ -34,10 +34,10 @@ echo "3. Make Install ..." >> $PKGLOG_ERROR
 make install ENABLE_DOCS=0 LIBDIR=/usr/lib  \
       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -vm644 docs/efivar.1 /usr/share/man/man1  \
-     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -vm644 docs/*.3      /usr/share/man/man3  \
-     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -vm644 docs/efivar.1 /usr/share/man/man1  \
+#     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -vm644 docs/*.3      /usr/share/man/man3  \
+#     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

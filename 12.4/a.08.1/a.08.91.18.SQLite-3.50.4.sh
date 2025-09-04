@@ -23,8 +23,8 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-unzip ../sqlite-doc-3500400.zip \
-    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+#unzip ../sqlite-doc-3500400.zip \
+#    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
@@ -48,10 +48,10 @@ echo "4. Make Install ..." >> $LFSLOG_PROCESS
 echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -v -m755 -d /usr/share/doc/sqlite-3.50.4            \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-cp -v -R sqlite-doc-3500400/* /usr/share/doc/sqlite-3.50.4  \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m755 -d /usr/share/doc/sqlite-3.50.4            \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#cp -v -R sqlite-doc-3500400/* /usr/share/doc/sqlite-3.50.4  \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

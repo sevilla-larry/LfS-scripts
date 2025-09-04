@@ -55,12 +55,12 @@ echo "4. Make Install ..." >> $PKGLOG_ERROR
 make install    > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 #make SHLIB_LIBS="-lncursesw" install    \ LfS 12.2
 
-echo "   Install the documentation..."
-echo "   Install the documentation..." >> $LFSLOG_PROCESS
-echo "   Install the documentation..." >> $PKGLOG_ERROR
-install -v -m644 doc/*.{ps,pdf,html,dvi}    \
-    /usr/share/doc/readline-8.3             \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Install the documentation..."
+#echo "   Install the documentation..." >> $LFSLOG_PROCESS
+#echo "   Install the documentation..." >> $PKGLOG_ERROR
+#install -v -m644 doc/*.{ps,pdf,html,dvi}    \
+#    /usr/share/doc/readline-8.3             \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

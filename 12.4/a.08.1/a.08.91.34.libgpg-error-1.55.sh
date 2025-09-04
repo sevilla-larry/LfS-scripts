@@ -44,8 +44,8 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -v -m644 -D README /usr/share/doc/libgpg-error-1.55/README  \
-        > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m644 -D README /usr/share/doc/libgpg-error-1.55/README  \
+#        > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

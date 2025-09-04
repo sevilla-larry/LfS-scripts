@@ -45,11 +45,11 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "6. Make Install API documentation ..."
-echo "6. Make Install API documentation ..." >> $LFSLOG_PROCESS
-echo "6. Make Install API documentation ..." >> $PKGLOG_ERROR
-make -C doc/reference install-data-local    \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#echo "6. Make Install API documentation ..."
+#echo "6. Make Install API documentation ..." >> $LFSLOG_PROCESS
+#echo "6. Make Install API documentation ..." >> $PKGLOG_ERROR
+#make -C doc/reference install-data-local    \
+#    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

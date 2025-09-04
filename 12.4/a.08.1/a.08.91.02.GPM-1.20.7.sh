@@ -65,14 +65,14 @@ ln -sfv libgpm.so.2.1.0 /usr/lib/libgpm.so  \
 install -v -m644 conf/gpm-root.conf /etc    \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-install -v -m755 -d /usr/share/doc/gpm-1.20.7/support   \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install -v -m644    doc/support/*                       \
-                    /usr/share/doc/gpm-1.20.7/support   \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install -v -m644    doc/{FAQ,HACK_GPM,README*}          \
-                    /usr/share/doc/gpm-1.20.7           \
-    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m755 -d /usr/share/doc/gpm-1.20.7/support   \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m644    doc/support/*                       \
+#                    /usr/share/doc/gpm-1.20.7/support   \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m644    doc/{FAQ,HACK_GPM,README*}          \
+#                    /usr/share/doc/gpm-1.20.7           \
+#    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 # Configure Mouse
 cat > /etc/sysconfig/mouse << "EOF" 2>> $PKGLOG_ERROR

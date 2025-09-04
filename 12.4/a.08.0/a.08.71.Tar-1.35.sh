@@ -44,9 +44,9 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-make -C doc install-html                \
-     docdir=/usr/share/doc/tar-1.35     \
-     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#make -C doc install-html                \
+#     docdir=/usr/share/doc/tar-1.35     \
+#     >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

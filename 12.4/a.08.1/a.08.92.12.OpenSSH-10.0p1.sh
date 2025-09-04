@@ -70,11 +70,11 @@ install -v -m755    contrib/ssh-copy-id /usr/bin        \
 install -v -m644    contrib/ssh-copy-id.1               \
                     /usr/share/man/man1                 \
          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install -v -m755 -d /usr/share/doc/openssh-10.0p1       \
-         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install -v -m644    INSTALL LICENCE OVERVIEW README*    \
-                    /usr/share/doc/openssh-10.0p1       \
-         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m755 -d /usr/share/doc/openssh-10.0p1       \
+#         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m644    INSTALL LICENCE OVERVIEW README*    \
+#                    /usr/share/doc/openssh-10.0p1       \
+#         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "."
 echo "."                                                    >> $LFSLOG_PROCESS

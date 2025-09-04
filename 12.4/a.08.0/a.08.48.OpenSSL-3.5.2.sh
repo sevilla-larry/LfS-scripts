@@ -52,17 +52,17 @@ sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile    \
 make MANSUFFIX=ssl install                                  \
      >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "   Add the version to the documentation directory name..."
-echo "   Add the version to the documentation directory name..." >> $LFSLOG_PROCESS
-echo "   Add the version to the documentation directory name..." >> $PKGLOG_ERROR
-mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.5.2   \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-
-echo "   Install some additional documentation..."
-echo "   Install some additional documentation..." >> $LFSLOG_PROCESS
-echo "   Install some additional documentation..." >> $PKGLOG_ERROR
-cp -vfr doc/* /usr/share/doc/openssl-3.5.2                  \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Add the version to the documentation directory name..."
+#echo "   Add the version to the documentation directory name..." >> $LFSLOG_PROCESS
+#echo "   Add the version to the documentation directory name..." >> $PKGLOG_ERROR
+#mv -v /usr/share/doc/openssl /usr/share/doc/openssl-3.5.2   \
+#     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#
+#echo "   Install some additional documentation..."
+#echo "   Install some additional documentation..." >> $LFSLOG_PROCESS
+#echo "   Install some additional documentation..." >> $PKGLOG_ERROR
+#cp -vfr doc/* /usr/share/doc/openssl-3.5.2                  \
+     #>> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

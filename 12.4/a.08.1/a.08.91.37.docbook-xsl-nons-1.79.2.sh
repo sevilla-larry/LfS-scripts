@@ -46,15 +46,15 @@ cp -v -R VERSION assembly common eclipse epub epub3 extensions fo           \
 ln -vs VERSION /usr/share/xml/docbook/xsl-stylesheets-nons-1.79.2/VERSION.xsl   \
         >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-install -v -m644 -D README \
-                    /usr/share/doc/docbook-xsl-nons-1.79.2/README.txt       \
-        >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -m644    RELEASE-NOTES* NEWS* \
-                    /usr/share/doc/docbook-xsl-nons-1.79.2                  \
-        >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -v -m644 -D README \
+#                    /usr/share/doc/docbook-xsl-nons-1.79.2/README.txt       \
+#        >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -v -m644    RELEASE-NOTES* NEWS* \
+#                    /usr/share/doc/docbook-xsl-nons-1.79.2                  \
+#        >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-cp -v -R doc/* /usr/share/doc/docbook-xsl-nons-1.79.2   \
-        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#cp -v -R doc/* /usr/share/doc/docbook-xsl-nons-1.79.2   \
+#        >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 if [ ! -d /etc/xml ]; then
     install -v -m755 -d /etc/xml    \

@@ -68,18 +68,18 @@ install-info -v --dir-file=/usr/share/info/dir    \
      /usr/share/info/libext2fs.info               \
      >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "   Create and install some additional documentation..."
-echo "   Create and install some additional documentation..." >> $LFSLOG_PROCESS
-echo "   Create and install some additional documentation..." >> $PKGLOG_ERROR
-makeinfo -o doc/com_err.info                 \
-     ../lib/et/com_err.texinfo               \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install -v -m644  doc/com_err.info           \
-     /usr/share/info                         \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-install-info --dir-file=/usr/share/info/dir  \
-     /usr/share/info/com_err.info            \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Create and install some additional documentation..."
+#echo "   Create and install some additional documentation..." >> $LFSLOG_PROCESS
+#echo "   Create and install some additional documentation..." >> $PKGLOG_ERROR
+#makeinfo -o doc/com_err.info                 \
+#     ../lib/et/com_err.texinfo               \
+#     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install -v -m644  doc/com_err.info           \
+#     /usr/share/info                         \
+#     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#install-info --dir-file=/usr/share/info/dir  \
+#     /usr/share/info/com_err.info            \
+#     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

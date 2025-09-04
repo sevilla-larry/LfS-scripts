@@ -99,15 +99,15 @@ echo "   Rename a man page that conflicts with a Perl man page..." >> $PKGLOG_ER
 mv -v /usr/share/man/man3/{Thread,Tcl_Thread}.3 \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "8. Extract html tar..."
-echo "8. Extract html tar..." >> $LFSLOG_PROCESS
-echo "8. Extract html tar..." >> $PKGLOG_ERROR
-cd ..
-tar -xvf ../tcl8.6.16-html.tar.gz   \
-    --strip-components=1            \
-    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
-mkdir -vp /usr/share/doc/tcl-8.6.16         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
-cp -vr ./html/* /usr/share/doc/tcl-8.6.16   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "8. Extract html tar..."
+#echo "8. Extract html tar..." >> $LFSLOG_PROCESS
+#echo "8. Extract html tar..." >> $PKGLOG_ERROR
+#cd ..
+#tar -xvf ../tcl8.6.16-html.tar.gz   \
+#    --strip-components=1            \
+#    >> $PKGLOG_TAR 2>> $PKGLOG_ERROR
+#mkdir -vp /usr/share/doc/tcl-8.6.16         >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#cp -vr ./html/* /usr/share/doc/tcl-8.6.16   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

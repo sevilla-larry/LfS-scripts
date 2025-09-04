@@ -35,7 +35,7 @@ echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS 
 echo "3. Make Build ..." >> $PKGLOG_ERROR
 make       > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
-make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
+#make html >> $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
@@ -46,7 +46,7 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install       > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-make install-html >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#make install-html >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

@@ -61,8 +61,8 @@ find docs \( -name Makefile\* -o        \
              -name CMakeLists.txt \) -delete    \
     >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
-cp -v -R docs -T /usr/share/doc/curl-8.15.0     \
-    >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
+#cp -v -R docs -T /usr/share/doc/curl-8.15.0     \
+#    >> $PKGLOG_OTHERS   2>> $PKGLOG_ERROR
 
 
 echo "." >> $PKGLOG_OTHERS1

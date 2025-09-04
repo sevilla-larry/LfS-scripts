@@ -802,7 +802,7 @@ D. [LFS 10.x] Making the LFS System Bootable
         cp -iv System.map /boot/System.map-$LKV-lfs-$LFSV-r00
         cp -iv .config /boot/config-$LKV-lfs-$LFSV-r00
 
-        cp -r Documentation -T /usr/share/doc/linux-$LKV
+      # cp -r Documentation -T /usr/share/doc/linux-$LKV
 
         ###
 

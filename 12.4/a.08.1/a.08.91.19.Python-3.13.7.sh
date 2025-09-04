@@ -62,8 +62,6 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-# Documentation already Installed
-
 # Read: https://www.linuxfromscratch.org/blfs/view/12.4/general/python3.html
 
 

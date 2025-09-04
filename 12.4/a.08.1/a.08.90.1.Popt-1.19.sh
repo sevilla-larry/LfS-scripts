@@ -45,11 +45,11 @@ echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "   Install documentation..."
-echo "   Install documentation..." >> $LFSLOG_PROCESS
-echo "   Install documentation..." >> $PKGLOG_ERROR
-install -v -m755 -d /usr/share/doc/popt-1.19 \
-     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Install documentation..."
+#echo "   Install documentation..." >> $LFSLOG_PROCESS
+#echo "   Install documentation..." >> $PKGLOG_ERROR
+#install -v -m755 -d /usr/share/doc/popt-1.19 \
+#     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 #install -m644 doxygen/html/* /usr/share/doc/popt-1.19
 #doxygen NOT installed
 

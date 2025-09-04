@@ -45,10 +45,10 @@ echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -d -m755           /usr/share/doc/sed-4.9    \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -m644 doc/sed.html /usr/share/doc/sed-4.9    \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -v -d -m755           /usr/share/doc/sed-4.9    \
+#    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -v -m644 doc/sed.html /usr/share/doc/sed-4.9    \
+#    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

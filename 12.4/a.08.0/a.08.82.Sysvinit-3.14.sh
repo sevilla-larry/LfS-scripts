@@ -23,20 +23,20 @@ tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "2. Patching..."
-echo "2. Patching..." >> $LFSLOG_PROCESS
-echo "2. Patching..." >> $PKGLOG_ERROR
+echo "   Patching..."
+echo "   Patching..." >> $LFSLOG_PROCESS
+echo "   Patching..." >> $PKGLOG_ERROR
 patch -Np1 -i ../sysvinit-3.14-consolidated-1.patch \
      > $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "3. Make Build ..."
-echo "3. Make Build ..." >> $LFSLOG_PROCESS
-echo "3. Make Build ..." >> $PKGLOG_ERROR
+echo "2. Make Build ..."
+echo "2. Make Build ..." >> $LFSLOG_PROCESS
+echo "2. Make Build ..." >> $PKGLOG_ERROR
 make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Make Install ..."
-echo "4. Make Install ..." >> $LFSLOG_PROCESS
-echo "4. Make Install ..." >> $PKGLOG_ERROR
+echo "3. Make Install ..."
+echo "3. Make Install ..." >> $LFSLOG_PROCESS
+echo "3. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 

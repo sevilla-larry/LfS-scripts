@@ -44,11 +44,11 @@ echo "4. Make Build & Install..."
 echo "4. Make Build & Install..." >> $LFSLOG_PROCESS
 echo "4. Make Build & Install..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -dm755  /usr/share/doc/dejagnu-1.6.3 \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
-install -v -m644   doc/dejagnu.{html,txt}       \
-    /usr/share/doc/dejagnu-1.6.3                \
-    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -v -dm755  /usr/share/doc/dejagnu-1.6.3 \
+#    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+#install -v -m644   doc/dejagnu.{html,txt}       \
+#    /usr/share/doc/dejagnu-1.6.3                \
+#    >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

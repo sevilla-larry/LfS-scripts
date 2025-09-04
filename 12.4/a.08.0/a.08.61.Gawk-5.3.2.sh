@@ -61,12 +61,12 @@ echo "   Create man page as a symlink..." >> $PKGLOG_ERROR
 ln -sv gawk.1 /usr/share/man/man1/awk.1 \
           >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo "   Install the documentation..."
-echo "   Install the documentation..." >> $LFSLOG_PROCESS
-echo "   Install the documentation..." >> $PKGLOG_ERROR
-install   -vDm644 doc/{awkforai.txt,*.{eps,pdf,jpg}}   \
-          -t /usr/share/doc/gawk-5.3.2                 \
-          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+#echo "   Install the documentation..."
+#echo "   Install the documentation..." >> $LFSLOG_PROCESS
+#echo "   Install the documentation..." >> $PKGLOG_ERROR
+#install   -vDm644 doc/{awkforai.txt,*.{eps,pdf,jpg}}   \
+#          -t /usr/share/doc/gawk-5.3.2                 \
+#          >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES
