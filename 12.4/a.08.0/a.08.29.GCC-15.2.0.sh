@@ -125,13 +125,13 @@ echo "   Add a compatibility symlink to enable building programs with Link Time 
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/15.2.0/liblto_plugin.so  \
         /usr/lib/bfd-plugins/   >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
-echo 'int main(){}' > dummy.c
-cc dummy.c -x c - -v -Wl,--verbose &> dummy.log
+echo 'int main(){}' | cc -x c - -v -Wl,--verbose &> dummy.log
 
-echo "dummy.c"  >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-cat dummy.log   >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo "dummy.c"      >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo 'int main(){}' >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+cat   dummy.log     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
-readelf -l a.out | grep ': /lib'    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
+readelf -l a.out | grep ': /lib'    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 ### output should be:
 # [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]
 

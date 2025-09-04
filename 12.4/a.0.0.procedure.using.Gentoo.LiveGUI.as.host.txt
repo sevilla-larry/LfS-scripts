@@ -130,8 +130,9 @@ A. Preparation
 
         ###
 
-        chown -v root:root $LFS
-        chmod -v 755 $LFS
+        ## both retained
+        # chown -v root:root $LFS
+        # chmod -v 755 $LFS
 
         ###
 

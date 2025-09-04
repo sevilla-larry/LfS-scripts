@@ -39,7 +39,7 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
-make check >> PKGLOG_CHECK	2>> PKGLOG_ERROR
+make check > $PKGLOG_CHECK	2>> $PKGLOG_ERROR
 # One test named test/cp.test is known to fail because Coreutils is not built with the Acl support yet
 
 echo "5. Make Install ..."
