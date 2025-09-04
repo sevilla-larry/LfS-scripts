@@ -22,7 +22,7 @@ A. Preparation
 
   A.02. [LFS 2.2] Host System Requirements
 
-      # (based on https://www.linuxfromscratch.org/lfs/view/12.3/chapter02/hostreqs.html )
+      # (based on https://www.linuxfromscratch.org/lfs/view/12.4/chapter02/hostreqs.html )
       # check the corresponding versions
 
       bash a.2.2.version-check.sh
@@ -423,7 +423,8 @@ B.  Generate LFS
         #
         ###
 
-        export CXXFLAGS=$CFLAGS" -std=c++20"
+      # export CXXFLAGS=$CFLAGS" -std=c++11"
+        export CXXFLAGS=$CFLAGS
       # export LDFLAGS="-Wl,--as-needed -Wl,--gc-sections -Wl,-O1 -Wl,--strip-all"
         export LDFLAGS="-Wl,--as-needed -Wl,-O1 -Wl,--strip-all"
 
@@ -462,7 +463,7 @@ B.  Generate LFS
 
         bash a.08.00.Part2.29-36.sh
 
-        # Note: read https://www.linuxfromscratch.org/lfs/view/12.3/chapter08/gcc.html specially the 29/*.log files
+        # Note: read https://www.linuxfromscratch.org/lfs/view/12.4/chapter08/gcc.html specially the 29/*.log files
 
         ###
 
@@ -487,7 +488,7 @@ B.  Generate LFS
         ###
         #
         # including [LFS 8.64] Chapter 8 Part 4 GRUB
-        # ( based on: https://www.linuxfromscratch.org/blfs/view/12.3/postlfs/grub-efi.html )
+        # ( based on: https://www.linuxfromscratch.org/blfs/view/12.4/postlfs/grub-efi.html )
         #
         # Misc Support Applications
         #
