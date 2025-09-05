@@ -210,7 +210,7 @@ echo "." >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 echo "   Once everything is working correctly, clean up the test files..."
 echo "   Once everything is working correctly, clean up the test files..." >> $LFSLOG_PROCESS
 echo "   Once everything is working correctly, clean up the test files..." >> $PKGLOG_ERROR
-rm -v dummy.c a.out dummy.log   \
+rm -v a.out dummy.log   \
     >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 echo "   Finally, move a misplaced file..."

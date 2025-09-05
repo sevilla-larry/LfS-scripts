@@ -618,7 +618,7 @@ echo "."
 echo "08.79.Util-linux-2.41.1"
 echo "08.79.Util-linux-2.41.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.79.Util-linux-2.40.4.sh ; }
+time { bash a.08.79.Util-linux-2.41.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
