@@ -107,9 +107,11 @@ A. Preparation
   A.06. [LFS 2.6] Setting the $LFS variable
 
         ###
+
         export LFS=/mnt/lfs
 
         umask 022
+        
         ###
 
   A.07. [LFS 2.7] Mounting the New Partition
