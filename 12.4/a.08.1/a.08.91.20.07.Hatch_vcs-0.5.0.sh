@@ -1,8 +1,8 @@
-# a.08.91.20.03.Pluggy-1.6.0.sh
+# a.08.91.20.07.Hatch_vcs-0.5.0.sh
 #
 
-export PKG="pluggy-1.6.0"
-export PKGLOG_DIR=$LFSLOG/08.91.20.03
+export PKG="hatch_vcs-0.5.0"
+export PKGLOG_DIR=$LFSLOG/08.91.20.07
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -38,7 +38,7 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                pluggy                  \
+                hatch_vcs               \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 

@@ -1,8 +1,8 @@
-# a.08.91.20.05.Pathspec-0.12.1.sh
+# a.08.91.20.02.Pluggy-1.6.0.sh
 #
 
-export PKG="pathspec-0.12.1"
-export PKGLOG_DIR=$LFSLOG/08.91.20.05
+export PKG="pluggy-1.6.0"
+export PKGLOG_DIR=$LFSLOG/08.91.20.02
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -38,7 +38,7 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                pathspec                \
+                pluggy                  \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 

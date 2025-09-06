@@ -1,8 +1,8 @@
-# a.08.91.20.02.Setuptools_scm-8.3.1.sh
+# a.08.91.20.01.Setuptools_scm-8.3.1.sh
 #
 
 export PKG="setuptools_scm-8.3.1"
-export PKGLOG_DIR=$LFSLOG/08.91.20.02
+export PKGLOG_DIR=$LFSLOG/08.91.20.01
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log

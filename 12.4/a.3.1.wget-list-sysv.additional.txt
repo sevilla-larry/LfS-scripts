@@ -64,22 +64,24 @@ https://sqlite.org/2025/sqlite-autoconf-3500400.tar.gz
 https://sqlite.org/2025/sqlite-doc-3500400.zip
 
 # 08.91.20 Python Modules & Dependencies
-# 08.91.20.02 Setuptools_scm-8.3.1
+# 08.91.20.01 Setuptools_scm-8.3.1
 https://files.pythonhosted.org/packages/source/s/setuptools_scm/setuptools_scm-8.3.1.tar.gz
-# 08.91.20.03 Pluggy-1.6.0
+# 08.91.20.02 Pluggy-1.6.0
 https://files.pythonhosted.org/packages/source/p/pluggy/pluggy-1.6.0.tar.gz
-# 08.91.20.04 Editables-0.5
+# 08.91.20.03 Editables-0.5
 https://files.pythonhosted.org/packages/source/e/editables/editables-0.5.tar.gz
-# 08.91.20.05 Pathspec-0.12.1
+# 08.91.20.04 Pathspec-0.12.1
 https://files.pythonhosted.org/packages/source/p/pathspec/pathspec-0.12.1.tar.gz
-# 08.91.20.06 Trove-Classifiers-2025.8.6.13
+# 08.91.20.05 Trove-Classifiers-2025.8.6.13
 https://files.pythonhosted.org/packages/source/t/trove_classifiers/trove_classifiers-2025.8.6.13.tar.gz
-# 08.91.20.07 Hatchling-1.27.0
+# 08.91.20.06 Hatchling-1.27.0
 https://files.pythonhosted.org/packages/source/h/hatchling/hatchling-1.27.0.tar.gz
-# 08.91.20.08 Hatch_vcs-0.5.0
+# 08.91.20.07 Hatch_vcs-0.5.0
 https://files.pythonhosted.org/packages/source/h/hatch-vcs/hatch_vcs-0.5.0.tar.gz
-# 08.91.20.09 Iniconfig-2.1.0
+# 08.91.20.08 Iniconfig-2.1.0
 https://files.pythonhosted.org/packages/source/i/iniconfig/iniconfig-2.1.0.tar.gz
+# 08.91.20.09 Pygments-2.19.2
+https://files.pythonhosted.org/packages/source/P/Pygments/pygments-2.19.2.tar.gz
 # 08.91.20.10 Pytest-8.4.1
 https://files.pythonhosted.org/packages/source/p/pytest/pytest-8.4.1.tar.gz
 # 08.91.20.11 Cython-3.1.3

@@ -64,22 +64,24 @@ d74bbdca4ab1b2bd46d3b3f8dbb0f3db sqlite-autoconf-3500400.tar.gz
 faa12e794bcc37ba275fd6268317eb87 sqlite-doc-3500400.zip
 
 # 08.91.20 Python Modules & Dependencies
-# 08.91.20.02 Setuptools_scm-8.3.1
+# 08.91.20.01 Setuptools_scm-8.3.1
 35e09656d091a94b27f9c50b383b32c5 setuptools_scm-8.3.1.tar.gz
-# 08.91.20.03 Pluggy-1.6.0
+# 08.91.20.02 Pluggy-1.6.0
 54391218af778acb006c2d915085d469 pluggy-1.6.0.tar.gz
-# 08.91.20.04 Editables-0.5
+# 08.91.20.03 Editables-0.5
 520de8c3a9dc5dfb2b365d104541c9de editables-0.5.tar.gz
-# 08.91.20.05 Pathspec-0.12.1
+# 08.91.20.04 Pathspec-0.12.1
 2b26ad1981bfa23748e115f00085624c pathspec-0.12.1.tar.gz
-# 08.91.20.06 Trove-Classifiers-2025.8.6.13
+# 08.91.20.05 Trove-Classifiers-2025.8.6.13
 939166b6e238cdafdbe63becd398e906 trove_classifiers-2025.8.6.13.tar.gz
-# 08.91.20.07 Hatchling-1.27.0
+# 08.91.20.06 Hatchling-1.27.0
 6ffb3087c9b6a9ffbfc1bb394f7ed1a8 hatchling-1.27.0.tar.gz
-# 08.91.20.08 Hatch_vcs-0.5.0
+# 08.91.20.07 Hatch_vcs-0.5.0
 9a22a9f7203783e526959d34510a9672 hatch_vcs-0.5.0.tar.gz
-# 08.91.20.09 Iniconfig-2.1.0
+# 08.91.20.08 Iniconfig-2.1.0
 437ede5b20b0ab2e76ca08f02b5c49dd iniconfig-2.1.0.tar.gz
+# 08.91.20.09 Pygments-2.19.2
+79260d1c566a507953a81d24b1c51c72 pygments-2.19.2.tar.gz
 # 08.91.20.10 Pytest-8.4.1
 ac7dfc1b6d681ee9ff65f94d65a6a5a1 pytest-8.4.1.tar.gz
 # 08.91.20.11 Cython-3.1.3
