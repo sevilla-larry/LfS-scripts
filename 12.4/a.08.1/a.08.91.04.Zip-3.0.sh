@@ -22,17 +22,17 @@ tar xvf $PKG.tar.gz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
-echo "3. Make Build ..."
-echo "3. Make Build ..." >> $LFSLOG_PROCESS
-echo "3. Make Build ..." >> $PKGLOG_ERROR
+echo "2. Make Build ..."
+echo "2. Make Build ..." >> $LFSLOG_PROCESS
+echo "2. Make Build ..." >> $PKGLOG_ERROR
 make    -f unix/Makefile    \
         generic             \
         CC="gcc -std=gnu89" \
         > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Make Install ..."
-echo "4. Make Install ..." >> $LFSLOG_PROCESS
-echo "4. Make Install ..." >> $PKGLOG_ERROR
+echo "3. Make Install ..."
+echo "3. Make Install ..." >> $LFSLOG_PROCESS
+echo "3. Make Install ..." >> $PKGLOG_ERROR
 make    prefix=/usr                 \
         MANDIR=/usr/share/man/man1  \
         -f unix/Makefile            \
