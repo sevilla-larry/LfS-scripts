@@ -204,8 +204,8 @@ https://anduin.linuxfromscratch.org/BLFS/Linux-PAM/Linux-PAM-1.7.1-docs.tar.xz
 
 # 08.92.11 Sudo-1.9.17p2
 https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz
-# 08.92.12 OpenSSH-9.9p2
-https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.9p2.tar.gz
+# 08.92.12 OpenSSH-10.0p1
+https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p1.tar.gz
 
 # 08.93.01 ntp-4.2.8p18
 https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p18.tar.gz
