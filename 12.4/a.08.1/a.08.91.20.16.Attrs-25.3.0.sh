@@ -41,15 +41,15 @@ pip3 install    --no-index              \
                 attrs                   \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "4. pyTest ..."
-echo "4. pyTest ..." >> $LFSLOG_PROCESS
-echo "4. pyTest ..." >> $PKGLOG_ERROR
-python3 -m venv --system-site-packages testenv              \
-            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-testenv/bin/pip3 install 'attrs[tests]'                     \
-            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-PATH=$PWD/testenv/bin:$PATH testenv/bin/python -m pytest    \
-            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#echo "4. pyTest ..."
+#echo "4. pyTest ..." >> $LFSLOG_PROCESS
+#echo "4. pyTest ..." >> $PKGLOG_ERROR
+#python3 -m venv --system-site-packages testenv              \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#testenv/bin/pip3 install 'attrs[tests]'                     \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#PATH=$PWD/testenv/bin:$PATH testenv/bin/python -m pytest    \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

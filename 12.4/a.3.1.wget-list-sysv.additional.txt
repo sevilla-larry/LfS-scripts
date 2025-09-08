@@ -115,8 +115,8 @@ https://www.linuxfromscratch.org/patches/blfs/12.4/nss-standalone-1.patch
 https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz
 # 08.91.34 libgpg-error-1.55
 https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.55.tar.bz2
-# 08.91.35 libgcrypt-1.11.0
-https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2
+# 08.91.35 libgcrypt-1.11.2
+https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.2.tar.bz2
 # 08.91.36 docbook-xml-4.5
 https://www.docbook.org/xml/4.5/docbook-xml-4.5.zip
 # 08.91.37 docbook-xsl-nons-1.79.2

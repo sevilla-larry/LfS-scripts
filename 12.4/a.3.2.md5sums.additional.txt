@@ -115,8 +115,8 @@ be993c415dd4590c8e8fc2da7b0594bf nspr-4.37.tar.gz
 930f71d788cf37505a0327c1b84741be libtasn1-4.20.0.tar.gz
 # 08.91.34 libgpg-error-1.55
 0430e56fd67d0751b83fc18b0f56a084 libgpg-error-1.55.tar.bz2
-# 08.91.35 libgcrypt-1.11.0
-321c4975cfd6a496f0530b65a673f9a4 libgcrypt-1.11.0.tar.bz2
+# 08.91.35 libgcrypt-1.11.2
+84ce2ad07794b987fe6341b63cf5f537 libgcrypt-1.11.2.tar.bz2
 # 08.91.36 docbook-xml-4.5
 03083e288e87a7e829e437358da7ef9e docbook-xml-4.5.zip
 # 08.91.37 docbook-xsl-nons-1.79.2
