@@ -767,6 +767,7 @@ D. [LFS 10.x] Making the LFS System Bootable
         https://www.linuxfromscratch.org/blfs/view/12.4/x/xorg-server.html
         https://www.linuxfromscratch.org/blfs/view/12.4/x/x7driver.html#libevdev
         https://www.linuxfromscratch.org/blfs/view/12.4/general/elogind.html
+        https://www.linuxfromscratch.org/blfs/view/12.4/general/keyutils.html
         
         ( additional )
 
