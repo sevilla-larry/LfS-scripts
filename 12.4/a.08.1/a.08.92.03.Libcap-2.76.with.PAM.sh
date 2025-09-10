@@ -29,9 +29,9 @@ echo "2. Make Build ..." >> $PKGLOG_ERROR
 make -C pam_cap \
     > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
-echo "4. Make Install ..."
-echo "4. Make Install ..." >> $LFSLOG_PROCESS
-echo "4. Make Install ..." >> $PKGLOG_ERROR
+echo "3. Make Install ..."
+echo "3. Make Install ..." >> $LFSLOG_PROCESS
+echo "3. Make Install ..." >> $PKGLOG_ERROR
 install -v -m755 pam_cap/pam_cap.so /usr/lib/security   \
      > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 install -v -m644 pam_cap/capability.conf /etc/security  \
