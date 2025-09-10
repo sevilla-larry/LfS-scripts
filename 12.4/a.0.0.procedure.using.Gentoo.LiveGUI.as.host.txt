@@ -511,7 +511,7 @@ C. Finishing Up
 
         cd /sources
 
-        bash a.09.02.LFS-Bootscripts-20240825.sh
+        bash a.09.02.LFS-Bootscripts-20250827.sh
 
         ###
 
@@ -731,7 +731,7 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         ###
 
-        mkdir /mnt/cdrom
+        mkdir -v /mnt/cdrom
 
         ###
 
@@ -919,7 +919,7 @@ E. The End
 
         ### as root
 
-        cd /sources
+      # cd /sources
 
         bash a.13.01.root.sh
 
