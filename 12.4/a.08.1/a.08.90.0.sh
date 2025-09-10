@@ -52,6 +52,11 @@ echo "."
 
 ###
 
+export ZCCF=$CFLAGS
+export ZLDF=$LDFLAGS
+
+unset {C,CPP,CXX,LD}FLAGS
+
 echo "08.90.4.GRUB-2.12.for.EFI.x64"
 echo "08.90.4.GRUB-2.12.for.EFI.x64" >> $LFSLOG_PROCESS
 
@@ -63,6 +68,13 @@ date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
 echo "." >> $LFSLOG_PROCESS
 echo "."
 echo "."
+
+export CFLAGS=$ZCCF
+export CXXFLAGS=$ZCCF
+export CPPFLAGS=$ZCCF
+export LDFLAGS=$ZLDF
+
+unset ZCCF ZLDF
 
 #####
 
