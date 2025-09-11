@@ -32,8 +32,8 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                       \
             --enable-cxx                        \
             --disable-static                    \
-            --docdir=/usr/share/doc/gmp-6.3.0   \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/gmp-6.3.0   \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

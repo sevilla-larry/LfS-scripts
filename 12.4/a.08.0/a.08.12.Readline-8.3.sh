@@ -37,11 +37,11 @@ sed -i 's/-Wl,-rpath,[^ ]*//'   support/shobj-conf      >> $PKGLOG_OTHERS 2>> $P
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                           \
-            --disable-static                        \
-            --with-curses                           \
-            --docdir=/usr/share/doc/readline-8.3    \
+./configure --prefix=/usr       \
+            --disable-static    \
+            --with-curses       \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/readline-8.3    \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

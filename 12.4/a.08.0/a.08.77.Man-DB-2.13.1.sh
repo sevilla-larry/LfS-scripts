@@ -26,7 +26,6 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                         \
-            --docdir=/usr/share/doc/man-db-2.13.1 \
             --sysconfdir=/etc                     \
             --disable-setuid                      \
             --enable-cache-owner=bin              \
@@ -36,6 +35,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --with-systemdtmpfilesdir=            \
             --with-systemdsystemunitdir=          \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/man-db-2.13.1 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

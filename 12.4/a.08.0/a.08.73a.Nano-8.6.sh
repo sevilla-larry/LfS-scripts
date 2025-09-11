@@ -28,8 +28,8 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                     \
             --sysconfdir=/etc                 \
             --enable-utf8                     \
-            --docdir=/usr/share/doc/nano-8.6  \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/nano-8.6  \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

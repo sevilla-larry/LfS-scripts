@@ -26,11 +26,11 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                           \
-            --docdir=/usr/share/doc/procps-ng-4.0.5 \
             --disable-static                        \
             --disable-kill                          \
             --enable-watch8bit                      \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/procps-ng-4.0.5 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

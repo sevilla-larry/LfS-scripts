@@ -38,9 +38,9 @@ sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in    >> $PKGLOG_OTHERS 2>> $P
 echo "3. Configure ..."
 echo "3. Configure ..." >> $LFSLOG_PROCESS
 echo "3. Configure ..." >> $PKGLOG_ERROR
-./configure    --prefix=/usr       \
-               --disable-vlock     \
-     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+./configure --prefix=/usr       \
+            --disable-vlock     \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS

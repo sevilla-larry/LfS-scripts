@@ -29,18 +29,18 @@ cd    build
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-../configure --prefix=/usr          \
-             --sysconfdir=/etc      \
-             --enable-ld=default    \
-             --enable-plugins       \
-             --enable-shared        \
-             --disable-werror       \
-             --enable-64-bit-bfd    \
-             --enable-new-dtags     \
-             --with-system-zlib     \
-             --enable-default-hash-style=gnu    \
-    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#             --enable-gold          \ LfS 12.2
+../configure    --prefix=/usr       \
+                --sysconfdir=/etc   \
+                --enable-ld=default \
+                --enable-plugins    \
+                --enable-shared     \
+                --disable-werror    \
+                --enable-64-bit-bfd \
+                --enable-new-dtags  \
+                --with-system-zlib  \
+                --enable-default-hash-style=gnu \
+                > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#                --enable-gold          \ LfS 12.2
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

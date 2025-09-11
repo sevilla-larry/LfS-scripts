@@ -29,9 +29,9 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                       \
             --without-bash-malloc               \
             --with-installed-readline           \
-            --docdir=/usr/share/doc/bash-5.3    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #            bash_cv_strtold_broken=no           \ LfS 12.2
+#            --docdir=/usr/share/doc/bash-5.3    \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
