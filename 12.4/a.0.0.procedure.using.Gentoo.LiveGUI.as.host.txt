@@ -423,7 +423,7 @@ B.  Generate LFS
         #
         ###
 
-        export CPPFLAGS=$CFLAGS
+      # export CPPFLAGS=$CFLAGS
       # export CXXFLAGS=$CFLAGS" -std=c++11"
         export CXXFLAGS=$CFLAGS
       # export LDFLAGS="-Wl,--as-needed -Wl,--gc-sections -Wl,-O1 -Wl,--strip-all"
