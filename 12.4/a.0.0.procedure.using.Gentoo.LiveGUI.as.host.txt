@@ -433,7 +433,7 @@ B.  Generate LFS
 
         echo $CFLAGS
         echo $CXXFLAGS
-        echo $CPPFLAGS
+      # echo $CPPFLAGS
         echo $LDFLAGS
 
         ###
