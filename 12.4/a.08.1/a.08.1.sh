@@ -15,3 +15,4 @@ bash a.08.91.0.8.sh
 bash a.08.92.0.sh
 bash a.08.93.0.sh
 bash a.08.94.0.sh
+bash a.08.95.0.sh

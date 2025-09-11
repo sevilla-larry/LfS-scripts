@@ -223,5 +223,11 @@ https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
 #https://www.kernel.org/pub/software/scm/git/git-manpages-2.50.1.tar.xz
 #https://www.kernel.org/pub/software/scm/git/git-htmldocs-2.50.1.tar.xz
 
+# 08.95.1 libnl-3.11.0
+https://github.com/thom311/libnl/releases/download/libnl3_11_0/libnl-3.11.0.tar.gz
+https://github.com/thom311/libnl/releases/download/libnl3_11_0/libnl-doc-3.11.0.tar.gz
+# 08.95.2 btop-1.4.4
+--content-disposition https://github.com/aristocratos/btop/archive/refs/tags/v1.4.4.tar.gz
+
 # 09.99 BLFS-Bootscripts-20250225
 https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20250225.tar.xz
