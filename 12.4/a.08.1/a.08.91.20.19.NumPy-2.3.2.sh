@@ -1,8 +1,8 @@
-# a.08.91.20.14.Pytz-2025.2.sh
+# a.08.91.20.19.NumPy-2.3.2.sh
 #
 
-export PKG="pytz-2025.2"
-export PKGLOG_DIR=$LFSLOG/08.91.20.14
+export PKG="numpy-2.3.2"
+export PKGLOG_DIR=$LFSLOG/08.91.20.19
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -28,6 +28,7 @@ pip3 wheel  -w dist                 \
             --no-build-isolation    \
             --no-deps               \
             --no-cache-dir          \
+            -C setup-args=-Dallow-noblas=true   \
             $PWD                    \
             > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
@@ -38,13 +39,24 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                pytz                    \
+                numpy                   \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "4. pyTest ..."
-echo "4. pyTest ..." >> $LFSLOG_PROCESS
-echo "4. pyTest ..." >> $PKGLOG_ERROR
-pytest >  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#echo "4. pyTest ..."
+#echo "4. pyTest ..." >> $LFSLOG_PROCESS
+#echo "4. pyTest ..." >> $PKGLOG_ERROR
+#mkdir -p test
+#cd       test
+#python3 -m venv --system-site-packages testenv  \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#source testenv/bin/activate                     \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#pip3 install hypothesis                         \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#python3 -c "import numpy, sys; sys.exit(numpy.test() is False)" \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#deactivate                                      \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

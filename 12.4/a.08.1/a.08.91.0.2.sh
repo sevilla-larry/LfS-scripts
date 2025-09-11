@@ -123,24 +123,10 @@ echo "."
 
 ###
 
-echo "a.08.91.20.09.Pygments-2.19.2"
-echo "a.08.91.20.09.Pygments-2.19.2" >> $LFSLOG_PROCESS
+echo "08.91.20.09.Pytest-8.4.1"
+echo "08.91.20.09.Pytest-8.4.1" >> $LFSLOG_PROCESS
 
-time { bash a.08.91.20.09.Pygments-2.19.2.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
-
-###
-
-echo "08.91.20.10.Pytest-8.4.1"
-echo "08.91.20.10.Pytest-8.4.1" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.20.10.Pytest-8.4.1.sh ; }
+time { bash a.08.91.20.09.Pytest-8.4.1.sh ; }
 
 date +"%Y/%b/%d %H:%M"
 date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS

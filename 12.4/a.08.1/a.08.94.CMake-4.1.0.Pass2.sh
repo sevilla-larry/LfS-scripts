@@ -45,10 +45,10 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --no-system-jsoncpp     \
             --no-system-cppdap      \
             --no-system-librhash    \
-            --docdir=/share/doc/cmake-4.1.0 \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
 #curl 8.14.1 not compatible with CMake-3.31.5 internal code in cmCurl.cxx
 #            --no-system-curl        \
+#            --docdir=/share/doc/cmake-4.1.0 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

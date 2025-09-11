@@ -30,9 +30,9 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --libexecdir=/usr/lib   \
             --with-secure-path      \
             --with-env-editor       \
-            --docdir=/usr/share/doc/sudo-1.9.17p2           \
             --with-passprompt="[sudo] password for %p: "    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/sudo-1.9.17p2           \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

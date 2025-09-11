@@ -43,8 +43,8 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --no-system-libarchive  \
             --no-system-libuv       \
             --no-system-nghttp2     \
-            --docdir=/share/doc/cmake-4.1.0 \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/share/doc/cmake-4.1.0 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

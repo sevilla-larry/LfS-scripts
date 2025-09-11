@@ -1,7 +1,7 @@
-# a.08.91.20.15.Hatch-Fancy-Pypi-Readme-25.1.0.sh
+# a.08.91.20.15.Meson_python-0.18.0.sh
 #
 
-export PKG="hatch_fancy_pypi_readme-25.1.0"
+export PKG="meson_python-0.18.0"
 export PKGLOG_DIR=$LFSLOG/08.91.20.15
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -25,9 +25,9 @@ echo "2. pip3 Build ..."
 echo "2. pip3 Build ..." >> $LFSLOG_PROCESS
 echo "2. pip3 Build ..." >> $PKGLOG_ERROR
 pip3 wheel  -w dist                 \
+            --no-cache-dir          \
             --no-build-isolation    \
             --no-deps               \
-            --no-cache-dir          \
             $PWD                    \
             > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
@@ -38,13 +38,19 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                hatch-fancy-pypi-readme \
+                meson_python            \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "4. pyTest ..."
-echo "4. pyTest ..." >> $LFSLOG_PROCESS
-echo "4. pyTest ..." >> $PKGLOG_ERROR
-pytest >  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+# NO test
+#
+# git NOT yet installed
+#
+# echo "4. pyTest ..."
+# echo "4. pyTest ..." >> $LFSLOG_PROCESS
+# echo "4. pyTest ..." >> $PKGLOG_ERROR
+# python3 -m venv --system-site-packages testenv &&
+# testenv/bin/pip3 install 'meson_python[test]'  &&
+# HOME= testenv/bin/python -m pytest
 
 
 cd $SOURCES

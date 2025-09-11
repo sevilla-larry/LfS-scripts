@@ -26,7 +26,6 @@ echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                       \
-            --docdir=/usr/share/doc/pcre2-10.45 \
             --enable-unicode                    \
             --enable-jit                        \
             --enable-pcre2-16                   \
@@ -35,7 +34,8 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --enable-pcre2grep-libbz2           \
             --enable-pcre2test-libreadline      \
             --disable-static                    \
-          > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/pcre2-10.45 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

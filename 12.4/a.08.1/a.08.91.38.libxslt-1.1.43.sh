@@ -25,10 +25,11 @@ cd $PKG
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                          \
-            --disable-static                       \
-            --docdir=/usr/share/doc/libxslt-1.1.43 \
-          > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+./configure --prefix=/usr       \
+            --disable-static    \
+            --without-python    \
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/libxslt-1.1.43 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

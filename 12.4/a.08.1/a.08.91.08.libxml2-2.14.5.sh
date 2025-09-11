@@ -31,9 +31,10 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
             --disable-static        \
             --with-history          \
             --with-icu              \
+            --disable-gtk-doc       \
             PYTHON=/usr/bin/python3 \
-            --docdir=/usr/share/doc/libxml2-2.14.5 \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/libxml2-2.14.5 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

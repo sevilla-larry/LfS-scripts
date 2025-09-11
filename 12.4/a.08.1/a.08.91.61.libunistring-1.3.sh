@@ -27,8 +27,8 @@ echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr       \
             --disable-static    \
-            --docdir=/usr/share/doc/libunistring-1.3    \
-        > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+            > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/libunistring-1.3    \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS

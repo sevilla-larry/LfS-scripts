@@ -35,11 +35,12 @@ cd    build
 echo "2. Meson Setup ..."
 echo "2. Meson Setup ..." >> $LFSLOG_PROCESS
 echo "2. Meson Setup ..." >> $PKGLOG_ERROR
-meson setup ..        \
-  --prefix=/usr       \
-  --buildtype=release \
-  -D docdir=/usr/share/doc/Linux-PAM-1.7.1  \
-  > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+meson setup ..          \
+    --prefix=/usr       \
+    --buildtype=release \
+    -D doc=disabled     \
+    > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#    -D docdir=/usr/share/doc/Linux-PAM-1.7.1  \
 
 echo "3. Ninja Build ..."
 echo "3. Ninja Build ..." >> $LFSLOG_PROCESS

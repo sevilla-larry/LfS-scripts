@@ -48,8 +48,8 @@ echo "3. Configure ..." >> $PKGLOG_ERROR
             --sysconfdir=/etc               \
             --enable-linuxcaps              \
             --with-lineeditlibs=readline    \
-            --docdir=/usr/share/doc/ntp-4.2.8p18    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#            --docdir=/usr/share/doc/ntp-4.2.8p18    \
 
 echo "4. Make Build ..."
 echo "4. Make Build ..." >> $LFSLOG_PROCESS

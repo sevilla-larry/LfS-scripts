@@ -80,23 +80,26 @@ faa12e794bcc37ba275fd6268317eb87 sqlite-doc-3500400.zip
 9a22a9f7203783e526959d34510a9672 hatch_vcs-0.5.0.tar.gz
 # 08.91.20.08 Iniconfig-2.1.0
 437ede5b20b0ab2e76ca08f02b5c49dd iniconfig-2.1.0.tar.gz
-# 08.91.20.09 Pygments-2.19.2
-79260d1c566a507953a81d24b1c51c72 pygments-2.19.2.tar.gz
-# 08.91.20.10 Pytest-8.4.1
+# 08.91.20.09 Pytest-8.4.1
 ac7dfc1b6d681ee9ff65f94d65a6a5a1 pytest-8.4.1.tar.gz
+
 # 08.91.20.11 Cython-3.1.3
 f508595cc0951a77b70c07100df1b4ff cython-3.1.3.tar.gz
-# 08.91.20.12 Pyproject-Metadata-0.9.1
+# 08.91.20.12 Pyproject_Hooks-1.2.0
+ed3dd1b984339e83e35f676d7169c192 pyproject_hooks-1.2.0.tar.gz
+# 08.91.20.13 build-1.3.0
+48f7fbc11051430eab3c1abe216bed7a build-1.3.0.tar.gz
+# 08.91.20.14 Pyproject-Metadata-0.9.1
 d897e16dca18204e421f912487730668 pyproject_metadata-0.9.1.tar.gz
-# 08.91.20.13 Meson_python-0.18.0
+# 08.91.20.15 Meson_python-0.18.0
 b4d7f9ef6f09deb8dc8a7e5cbf16778e meson_python-0.18.0.tar.gz
-# 08.91.20.14 Pytz-2025.2
+# 08.91.20.16 Pytz-2025.2
 6a7760c71e38b6c75577b34b18b89d5b pytz-2025.2.tar.gz
-# 08.91.20.15 Hatch-Fancy-Pypi-Readme-25.1.0
+# 08.91.20.17 Hatch-Fancy-Pypi-Readme-25.1.0
 8e1ed2416887685adc1c909ed4fb63cb hatch_fancy_pypi_readme-25.1.0.tar.gz
-# 08.91.20.16 Attrs-25.3.0
+# 08.91.20.18 Attrs-25.3.0
 173fe452e1fe986051d9bc194ed59525 attrs-25.3.0.tar.gz
-# 08.91.20.17 NumPy-2.3.2
+# 08.91.20.19 NumPy-2.3.2
 f8d3d3b3ecd2b6e98889e88f6bbdc1a3 numpy-2.3.2.tar.gz
 
 # 08.91.21 libseccomp-2.6.0

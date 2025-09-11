@@ -1,8 +1,8 @@
-# a.08.91.20.17.NumPy-2.3.2.sh
+# a.08.91.20.12.Pyproject_Hooks-1.2.0.sh
 #
 
-export PKG="numpy-2.3.2"
-export PKGLOG_DIR=$LFSLOG/08.91.20.17
+export PKG="pyproject_hooks-1.2.0"
+export PKGLOG_DIR=$LFSLOG/08.91.20.12
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
 export PKGLOG_CHECK=$PKGLOG_DIR/check.log
@@ -25,10 +25,9 @@ echo "2. pip3 Build ..."
 echo "2. pip3 Build ..." >> $LFSLOG_PROCESS
 echo "2. pip3 Build ..." >> $PKGLOG_ERROR
 pip3 wheel  -w dist                 \
+            --no-cache-dir          \
             --no-build-isolation    \
             --no-deps               \
-            --no-cache-dir          \
-            -C setup-args=-Dallow-noblas=true   \
             $PWD                    \
             > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 
@@ -39,24 +38,22 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                numpy                   \
+                pyproject_hooks         \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-#echo "4. pyTest ..."
-#echo "4. pyTest ..." >> $LFSLOG_PROCESS
-#echo "4. pyTest ..." >> $PKGLOG_ERROR
-#mkdir -p test
-#cd       test
-#python3 -m venv --system-site-packages testenv  \
-#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#source testenv/bin/activate                     \
-#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#pip3 install hypothesis                         \
-#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#python3 -c "import numpy, sys; sys.exit(numpy.test() is False)" \
-#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#deactivate                                      \
-#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+echo "4. pyTest ..."
+echo "4. pyTest ..." >> $LFSLOG_PROCESS
+echo "4. pyTest ..." >> $PKGLOG_ERROR
+python3 -m venv --system-site-packages testenv  \
+    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+source testenv/bin/activate                     \
+    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+pip3 install testpath                           \
+    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+python3 -m pytest                               \
+    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+deactivate                                      \
+    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES
