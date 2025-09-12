@@ -1,4 +1,5 @@
-# a.08.91.18.SQLite-3.50.4.sh
+# a.08.50z.SQLite-3.50.4.sh
+# before Python
 #
 
 export PKG="sqlite-autoconf-3500400"

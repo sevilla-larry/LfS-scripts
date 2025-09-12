@@ -204,6 +204,20 @@ echo "."
 
 ###
 
+echo "08.50z.SQLite-3.50.4"
+echo "08.50z.SQLite-3.50.4" >> $LFSLOG_PROCESS
+
+time { bash a.08.50z.SQLite-3.50.4.sh ; }
+
+date +"%Y/%b/%d %H:%M"
+date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+
+echo "." >> $LFSLOG_PROCESS
+echo "."
+echo "."
+
+###
+
 # if   [ "$PYVER" -eq 12 ]; then
 #
 # 	echo "08.51.Python-3.12.11"

@@ -246,17 +246,17 @@ echo "."
 
 ###
 
-echo "08.91.18.SQLite-3.50.4"
-echo "08.91.18.SQLite-3.50.4" >> $LFSLOG_PROCESS
-
-time { bash a.08.91.18.SQLite-3.50.4.sh ; }
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
+#echo "08.91.18.SQLite-3.50.4"
+#echo "08.91.18.SQLite-3.50.4" >> $LFSLOG_PROCESS
+#
+#time { bash a.08.91.18.SQLite-3.50.4.sh ; }
+#
+#date +"%Y/%b/%d %H:%M"
+#date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+#
+#echo "." >> $LFSLOG_PROCESS
+#echo "."
+#echo "."
 
 ###
 
@@ -279,29 +279,29 @@ echo "."
 #
 # fi
 
-case "$PYVER" in
-    12)
-		echo "08.91.19.Python-3.12.11"
-		echo "08.91.19.Python-3.12.11" >> $LFSLOG_PROCESS
-		time { bash a.08.91.19.Python-3.12.11.sh ; }
-        ;;
-    13)
-		echo "08.91.19.Python-3.13.7"
-		echo "08.91.19.Python-3.13.7" >> $LFSLOG_PROCESS
-		time { bash a.08.91.19.Python-3.13.7.sh ; }
-        ;;
-    *)
-		echo "Error: PYVER must be 12 or 13"
-		echo "Error: PYVER must be 12 or 13" >> $LFSLOG_PROCESS
-        ;;
-esac
-
-date +"%Y/%b/%d %H:%M"
-date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
-
-echo "." >> $LFSLOG_PROCESS
-echo "."
-echo "."
+#case "$PYVER" in
+#    12)
+#		echo "08.91.19.Python-3.12.11"
+#		echo "08.91.19.Python-3.12.11" >> $LFSLOG_PROCESS
+#		time { bash a.08.91.19.Python-3.12.11.sh ; }
+#        ;;
+#    13)
+#		echo "08.91.19.Python-3.13.7"
+#		echo "08.91.19.Python-3.13.7" >> $LFSLOG_PROCESS
+#		time { bash a.08.91.19.Python-3.13.7.sh ; }
+#        ;;
+#    *)
+#		echo "Error: PYVER must be 12 or 13"
+#		echo "Error: PYVER must be 12 or 13" >> $LFSLOG_PROCESS
+#        ;;
+#esac
+#
+#date +"%Y/%b/%d %H:%M"
+#date +"%Y/%b/%d %H:%M" >> $LFSLOG_PROCESS
+#
+#echo "." >> $LFSLOG_PROCESS
+#echo "."
+#echo "."
 
 #####
 
