@@ -12,6 +12,9 @@ ca88b5ee2cb5aef19376ef2ec88e839b python-3.12.11-docs-html.tar.bz2
 
 # 08.73a Nano-8.3
 3b5a70dd65ddee4bd848b620c1638526 nano-8.6.tar.xz
+# 08.50z SQLite-3.50.4
+d74bbdca4ab1b2bd46d3b3f8dbb0f3db sqlite-autoconf-3500400.tar.gz
+faa12e794bcc37ba275fd6268317eb87 sqlite-doc-3500400.zip
 
 # 08.90.1 Popt-1.19
 eaa2135fddb6eb03f2c87ee1823e5a78 popt-1.19.tar.gz
@@ -59,9 +62,6 @@ b5333f021f880fe76490d8a799cd79f4 libevent-2.1.12-stable.tar.gz
 fb178645dfa85ebab0f1e42e219b42ae libnsl-2.0.1.tar.xz
 # 08.91.17 rpcsvc-proto-1.4.4  
 bf908de360308d909e9cc469402ff2ef rpcsvc-proto-1.4.4.tar.xz
-# 08.91.18 SQLite-3.50.4
-d74bbdca4ab1b2bd46d3b3f8dbb0f3db sqlite-autoconf-3500400.tar.gz
-faa12e794bcc37ba275fd6268317eb87 sqlite-doc-3500400.zip
 
 # 08.91.20 Python Modules & Dependencies
 # 08.91.20.01 Setuptools_scm-8.3.1
