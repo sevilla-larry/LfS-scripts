@@ -1,7 +1,7 @@
-# a.08.91.20.09.Pytest-8.4.1.sh
+# a.08.91.20.09.Pygments-2.19.2.sh
 #
 
-export PKG="pytest-8.4.1"
+export PKG="pygments-2.19.2"
 export PKGLOG_DIR=$LFSLOG/08.91.20.09
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -38,23 +38,18 @@ pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
                 --no-cache-dir          \
-                pytest                  \
+                Pygments                \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-# hypothesis and xmlschema not installed
-#echo "4. Tests ..."
-#echo "4. Tests ..." >> $LFSLOG_PROCESS
-#echo "4. Tests ..." >> $PKGLOG_ERROR
+#echo "4. pyTest ..."
+#echo "4. pyTest ..." >> $LFSLOG_PROCESS
+#echo "4. pyTest ..." >> $PKGLOG_ERROR
 #python3 -m venv --system-site-packages testenv  \
-#                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#source testenv/bin/activate                     \
-#                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#pip3 install pytest[dev] xmlschema hypothesis   \
-#                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#python3 /usr/bin/pytest                         \
-#                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-#deactivate                                      \
-#                >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#testenv/bin/pip3 install wcag-contrast-ratio    \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+#testenv/bin/python -m pytest                    \
+#            >>  $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES
