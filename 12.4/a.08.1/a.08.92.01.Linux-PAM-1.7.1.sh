@@ -38,8 +38,8 @@ echo "2. Meson Setup ..." >> $PKGLOG_ERROR
 meson setup ..          \
     --prefix=/usr       \
     --buildtype=release \
-    -D doc=disabled     \
     > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
+#    -D doc=disabled     \  error
 #    -D docdir=/usr/share/doc/Linux-PAM-1.7.1  \
 
 echo "3. Ninja Build ..."

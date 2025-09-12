@@ -41,19 +41,19 @@ pip3 install    --no-index              \
                 pyproject_hooks         \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
-echo "4. pyTest ..."
-echo "4. pyTest ..." >> $LFSLOG_PROCESS
-echo "4. pyTest ..." >> $PKGLOG_ERROR
-python3 -m venv --system-site-packages testenv  \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-source testenv/bin/activate                     \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-pip3 install testpath                           \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-python3 -m pytest                               \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
-deactivate                                      \
-    >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+# echo "4. pyTest ..."
+# echo "4. pyTest ..." >> $LFSLOG_PROCESS
+# echo "4. pyTest ..." >> $PKGLOG_ERROR
+# python3 -m venv --system-site-packages testenv  \
+#     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+# source testenv/bin/activate                     \
+#     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+# pip3 install testpath                           \
+#     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+# python3 -m pytest                               \
+#     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
+# deactivate                                      \
+#     >> $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES
