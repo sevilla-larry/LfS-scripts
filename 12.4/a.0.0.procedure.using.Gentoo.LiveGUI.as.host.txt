@@ -841,8 +841,8 @@ D. [LFS 10.x] Making the LFS System Bootable
         fi
 
         menuentry "GNU/Linux, Linux $LKV-lfs-$LFSV-r00" {
-          linux   /boot/vmlinuz-$LKV-lfs-$LFSV-r00 root=/dev/vda2 ro   # Qemu/KVM VM
-          linux   /boot/vmlinuz-$LKV-lfs-$LFSV-r00 root=/dev/sda2 ro   # PC & VB
+          linux   /boot/vmlinuz-$LKV-lfs-$LFSV-r00 root=/dev/vda2 ro net.ifnames=0  # Qemu/KVM VM
+          linux   /boot/vmlinuz-$LKV-lfs-$LFSV-r00 root=/dev/sda2 ro net.ifnames=0  # PC & VB
         }
 
         menuentry "Firmware Setup" {
