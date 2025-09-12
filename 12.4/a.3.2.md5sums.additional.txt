@@ -80,7 +80,9 @@ faa12e794bcc37ba275fd6268317eb87 sqlite-doc-3500400.zip
 9a22a9f7203783e526959d34510a9672 hatch_vcs-0.5.0.tar.gz
 # 08.91.20.08 Iniconfig-2.1.0
 437ede5b20b0ab2e76ca08f02b5c49dd iniconfig-2.1.0.tar.gz
-# 08.91.20.09 Pytest-8.4.1
+# 08.91.20.09 Pygments-2.19.2
+79260d1c566a507953a81d24b1c51c72 pygments-2.19.2.tar.gz
+# 08.91.20.10 Pytest-8.4.1
 ac7dfc1b6d681ee9ff65f94d65a6a5a1 pytest-8.4.1.tar.gz
 
 # 08.91.20.11 Cython-3.1.3
