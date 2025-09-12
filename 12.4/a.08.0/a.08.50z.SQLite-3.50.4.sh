@@ -3,7 +3,7 @@
 #
 
 export PKG="sqlite-autoconf-3500400"
-export PKGLOG_DIR=$LFSLOG/08.91.18
+export PKGLOG_DIR=$LFSLOG/08.50z
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
