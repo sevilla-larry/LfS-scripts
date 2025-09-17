@@ -852,6 +852,16 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         ###
 
+  D.04. CPUPower from Linux Kernel Source
+
+        ### for PCs only
+
+        cd /sources
+
+        bash a.10.05.cpupower.sh
+
+        ###
+
 E. The End
 
   E.01. [LFS 11.1] The End
