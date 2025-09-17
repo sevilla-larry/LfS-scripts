@@ -1,4 +1,4 @@
-# a.10.05.cpupower.sh
+# a.10.05.CPUPower.sh
 #
 # build CPUPower from Linux Kernel Source
 #

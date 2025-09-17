@@ -858,7 +858,7 @@ D. [LFS 10.x] Making the LFS System Bootable
 
         cd /sources
 
-        bash a.10.05.cpupower.sh
+        bash a.10.05.CPUPower.sh
 
         ###
 
