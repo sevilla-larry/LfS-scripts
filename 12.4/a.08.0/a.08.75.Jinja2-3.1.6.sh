@@ -36,6 +36,7 @@ echo "3. pip3 Install ..." >> $PKGLOG_ERROR
 pip3 install    --no-index              \
                 --no-user               \
                 --find-links dist       \
+                --no-cache-dir          \
                 Jinja2                  \
                 > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
