@@ -1,7 +1,8 @@
-# a.08.40. Expat-2.7.1.sh
+# a.08.40. Expat-2.7.3.sh
+# errata
 #
 
-export PKG="expat-2.7.1"
+export PKG="expat-2.7.3"
 export PKGLOG_DIR=$LFSLOG/08.40
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -29,7 +30,7 @@ echo "2. Configure ..." >> $PKGLOG_ERROR
 ./configure --prefix=/usr                       \
             --disable-static                    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#            --docdir=/usr/share/doc/expat-2.7.1 \
+#            --docdir=/usr/share/doc/expat-2.7.3 \
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -50,7 +51,7 @@ make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 #echo "   Install the documentation..." >> $LFSLOG_PROCESS
 #echo "   Install the documentation..." >> $PKGLOG_ERROR
 #install -v -m644 doc/*.{html,css}   \
-#        /usr/share/doc/expat-2.7.1  \
+#        /usr/share/doc/expat-2.7.3  \
 #    >> $PKGLOG_OTHERS 2>> $PKGLOG_ERROR
 
 

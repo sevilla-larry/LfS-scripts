@@ -1,7 +1,8 @@
-# a.08.93.04.cURL-8.15.0.sh
+# a.08.93.04.cURL-8.17.0.sh
+# errata
 #
 
-export PKG="curl-8.15.0"
+export PKG="curl-8.17.0"
 export PKGLOG_DIR=$LFSLOG/08.93.04
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

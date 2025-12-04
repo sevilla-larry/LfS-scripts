@@ -1,8 +1,9 @@
-# a.08.52.Python-3.12.11.sh
-# latest 2025/Sep/01
+# a.08.52.Python-3.12.12.sh
+# latest 2025/Dec/04 3.12.12
+#        2025/Sep/01 3.12.11
 #
 
-export PKG="Python-3.12.11"
+export PKG="Python-3.12.12"
 export PKGLOG_DIR=$LFSLOG/08.51
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

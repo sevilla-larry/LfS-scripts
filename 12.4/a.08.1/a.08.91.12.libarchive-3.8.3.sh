@@ -1,8 +1,9 @@
-# a.08.91.11.PCRE2-10.45.sh
+# a.08.91.12.libarchive-3.8.3.sh
+# errata
 #
 
-export PKG="pcre2-10.45"
-export PKGLOG_DIR=$LFSLOG/08.91.11
+export PKG="libarchive-3.8.3"
+export PKGLOG_DIR=$LFSLOG/08.91.12
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
 export PKGLOG_BUILD=$PKGLOG_DIR/build.log
@@ -18,24 +19,18 @@ mkdir $PKGLOG_DIR
 echo "1. Extract tar..."
 echo "1. Extract tar..." >> $LFSLOG_PROCESS
 echo "1. Extract tar..." >> $PKGLOG_ERROR
-tar xvf $PKG.tar.bz2 > $PKGLOG_TAR 2>> $PKGLOG_ERROR
+tar xvf $PKG.tar.xz > $PKGLOG_TAR 2>> $PKGLOG_ERROR
 cd $PKG
 
 
 echo "2. Configure ..."
 echo "2. Configure ..." >> $LFSLOG_PROCESS
 echo "2. Configure ..." >> $PKGLOG_ERROR
-./configure --prefix=/usr                       \
-            --enable-unicode                    \
-            --enable-jit                        \
-            --enable-pcre2-16                   \
-            --enable-pcre2-32                   \
-            --enable-pcre2grep-libz             \
-            --enable-pcre2grep-libbz2           \
-            --enable-pcre2test-libreadline      \
-            --disable-static                    \
+./configure --prefix=/usr       \
+            --disable-static    \
             > $PKGLOG_CONFIG 2>> $PKGLOG_ERROR
-#            --docdir=/usr/share/doc/pcre2-10.45 \
+#            --with-nettle       \      use OpenSSL
+#            --without-expat     \      LfS 12.2
 
 echo "3. Make Build ..."
 echo "3. Make Build ..." >> $LFSLOG_PROCESS
@@ -45,12 +40,16 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "4. Make Check ..."
 echo "4. Make Check ..." >> $LFSLOG_PROCESS
 echo "4. Make Check ..." >> $PKGLOG_ERROR
+#LC_ALL=C.UTF-8
 make check > $PKGLOG_CHECK 2>> $PKGLOG_ERROR
 
 echo "5. Make Install ..."
 echo "5. Make Install ..." >> $LFSLOG_PROCESS
 echo "5. Make Install ..." >> $PKGLOG_ERROR
 make install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+
+ln -sfv bsdunzip /usr/bin/unzip \
+            >> $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

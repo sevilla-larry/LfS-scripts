@@ -1,9 +1,7 @@
-# a.08.95.2.btop-1.4.4.sh
-#
-# copyied from github source
+# a.08.95.2.btop-1.4.5.sh
 #
 
-export PKG="btop-1.4.4"
+export PKG="btop-1.4.5"
 export PKGLOG_DIR=$LFSLOG/08.95.2
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 #export PKGLOG_CONFIG=$PKGLOG_DIR/config.log
@@ -32,7 +30,7 @@ make > $PKGLOG_BUILD 2>> $PKGLOG_ERROR
 echo "3. Make Install ..."
 echo "3. Make Install ..." >> $LFSLOG_PROCESS
 echo "3. Make Install ..." >> $PKGLOG_ERROR
-make install PREFIX=/usr > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
+make PREFIX=/usr install > $PKGLOG_INSTALL 2>> $PKGLOG_ERROR
 
 
 cd $SOURCES

@@ -1,7 +1,8 @@
-# a.08.92.12.OpenSSH-10.0p1.sh
+# a.08.92.12.OpenSSH-10.2p1.sh
+# errata
 #
 
-export PKG="openssh-10.0p1"
+export PKG="openssh-10.2p1"
 export PKGLOG_DIR=$LFSLOG/08.92.12
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

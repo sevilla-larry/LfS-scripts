@@ -1,7 +1,8 @@
-# a.08.48.OpenSSL-3.5.2.sh
+# a.08.48.OpenSSL-3.6.0.sh
+# errata
 #
 
-export PKG="openssl-3.5.2"
+export PKG="openssl-3.6.0"
 export PKGLOG_DIR=$LFSLOG/08.48
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

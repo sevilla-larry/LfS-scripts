@@ -1,7 +1,8 @@
-# a.08.91.22.brotli-1.1.0.sh
+# a.08.91.22.brotli-1.2.0.sh
+# errata
 #
 
-export PKG="brotli-1.1.0"
+export PKG="brotli-1.2.0"
 export PKGLOG_DIR=$LFSLOG/08.91.22
 export PKGLOG_TAR=$PKGLOG_DIR/tar.log
 export PKGLOG_CONFIG=$PKGLOG_DIR/config.log

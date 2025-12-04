@@ -1,10 +1,18 @@
 # Errata LfS
 
+# a.08.40 Expat-2.7.3
+https://github.com/libexpat/libexpat/releases/download/R_2_7_3/expat-2.7.3.tar.xz
+# a.08.48 OpenSSL-3.6.0
+https://github.com/openssl/openssl/releases/download/openssl-3.6.0/openssl-3.6.0.tar.gz
+
 #####
 
-# 07.10, 08.51 & 08.91.19 Python-3.12.11 (latest 2025/Sep)
-https://www.python.org/ftp/python/3.12.11/Python-3.12.11.tar.xz
-https://www.python.org/ftp/python/doc/3.12.11/python-3.12.11-docs-html.tar.bz2
+# 07.10, 08.51 & 08.91.19 Python-3.12.11 (       2025/Sep)
+#https://www.python.org/ftp/python/3.12.11/Python-3.12.11.tar.xz
+#https://www.python.org/ftp/python/doc/3.12.11/python-3.12.11-docs-html.tar.bz2
+# 07.10 & 08.51			  Python-3.12.12 (latest 2025/Dec)
+https://www.python.org/ftp/python/3.12.12/Python-3.12.12.tar.xz
+https://www.python.org/ftp/python/doc/3.12.12/python-3.12.12-docs-html.tar.bz2
 
 #####
 
@@ -48,9 +56,13 @@ https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz
 # 08.91.10 Nettle-3.10.2
 https://ftp.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz
 # 08.91.11 PCRE2-10.45
-https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2
+#https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2
+# 08.91.11 PCRE2-10.47
+https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2
 # 08.91.12 libarchive-3.8.1
-https://github.com/libarchive/libarchive/releases/download/v3.8.1/libarchive-3.8.1.tar.xz
+#https://github.com/libarchive/libarchive/releases/download/v3.8.1/libarchive-3.8.1.tar.xz
+# 08.91.12 libarchive-3.8.3
+https://github.com/libarchive/libarchive/releases/download/v3.8.3/libarchive-3.8.3.tar.xz
 # 08.91.13 libuv-1.51.0
 https://dist.libuv.org/dist/v1.51.0/libuv-v1.51.0.tar.gz
 # 08.91.14 libevent-2.1.12
@@ -107,7 +119,9 @@ https://files.pythonhosted.org/packages/source/n/numpy/numpy-2.3.2.tar.gz
 # 08.91.21 libseccomp-2.6.0
 https://github.com/seccomp/libseccomp/releases/download/v2.6.0/libseccomp-2.6.0.tar.gz
 # 08.91.22 brotli-1.1.0
-https://github.com/google/brotli/archive/v1.1.0/brotli-1.1.0.tar.gz
+#https://github.com/google/brotli/archive/v1.1.0/brotli-1.1.0.tar.gz
+# 08.91.22 brotli-1.2.0
+https://github.com/google/brotli/archive/v1.2.0/brotli-1.2.0.tar.gz
 # 08.91.23 boost-1.89.0
 https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.xz
 
@@ -179,7 +193,9 @@ https://ftp.gnu.org/gnu/libunistring/libunistring-1.3.tar.xz
 # 08.91.62 libidn2-2.3.8
 https://ftp.gnu.org/gnu/libidn/libidn2-2.3.8.tar.gz
 # 08.91.63 GnuTLS-3.8.10
-https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz
+#https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz
+# 08.91.63 GnuTLS-3.8.10
+https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.11.tar.xz
 # 08.91.64 libpsl-0.21.5
 https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
 # 08.91.65 c-ares-1.34.5
@@ -210,7 +226,9 @@ https://anduin.linuxfromscratch.org/BLFS/Linux-PAM/Linux-PAM-1.7.1-docs.tar.xz
 # 08.92.11 Sudo-1.9.17p2
 https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz
 # 08.92.12 OpenSSH-10.0p1
-https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p1.tar.gz
+#https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p1.tar.gz
+# 08.92.12 OpenSSH-10.2p1
+https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.2p1.tar.gz
 
 # 08.93.01 ntp-4.2.8p18
 https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p18.tar.gz
@@ -219,7 +237,9 @@ https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz
 # 08.93.03 Lynx-2.9.2
 https://invisible-mirror.net/archives/lynx/tarballs/lynx2.9.2.tar.bz2
 # 08.93.04 cURL-8.15.0
-https://curl.se/download/curl-8.15.0.tar.xz
+#https://curl.se/download/curl-8.15.0.tar.xz
+# 08.93.04 cURL-8.17.0
+https://curl.se/download/curl-8.17.0.tar.xz
 # 08.93.05 Git-2.50.1
 https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
 #https://www.kernel.org/pub/software/scm/git/git-manpages-2.50.1.tar.xz
@@ -229,7 +249,9 @@ https://www.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
 https://github.com/thom311/libnl/releases/download/libnl3_11_0/libnl-3.11.0.tar.gz
 https://github.com/thom311/libnl/releases/download/libnl3_11_0/libnl-doc-3.11.0.tar.gz
 # 08.95.2 btop-1.4.4
---content-disposition https://github.com/aristocratos/btop/archive/refs/tags/v1.4.4.tar.gz
+#--content-disposition https://github.com/aristocratos/btop/archive/refs/tags/v1.4.4.tar.gz
+# 08.95.2 btop-1.4.5
+https://github.com/aristocratos/btop/archive/v1.4.5/btop-1.4.5.tar.gz
 
 # 09.99 BLFS-Bootscripts-20250225
 https://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-20250225.tar.xz
